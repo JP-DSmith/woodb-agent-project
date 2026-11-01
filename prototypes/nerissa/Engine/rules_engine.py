@@ -27,11 +27,13 @@ import pathlib
 from datetime import date
 
 # ---- FOLDERS ----
-DRIVE         = pathlib.Path('/content/drive/MyDrive/Deep_Learning')
-ENGINE_FOLDER = DRIVE / 'Engine'     # where rules_engine.py lives
-WORLD_FOLDER  = DRIVE / 'World'      # the answer key is saved here, next to the world files
-RULES_FOLDER = DRIVE / 'Rules'       # where footwear_rules
+# Resolve data files relative to this repository so the engine works
+# locally, in Docker, in Cloud Run, and in notebooks.
 
+ENGINE_FOLDER = pathlib.Path(__file__).resolve().parent     # where rules_engine.py lives
+PROTOTYPE_FOLDER = ENGINE_FOLDER.parent
+WORLD_FOLDER  = PROTOTYPE_FOLDER / 'World'      # the answer key is saved here, next to the world files
+RULES_FOLDER = PROTOTYPE_FOLDER / 'Rules'       # where footwear_rule
 RULES = json.loads((RULES_FOLDER / "footwear_rules.json").read_text())   # written by step 1
 FR = RULES["footwear_rule"]
 CUSMA = {"CA", "US", "MX"}
