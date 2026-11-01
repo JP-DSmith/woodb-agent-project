@@ -1,0 +1,377 @@
+sku,line_no,component,description,hs_code,supplier_id,origin_country,cost_cad
+NB-0101,1,Upper/shell,Hand-laid natural rubber shell (from in-house compound),4001.22,SUP-014,TH,4.20
+NB-0101,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.50
+NB-0101,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.30
+NB-0101,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.40
+NB-0101,5,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.20
+NB-0101,6,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.35
+NB-0101,7,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.95
+NB-0101-V1,1,Upper/shell,Hand-laid natural rubber shell (from in-house compound),4001.22,SUP-014,TH,4.20
+NB-0101-V1,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.50
+NB-0101-V1,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.30
+NB-0101-V1,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.40
+NB-0101-V1,5,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.20
+NB-0101-V1,6,Trims,"Labels, patch, pull loop",5807.10,SUP-120,CN,0.37
+NB-0101-V1,7,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.95
+NB-0101-V2,1,Upper/shell,Hand-laid natural rubber shell (from in-house compound),4001.22,SUP-014,TH,4.23
+NB-0101-V2,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.51
+NB-0101-V2,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.31
+NB-0101-V2,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.41
+NB-0101-V2,5,Insole,Anti-fatigue PU insole,6406.90,SUP-105,MX,1.27
+NB-0101-V2,6,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.35
+NB-0101-V2,7,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.96
+NB-0101-V3,1,Upper/shell,Hand-laid natural rubber shell (from in-house compound),4001.22,SUP-014,TH,3.68
+NB-0101-V3,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.31
+NB-0101-V3,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.14
+NB-0101-V3,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.23
+NB-0101-V3,5,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.05
+NB-0101-V3,6,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.31
+NB-0101-V3,7,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.83
+NB-0102,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,4.40
+NB-0102,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.60
+NB-0102,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.30
+NB-0102,4,Safety toe,Steel toe cap,6406.10,SUP-031,CN,2.20
+NB-0102,5,Puncture plate,Steel midsole plate,6406.90,SUP-031,CN,2.00
+NB-0102,6,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.40
+NB-0102,7,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.30
+NB-0102,8,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.40
+NB-0102,9,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.00
+NB-0102-V1,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,3.74
+NB-0102-V1,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.36
+NB-0102-V1,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.11
+NB-0102-V1,4,Safety toe,Steel toe cap,6406.10,SUP-031,CN,1.87
+NB-0102-V1,5,Puncture plate,Steel midsole plate,6406.90,SUP-031,CN,1.70
+NB-0102-V1,6,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.19
+NB-0102-V1,7,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.11
+NB-0102-V1,8,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.34
+NB-0102-V1,9,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.85
+NB-0102-V2,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,4.40
+NB-0102-V2,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.60
+NB-0102-V2,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.30
+NB-0102-V2,4,Safety toe,Steel toe cap,6406.10,SUP-031,CN,2.20
+NB-0102-V2,5,Puncture plate,Steel midsole plate,6406.90,SUP-031,CN,2.00
+NB-0102-V2,6,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.40
+NB-0102-V2,7,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.30
+NB-0102-V2,8,Trims,"Labels, patch, pull loop",5807.10,SUP-120,CN,0.37
+NB-0102-V2,9,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.00
+NB-0102-V3,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,4.40
+NB-0102-V3,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.60
+NB-0102-V3,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.30
+NB-0102-V3,4,Safety toe,Steel toe cap,6406.10,SUP-031,CN,2.20
+NB-0102-V3,5,Puncture plate,Steel midsole plate,6406.90,SUP-031,CN,2.00
+NB-0102-V3,6,Lining,Polyester knit lining,6006.32,SUP-111,US,1.29
+NB-0102-V3,7,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.30
+NB-0102-V3,8,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.40
+NB-0102-V3,9,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.00
+NB-0412,1,Upper,"TPU compound pellets, moulded in-house",3909.50,SUP-010,DE,7.40
+NB-0412,2,Colourant,Colour masterbatch,3206.49,SUP-011,US,0.35
+NB-0412,3,Insulation,"PU foam system, foamed in place",3907.29 / 3909.31,SUP-012,US,3.10
+NB-0412,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.60
+NB-0412,5,Outsole compound,Natural rubber TSR 20,4001.22,SUP-014,TH,1.90
+NB-0412,6,Outsole compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.20
+NB-0412,7,Outsole compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.10
+NB-0412,8,Safety toe,Composite toe cap,6406.10,SUP-017,CN,2.80
+NB-0412,9,Puncture plate,Composite aramid plate,6406.90,SUP-018,DE,3.40
+NB-0412,10,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.50
+NB-0412,11,Midsole,Gel midsole,6406.90,SUP-020,CA,1.20
+NB-0412,12,Trims,"Labels, safety patch, pull loop",5807.10,SUP-013,CN,0.45
+NB-0412,13,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.05
+NB-0412-V1,1,Upper,"TPU compound pellets, moulded in-house",3909.50,SUP-010,DE,7.40
+NB-0412-V1,2,Colourant,Colour masterbatch,3206.49,SUP-011,US,0.35
+NB-0412-V1,3,Insulation,"PU foam system, foamed in place",3907.29 / 3909.31,SUP-012,US,3.10
+NB-0412-V1,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.60
+NB-0412-V1,5,Outsole compound,Natural rubber TSR 20,4001.22,SUP-014,TH,1.90
+NB-0412-V1,6,Outsole compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.20
+NB-0412-V1,7,Outsole compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.10
+NB-0412-V1,8,Safety toe,Composite toe cap,6406.10,SUP-017,CN,2.80
+NB-0412-V1,9,Puncture plate,Composite aramid plate,6406.90,SUP-115,DE,3.40
+NB-0412-V1,10,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.50
+NB-0412-V1,11,Midsole,Gel midsole,6406.90,SUP-020,CA,1.20
+NB-0412-V1,12,Trims,"Labels, safety patch, pull loop",5807.10,SUP-013,CN,0.45
+NB-0412-V1,13,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.05
+NB-0412-V2,1,Upper,"TPU compound pellets, moulded in-house",3909.50,SUP-010,DE,6.54
+NB-0412-V2,2,Colourant,Colour masterbatch,3206.49,SUP-011,US,0.31
+NB-0412-V2,3,Insulation,"PU foam system, foamed in place",3907.29 / 3909.31,SUP-012,US,2.74
+NB-0412-V2,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.41
+NB-0412-V2,5,Outsole compound,Natural rubber TSR 20,4001.22,SUP-014,TH,1.68
+NB-0412-V2,6,Outsole compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.06
+NB-0412-V2,7,Outsole compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.97
+NB-0412-V2,8,Safety toe,Composite toe cap,6406.10,SUP-017,CN,2.47
+NB-0412-V2,9,Puncture plate,Composite aramid plate,6406.90,SUP-018,DE,3.00
+NB-0412-V2,10,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.32
+NB-0412-V2,11,Midsole,Gel midsole,6406.90,SUP-020,CA,1.06
+NB-0412-V2,12,Trims,"Labels, safety patch, pull loop",5807.10,SUP-119,CA,0.43
+NB-0412-V2,13,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.93
+NB-0412-V3,1,Upper,"TPU compound pellets, moulded in-house",3909.50,SUP-010,DE,7.40
+NB-0412-V3,2,Colourant,Colour masterbatch,3206.49,SUP-011,US,0.35
+NB-0412-V3,3,Insulation,"PU foam system, foamed in place",3907.29 / 3909.31,SUP-012,US,3.10
+NB-0412-V3,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.60
+NB-0412-V3,5,Outsole compound,Natural rubber TSR 20,4001.22,SUP-014,TH,1.90
+NB-0412-V3,6,Outsole compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.20
+NB-0412-V3,7,Outsole compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.10
+NB-0412-V3,8,Safety toe,Composite toe cap,6406.10,SUP-017,CN,2.80
+NB-0412-V3,9,Puncture plate,Composite aramid plate,6406.90,SUP-018,DE,3.40
+NB-0412-V3,10,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.50
+NB-0412-V3,11,Midsole,Gel midsole,6406.90,SUP-020,CA,1.20
+NB-0412-V3,12,Trims,"Labels, safety patch, pull loop",5807.10,SUP-013,CN,0.45
+NB-0412-V3,13,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.05
+NB-0413,1,Upper,"TPU compound pellets, moulded in-house",3909.50,SUP-010,DE,7.40
+NB-0413,2,Colourant,Colour masterbatch,3206.49,SUP-011,US,0.35
+NB-0413,3,Insulation,"PU foam system, foamed in place",3907.29 / 3909.31,SUP-012,US,3.10
+NB-0413,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.60
+NB-0413,5,Outsole,"Finished rubber outsole, bought",6406.20,SUP-023,VN,6.50
+NB-0413,6,Safety toe,Composite toe cap,6406.10,SUP-017,CN,2.80
+NB-0413,7,Puncture plate,Composite aramid plate,6406.90,SUP-018,DE,3.40
+NB-0413,8,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.50
+NB-0413,9,Midsole,Gel midsole,6406.90,SUP-020,CA,1.20
+NB-0413,10,Trims,"Labels, safety patch, pull loop",5807.10,SUP-013,CN,0.45
+NB-0413,11,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.05
+NB-0413-V1,1,Upper,"TPU compound pellets, moulded in-house",3909.50,SUP-010,DE,6.33
+NB-0413-V1,2,Colourant,Colour masterbatch,3206.49,SUP-011,US,0.30
+NB-0413-V1,3,Insulation,"PU foam system, foamed in place",3907.29 / 3909.31,SUP-012,US,2.65
+NB-0413-V1,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.37
+NB-0413-V1,5,Outsole,"Finished rubber outsole, bought",6406.20,SUP-023,VN,5.56
+NB-0413-V1,6,Safety toe,Composite toe cap,6406.10,SUP-017,CN,2.39
+NB-0413-V1,7,Puncture plate,Composite aramid plate,6406.90,SUP-018,DE,2.91
+NB-0413-V1,8,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.28
+NB-0413-V1,9,Midsole,Gel midsole,6406.90,SUP-118,CN,1.01
+NB-0413-V1,10,Trims,"Labels, safety patch, pull loop",5807.10,SUP-013,CN,0.38
+NB-0413-V1,11,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.90
+NB-0413-V2,1,Upper,"TPU compound pellets, moulded in-house",3909.50,SUP-010,DE,7.40
+NB-0413-V2,2,Colourant,Colour masterbatch,3206.49,SUP-011,US,0.35
+NB-0413-V2,3,Insulation,"PU foam system, foamed in place",3907.29 / 3909.31,SUP-012,US,3.10
+NB-0413-V2,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.60
+NB-0413-V2,5,Outsole,"Finished rubber outsole, bought",6406.20,SUP-023,VN,6.50
+NB-0413-V2,6,Safety toe,Composite toe cap,6406.10,SUP-101,DE,2.74
+NB-0413-V2,7,Puncture plate,Composite aramid plate,6406.90,SUP-018,DE,3.40
+NB-0413-V2,8,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.50
+NB-0413-V2,9,Midsole,Gel midsole,6406.90,SUP-020,CA,1.20
+NB-0413-V2,10,Trims,"Labels, safety patch, pull loop",5807.10,SUP-013,CN,0.45
+NB-0413-V2,11,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.05
+NB-0413-V3,1,Upper,"TPU compound pellets, moulded in-house",3909.50,SUP-010,DE,7.22
+NB-0413-V3,2,Colourant,Colour masterbatch,3206.49,SUP-011,US,0.34
+NB-0413-V3,3,Insulation,"PU foam system, foamed in place",3907.29 / 3909.31,SUP-012,US,3.03
+NB-0413-V3,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.56
+NB-0413-V3,5,Outsole,"Finished rubber outsole, bought",6406.20,SUP-023,VN,6.34
+NB-0413-V3,6,Safety toe,Composite toe cap,6406.10,SUP-017,CN,2.73
+NB-0413-V3,7,Puncture plate,Composite aramid plate,6406.90,SUP-018,DE,3.32
+NB-0413-V3,8,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.46
+NB-0413-V3,9,Midsole,Gel midsole,6406.90,SUP-020,CA,1.17
+NB-0413-V3,10,Trims,"Labels, safety patch, pull loop",5807.10,SUP-013,CN,0.44
+NB-0413-V3,11,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.02
+NB-0414,1,Upper,"Pre-formed TPU upper, bought",6406.10,SUP-024,CN,11.00
+NB-0414,2,Colourant,Colour masterbatch,3206.49,SUP-011,US,0.35
+NB-0414,3,Insulation,"PU foam system, foamed in place",3907.29 / 3909.31,SUP-012,US,3.10
+NB-0414,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.60
+NB-0414,5,Outsole compound,Natural rubber TSR 20,4001.22,SUP-014,TH,1.90
+NB-0414,6,Outsole compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.20
+NB-0414,7,Outsole compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.10
+NB-0414,8,Safety toe,Composite toe cap,6406.10,SUP-017,CN,2.80
+NB-0414,9,Puncture plate,Composite aramid plate,6406.90,SUP-018,DE,3.40
+NB-0414,10,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.50
+NB-0414,11,Midsole,Gel midsole,6406.90,SUP-020,CA,1.20
+NB-0414,12,Trims,"Labels, safety patch, pull loop",5807.10,SUP-013,CN,0.45
+NB-0414,13,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.05
+NB-0414-V1,1,Upper,"Pre-formed TPU upper, bought",6406.10,SUP-024,CN,11.00
+NB-0414-V1,2,Colourant,Colour masterbatch,3206.49,SUP-011,US,0.35
+NB-0414-V1,3,Insulation,"PU foam system, foamed in place",3907.29 / 3909.31,SUP-012,US,3.10
+NB-0414-V1,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.60
+NB-0414-V1,5,Outsole compound,Natural rubber TSR 20,4001.22,SUP-014,TH,1.90
+NB-0414-V1,6,Outsole compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.20
+NB-0414-V1,7,Outsole compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.10
+NB-0414-V1,8,Safety toe,Composite toe cap,6406.10,SUP-017,CN,2.80
+NB-0414-V1,9,Puncture plate,Composite aramid plate,6406.90,SUP-018,DE,3.40
+NB-0414-V1,10,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.50
+NB-0414-V1,11,Midsole,Gel midsole,6406.90,SUP-020,CA,1.20
+NB-0414-V1,12,Trims,"Labels, safety patch, pull loop",5807.10,SUP-013,CN,0.45
+NB-0414-V1,13,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.05
+NB-0414-V2,1,Upper,"Pre-formed TPU upper, bought",6406.10,SUP-024,CN,11.00
+NB-0414-V2,2,Colourant,Colour masterbatch,3206.49,SUP-011,US,0.35
+NB-0414-V2,3,Insulation,"PU foam system, foamed in place",3907.29 / 3909.31,SUP-012,US,3.10
+NB-0414-V2,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.60
+NB-0414-V2,5,Outsole compound,Natural rubber TSR 20,4001.22,SUP-014,TH,1.90
+NB-0414-V2,6,Outsole compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.20
+NB-0414-V2,7,Outsole compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.10
+NB-0414-V2,8,Safety toe,Composite toe cap,6406.10,SUP-017,CN,2.80
+NB-0414-V2,9,Puncture plate,Composite aramid plate,6406.90,SUP-018,DE,3.40
+NB-0414-V2,10,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.50
+NB-0414-V2,11,Midsole,Gel midsole,6406.90,SUP-020,CA,1.20
+NB-0414-V2,12,Trims,"Labels, safety patch, pull loop",5807.10,SUP-013,CN,0.45
+NB-0414-V2,13,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.05
+NB-0414-V3,1,Upper,"Pre-formed TPU upper, bought",6406.10,SUP-024,CN,10.83
+NB-0414-V3,2,Colourant,Colour masterbatch,3206.49,SUP-011,US,0.34
+NB-0414-V3,3,Insulation,"PU foam system, foamed in place",3907.29 / 3909.31,SUP-012,US,3.05
+NB-0414-V3,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,1.58
+NB-0414-V3,5,Outsole compound,Natural rubber TSR 20,4001.22,SUP-014,TH,1.87
+NB-0414-V3,6,Outsole compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.18
+NB-0414-V3,7,Outsole compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.08
+NB-0414-V3,8,Safety toe,Composite toe cap,6406.10,SUP-017,CN,2.76
+NB-0414-V3,9,Puncture plate,Composite aramid plate,6406.90,SUP-018,DE,3.35
+NB-0414-V3,10,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.48
+NB-0414-V3,11,Midsole,Gel midsole,6406.90,SUP-020,CA,1.18
+NB-0414-V3,12,Trims,"Labels, safety patch, pull loop",5807.10,SUP-013,CN,0.44
+NB-0414-V3,13,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.03
+NB-0104,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.10
+NB-0104,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,0.80
+NB-0104,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.70
+NB-0104,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,0.80
+NB-0104,5,Insole,PU insole,6406.90,SUP-032,CN,0.60
+NB-0104,6,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.25
+NB-0104,7,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.70
+NB-0104-V1,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.10
+NB-0104-V1,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,0.80
+NB-0104-V1,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.70
+NB-0104-V1,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,0.80
+NB-0104-V1,5,Insole,PU insole,6406.90,SUP-032,CN,0.60
+NB-0104-V1,6,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.25
+NB-0104-V1,7,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.70
+NB-0104-V2,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.01
+NB-0104-V2,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,0.77
+NB-0104-V2,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.67
+NB-0104-V2,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,0.77
+NB-0104-V2,5,Insole,PU insole,6406.90,SUP-032,CN,0.58
+NB-0104-V2,6,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.24
+NB-0104-V2,7,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.67
+NB-0104-V3,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.40
+NB-0104-V3,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,0.92
+NB-0104-V3,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.80
+NB-0104-V3,4,Lining,Polyester knit lining,6006.32,SUP-013,CN,0.92
+NB-0104-V3,5,Insole,PU insole,6406.90,SUP-032,CN,0.69
+NB-0104-V3,6,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.29
+NB-0104-V3,7,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.80
+NB-0105,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.60
+NB-0105,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.00
+NB-0105,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.90
+NB-0105,4,Upper,Nylon upper fabric,5407.42,SUP-027,CN,3.20
+NB-0105,5,Liner,"Wool-blend felt sheet, liner sewn in-house",5602.10,SUP-028,CN,2.40
+NB-0105,6,Fittings,"Plastic buckles, eyelets, laces",3926.90,SUP-029,CN,1.10
+NB-0105,7,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.10
+NB-0105,8,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.10
+NB-0105-V1,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.60
+NB-0105-V1,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.00
+NB-0105-V1,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.90
+NB-0105-V1,4,Upper,Nylon upper fabric,5407.42,SUP-027,CN,3.20
+NB-0105-V1,5,Liner,"Wool-blend felt sheet, liner sewn in-house",5602.10,SUP-028,CN,2.40
+NB-0105-V1,6,Fittings,"Plastic buckles, eyelets, laces",3926.90,SUP-029,CN,1.10
+NB-0105-V1,7,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.10
+NB-0105-V1,8,Packaging,Retail box and tissue,4819.10,SUP-121,US,1.10
+NB-0105-V2,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.27
+NB-0105-V2,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,0.87
+NB-0105-V2,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.79
+NB-0105-V2,4,Upper,Nylon upper fabric,5407.42,SUP-027,CN,2.79
+NB-0105-V2,5,Liner,"Wool-blend felt sheet, liner sewn in-house",5602.10,SUP-028,CN,2.09
+NB-0105-V2,6,Fittings,"Plastic buckles, eyelets, laces",3926.90,SUP-029,CN,0.96
+NB-0105-V2,7,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,0.96
+NB-0105-V2,8,Packaging,Retail box and tissue,4819.10,SUP-122,CA,0.94
+NB-0105-V3,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.60
+NB-0105-V3,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.00
+NB-0105-V3,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.90
+NB-0105-V3,4,Upper,Nylon upper fabric,5407.42,SUP-027,CN,3.20
+NB-0105-V3,5,Liner,"Removable felt liner, bought finished",6406.10,SUP-028,CN,5.20
+NB-0105-V3,6,Fittings,"Plastic buckles, eyelets, laces",3926.90,SUP-029,CN,1.10
+NB-0105-V3,7,Insole,Anti-fatigue PU insole,6406.90,SUP-106,CA,1.03
+NB-0105-V3,8,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.10
+NB-0106,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.60
+NB-0106,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.00
+NB-0106,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.90
+NB-0106,4,Upper,Finished bovine leather,4107.92,SUP-026,IT,5.80
+NB-0106,5,Liner,"Wool-blend felt sheet, liner sewn in-house",5602.10,SUP-028,CN,2.40
+NB-0106,6,Fittings,"Plastic buckles, eyelets, laces",3926.90,SUP-029,CN,1.10
+NB-0106,7,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.10
+NB-0106,8,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.10
+NB-0106-V1,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.60
+NB-0106-V1,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.00
+NB-0106-V1,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.90
+NB-0106-V1,4,Upper,Finished bovine leather,4107.92,SUP-026,IT,5.80
+NB-0106-V1,5,Liner,"Removable felt liner, bought finished",6406.10,SUP-028,CN,5.20
+NB-0106-V1,6,Fittings,"Plastic buckles, eyelets, laces",3926.90,SUP-029,CN,1.10
+NB-0106-V1,7,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.10
+NB-0106-V1,8,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.10
+NB-0106-V2,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.93
+NB-0106-V2,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.13
+NB-0106-V2,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,1.01
+NB-0106-V2,4,Upper,Finished bovine leather,4107.92,SUP-026,IT,6.53
+NB-0106-V2,5,Liner,"Wool-blend felt sheet, liner sewn in-house",5602.10,SUP-028,CN,2.70
+NB-0106-V2,6,Fittings,"Plastic buckles, eyelets, laces",3926.90,SUP-029,CN,1.24
+NB-0106-V2,7,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.24
+NB-0106-V2,8,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.24
+NB-0106-V3,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.60
+NB-0106-V3,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.00
+NB-0106-V3,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.90
+NB-0106-V3,4,Upper,Finished bovine leather,4107.92,SUP-026,IT,5.80
+NB-0106-V3,5,Liner,"Removable felt liner, bought finished",6406.10,SUP-028,CN,5.20
+NB-0106-V3,6,Fittings,"Plastic buckles, eyelets, laces",3926.90,SUP-029,CN,1.10
+NB-0106-V3,7,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.10
+NB-0106-V3,8,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.10
+NB-0107,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.40
+NB-0107,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,0.90
+NB-0107,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.80
+NB-0107,4,Shaft,"Jersey-laminated neoprene sheet, cut and sewn in-house",5906.99,SUP-030,CN,7.50
+NB-0107,5,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.20
+NB-0107,6,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.40
+NB-0107,7,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.00
+NB-0107-V1,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.40
+NB-0107-V1,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,0.90
+NB-0107-V1,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.80
+NB-0107-V1,4,Shaft,"Jersey-laminated neoprene sheet, cut and sewn in-house",5906.99,SUP-030,CN,7.50
+NB-0107-V1,5,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.20
+NB-0107-V1,6,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.40
+NB-0107-V1,7,Packaging,Retail box and tissue,4819.10,SUP-121,US,1.01
+NB-0107-V2,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.74
+NB-0107-V2,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,1.03
+NB-0107-V2,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.91
+NB-0107-V2,4,Shaft,"Jersey-laminated neoprene sheet, cut and sewn in-house",5906.99,SUP-030,CN,8.57
+NB-0107-V2,5,Insole,Anti-fatigue PU insole,6406.90,SUP-105,MX,1.47
+NB-0107-V2,6,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.46
+NB-0107-V2,7,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.14
+NB-0107-V3,1,Outsole/shell compound,Natural rubber TSR 20,4001.22,SUP-014,TH,2.33
+NB-0107-V3,2,Outsole/shell compound,SBR / BR synthetic rubber,4002.19,SUP-015,US,0.87
+NB-0107-V3,3,Outsole/shell compound,"Carbon black, silica, cure chemicals",2803.00,SUP-016,CA,0.78
+NB-0107-V3,4,Shaft,"Jersey-laminated neoprene sheet, cut and sewn in-house",5906.99,SUP-030,CN,7.27
+NB-0107-V3,5,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.16
+NB-0107-V3,6,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.39
+NB-0107-V3,7,Packaging,Retail box and tissue,4819.10,SUP-122,CA,0.94
+NB-0109,1,Outsole,"Premium branded rubber outsole, bought finished",6406.20,SUP-033,IT,9.00
+NB-0109,2,Shaft,"Jersey-laminated neoprene sheet, cut and sewn in-house",5906.99,SUP-030,CN,7.50
+NB-0109,3,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.20
+NB-0109,4,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.40
+NB-0109,5,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.00
+NB-0109-V1,1,Outsole,"Premium branded rubber outsole, bought finished",6406.20,SUP-033,IT,9.00
+NB-0109-V1,2,Shaft,"Jersey-laminated neoprene sheet, cut and sewn in-house",5906.99,SUP-030,CN,7.50
+NB-0109-V1,3,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.20
+NB-0109-V1,4,Trims,"Labels, patch, pull loop",5807.10,SUP-119,CA,0.41
+NB-0109-V1,5,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.00
+NB-0109-V2,1,Outsole,"Premium branded rubber outsole, bought finished",6406.20,SUP-033,IT,9.83
+NB-0109-V2,2,Shaft,"Jersey-laminated neoprene sheet, cut and sewn in-house",5906.99,SUP-030,CN,8.19
+NB-0109-V2,3,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.31
+NB-0109-V2,4,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.44
+NB-0109-V2,5,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.09
+NB-0109-V3,1,Outsole,"Premium branded rubber outsole, bought finished",6406.20,SUP-033,IT,9.74
+NB-0109-V3,2,Shaft,"Jersey-laminated neoprene sheet, cut and sewn in-house",5906.99,SUP-030,CN,8.12
+NB-0109-V3,3,Insole,Anti-fatigue PU insole,6406.90,SUP-019,MX,1.30
+NB-0109-V3,4,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.43
+NB-0109-V3,5,Packaging,Retail box and tissue,4819.10,SUP-022,CA,1.08
+NB-0108,1,Upper,"Pre-formed rubber upper with lining, bought",6406.10,SUP-024,CN,10.50
+NB-0108,2,Outsole,"Finished rubber outsole, bought",6406.20,SUP-023,VN,5.50
+NB-0108,3,Safety toe,Steel toe cap,6406.10,SUP-031,CN,2.00
+NB-0108,4,Insole,PU insole,6406.90,SUP-032,CN,0.90
+NB-0108,5,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.30
+NB-0108,6,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.90
+NB-0108-V1,1,Upper,"Pre-formed rubber upper with lining, bought",6406.10,SUP-024,CN,9.17
+NB-0108-V1,2,Outsole,"Finished rubber outsole, bought",6406.20,SUP-023,VN,4.80
+NB-0108-V1,3,Safety toe,Steel toe cap,6406.10,SUP-031,CN,1.75
+NB-0108-V1,4,Insole,PU insole,6406.90,SUP-032,CN,0.79
+NB-0108-V1,5,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.26
+NB-0108-V1,6,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.79
+NB-0108-V2,1,Upper,"Pre-formed rubber upper with lining, bought",6406.10,SUP-024,CN,10.50
+NB-0108-V2,2,Outsole,"Finished rubber outsole, bought",6406.20,SUP-023,VN,5.50
+NB-0108-V2,3,Safety toe,Steel toe cap,6406.10,SUP-031,CN,2.00
+NB-0108-V2,4,Insole,PU insole,6406.90,SUP-032,CN,0.90
+NB-0108-V2,5,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.30
+NB-0108-V2,6,Packaging,Retail box and tissue,4819.10,SUP-121,US,0.91
+NB-0108-V3,1,Upper,"Pre-formed rubber upper with lining, bought",6406.10,SUP-024,CN,10.17
+NB-0108-V3,2,Outsole,"Finished rubber outsole, bought",6406.20,SUP-023,VN,5.33
+NB-0108-V3,3,Safety toe,Steel toe cap,6406.10,SUP-031,CN,1.94
+NB-0108-V3,4,Insole,PU insole,6406.90,SUP-032,CN,0.87
+NB-0108-V3,5,Trims,"Labels, patch, pull loop",5807.10,SUP-013,CN,0.29
+NB-0108-V3,6,Packaging,Retail box and tissue,4819.10,SUP-022,CA,0.87

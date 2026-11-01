@@ -1,0 +1,25 @@
+supplier_id,name,country,supplies,declaration_status,declaration_expiry,language
+SUP-010,Hartwig Polymere GmbH,DE,TPU pellets,not_applicable,,en
+SUP-011,Brightline Color Inc.,US,Colour masterbatch,valid,2027-06-30,en
+SUP-012,Prairie Foam Systems LLC,US,PU foam system,valid,2027-03-31,en
+SUP-013,Jade River Textiles Co.,CN,Knit lining; trims,not_applicable,,en
+SUP-014,Siam Latex Trading Ltd.,TH,Natural rubber,not_applicable,,en
+SUP-015,Gulfport Elastomers Inc.,US,SBR/BR rubber,valid,2027-01-31,en
+SUP-016,Chimie Laurentide inc.,CA,Carbon black and cure chemicals,valid,2027-05-31,fr
+SUP-017,Ningbo Safeguard Parts Co.,CN,Composite toe caps,not_applicable,,en
+SUP-018,Aramid Technik GmbH,DE,Composite puncture plates,not_applicable,,en
+SUP-019,Plantillas del Pacifico S.A. de C.V.,MX,Insoles,valid,2026-12-31,es
+SUP-020,Gel-Confort Quebec inc.,CA,Gel midsoles,valid,2027-02-28,fr
+SUP-022,Cartonnage Mauricie inc.,CA,Retail boxes,valid,2027-04-30,fr
+SUP-023,Mekong Sole Works Co.,VN,Finished outsoles,not_applicable,,en
+SUP-024,Dongguan Upper Craft Co.,CN,Pre-formed uppers,not_applicable,,en
+SUP-025,Keystone Safety Components LLC,US,Composite toe caps,valid,2027-08-31,en
+SUP-026,Conceria Valdarno S.r.l.,IT,Finished bovine leather,not_applicable,,en
+SUP-027,Hangzhou Weave Tech Co.,CN,Nylon upper fabric,not_applicable,,en
+SUP-028,Hebei Felt Products Co.,CN,Wool-blend felt sheet,not_applicable,,en
+SUP-029,Foshan Hardware Fittings Co.,CN,"Plastic buckles, eyelets, laces",not_applicable,,en
+SUP-030,Shenzhen NeoFlex Materials Co.,CN,Jersey-laminated neoprene sheet,not_applicable,,en
+SUP-031,Tianjin Steelcap Co.,CN,Steel toe caps and plates,not_applicable,,en
+SUP-032,Xiamen Comfort Insole Co.,CN,Insoles,not_applicable,,en
+SUP-033,Suole Alpine S.p.A.,IT,Premium branded rubber outsoles,not_applicable,,en
+SUP-034,Bay State Outsole Co.,US,Premium branded rubber outsoles (US plant),valid,2027-09-30,en

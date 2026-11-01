@@ -1,0 +1,45 @@
+sku,variant_of,hs_code,excluded_share,tariff_shift_ok,rvc,verdict,reason
+NB-0101,,6401.99.10,0.0,True,0.8164,qualifies,
+NB-0101-V1,NB-0101,6401.99.10,0.0,True,0.8159,qualifies,
+NB-0101-V2,NB-0101,6401.99.10,0.0,True,0.8184,qualifies,
+NB-0101-V3,NB-0101,6401.99.10,0.0,True,0.8384,qualifies,
+NB-0102,,6401.10.00,0.0577,True,0.727,qualifies,
+NB-0102-V1,NB-0102,6401.10.00,0.0516,True,0.756,qualifies,
+NB-0102-V2,NB-0102,6401.10.00,0.0578,True,0.7276,qualifies,
+NB-0102-V3,NB-0102,6401.10.00,0.0579,True,0.7631,qualifies,
+NB-0412,,6401.99.10,0.0554,True,0.6528,qualifies,
+NB-0412-V1,NB-0412,6401.99.10,0.0554,True,0.6528,qualifies,
+NB-0412-V2,NB-0412,6401.99.10,0.0516,True,0.6846,qualifies,
+NB-0412-V3,NB-0412,,0.0554,True,0.6528,needs_review,"origin test passed, but the tariff code needs a person: Height 15.5 in. is inside the 14-17 in. knee band (Assumption #8)"
+NB-0413,NB-0412,6401.99.10,0.0567,True,0.5512,needs_review,RVC 55.1% is within 2% of the threshold
+NB-0413-V1,NB-0413,6401.99.10,0.0524,True,0.5629,needs_review,RVC 56.3% is within 2% of the threshold
+NB-0413-V2,NB-0413,,0.0556,True,0.5518,needs_review,RVC 55.2% is within 2% of the threshold; the tariff code also needs a person: Height 15.5 in. is inside the 14-17 in. knee band (Assumption #8)
+NB-0413-V3,NB-0413,6401.99.10,0.0561,True,0.5562,needs_review,RVC 55.6% is within 2% of the threshold
+NB-0414,NB-0412,6401.99.10,0.2779,False,0.574,does_not_qualify,
+NB-0414-V1,NB-0414,6401.99.10,0.2779,False,0.574,does_not_qualify,
+NB-0414-V2,NB-0414,6401.99.10,0.2779,False,0.574,does_not_qualify,
+NB-0414-V3,NB-0414,6401.99.10,0.2747,False,0.579,does_not_qualify,
+NB-0104,,6401.92.90,0.0,True,0.7788,qualifies,
+NB-0104-V1,NB-0104,6401.92.90,0.0,True,0.7788,qualifies,
+NB-0104-V2,NB-0104,6401.92.90,0.0,True,0.7855,qualifies,
+NB-0104-V3,NB-0104,6401.92.90,0.0,True,0.7626,qualifies,
+NB-0105,,6404.19.20,0.0,True,0.7513,qualifies,
+NB-0105-V1,NB-0105,6404.19.20,0.0,True,0.7513,qualifies,
+NB-0105-V2,NB-0105,6404.19.20,0.0,True,0.7707,qualifies,
+NB-0105-V3,NB-0105,6404.19.20,0.1296,False,0.6985,does_not_qualify,
+NB-0106,NB-0105,6403.91.90,0.0,True,0.7025,qualifies,
+NB-0106-V1,NB-0106,6403.91.90,0.1215,False,0.6565,does_not_qualify,
+NB-0106-V2,NB-0106,6403.91.90,0.0,True,0.6889,qualifies,
+NB-0106-V3,NB-0106,6403.91.90,0.1215,False,0.6565,does_not_qualify,
+NB-0107,,,0.0,True,0.7074,needs_review,"origin test passed, but the tariff code needs a person: Neoprene upper: rubber (6401) or textile (6404) is a judgment call; a person decides"
+NB-0107-V1,NB-0107,,0.0,True,0.7075,needs_review,"origin test passed, but the tariff code needs a person: Neoprene upper: rubber (6401) or textile (6404) is a judgment call; a person decides"
+NB-0107-V2,NB-0107,,0.0,True,0.6858,needs_review,"origin test passed, but the tariff code needs a person: Neoprene upper: rubber (6401) or textile (6404) is a judgment call; a person decides"
+NB-0107-V3,NB-0107,,0.0,True,0.7084,needs_review,"origin test passed, but the tariff code needs a person: Neoprene upper: rubber (6401) or textile (6404) is a judgment call; a person decides"
+NB-0109,NB-0107,,0.0,True,0.5622,needs_review,RVC 56.2% is within 2% of the threshold; the tariff code also needs a person: Neoprene upper: rubber (6401) or textile (6404) is a judgment call; a person decides
+NB-0109-V1,NB-0109,,0.0,True,0.5726,needs_review,"origin test passed, but the tariff code needs a person: Neoprene upper: rubber (6401) or textile (6404) is a judgment call; a person decides"
+NB-0109-V2,NB-0109,,0.0,True,0.5534,needs_review,RVC 55.3% is within 2% of the threshold; the tariff code also needs a person: Neoprene upper: rubber (6401) or textile (6404) is a judgment call; a person decides
+NB-0109-V3,NB-0109,,0.0,True,0.5557,needs_review,RVC 55.6% is within 2% of the threshold; the tariff code also needs a person: Neoprene upper: rubber (6401) or textile (6404) is a judgment call; a person decides
+NB-0108,,6401.10.00,0.3666,False,0.437,does_not_qualify,
+NB-0108-V1,NB-0108,6401.10.00,0.3442,False,0.4715,does_not_qualify,
+NB-0108-V2,NB-0108,6401.10.00,0.3665,False,0.4371,does_not_qualify,
+NB-0108-V3,NB-0108,6401.10.00,0.3674,False,0.4357,does_not_qualify,
