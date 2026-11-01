@@ -1,19 +1,56 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from pydantic import BaseModel
+
 
 app = FastAPI(
     title="CUSMA Boots Agent",
     description="Development environment for the CUSMA conversational agent",
-    version="0.1.2",
+    version="0.2.0",
 )
+
+
+class ChatRequest(BaseModel):
+    message: str
+
+
+class ChatResponse(BaseModel):
+    response: str
+    environment: str
+    version: str
 
 
 @app.get("/health")
 def health():
     return {
         "status": "healthy",
-        "environment": "dev"
+        "environment": "dev",
+        "version": "0.2.0"
     }
+
+
+@app.post("/chat", response_model=ChatResponse)
+def chat(request: ChatRequest):
+    user_message = request.message.strip()
+
+    if not user_message:
+        return ChatResponse(
+            response="Please enter a question.",
+            environment="dev",
+            version="0.2.0"
+        )
+
+    return ChatResponse(
+        response=(
+            "The conversational interface is working. "
+            "Your question was received successfully: "
+            f"'{user_message}'. "
+            "CUSMA agent reasoning will be connected here as "
+            "the team's components are integrated."
+        ),
+        environment="dev",
+        version="0.2.0"
+    )
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -21,42 +58,272 @@ def home():
     return """
     <!DOCTYPE html>
     <html>
-        <head>
-            <title>CUSMA Boots Agent</title>
-        </head>
-        <body style="
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-        ">
-            <h1>CUSMA Boots Agent</h1>
+    <head>
+        <title>CUSMA Boots Agent</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <h2>Development Environment</h2>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: #f4f6f8;
+                margin: 0;
+                padding: 0;
+            }
 
-            <p>
-                The CUSMA conversational agent development
-                environment is running successfully.
-            </p>
+            .container {
+                max-width: 900px;
+                margin: 40px auto;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+                overflow: hidden;
+            }
 
-            <p>
-                Agent functionality will be added as the team's
-                components are integrated.
-            </p>
+            .header {
+                background: #163a5f;
+                color: white;
+                padding: 24px 30px;
+            }
 
-            <hr>
+            .header h1 {
+                margin: 0;
+            }
 
-            <p>
-                <strong>Status:</strong> Online
-            </p>
+            .environment {
+                display: inline-block;
+                margin-top: 8px;
+                background: #f5a623;
+                color: #1d1d1d;
+                padding: 4px 10px;
+                border-radius: 15px;
+                font-size: 13px;
+                font-weight: bold;
+            }
 
-            <p>
-                <strong>Environment:</strong> DEV
-            </p>
+            .content {
+                padding: 30px;
+            }
 
-            <p>
-                <strong>Version:</strong> 0.1.2
-            </p>
-        </body>
+            .intro {
+                color: #555;
+                line-height: 1.5;
+                margin-bottom: 25px;
+            }
+
+            #conversation {
+                min-height: 250px;
+                max-height: 450px;
+                overflow-y: auto;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+                background: #fafafa;
+            }
+
+            .message {
+                margin-bottom: 18px;
+            }
+
+            .user-label {
+                font-weight: bold;
+                color: #163a5f;
+                margin-bottom: 5px;
+            }
+
+            .agent-label {
+                font-weight: bold;
+                color: #2d6a4f;
+                margin-bottom: 5px;
+            }
+
+            .bubble {
+                background: white;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 12px 15px;
+                line-height: 1.45;
+            }
+
+            .input-area {
+                display: flex;
+                gap: 10px;
+            }
+
+            #message {
+                flex: 1;
+                padding: 14px;
+                font-size: 16px;
+                border: 1px solid #bbb;
+                border-radius: 6px;
+            }
+
+            button {
+                background: #163a5f;
+                color: white;
+                border: none;
+                padding: 0 24px;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background: #225682;
+            }
+
+            button:disabled {
+                background: #999;
+                cursor: not-allowed;
+            }
+
+            .footer {
+                padding: 15px 30px;
+                background: #f1f3f5;
+                color: #666;
+                font-size: 13px;
+                display: flex;
+                justify-content: space-between;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="header">
+                <h1>CUSMA Boots Agent</h1>
+                <div class="environment">DEVELOPMENT</div>
+            </div>
+
+            <div class="content">
+
+                <div class="intro">
+                    Ask a question about CUSMA qualification,
+                    sourcing, duties, certification, or a boot product.
+                    This development interface will progressively connect
+                    to the team's CUSMA agents and rules engine.
+                </div>
+
+                <div id="conversation">
+                    <div class="message">
+                        <div class="agent-label">CUSMA Agent</div>
+                        <div class="bubble">
+                            Development environment online.
+                            Ask a CUSMA-related question to test the interface.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <input
+                        id="message"
+                        type="text"
+                        placeholder="Ask about a boot or CUSMA qualification..."
+                    >
+
+                    <button id="sendButton" onclick="sendMessage()">
+                        Send
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="footer">
+                <span>Status: Online</span>
+                <span>Environment: DEV</span>
+                <span>Version: 0.2.0</span>
+            </div>
+
+        </div>
+
+        <script>
+            const input = document.getElementById("message");
+            const button = document.getElementById("sendButton");
+            const conversation = document.getElementById("conversation");
+
+            input.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") {
+                    sendMessage();
+                }
+            });
+
+            function addMessage(label, text, isAgent) {
+                const wrapper = document.createElement("div");
+                wrapper.className = "message";
+
+                const labelElement = document.createElement("div");
+                labelElement.className =
+                    isAgent ? "agent-label" : "user-label";
+                labelElement.textContent = label;
+
+                const bubble = document.createElement("div");
+                bubble.className = "bubble";
+                bubble.textContent = text;
+
+                wrapper.appendChild(labelElement);
+                wrapper.appendChild(bubble);
+
+                conversation.appendChild(wrapper);
+                conversation.scrollTop = conversation.scrollHeight;
+            }
+
+            async function sendMessage() {
+                const message = input.value.trim();
+
+                if (!message) {
+                    return;
+                }
+
+                addMessage("You", message, false);
+
+                input.value = "";
+                input.disabled = true;
+                button.disabled = true;
+                button.textContent = "Sending...";
+
+                try {
+                    const response = await fetch("/chat", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            message: message
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Server returned an error");
+                    }
+
+                    const data = await response.json();
+
+                    addMessage(
+                        "CUSMA Agent",
+                        data.response,
+                        true
+                    );
+
+                } catch (error) {
+
+                    addMessage(
+                        "System",
+                        "The development agent could not process the request. "
+                        + "Please try again.",
+                        true
+                    );
+
+                } finally {
+                    input.disabled = false;
+                    button.disabled = false;
+                    button.textContent = "Send";
+                    input.focus();
+                }
+            }
+        </script>
+
+    </body>
     </html>
     """
