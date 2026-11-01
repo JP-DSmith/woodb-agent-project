@@ -1,0 +1,47 @@
+supplier_id,name,country,supplies,declaration_status,declaration_expiry,language,component
+SUP-010,Hartwig Polymere GmbH,DE,TPU pellets,not_applicable,,en,Upper
+SUP-011,Brightline Color Inc.,US,Colour masterbatch,valid,2027-06-30,en,Colourant
+SUP-012,Prairie Foam Systems LLC,US,PU foam system,valid,2027-03-31,en,Insulation
+SUP-013,Jade River Textiles Co.,CN,Knit lining; trims,not_applicable,,en,Lining
+SUP-014,Siam Latex Trading Ltd.,TH,Natural rubber,not_applicable,,en,Upper/shell
+SUP-015,Gulfport Elastomers Inc.,US,SBR/BR rubber,valid,2027-01-31,en,Outsole/shell compound
+SUP-016,Chimie Laurentide inc.,CA,Carbon black and cure chemicals,valid,2027-05-31,fr,Outsole/shell compound
+SUP-017,Ningbo Safeguard Parts Co.,CN,Composite toe caps,not_applicable,,en,Safety toe
+SUP-018,Aramid Technik GmbH,DE,Composite puncture plates,not_applicable,,en,Puncture plate
+SUP-019,Plantillas del Pacifico S.A. de C.V.,MX,Insoles,valid,2026-12-31,es,Insole
+SUP-020,Gel-Confort Quebec inc.,CA,Gel midsoles,valid,2027-02-28,fr,Midsole
+SUP-022,Cartonnage Mauricie inc.,CA,Retail boxes,valid,2027-04-30,fr,Packaging
+SUP-023,Mekong Sole Works Co.,VN,Finished outsoles,not_applicable,,en,Outsole
+SUP-024,Dongguan Upper Craft Co.,CN,Pre-formed uppers,not_applicable,,en,Upper
+SUP-025,Keystone Safety Components LLC,US,Composite toe caps,valid,2027-08-31,en,
+SUP-026,Conceria Valdarno S.r.l.,IT,Finished bovine leather,not_applicable,,en,Upper
+SUP-027,Hangzhou Weave Tech Co.,CN,Nylon upper fabric,not_applicable,,en,Upper
+SUP-028,Hebei Felt Products Co.,CN,Wool-blend felt sheet,not_applicable,,en,Liner
+SUP-029,Foshan Hardware Fittings Co.,CN,"Plastic buckles, eyelets, laces",not_applicable,,en,Fittings
+SUP-030,Shenzhen NeoFlex Materials Co.,CN,Jersey-laminated neoprene sheet,not_applicable,,en,Shaft
+SUP-031,Tianjin Steelcap Co.,CN,Steel toe caps and plates,not_applicable,,en,Safety toe
+SUP-032,Xiamen Comfort Insole Co.,CN,Insoles,not_applicable,,en,Insole
+SUP-033,Suole Alpine S.p.A.,IT,Premium branded rubber outsoles,not_applicable,,en,Outsole
+SUP-034,Bay State Outsole Co.,US,Premium branded rubber outsoles (US plant),valid,2027-09-30,en,
+SUP-101,Ramos Safety Components GmbH,DE,Safety toe,not_applicable,,en,Safety toe
+SUP-102,Campbell Safety Components LLC,US,Safety toe,expired,2026-06-13,en,Safety toe
+SUP-103,Frazier Safety Components S.A. de C.V.,MX,Safety toe,valid,2027-03-19,es,Safety toe
+SUP-104,"Lewis Comfort Insoles Co., Ltd.",CN,Insole,not_applicable,,en,Insole
+SUP-105,Hunter Comfort Insoles S.A. de C.V.,MX,Insole,valid,2027-08-25,es,Insole
+SUP-106,Carr Comfort Insoles Inc.,CA,Insole,valid,2027-07-20,fr,Insole
+SUP-107,Conley Sole Works LLC,US,Outsole,expired,2026-07-23,en,Outsole
+SUP-108,Dean Sole Works S.A. de C.V.,MX,Outsole,valid,2026-12-25,es,Outsole
+SUP-109,"Mcpherson Sole Works Co., Ltd.",CN,Outsole,not_applicable,,en,Outsole
+SUP-110,"Gray Textiles Co., Ltd.",CN,Lining,not_applicable,,en,Lining
+SUP-111,Merritt Textiles LLC,US,Lining,valid,2027-03-12,en,Lining
+SUP-112,"Hall Textiles Co., Ltd.",TW,Lining,not_applicable,,en,Lining
+SUP-113,Clark Protective Parts LLC,US,Puncture plate,valid,2027-08-12,en,Puncture plate
+SUP-114,"Edwards Protective Parts Co., Ltd.",CN,Puncture plate,not_applicable,,en,Puncture plate
+SUP-115,Thomas Protective Parts GmbH,DE,Puncture plate,not_applicable,,en,Puncture plate
+SUP-116,Flores Footbed S.A. de C.V.,MX,Midsole,expired,2026-06-28,es,Midsole
+SUP-117,Levy Footbed Inc.,CA,Midsole,valid,2027-01-28,en,Midsole
+SUP-118,"Hill Footbed Co., Ltd.",CN,Midsole,not_applicable,,en,Midsole
+SUP-119,Powell Labels Inc.,CA,Trims,valid,2027-09-12,fr,Trims
+SUP-120,"Tucker Labels Co., Ltd.",CN,Trims,not_applicable,,en,Trims
+SUP-121,Waters Packaging LLC,US,Packaging,valid,2027-10-15,en,Packaging
+SUP-122,Jordan Packaging Inc.,CA,Packaging,valid,2027-09-05,en,Packaging
