@@ -4,7 +4,7 @@ from fastapi.responses import HTMLResponse
 app = FastAPI(
     title="CUSMA Boots Agent",
     description="Development environment for the CUSMA conversational agent",
-    version="0.1.1",
+    version="0.1.2",
 )
 
 
@@ -55,7 +55,7 @@ def home():
             </p>
 
             <p>
-                <strong>Version:</strong> 0.1.1
+                <strong>Version:</strong> 0.1.2
             </p>
         </body>
     </html>
