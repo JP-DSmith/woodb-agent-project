@@ -1,0 +1,18 @@
+FACTURA COMERCIAL
+Factura No.: ${invoice_no}            Fecha: ${invoice_date}
+Vendedor: ${supplier_name}
+          ${supplier_address}
+          RFC: ${supplier_tax_id}
+Comprador: Northfield Rubber Footwear Inc.
+           ${buyer_address}
+Orden de compra: ${po_no}     Términos: ${incoterm}     Moneda: ${currency}
+
+Línea  No. parte    Descripción                          Cant.  Unidad Precio unit. Importe   País de origen   Fracción arancelaria
+${line_items}
+
+Subtotal: ${subtotal} ${currency}
+Flete:    ${freight} ${currency}
+TOTAL:    ${total} ${currency}
+
+Enviado por: ${ship_via}      Fecha de envío: ${ship_date}
+Firma autorizada: ${signature}

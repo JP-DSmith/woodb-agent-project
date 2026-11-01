@@ -1,0 +1,14 @@
+From: Douglas Wallace <douglas@sichuan.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2026-10-16
+Subject: Shipment for PO PO-5001
+
+Hi Sam,
+
+Your order PO-5001 shipped on 2026-10-16 via UPS Freight. Invoice INV-9875 is attached.
+250 m of black compound, 25 kg
+
+
+Best regards,
+Douglas Wallace
+Sichuan Synthetic Fibers

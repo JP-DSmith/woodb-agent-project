@@ -1,0 +1,37 @@
+[
+  {
+    "order_id":"ORD-5001",
+    "customer_id":"CUST-101",
+    "boot_id":"BOOT-001",
+    "quantity":150,
+    "date":"2026-10-25"
+  },
+  {
+    "order_id":"ORD-5002",
+    "customer_id":"CUST-102",
+    "boot_id":"BOOT-002",
+    "quantity":80,
+    "date":"2026-10-26"
+  },
+  {
+    "order_id":"ORD-5003",
+    "customer_id":"CUST-103",
+    "boot_id":"BOOT-003",
+    "quantity":200,
+    "date":"2026-10-27"
+  },
+  {
+    "order_id":"ORD-5004",
+    "customer_id":"CUST-104",
+    "boot_id":"BOOT-004",
+    "quantity":300,
+    "date":"2026-10-27"
+  },
+  {
+    "order_id":"ORD-5005",
+    "customer_id":"CUST-101",
+    "boot_id":"BOOT-005",
+    "quantity":120,
+    "date":"2026-10-28"
+  }
+]

@@ -1,0 +1,18 @@
+FACTURE COMMERCIALE
+N° de facture : ${invoice_no}            Date : ${invoice_date}
+Vendeur : ${supplier_name}
+          ${supplier_address}
+          N° TPS/TVQ : ${supplier_tax_id}
+Acheteur : Chaussures de caoutchouc Northfield inc.
+           ${buyer_address}
+Réf. bon de commande : ${po_no}     Conditions : ${incoterm}     Devise : ${currency}
+
+Ligne  N° pièce     Description                          Qté    Unité  Prix unit.   Montant   Pays d'origine   Code SH
+${line_items}
+
+Sous-total : ${subtotal} ${currency}
+Transport :  ${freight} ${currency}
+TOTAL :      ${total} ${currency}
+
+Expédié par : ${ship_via}      Date d'expédition : ${ship_date}
+Signature autorisée : ${signature}

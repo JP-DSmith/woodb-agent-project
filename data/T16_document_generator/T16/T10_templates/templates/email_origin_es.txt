@@ -1,0 +1,14 @@
+De: ${sender_name} <${sender_email}>
+Para: ${recipient_name} <${recipient_email}>
+Fecha: ${email_date}
+Asunto: RE: Origen de ${material}
+
+Hola ${recipient_first}:
+
+En respuesta a su pregunta: el ${material} (parte ${part_no}) que suministramos se fabrica en ${origin_country}.
+${body_detail}
+
+${extra_note}
+Gracias,
+${sender_name}
+${supplier_name}

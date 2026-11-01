@@ -1,0 +1,32 @@
+[
+  {
+    "supplier_id":"SUP-01",
+    "name":"Northern Tanning Co.",
+    "material":"Bovine Leather",
+    "country":"CA"
+  },
+  {
+    "supplier_id":"SUP-02",
+    "name":"Cascadia Soles & Compounds",
+    "material":"Rubber Outsoles",
+    "country":"US"
+  },
+  {
+    "supplier_id":"SUP-03",
+    "name":"Bajio Textile Mills",
+    "material":"Linings & Mesh",
+    "country":"MX"
+  },
+  {
+    "supplier_id":"SUP-04",
+    "name":"Sichuan Synthetic Fibers",
+    "material":"Nylon & Cordura",
+    "country":"CN"
+  },
+  {
+    "supplier_id":"SUP-05",
+    "name":"Alpina Leather S.p.A.",
+    "material":"Calfskin",
+    "country":"IT"
+  }
+]

@@ -1,0 +1,19 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-3325            Date: 2026-10-23
+Seller: Cascadia Soles & Compounds
+        96574 David Locks, Robinbury, MO 97673
+        Tax ID: 405944949
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: PO-5003        Terms: EXW        Currency: USD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SOL-210  Rubber outsole, lug pattern  100  pair  6.80  680.00  United States  6406.20
+2     SOL-220  Dual-density rubber outsole  250  pair  9.40  2,350.00  United States  6406.20
+
+Subtotal: 3,030.00 USD
+Freight:  187.22 USD
+TOTAL:    3,217.22 USD
+
+Ship via: DHL      Ship date: 2026-10-23
+Authorized signature: Lori Stone

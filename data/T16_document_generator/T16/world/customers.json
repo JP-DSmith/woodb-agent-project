@@ -1,0 +1,26 @@
+[
+  {
+    "customer_id":"CUST-101",
+    "name":"Alberta Industrial Supply",
+    "region":"Western Canada",
+    "country":"CA"
+  },
+  {
+    "customer_id":"CUST-102",
+    "name":"Pacific Gear Outfitters",
+    "region":"Pacific Northwest",
+    "country":"US"
+  },
+  {
+    "customer_id":"CUST-103",
+    "name":"Monarch Safety Footwear",
+    "region":"Central Canada",
+    "country":"CA"
+  },
+  {
+    "customer_id":"CUST-104",
+    "name":"Mexico City Workwear Direct",
+    "region":"Bajio",
+    "country":"MX"
+  }
+]

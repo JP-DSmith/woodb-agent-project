@@ -1,0 +1,102 @@
+[
+  {
+    "boot_id":"BOOT-001",
+    "name":"Alberton Work Boot",
+    "category":"Work",
+    "upper_material":"Bovine Leather",
+    "lining":"Textile",
+    "outsole":"Rubber",
+    "origin_country":"CA",
+    "cost_cad":145.0
+  },
+  {
+    "boot_id":"BOOT-002",
+    "name":"Rocky Mountain Hiker",
+    "category":"Outdoor",
+    "upper_material":"Full-Grain Leather",
+    "lining":"Gore-Tex",
+    "outsole":"Vibram Rubber",
+    "origin_country":"US",
+    "cost_cad":210.0
+  },
+  {
+    "boot_id":"BOOT-003",
+    "name":"Prairie Logger",
+    "category":"Heavy Industrial",
+    "upper_material":"Oil-Tanned Leather",
+    "lining":"Thinsulate",
+    "outsole":"Dual-Density Rubber",
+    "origin_country":"CA",
+    "cost_cad":260.0
+  },
+  {
+    "boot_id":"BOOT-004",
+    "name":"Edmonton Safety Toe",
+    "category":"Safety",
+    "upper_material":"Split Leather",
+    "lining":"Mesh",
+    "outsole":"PU\/Rubber",
+    "origin_country":"MX",
+    "cost_cad":115.0
+  },
+  {
+    "boot_id":"BOOT-005",
+    "name":"Boreal Insulated Boot",
+    "category":"Winter",
+    "upper_material":"Nylon & Leather",
+    "lining":"Felted Wool",
+    "outsole":"Cold-Weather Rubber",
+    "origin_country":"CA",
+    "cost_cad":185.0
+  },
+  {
+    "boot_id":"BOOT-006",
+    "name":"Cascade Chelsea",
+    "category":"Casual",
+    "upper_material":"Calfskin Leather",
+    "lining":"Leather",
+    "outsole":"Leather\/Rubber",
+    "origin_country":"MX",
+    "cost_cad":160.0
+  },
+  {
+    "boot_id":"BOOT-007",
+    "name":"Shield Tactical Boot",
+    "category":"Tactical",
+    "upper_material":"Cordura & Leather",
+    "lining":"Moisture-Wicking",
+    "outsole":"Slip-Resistant Rubber",
+    "origin_country":"US",
+    "cost_cad":195.0
+  },
+  {
+    "boot_id":"BOOT-008",
+    "name":"Athabasca Utility",
+    "category":"Work",
+    "upper_material":"Action Leather",
+    "lining":"Canvas",
+    "outsole":"Synthetic Rubber",
+    "origin_country":"CN",
+    "cost_cad":90.0
+  },
+  {
+    "boot_id":"BOOT-009",
+    "name":"Sturgeon River Dress Boot",
+    "category":"Formal",
+    "upper_material":"Full-Grain Calf",
+    "lining":"Kid Leather",
+    "outsole":"Leather",
+    "origin_country":"IT",
+    "cost_cad":290.0
+  },
+  {
+    "boot_id":"BOOT-010",
+    "name":"Northern Ranger",
+    "category":"Outdoor",
+    "upper_material":"Nubuck Leather",
+    "lining":"Microfiber",
+    "outsole":"Lug Rubber",
+    "origin_country":"CA",
+    "cost_cad":225.0
+  }
+]

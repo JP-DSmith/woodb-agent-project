@@ -1,0 +1,19 @@
+FACTURA COMERCIAL
+Factura No.: INV-9466            Fecha: 2026-10-21
+Vendedor: Bajio Textile Mills
+          Peatonal Guerrero 584 120, Nueva Bangladesh, CHIS 08209
+          RFC: 343357877
+Comprador: Northfield Rubber Footwear Inc.
+           45 Factory Rd, Kitchener, ON N2G 1A1
+Orden de compra: PO-5004     Términos: EXW     Moneda: MXN
+
+Línea  No. parte    Descripción                          Cant.  Unidad Precio unit. Importe   País de origen   Fracción arancelaria
+1     TXT-310  Textile lining, brushed  250  m  3.10  775.00  Méx1c0  5903.90
+2     TXT-320  Mesh lining  250  m  2.40  600.00  Méx1c0  6005.36
+
+Subtotal: 1,589.46 MXN
+Flete:    238.17 MXN
+TOTAL:    1,827.63 MXN
+
+Enviado por: Purolator      Fecha de envío: 2026-10-21
+Firma autorizada: Gabriela Lorena Mena

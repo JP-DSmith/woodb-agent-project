@@ -1,0 +1,1 @@
+${part_no}  ${description}  ${hs_code}  ${origin_country}  ${origin_criterion}
