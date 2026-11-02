@@ -18,7 +18,7 @@
             margin: 40px auto;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
             overflow: hidden;
         }
 
@@ -55,7 +55,7 @@
 
         #conversation {
             min-height: 250px;
-            max-height: 450px;
+            max-height: 500px;
             overflow-y: auto;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -120,6 +120,92 @@
             cursor: not-allowed;
         }
 
+        .result-card {
+            margin: 12px 0 22px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #d7dce1;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .result-header {
+            padding: 16px 18px;
+            color: white;
+        }
+
+        .result-header.qualifies {
+            background: #2d6a4f;
+        }
+
+        .result-header.needs-review {
+            background: #b7791f;
+        }
+
+        .result-header.does-not-qualify {
+            background: #b42318;
+        }
+
+        .result-title {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .result-sku {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        .result-verdict {
+            margin-top: 6px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .result-body {
+            padding: 18px;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 9px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            color: #666;
+        }
+
+        .result-value {
+            color: #222;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .review-box {
+            margin-top: 14px;
+            padding: 12px 14px;
+            border-radius: 6px;
+            background: #fff4d6;
+            color: #664d03;
+            line-height: 1.4;
+        }
+
+        .rules-version {
+            margin-top: 14px;
+            color: #777;
+            font-size: 12px;
+        }
+
         .footer {
             padding: 15px 30px;
             background: #f1f3f5;
@@ -132,145 +218,241 @@
 </head>
 
 <body>
-
-<div class="container">
-
-    <div class="header">
-        <h1>CUSMA Boots Agent</h1>
-        <div class="environment">DEVELOPMENT</div>
-    </div>
-
-    <div class="content">
-
-        <div class="intro">
-            Ask a question about CUSMA qualification,
-            sourcing, duties, certification, or a boot product.
-            Qualification decisions are calculated by the
-            deterministic CUSMA rules engine.
+    <div class="container">
+        <div class="header">
+            <h1>CUSMA Boots Agent</h1>
+            <div class="environment">DEVELOPMENT</div>
         </div>
 
-        <div id="conversation">
+        <div class="content">
+            <div class="intro">
+                Ask a question about CUSMA qualification, sourcing, duties,
+                certification, or a boot product. Qualification decisions are
+                calculated by the deterministic CUSMA rules engine.
+            </div>
 
-            <div class="message">
-                <div class="agent-label">CUSMA Agent</div>
+            <div id="conversation">
+                <div class="message">
+                    <div class="agent-label">CUSMA Agent</div>
 
-                <div class="bubble">
-                    Development environment online.
-                    Try asking: Does NB-0101 qualify under CUSMA?
+                    <div class="bubble">
+                        Development environment online.
+                        Try asking: Does NB-0101 qualify under CUSMA?
+                    </div>
                 </div>
             </div>
 
+            <div class="input-area">
+                <input
+                    id="message"
+                    type="text"
+                    placeholder="Example: Does NB-0101 qualify under CUSMA?"
+                >
+
+                <button id="sendButton" onclick="sendMessage()">
+                    Send
+                </button>
+            </div>
         </div>
 
-        <div class="input-area">
-
-            <input
-                id="message"
-                type="text"
-                placeholder="Example: Does NB-0101 qualify under CUSMA?"
-            >
-
-            <button id="sendButton" onclick="sendMessage()">
-                Send
-            </button>
-
+        <div class="footer">
+            <span>Status: Online</span>
+            <span>Environment: DEV</span>
+            <span>Version: 0.4.0</span>
         </div>
-
     </div>
 
-    <div class="footer">
-        <span>Status: Online</span>
-        <span>Environment: DEV</span>
-        <span>Version: 0.3.0</span>
-    </div>
+    <script>
+        const input = document.getElementById("message");
+        const button = document.getElementById("sendButton");
+        const conversation = document.getElementById("conversation");
 
-</div>
+        input.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        });
 
-<script>
-    const input = document.getElementById("message");
-    const button = document.getElementById("sendButton");
-    const conversation = document.getElementById("conversation");
+        function addMessage(label, text, isAgent) {
+            const wrapper = document.createElement("div");
+            wrapper.className = "message";
 
-    input.addEventListener("keydown", function(event) {
-        if (event.key === "Enter") {
-            sendMessage();
-        }
-    });
+            const labelElement = document.createElement("div");
+            labelElement.className =
+                isAgent ? "agent-label" : "user-label";
+            labelElement.textContent = label;
 
-    function addMessage(label, text, isAgent) {
-        const wrapper = document.createElement("div");
-        wrapper.className = "message";
+            const bubble = document.createElement("div");
+            bubble.className = "bubble";
+            bubble.textContent = text;
 
-        const labelElement = document.createElement("div");
-        labelElement.className =
-            isAgent ? "agent-label" : "user-label";
+            wrapper.appendChild(labelElement);
+            wrapper.appendChild(bubble);
 
-        labelElement.textContent = label;
-
-        const bubble = document.createElement("div");
-        bubble.className = "bubble";
-        bubble.textContent = text;
-
-        wrapper.appendChild(labelElement);
-        wrapper.appendChild(bubble);
-
-        conversation.appendChild(wrapper);
-        conversation.scrollTop = conversation.scrollHeight;
-    }
-
-    async function sendMessage() {
-        const message = input.value.trim();
-
-        if (!message) {
-            return;
+            conversation.appendChild(wrapper);
+            conversation.scrollTop = conversation.scrollHeight;
         }
 
-        addMessage("You", message, false);
+        function addQualificationResult(result) {
+            const card = document.createElement("div");
+            card.className = "result-card";
 
-        input.value = "";
-        input.disabled = true;
-        button.disabled = true;
-        button.textContent = "Sending...";
+            const header = document.createElement("div");
 
-        try {
-            const response = await fetch("/chat", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    message: message
-                })
-            });
+            let verdictText = "";
+            let verdictClass = "";
 
-            if (!response.ok) {
-                throw new Error("Server returned an error");
+            if (result.verdict === "qualifies") {
+                verdictText = "QUALIFIES";
+                verdictClass = "qualifies";
+            } else if (result.verdict === "needs_review") {
+                verdictText = "NEEDS HUMAN REVIEW";
+                verdictClass = "needs-review";
+            } else {
+                verdictText = "DOES NOT QUALIFY";
+                verdictClass = "does-not-qualify";
             }
 
-            const data = await response.json();
+            header.className = "result-header " + verdictClass;
 
-            addMessage(
-                "CUSMA Agent",
-                data.response,
-                true
-            );
+            const title = document.createElement("div");
+            title.className = "result-title";
+            title.textContent = "CUSMA Qualification Result";
 
-        } catch (error) {
+            const sku = document.createElement("div");
+            sku.className = "result-sku";
+            sku.textContent = result.sku;
 
-            addMessage(
-                "System",
-                "The development agent could not process the request. Please try again.",
-                true
-            );
+            const verdict = document.createElement("div");
+            verdict.className = "result-verdict";
+            verdict.textContent = verdictText;
 
-        } finally {
-            input.disabled = false;
-            button.disabled = false;
-            button.textContent = "Send";
-            input.focus();
+            header.appendChild(title);
+            header.appendChild(sku);
+            header.appendChild(verdict);
+
+            const body = document.createElement("div");
+            body.className = "result-body";
+
+            const fields = [
+                [
+                    "HS Classification",
+                    result.hs_code || "Needs review"
+                ],
+                [
+                    "Regional Value Content",
+                    (result.rvc * 100).toFixed(1) + "%"
+                ],
+                [
+                    "Required RVC",
+                    (result.rvc_threshold * 100).toFixed(1) + "%"
+                ],
+                [
+                    "Tariff Shift",
+                    result.tariff_shift_passed ? "PASSED" : "FAILED"
+                ]
+            ];
+
+            fields.forEach(function(field) {
+                const row = document.createElement("div");
+                row.className = "result-row";
+
+                const label = document.createElement("div");
+                label.className = "result-label";
+                label.textContent = field[0];
+
+                const value = document.createElement("div");
+                value.className = "result-value";
+                value.textContent = field[1];
+
+                row.appendChild(label);
+                row.appendChild(value);
+                body.appendChild(row);
+            });
+
+            if (result.review_reason) {
+                const review = document.createElement("div");
+                review.className = "review-box";
+
+                const reviewTitle = document.createElement("strong");
+                reviewTitle.textContent = "Review required: ";
+
+                review.appendChild(reviewTitle);
+                review.appendChild(
+                    document.createTextNode(result.review_reason)
+                );
+
+                body.appendChild(review);
+            }
+
+            const rules = document.createElement("div");
+            rules.className = "rules-version";
+            rules.textContent =
+                "Rules version: " + result.rules_version;
+
+            body.appendChild(rules);
+
+            card.appendChild(header);
+            card.appendChild(body);
+
+            conversation.appendChild(card);
+            conversation.scrollTop = conversation.scrollHeight;
         }
-    }
-</script>
 
+        async function sendMessage() {
+            const message = input.value.trim();
+
+            if (!message) {
+                return;
+            }
+
+            addMessage("You", message, false);
+
+            input.value = "";
+            input.disabled = true;
+            button.disabled = true;
+            button.textContent = "Sending...";
+
+            try {
+                const response = await fetch("/chat", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        message: message
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error("Server returned an error");
+                }
+
+                const data = await response.json();
+
+                if (data.result) {
+                    addQualificationResult(data.result);
+                } else {
+                    addMessage(
+                        "CUSMA Agent",
+                        data.response,
+                        true
+                    );
+                }
+            } catch (error) {
+                addMessage(
+                    "System",
+                    "The development agent could not process the request. " +
+                    "Please try again.",
+                    true
+                );
+            } finally {
+                input.disabled = false;
+                button.disabled = false;
+                button.textContent = "Send";
+                input.focus();
+            }
+        }
+    </script>
 </body>
 </html>
