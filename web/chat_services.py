@@ -1,6 +1,6 @@
 import re
 
-from prototypes.nerissa.Engine.rules_engine import check_origin
+from prototypes.cusma_qualification.Engine.rules_engine import check_origin
 
 
 SKU_PATTERN = re.compile(
