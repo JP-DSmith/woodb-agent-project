@@ -20,17 +20,22 @@ def answer_question(message: str) -> str:
     user_message = message.strip()
 
     if not user_message:
-        return "Please enter a question."
+        return {
+            "response": "Please enter a question.",
+            "result": None,
+        }
 
     sku_match = SKU_PATTERN.search(user_message)
 
     if not sku_match:
-        return (
-            "I can currently evaluate CUSMA qualification for products "
-            "in the NB-series test world. Please include a SKU such as "
-            "NB-0101, NB-0413, or NB-0414 in your question."
-        )
-
+        return {
+            "response": (
+                "I can currently evaluate CUSMA qualification for products "
+                "in the NB-series test world. Please include a SKU such as "
+                "NB-0101, NB-0413, or NB-0414 in your question."
+            ),
+            "result": None,
+        }
     sku = sku_match.group(0).upper()
 
     result = check_origin(sku)
@@ -38,10 +43,13 @@ def answer_question(message: str) -> str:
     if not result["ok"]:
         error = result["error"]
 
-        return (
-            f"I could not evaluate {sku}. "
-            f"{error['message']}"
-        )
+        return {
+            "response": (
+                f"I could not evaluate {sku}. "
+                f"{error['message']}"
+            ),
+            "result": None,
+        }
 
     data = result["data"]
 
@@ -89,4 +97,16 @@ def answer_question(message: str) -> str:
         f"Rules version: {rules_version}."
     )
 
-    return " ".join(response_parts)
+    return {
+    "response": " ".join(response_parts),
+    "result": {
+        "sku": sku,
+        "verdict": verdict,
+        "hs_code": hs_code,
+        "rvc": rvc,
+        "rvc_threshold": threshold,
+        "tariff_shift_passed": tariff_shift_passed,
+        "review_reason": data["escalate_reason"],
+        "rules_version": rules_version,
+    },
+}
