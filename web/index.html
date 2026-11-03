@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
     <title>CUSMA Boots Agent</title>
 
     <style>
@@ -86,6 +90,11 @@
             border-radius: 8px;
             padding: 12px 15px;
             line-height: 1.45;
+            white-space: pre-wrap;
+        }
+
+        .bubble[dir="rtl"] {
+            text-align: right;
         }
 
         .input-area {
@@ -99,6 +108,10 @@
             font-size: 16px;
             border: 1px solid #bbb;
             border-radius: 6px;
+        }
+
+        #message[dir="rtl"] {
+            text-align: right;
         }
 
         button {
@@ -206,6 +219,18 @@
             font-size: 12px;
         }
 
+        .result-card[dir="rtl"] {
+            text-align: right;
+        }
+
+        .result-card[dir="rtl"] .result-row {
+            flex-direction: row-reverse;
+        }
+
+        .result-card[dir="rtl"] .result-value {
+            text-align: left;
+        }
+
         .footer {
             padding: 15px 30px;
             background: #f1f3f5;
@@ -213,6 +238,44 @@
             font-size: 13px;
             display: flex;
             justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .input-area {
+                flex-direction: column;
+            }
+
+            button {
+                min-height: 48px;
+            }
+
+            .result-row {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .result-value {
+                text-align: left;
+            }
+
+            .result-card[dir="rtl"] .result-row {
+                flex-direction: column;
+            }
+
+            .result-card[dir="rtl"] .result-value {
+                text-align: right;
+            }
         }
     </style>
 </head>
@@ -221,19 +284,25 @@
     <div class="container">
         <div class="header">
             <h1>CUSMA Boots Agent</h1>
-            <div class="environment">DEVELOPMENT</div>
+
+            <div class="environment">
+                DEVELOPMENT
+            </div>
         </div>
 
         <div class="content">
             <div class="intro">
-                Ask a question about CUSMA qualification, sourcing, duties,
-                certification, or a boot product. Qualification decisions are
-                calculated by the deterministic CUSMA rules engine.
+                Ask a question about CUSMA qualification, sourcing,
+                duties, certification, or a boot product.
+                Qualification decisions are calculated by the
+                deterministic CUSMA rules engine.
             </div>
 
             <div id="conversation">
                 <div class="message">
-                    <div class="agent-label">CUSMA Agent</div>
+                    <div class="agent-label">
+                        CUSMA Agent
+                    </div>
 
                     <div class="bubble">
                         Development environment online.
@@ -246,10 +315,15 @@
                 <input
                     id="message"
                     type="text"
+                    autocomplete="off"
                     placeholder="Example: Does NB-0101 qualify under CUSMA?"
                 >
 
-                <button id="sendButton" onclick="sendMessage()">
+                <button
+                    id="sendButton"
+                    type="button"
+                    onclick="sendMessage()"
+                >
                     Send
                 </button>
             </div>
@@ -258,72 +332,510 @@
         <div class="footer">
             <span>Status: Online</span>
             <span>Environment: DEV</span>
-            <span>Version: 0.4.0</span>
+            <span>Version: 0.5.0</span>
         </div>
     </div>
 
     <script>
         const input = document.getElementById("message");
         const button = document.getElementById("sendButton");
-        const conversation = document.getElementById("conversation");
+        const conversation =
+            document.getElementById("conversation");
 
-        input.addEventListener("keydown", function(event) {
-            if (event.key === "Enter") {
-                sendMessage();
+        let currentLanguage = "en";
+
+        const rightToLeftLanguages = new Set([
+            "ar"
+        ]);
+
+        const uiTranslations = {
+            en: {
+                resultTitle: "CUSMA Qualification Result",
+                qualifies: "QUALIFIES",
+                needsReview: "NEEDS HUMAN REVIEW",
+                doesNotQualify: "DOES NOT QUALIFY",
+                hsClassification: "HS Classification",
+                regionalValueContent:
+                    "Regional Value Content",
+                requiredRvc: "Required RVC",
+                tariffShift: "Tariff Shift",
+                passed: "PASSED",
+                failed: "FAILED",
+                reviewRequired: "Review required",
+                needsReviewValue: "Needs review",
+                rulesVersion: "Rules version",
+                you: "You",
+                agent: "CUSMA Agent",
+                sending: "Sending...",
+                send: "Send",
+                system: "System",
+                error:
+                    "The development agent could not process " +
+                    "the request. Please try again."
+            },
+
+            "fr-CA": {
+                resultTitle:
+                    "Résultat de l'admissibilité à l'ACEUM",
+                qualifies: "ADMISSIBLE",
+                needsReview:
+                    "RÉVISION HUMAINE REQUISE",
+                doesNotQualify: "NON ADMISSIBLE",
+                hsClassification: "Classification SH",
+                regionalValueContent:
+                    "Teneur en valeur régionale",
+                requiredRvc: "TVR requise",
+                tariffShift: "Changement tarifaire",
+                passed: "RÉUSSI",
+                failed: "ÉCHOUÉ",
+                reviewRequired: "Révision requise",
+                needsReviewValue: "Révision requise",
+                rulesVersion: "Version des règles",
+                you: "Vous",
+                agent: "Agent ACEUM",
+                sending: "Envoi...",
+                send: "Envoyer",
+                system: "Système",
+                error:
+                    "L'agent de développement n'a pas pu " +
+                    "traiter la demande. Veuillez réessayer."
+            },
+
+            es: {
+                resultTitle:
+                    "Resultado de calificación CUSMA",
+                qualifies: "CALIFICA",
+                needsReview:
+                    "REQUIERE REVISIÓN HUMANA",
+                doesNotQualify: "NO CALIFICA",
+                hsClassification: "Clasificación SA",
+                regionalValueContent:
+                    "Contenido de valor regional",
+                requiredRvc: "CVR requerido",
+                tariffShift: "Cambio arancelario",
+                passed: "APROBADO",
+                failed: "FALLIDO",
+                reviewRequired: "Revisión requerida",
+                needsReviewValue: "Requiere revisión",
+                rulesVersion: "Versión de las reglas",
+                you: "Usted",
+                agent: "Agente CUSMA",
+                sending: "Enviando...",
+                send: "Enviar",
+                system: "Sistema",
+                error:
+                    "El agente de desarrollo no pudo " +
+                    "procesar la solicitud. Inténtelo de nuevo."
+            },
+
+            "zh-CN": {
+                resultTitle: "CUSMA 资格审查结果",
+                qualifies: "符合资格",
+                needsReview: "需要人工审核",
+                doesNotQualify: "不符合资格",
+                hsClassification: "HS 分类",
+                regionalValueContent: "区域价值含量",
+                requiredRvc: "所需 RVC",
+                tariffShift: "税则归类改变",
+                passed: "通过",
+                failed: "未通过",
+                reviewRequired: "需要审核",
+                needsReviewValue: "需要审核",
+                rulesVersion: "规则版本",
+                you: "您",
+                agent: "CUSMA 助手",
+                sending: "正在发送...",
+                send: "发送",
+                system: "系统",
+                error:
+                    "开发助手无法处理该请求。请重试。"
+            },
+
+            pa: {
+                resultTitle: "CUSMA ਯੋਗਤਾ ਨਤੀਜਾ",
+                qualifies: "ਯੋਗ",
+                needsReview:
+                    "ਮਨੁੱਖੀ ਸਮੀਖਿਆ ਲੋੜੀਂਦੀ",
+                doesNotQualify: "ਯੋਗ ਨਹੀਂ",
+                hsClassification: "HS ਵਰਗੀਕਰਨ",
+                regionalValueContent:
+                    "ਖੇਤਰੀ ਮੁੱਲ ਸਮੱਗਰੀ",
+                requiredRvc: "ਲੋੜੀਂਦਾ RVC",
+                tariffShift: "ਟੈਰਿਫ਼ ਬਦਲਾਅ",
+                passed: "ਪਾਸ",
+                failed: "ਫੇਲ",
+                reviewRequired: "ਸਮੀਖਿਆ ਲੋੜੀਂਦੀ",
+                needsReviewValue: "ਸਮੀਖਿਆ ਲੋੜੀਂਦੀ",
+                rulesVersion: "ਨਿਯਮ ਸੰਸਕਰਣ",
+                you: "ਤੁਸੀਂ",
+                agent: "CUSMA ਏਜੰਟ",
+                sending: "ਭੇਜਿਆ ਜਾ ਰਿਹਾ ਹੈ...",
+                send: "ਭੇਜੋ",
+                system: "ਸਿਸਟਮ",
+                error:
+                    "ਡਿਵੈਲਪਮੈਂਟ ਏਜੰਟ ਬੇਨਤੀ ਦੀ " +
+                    "ਪ੍ਰਕਿਰਿਆ ਨਹੀਂ ਕਰ ਸਕਿਆ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+            },
+
+            ar: {
+                resultTitle:
+                    "نتيجة التأهل بموجب CUSMA",
+                qualifies: "مؤهل",
+                needsReview:
+                    "تتطلب مراجعة بشرية",
+                doesNotQualify: "غير مؤهل",
+                hsClassification:
+                    "تصنيف النظام المنسق",
+                regionalValueContent:
+                    "المحتوى القيمي الإقليمي",
+                requiredRvc: "RVC المطلوب",
+                tariffShift: "التغيير الجمركي",
+                passed: "ناجح",
+                failed: "غير ناجح",
+                reviewRequired: "المراجعة مطلوبة",
+                needsReviewValue: "تتطلب مراجعة",
+                rulesVersion: "إصدار القواعد",
+                you: "أنت",
+                agent: "وكيل CUSMA",
+                sending: "جارٍ الإرسال...",
+                send: "إرسال",
+                system: "النظام",
+                error:
+                    "تعذر على وكيل التطوير معالجة الطلب. " +
+                    "يرجى المحاولة مرة أخرى."
+            },
+
+            hi: {
+                resultTitle: "CUSMA योग्यता परिणाम",
+                qualifies: "योग्य",
+                needsReview:
+                    "मानवीय समीक्षा आवश्यक",
+                doesNotQualify: "योग्य नहीं",
+                hsClassification: "HS वर्गीकरण",
+                regionalValueContent:
+                    "क्षेत्रीय मूल्य सामग्री",
+                requiredRvc: "आवश्यक RVC",
+                tariffShift: "टैरिफ परिवर्तन",
+                passed: "उत्तीर्ण",
+                failed: "असफल",
+                reviewRequired: "समीक्षा आवश्यक",
+                needsReviewValue: "समीक्षा आवश्यक",
+                rulesVersion: "नियम संस्करण",
+                you: "आप",
+                agent: "CUSMA एजेंट",
+                sending: "भेजा जा रहा है...",
+                send: "भेजें",
+                system: "सिस्टम",
+                error:
+                    "डेवलपमेंट एजेंट अनुरोध को संसाधित " +
+                    "नहीं कर सका। कृपया पुनः प्रयास करें।"
+            },
+
+            fil: {
+                resultTitle:
+                    "Resulta ng Kwalipikasyon sa CUSMA",
+                qualifies: "KWALIPIKADO",
+                needsReview:
+                    "KAILANGAN NG PAGSUSURI NG TAO",
+                doesNotQualify:
+                    "HINDI KWALIPIKADO",
+                hsClassification: "HS Classification",
+                regionalValueContent:
+                    "Regional Value Content",
+                requiredRvc:
+                    "Kinakailangang RVC",
+                tariffShift: "Tariff Shift",
+                passed: "PUMASA",
+                failed: "HINDI PUMASA",
+                reviewRequired:
+                    "Kailangan ng pagsusuri",
+                needsReviewValue:
+                    "Kailangan ng pagsusuri",
+                rulesVersion:
+                    "Bersyon ng mga tuntunin",
+                you: "Ikaw",
+                agent: "CUSMA Agent",
+                sending: "Ipinapadala...",
+                send: "Ipadala",
+                system: "System",
+                error:
+                    "Hindi maproseso ng development agent " +
+                    "ang kahilingan. Pakisubukang muli."
+            },
+
+            yue: {
+                resultTitle: "CUSMA 資格結果",
+                qualifies: "符合資格",
+                needsReview: "需要人工審核",
+                doesNotQualify: "不符合資格",
+                hsClassification: "HS 分類",
+                regionalValueContent: "區域價值含量",
+                requiredRvc: "所需 RVC",
+                tariffShift: "關稅分類改變",
+                passed: "通過",
+                failed: "未通過",
+                reviewRequired: "需要審核",
+                needsReviewValue: "需要審核",
+                rulesVersion: "規則版本",
+                you: "你",
+                agent: "CUSMA 助手",
+                sending: "傳送中...",
+                send: "傳送",
+                system: "系統",
+                error:
+                    "開發助手無法處理要求，請再試一次。"
+            },
+
+            it: {
+                resultTitle:
+                    "Risultato qualificazione CUSMA",
+                qualifies: "QUALIFICA",
+                needsReview:
+                    "RICHIEDE REVISIONE UMANA",
+                doesNotQualify: "NON QUALIFICA",
+                hsClassification: "Classificazione SA",
+                regionalValueContent:
+                    "Contenuto di valore regionale",
+                requiredRvc: "RVC richiesto",
+                tariffShift: "Cambio tariffario",
+                passed: "SUPERATO",
+                failed: "NON SUPERATO",
+                reviewRequired: "Revisione richiesta",
+                needsReviewValue:
+                    "Revisione richiesta",
+                rulesVersion:
+                    "Versione delle regole",
+                you: "Tu",
+                agent: "Agente CUSMA",
+                sending: "Invio in corso...",
+                send: "Invia",
+                system: "Sistema",
+                error:
+                    "L'agente di sviluppo non ha potuto " +
+                    "elaborare la richiesta. Riprova."
+            },
+
+            de: {
+                resultTitle:
+                    "CUSMA-Qualifikationsergebnis",
+                qualifies: "QUALIFIZIERT",
+                needsReview:
+                    "MANUELLE PRÜFUNG ERFORDERLICH",
+                doesNotQualify:
+                    "NICHT QUALIFIZIERT",
+                hsClassification:
+                    "HS-Klassifizierung",
+                regionalValueContent:
+                    "Regionaler Wertanteil",
+                requiredRvc: "Erforderlicher RVC",
+                tariffShift: "Tarifwechsel",
+                passed: "BESTANDEN",
+                failed: "NICHT BESTANDEN",
+                reviewRequired:
+                    "Prüfung erforderlich",
+                needsReviewValue:
+                    "Prüfung erforderlich",
+                rulesVersion: "Regelversion",
+                you: "Sie",
+                agent: "CUSMA-Agent",
+                sending: "Wird gesendet...",
+                send: "Senden",
+                system: "System",
+                error:
+                    "Der Entwicklungsagent konnte die " +
+                    "Anfrage nicht verarbeiten. " +
+                    "Bitte versuchen Sie es erneut."
+            },
+
+            th: {
+                resultTitle:
+                    "ผลการพิจารณาคุณสมบัติ CUSMA",
+                qualifies: "ผ่านเกณฑ์",
+                needsReview:
+                    "ต้องมีการตรวจสอบโดยบุคคล",
+                doesNotQualify: "ไม่ผ่านเกณฑ์",
+                hsClassification:
+                    "การจำแนกประเภท HS",
+                regionalValueContent:
+                    "มูลค่าภูมิภาค",
+                requiredRvc: "RVC ที่กำหนด",
+                tariffShift:
+                    "การเปลี่ยนพิกัดอัตราศุลกากร",
+                passed: "ผ่าน",
+                failed: "ไม่ผ่าน",
+                reviewRequired: "ต้องตรวจสอบ",
+                needsReviewValue: "ต้องตรวจสอบ",
+                rulesVersion: "เวอร์ชันกฎ",
+                you: "คุณ",
+                agent: "ตัวแทน CUSMA",
+                sending: "กำลังส่ง...",
+                send: "ส่ง",
+                system: "ระบบ",
+                error:
+                    "ตัวแทนการพัฒนาไม่สามารถประมวลผล" +
+                    "คำขอได้ โปรดลองอีกครั้ง"
+            },
+
+            vi: {
+                resultTitle:
+                    "Kết quả xác định đủ điều kiện CUSMA",
+                qualifies: "ĐỦ ĐIỀU KIỆN",
+                needsReview:
+                    "CẦN CON NGƯỜI XEM XÉT",
+                doesNotQualify:
+                    "KHÔNG ĐỦ ĐIỀU KIỆN",
+                hsClassification: "Phân loại HS",
+                regionalValueContent:
+                    "Hàm lượng giá trị khu vực",
+                requiredRvc: "RVC yêu cầu",
+                tariffShift:
+                    "Chuyển đổi thuế quan",
+                passed: "ĐẠT",
+                failed: "KHÔNG ĐẠT",
+                reviewRequired: "Cần xem xét",
+                needsReviewValue: "Cần xem xét",
+                rulesVersion:
+                    "Phiên bản quy tắc",
+                you: "Bạn",
+                agent: "Trợ lý CUSMA",
+                sending: "Đang gửi...",
+                send: "Gửi",
+                system: "Hệ thống",
+                error:
+                    "Trợ lý phát triển không thể xử lý " +
+                    "yêu cầu. Vui lòng thử lại."
             }
-        });
+        };
 
-        function addMessage(label, text, isAgent) {
-            const wrapper = document.createElement("div");
+        function getUiText() {
+            return (
+                uiTranslations[currentLanguage]
+                || uiTranslations.en
+            );
+        }
+
+        function isRightToLeft(languageCode) {
+            return rightToLeftLanguages.has(languageCode);
+        }
+
+        function updateDocumentLanguage(languageCode) {
+            document.documentElement.lang =
+                languageCode || "en";
+
+            document.documentElement.dir =
+                isRightToLeft(languageCode)
+                    ? "rtl"
+                    : "ltr";
+
+            input.dir =
+                isRightToLeft(languageCode)
+                    ? "rtl"
+                    : "ltr";
+        }
+
+        input.addEventListener(
+            "keydown",
+            function(event) {
+                if (event.key === "Enter") {
+                    sendMessage();
+                }
+            }
+        );
+
+        function addMessage(
+            label,
+            text,
+            isAgent,
+            languageCode = "en"
+        ) {
+            const wrapper =
+                document.createElement("div");
+
             wrapper.className = "message";
 
-            const labelElement = document.createElement("div");
+            const labelElement =
+                document.createElement("div");
+
             labelElement.className =
-                isAgent ? "agent-label" : "user-label";
+                isAgent
+                    ? "agent-label"
+                    : "user-label";
+
             labelElement.textContent = label;
 
-            const bubble = document.createElement("div");
+            const bubble =
+                document.createElement("div");
+
             bubble.className = "bubble";
             bubble.textContent = text;
+
+            bubble.dir =
+                isRightToLeft(languageCode)
+                    ? "rtl"
+                    : "ltr";
 
             wrapper.appendChild(labelElement);
             wrapper.appendChild(bubble);
 
             conversation.appendChild(wrapper);
-            conversation.scrollTop = conversation.scrollHeight;
+
+            conversation.scrollTop =
+                conversation.scrollHeight;
         }
 
         function addQualificationResult(result) {
-            const card = document.createElement("div");
+            const labels = getUiText();
+
+            const card =
+                document.createElement("div");
+
             card.className = "result-card";
 
-            const header = document.createElement("div");
+            card.dir =
+                isRightToLeft(currentLanguage)
+                    ? "rtl"
+                    : "ltr";
+
+            const header =
+                document.createElement("div");
 
             let verdictText = "";
             let verdictClass = "";
 
             if (result.verdict === "qualifies") {
-                verdictText = "QUALIFIES";
+                verdictText = labels.qualifies;
                 verdictClass = "qualifies";
-            } else if (result.verdict === "needs_review") {
-                verdictText = "NEEDS HUMAN REVIEW";
+            } else if (
+                result.verdict === "needs_review"
+            ) {
+                verdictText = labels.needsReview;
                 verdictClass = "needs-review";
             } else {
-                verdictText = "DOES NOT QUALIFY";
-                verdictClass = "does-not-qualify";
+                verdictText =
+                    labels.doesNotQualify;
+
+                verdictClass =
+                    "does-not-qualify";
             }
 
-            header.className = "result-header " + verdictClass;
+            header.className =
+                "result-header " + verdictClass;
 
-            const title = document.createElement("div");
+            const title =
+                document.createElement("div");
+
             title.className = "result-title";
-            title.textContent = "CUSMA Qualification Result";
+            title.textContent = labels.resultTitle;
 
-            const sku = document.createElement("div");
+            const sku =
+                document.createElement("div");
+
             sku.className = "result-sku";
             sku.textContent = result.sku;
 
-            const verdict = document.createElement("div");
+            const verdict =
+                document.createElement("div");
+
             verdict.className = "result-verdict";
             verdict.textContent = verdictText;
 
@@ -331,37 +843,63 @@
             header.appendChild(sku);
             header.appendChild(verdict);
 
-            const body = document.createElement("div");
+            const body =
+                document.createElement("div");
+
             body.className = "result-body";
+
+            const rvcValue =
+                typeof result.rvc === "number"
+                    ? (
+                        result.rvc * 100
+                    ).toFixed(1) + "%"
+                    : "—";
+
+            const thresholdValue =
+                typeof result.rvc_threshold
+                    === "number"
+                    ? (
+                        result.rvc_threshold * 100
+                    ).toFixed(1) + "%"
+                    : "—";
 
             const fields = [
                 [
-                    "HS Classification",
-                    result.hs_code || "Needs review"
+                    labels.hsClassification,
+                    result.hs_code
+                        || labels.needsReviewValue
                 ],
                 [
-                    "Regional Value Content",
-                    (result.rvc * 100).toFixed(1) + "%"
+                    labels.regionalValueContent,
+                    rvcValue
                 ],
                 [
-                    "Required RVC",
-                    (result.rvc_threshold * 100).toFixed(1) + "%"
+                    labels.requiredRvc,
+                    thresholdValue
                 ],
                 [
-                    "Tariff Shift",
-                    result.tariff_shift_passed ? "PASSED" : "FAILED"
+                    labels.tariffShift,
+                    result.tariff_shift_passed
+                        ? labels.passed
+                        : labels.failed
                 ]
             ];
 
             fields.forEach(function(field) {
-                const row = document.createElement("div");
+                const row =
+                    document.createElement("div");
+
                 row.className = "result-row";
 
-                const label = document.createElement("div");
+                const label =
+                    document.createElement("div");
+
                 label.className = "result-label";
                 label.textContent = field[0];
 
-                const value = document.createElement("div");
+                const value =
+                    document.createElement("div");
+
                 value.className = "result-value";
                 value.textContent = field[1];
 
@@ -371,24 +909,37 @@
             });
 
             if (result.review_reason) {
-                const review = document.createElement("div");
+                const review =
+                    document.createElement("div");
+
                 review.className = "review-box";
 
-                const reviewTitle = document.createElement("strong");
-                reviewTitle.textContent = "Review required: ";
+                const reviewTitle =
+                    document.createElement("strong");
+
+                reviewTitle.textContent =
+                    labels.reviewRequired + ": ";
 
                 review.appendChild(reviewTitle);
+
                 review.appendChild(
-                    document.createTextNode(result.review_reason)
+                    document.createTextNode(
+                        result.review_reason
+                    )
                 );
 
                 body.appendChild(review);
             }
 
-            const rules = document.createElement("div");
+            const rules =
+                document.createElement("div");
+
             rules.className = "rules-version";
+
             rules.textContent =
-                "Rules version: " + result.rules_version;
+                labels.rulesVersion
+                + ": "
+                + result.rules_version;
 
             body.appendChild(rules);
 
@@ -396,7 +947,9 @@
             card.appendChild(body);
 
             conversation.appendChild(card);
-            conversation.scrollTop = conversation.scrollHeight;
+
+            conversation.scrollTop =
+                conversation.scrollHeight;
         }
 
         async function sendMessage() {
@@ -406,53 +959,86 @@
                 return;
             }
 
-            addMessage("You", message, false);
+            const labelsBeforeRequest =
+                getUiText();
+
+            addMessage(
+                labelsBeforeRequest.you,
+                message,
+                false,
+                currentLanguage
+            );
 
             input.value = "";
             input.disabled = true;
             button.disabled = true;
-            button.textContent = "Sending...";
+            button.textContent =
+                labelsBeforeRequest.sending;
 
             try {
-                const response = await fetch("/chat", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        message: message
-                    })
-                });
+                const response =
+                    await fetch("/chat", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+                        body: JSON.stringify({
+                            message: message
+                        })
+                    });
 
                 if (!response.ok) {
-                    throw new Error("Server returned an error");
+                    throw new Error(
+                        "Server returned an error"
+                    );
                 }
 
                 const data = await response.json();
 
-                if (data.result) {
-                    addQualificationResult(data.result);
-                } else {
+                currentLanguage =
+                    data.response_language || "en";
+
+                updateDocumentLanguage(
+                    currentLanguage
+                );
+
+                const labels = getUiText();
+
+                if (data.response) {
                     addMessage(
-                        "CUSMA Agent",
+                        labels.agent,
                         data.response,
-                        true
+                        true,
+                        currentLanguage
+                    );
+                }
+
+                if (data.result) {
+                    addQualificationResult(
+                        data.result
                     );
                 }
             } catch (error) {
+                const labels = getUiText();
+
                 addMessage(
-                    "System",
-                    "The development agent could not process the request. " +
-                    "Please try again.",
-                    true
+                    labels.system,
+                    labels.error,
+                    true,
+                    currentLanguage
                 );
             } finally {
+                const labels = getUiText();
+
                 input.disabled = false;
                 button.disabled = false;
-                button.textContent = "Send";
+                button.textContent = labels.send;
                 input.focus();
             }
         }
+
+        updateDocumentLanguage("en");
     </script>
 </body>
 </html>
