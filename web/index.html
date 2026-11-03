@@ -7,44 +7,130 @@
         content="width=device-width, initial-scale=1"
     >
 
-    <title>CUSMA Boots Agent</title>
+    <title>CUSMA Trade Assistant</title>
 
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
+            font-family:
+                Inter,
+                ui-sans-serif,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: #f5f7fa;
+            color: #172b3a;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+            max-width: 1120px;
+            margin: 32px auto;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            box-shadow:
+                0 2px 4px rgba(16, 24, 40, 0.04),
+                0 12px 32px rgba(16, 24, 40, 0.07);
             overflow: hidden;
         }
 
         .header {
-            background: #163a5f;
-            color: white;
-            padding: 24px 30px;
+            background: #123a5a;
+            color: #ffffff;
+            padding: 22px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
         }
 
         .header h1 {
             margin: 0;
+            font-size: 24px;
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #123a5a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .brand-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .brand-subtitle {
+            color: #c9d7e5;
+            font-size: 13px;
+            line-height: 1.3;
+        }
+
+        .header-status {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 11px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.10);
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #55d6a4;
         }
 
         .environment {
-            display: inline-block;
-            margin-top: 8px;
-            background: #f5a623;
-            color: #1d1d1d;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 13px;
-            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: #eef4ff;
+            color: #3538cd;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
         }
 
         .content {
@@ -52,195 +138,751 @@
         }
 
         .intro {
-            color: #555;
-            line-height: 1.5;
-            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            color: #667085;
+            line-height: 1.55;
+            margin-bottom: 24px;
+        }
+
+        .intro strong {
+            color: #172b3a;
+            font-size: 18px;
+            font-weight: 650;
+        }
+
+        .intro span {
+            font-size: 14px;
         }
 
         #conversation {
             min-height: 250px;
-            max-height: 500px;
+            max-height: 520px;
             overflow-y: auto;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
             padding: 20px;
-            margin-bottom: 20px;
-            background: #fafafa;
+            margin-bottom: 18px;
+            background: #f8fafc;
+        }
+
+        .welcome-panel {
+            padding: 10px 4px 6px;
+        }
+
+        .welcome-heading {
+            text-align: center;
+            margin-bottom: 26px;
+        }
+
+        .welcome-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 10px;
+            margin-bottom: 14px;
+            border-radius: 999px;
+            background: #ecfdf5;
+            color: #137a5a;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .welcome-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #137a5a;
+        }
+
+        .welcome-heading h2 {
+            margin: 0;
+            color: #172b3a;
+            font-size: 25px;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+        }
+
+        .welcome-heading p {
+            max-width: 650px;
+            margin: 10px auto 0;
+            color: #667085;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 26px;
+        }
+
+        .capability-card {
+            padding: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            background: #ffffff;
+        }
+
+        .capability-icon {
+            width: 34px;
+            height: 34px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            background: #eef4ff;
+            color: #123a5a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        .capability-title {
+            margin-bottom: 5px;
+            color: #172b3a;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .capability-description {
+            color: #667085;
+            font-size: 12px;
+            line-height: 1.45;
+        }
+
+        .suggestions {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
+
+        .suggestions-title {
+            margin-bottom: 11px;
+            color: #475467;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .suggestion-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .suggestion-button {
+            min-height: 58px;
+            padding: 12px 14px;
+            border: 1px solid #d0d5dd;
+            border-radius: 9px;
+            background: #ffffff;
+            color: #344054;
+            text-align: left;
+            font-size: 13px;
+            line-height: 1.4;
+            cursor: pointer;
+            transition:
+                border-color 0.15s ease,
+                background 0.15s ease,
+                box-shadow 0.15s ease;
+        }
+
+        .suggestion-button:hover {
+            background: #f8fafc;
+            border-color: #98a2b3;
+            box-shadow:
+                0 2px 5px rgba(16, 24, 40, 0.05);
+        }
+
+        .suggestion-button:focus-visible {
+            outline: 3px solid rgba(18, 58, 90, 0.18);
+            outline-offset: 2px;
+        }
+
+        .suggestion-arrow {
+            margin-left: 5px;
+            color: #137a5a;
+            font-weight: 700;
         }
 
         .message {
-            margin-bottom: 18px;
+            display: flex;
+            gap: 12px;
+            margin-bottom: 22px;
         }
 
-        .user-label {
-            font-weight: bold;
-            color: #163a5f;
-            margin-bottom: 5px;
+        .message.agent-message {
+            align-items: flex-start;
+        }
+
+        .message.user-message {
+            justify-content: flex-end;
+        }
+
+        .message-avatar {
+            width: 34px;
+            height: 34px;
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9px;
+            background: #123a5a;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .message-content {
+            max-width: 78%;
+        }
+
+        .user-message .message-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .message-label {
+            margin-bottom: 6px;
+            color: #475467;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
 
         .agent-label {
-            font-weight: bold;
-            color: #2d6a4f;
-            margin-bottom: 5px;
+            color: #137a5a;
+        }
+
+        .user-label {
+            color: #475467;
         }
 
         .bubble {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 12px 15px;
-            line-height: 1.45;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 13px 15px;
+            background: #ffffff;
+            color: #172b3a;
+            font-size: 14px;
+            line-height: 1.55;
             white-space: pre-wrap;
+        }
+
+        .agent-message .bubble {
+            border-top-left-radius: 4px;
+        }
+
+        .user-message .bubble {
+            background: #123a5a;
+            border-color: #123a5a;
+            border-top-right-radius: 4px;
+            color: #ffffff;
         }
 
         .bubble[dir="rtl"] {
             text-align: right;
         }
 
-        .input-area {
+        .message-meta {
             display: flex;
-            gap: 10px;
+            align-items: center;
+            gap: 6px;
+            margin-top: 7px;
+            color: #667085;
+            font-size: 11px;
         }
 
+        .message-meta-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #98a2b3;
+        }
+
+        .translation-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 7px;
+            padding: 5px 8px;
+            border-radius: 999px;
+            background: #eef4ff;
+            color: #3538cd;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        #conversation.conversation-active {
+            min-height: 320px;
+            background: #ffffff;
+        }
+
+        .composer { padding-top: 4px; }
+
+        .input-area {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0;
+            overflow: hidden;
+            border: 1px solid #d0d5dd;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+        .input-area:focus-within {
+            border-color: #5481a3;
+            box-shadow: 0 0 0 3px rgba(18, 58, 90, 0.10);
+        }
         #message {
             flex: 1;
-            padding: 14px;
-            font-size: 16px;
-            border: 1px solid #bbb;
-            border-radius: 6px;
-        }
-
-        #message[dir="rtl"] {
-            text-align: right;
-        }
-
-        button {
-            background: #163a5f;
-            color: white;
+            min-width: 0;
+            padding: 15px 16px;
             border: none;
-            padding: 0 24px;
-            border-radius: 6px;
-            font-size: 16px;
+            outline: none;
+            background: transparent;
+            color: #172b3a;
+            font-family: inherit;
+            font-size: 14px;
+        }
+        #message::placeholder { color: #98a2b3; }
+        #message[dir="rtl"] { text-align: right; }
+        #sendButton {
+            width: 42px;
+            height: 42px;
+            min-height: 42px;
+            flex: 0 0 auto;
+            margin-right: 5px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 9px;
+            background: #123a5a;
+            color: #ffffff;
+            font-size: 18px;
             cursor: pointer;
         }
-
-        button:hover {
-            background: #225682;
+        #sendButton:hover { background: #0b2942; }
+        #sendButton:focus-visible {
+            outline: 3px solid rgba(18, 58, 90, 0.22);
+            outline-offset: 2px;
         }
-
-        button:disabled {
-            background: #999;
-            cursor: not-allowed;
+        #sendButton:disabled { background: #98a2b3; cursor: not-allowed; }
+        .composer-note {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            color: #667085;
+            font-size: 11px;
         }
+        .composer-note-icon { color: #137a5a; font-weight: 800; }
+        .send-spinner {
+            width: 15px;
+            height: 15px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .status-region {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            clip-path: inset(50%);
+            white-space: nowrap;
+        }
+        .decision-disclosure {
+            margin-top: 20px;
+            border-top: 1px solid #e4e7ec;
+            padding-top: 15px;
+        }
+        .decision-disclosure summary {
+            width: fit-content;
+            color: #475467;
+            font-size: 12px;
+            font-weight: 650;
+            cursor: pointer;
+        }
+        .decision-disclosure summary:hover { color: #123a5a; }
+        .decision-disclosure summary:focus-visible {
+            outline: 3px solid rgba(18,58,90,0.16);
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+        .disclosure-content {
+            margin-top: 13px;
+            padding: 15px 16px;
+            border: 1px solid #e4e7ec;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+        .disclosure-content p {
+            margin: 0 0 14px;
+            color: #475467;
+            font-size: 12px;
+            line-height: 1.55;
+        }
+        .disclosure-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 18px;
+        }
+        .disclosure-grid div { display: flex; flex-direction: column; gap: 4px; }
+        .disclosure-grid strong { color: #172b3a; font-size: 12px; }
+        .disclosure-grid span { color: #667085; font-size: 11px; line-height: 1.5; }
 
         .result-card {
-            margin: 12px 0 22px 0;
-            border-radius: 10px;
+            margin: 8px 0 26px 46px;
             overflow: hidden;
-            border: 1px solid #d7dce1;
-            background: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            background: #ffffff;
+            box-shadow:
+                0 1px 2px rgba(16, 24, 40, 0.04),
+                0 6px 18px rgba(16, 24, 40, 0.06);
+        }
+
+        .result-card.qualifies-card {
+            border-top: 4px solid #137a5a;
+        }
+
+        .result-card.review-card {
+            border-top: 4px solid #b7791f;
+        }
+
+        .result-card.failure-card {
+            border-top: 4px solid #b42318;
         }
 
         .result-header {
-            padding: 16px 18px;
-            color: white;
+            padding: 18px 20px 16px;
+            background: #ffffff;
+            color: #172b3a;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        .result-header.qualifies {
-            background: #2d6a4f;
+        .result-header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
         }
 
-        .result-header.needs-review {
-            background: #b7791f;
+        .result-verdict-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .result-header.does-not-qualify {
-            background: #b42318;
+        .verdict-icon {
+            width: 38px;
+            height: 38px;
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .verdict-icon.qualifies {
+            background: #ecfdf5;
+            color: #137a5a;
+        }
+
+        .verdict-icon.needs-review {
+            background: #fffbeb;
+            color: #b7791f;
+        }
+
+        .verdict-icon.does-not-qualify {
+            background: #fef3f2;
+            color: #b42318;
         }
 
         .result-title {
-            font-size: 12px;
-            font-weight: bold;
+            margin-bottom: 4px;
+            color: #667085;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.07em;
             text-transform: uppercase;
-            opacity: 0.9;
-        }
-
-        .result-sku {
-            font-size: 22px;
-            font-weight: bold;
-            margin-top: 4px;
         }
 
         .result-verdict {
-            margin-top: 6px;
-            font-size: 16px;
-            font-weight: bold;
+            font-size: 17px;
+            font-weight: 750;
+            letter-spacing: -0.01em;
+        }
+
+        .result-verdict.qualifies {
+            color: #137a5a;
+        }
+
+        .result-verdict.needs-review {
+            color: #9a6700;
+        }
+
+        .result-verdict.does-not-qualify {
+            color: #b42318;
+        }
+
+        .result-sku-group {
+            text-align: right;
+        }
+
+        .result-sku-label {
+            margin-bottom: 3px;
+            color: #667085;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .result-sku {
+            color: #172b3a;
+            font-size: 21px;
+            font-weight: 750;
+            letter-spacing: -0.02em;
         }
 
         .result-body {
-            padding: 18px;
+            padding: 20px;
         }
 
-        .result-row {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 9px 0;
-            border-bottom: 1px solid #eee;
+        .result-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+            gap: 12px;
         }
 
-        .result-row:last-child {
-            border-bottom: none;
+        .result-metric {
+            padding: 14px 15px;
+            border: 1px solid #e4e7ec;
+            border-radius: 10px;
+            background: #f8fafc;
         }
 
         .result-label {
-            color: #666;
+            margin-bottom: 5px;
+            color: #667085;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
         }
 
         .result-value {
-            color: #222;
-            font-weight: bold;
-            text-align: right;
+            color: #172b3a;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .status-value {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .status-symbol {
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .status-symbol.pass {
+            background: #ecfdf5;
+            color: #137a5a;
+        }
+
+        .status-symbol.fail {
+            background: #fef3f2;
+            color: #b42318;
+        }
+
+        .rvc-panel {
+            margin-top: 14px;
+            padding: 16px;
+            border: 1px solid #e4e7ec;
+            border-radius: 10px;
+            background: #ffffff;
+        }
+
+        .rvc-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+
+        .rvc-primary {
+            color: #172b3a;
+            font-size: 25px;
+            font-weight: 750;
+            letter-spacing: -0.025em;
+        }
+
+        .rvc-threshold {
+            color: #667085;
+            font-size: 12px;
+        }
+
+        .rvc-track {
+            position: relative;
+            width: 100%;
+            height: 9px;
+            overflow: visible;
+            border-radius: 999px;
+            background: #eaecf0;
+        }
+
+        .rvc-fill {
+            height: 100%;
+            border-radius: 999px;
+            background: #137a5a;
+        }
+
+        .rvc-fill.review {
+            background: #b7791f;
+        }
+
+        .rvc-fill.failure {
+            background: #b42318;
+        }
+
+        .rvc-threshold-marker {
+            position: absolute;
+            top: -4px;
+            width: 2px;
+            height: 17px;
+            border-radius: 2px;
+            background: #344054;
+            transform: translateX(-1px);
+        }
+
+        .rvc-scale {
+            position: relative;
+            height: 21px;
+            margin-top: 5px;
+            color: #667085;
+            font-size: 10px;
+        }
+
+        .rvc-threshold-label {
+            position: absolute;
+            transform: translateX(-50%);
+            white-space: nowrap;
         }
 
         .review-box {
             margin-top: 14px;
-            padding: 12px 14px;
-            border-radius: 6px;
-            background: #fff4d6;
-            color: #664d03;
-            line-height: 1.4;
+            padding: 14px 15px;
+            border: 1px solid #fedf89;
+            border-radius: 10px;
+            background: #fffaeb;
+            color: #7a5d12;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .review-box strong {
+            color: #7a5d12;
+        }
+
+        .result-audit {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 18px;
+            padding-top: 15px;
+            border-top: 1px solid #e4e7ec;
+        }
+
+        .deterministic-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 9px;
+            border-radius: 999px;
+            background: #ecfdf5;
+            color: #137a5a;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .deterministic-icon {
+            font-size: 12px;
+            font-weight: 800;
         }
 
         .rules-version {
-            margin-top: 14px;
-            color: #777;
-            font-size: 12px;
+            color: #667085;
+            font-size: 11px;
         }
 
         .result-card[dir="rtl"] {
             text-align: right;
         }
 
-        .result-card[dir="rtl"] .result-row {
+        .result-card[dir="rtl"] .result-header-main,
+        .result-card[dir="rtl"] .result-audit {
             flex-direction: row-reverse;
         }
 
-        .result-card[dir="rtl"] .result-value {
+        .result-card[dir="rtl"] .result-sku-group {
             text-align: left;
         }
 
         .footer {
-            padding: 15px 30px;
-            background: #f1f3f5;
-            color: #666;
-            font-size: 13px;
+            padding: 14px 30px;
+            background: #f8fafc;
+            color: #667085;
+            border-top: 1px solid #e2e8f0;
+            font-size: 12px;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            gap: 12px;
+            gap: 16px;
             flex-wrap: wrap;
         }
+
+        .footer-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .footer-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #137a5a;
+        }
+
 
         @media (max-width: 700px) {
             .container {
@@ -252,6 +894,41 @@
                 padding: 20px;
             }
 
+            .capability-grid,
+            .suggestion-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-panel {
+                padding: 4px 0;
+            }
+
+            .welcome-heading {
+                text-align: left;
+            }
+
+            .welcome-heading h2 {
+                font-size: 22px;
+            }
+
+            .welcome-heading p {
+                margin-left: 0;
+            }
+
+            .message-content {
+                max-width: 88%;
+            }
+
+            .message-avatar {
+                width: 30px;
+                height: 30px;
+                border-radius: 8px;
+            }
+
+            .bubble {
+                font-size: 13px;
+            }
+
             .input-area {
                 flex-direction: column;
             }
@@ -260,81 +937,478 @@
                 min-height: 48px;
             }
 
-            .result-row {
+            .result-card {
+                margin-left: 0;
+            }
+
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .result-header-main {
+                align-items: flex-start;
+            }
+
+            .result-audit {
+                align-items: flex-start;
                 flex-direction: column;
-                gap: 4px;
             }
 
-            .result-value {
-                text-align: left;
+            .rvc-heading {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 3px;
             }
 
-            .result-card[dir="rtl"] .result-row {
+            .result-card[dir="rtl"]
+            .result-header-main {
+                flex-direction: row-reverse;
+            }
+
+            .result-card[dir="rtl"]
+            .result-audit {
+                align-items: flex-end;
+                flex-direction: column;
+            }
+            .header {
+                align-items: flex-start;
                 flex-direction: column;
             }
 
-            .result-card[dir="rtl"] .result-value {
-                text-align: right;
+            .header-status {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .language-control {
+                width: 100%;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .language-select-wrapper {
+                width: 100%;
+            }
+
+            .language-select {
+                width: 100%;
+            }
+
+            .brand-mark {
+                width: 38px;
+                height: 38px;
+            }
+
+            .header h1 {
+                font-size: 21px;
             }
         }
+
+        .language-control {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .language-label {
+            color: #c9d7e5;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .language-select-wrapper {
+            position: relative;
+        }
+
+        .language-select {
+            min-width: 145px;
+            appearance: none;
+            -webkit-appearance: none;
+            padding: 7px 30px 7px 11px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 8px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.10);
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .language-select:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .language-select:focus {
+            border-color: rgba(255, 255, 255, 0.55);
+            box-shadow:
+                0 0 0 3px rgba(255, 255, 255, 0.12);
+        }
+
+        .language-select option {
+            background: #ffffff;
+            color: #172b3a;
+        }
+
+        .language-chevron {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            color: #c9d7e5;
+            font-size: 9px;
+            pointer-events: none;
+            transform: translateY(-50%);
+        }
+
+        .language-notice {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            padding: 8px 11px;
+            border: 1px solid #d6e4ff;
+            border-radius: 8px;
+            background: #f5f8ff;
+            color: #475467;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .language-notice.visible {
+            display: flex;
+        }
+
+        .language-notice-icon {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #eef4ff;
+            color: #3538cd;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+
+        @media (max-width: 700px) {
+            body { background: #ffffff; }
+            .container { width: 100%; min-height: 100vh; margin: 0; border: none; border-radius: 0; box-shadow: none; }
+            .header { padding: 18px 20px; }
+            .content { padding: 20px 16px; }
+            #conversation { padding: 14px; }
+            .disclosure-grid { grid-template-columns: 1fr; }
+            .input-area { flex-direction: row; }
+            .footer { padding: 13px 16px; align-items: flex-start; flex-direction: column; gap: 7px; }
+        }
+
+        @media (min-width: 701px) and (max-width: 1000px) {
+            .container { margin: 20px; }
+            .capability-grid, .suggestion-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+            .header { align-items: flex-start; }
+            .header-status { max-width: 55%; }
+        }
+
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="header">
-            <h1>CUSMA Boots Agent</h1>
+            <div class="header">
+                <div class="brand">
+                    <div
+                        class="brand-mark"
+                        aria-hidden="true"
+                    >
+                        CA
+                    </div>
 
-            <div class="environment">
-                DEVELOPMENT
+                    <div class="brand-copy">
+                        <h1>
+                            CUSMA Trade Assistant
+                        </h1>
+
+                        <div class="brand-subtitle">
+                            Product qualification &amp;
+                            trade compliance
+                        </div>
+                    </div>
+                </div>
+
+            <div class="header-status">
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+
+                    <span>
+                        Rules engine online
+                    </span>
+                </div>
+
+                <div class="language-control">
+                    <label
+                        class="language-label"
+                        for="languageSelect"
+                    >
+                        Language
+                    </label>
+
+                    <div class="language-select-wrapper">
+                        <select
+                            id="languageSelect"
+                            class="language-select"
+                            aria-label="Preferred portal language"
+                        >
+                            <option value="auto">Auto-detect</option>
+                            <option value="en">English</option>
+                            <option value="fr-CA">Français</option>
+                            <option value="es">Español</option>
+                            <option value="zh-CN">中文</option>
+                            <option value="pa">ਪੰਜਾਬੀ</option>
+                            <option value="ar">العربية</option>
+                            <option value="hi">हिन्दी</option>
+                            <option value="fil">Filipino</option>
+                            <option value="yue">粵語</option>
+                            <option value="it">Italiano</option>
+                            <option value="de">Deutsch</option>
+                            <option value="th">ไทย</option>
+                            <option value="vi">Tiếng Việt</option>
+                        </select>
+
+                        <span
+                            class="language-chevron"
+                            aria-hidden="true"
+                        >
+                            ▼
+                        </span>
+                    </div>
+                </div>
+
+                <div class="environment">
+                    DEV
+                </div>
             </div>
         </div>
 
         <div class="content">
             <div class="intro">
-                Ask a question about CUSMA qualification, sourcing,
-                duties, certification, or a boot product.
-                Qualification decisions are calculated by the
-                deterministic CUSMA rules engine.
+                <strong>
+                    Trade qualification with transparent,
+                    deterministic results.
+                </strong>
+
+                <span>
+                    Ask about CUSMA qualification, sourcing,
+                    duties, certification, or a product.
+                    Qualification decisions are calculated by
+                    the deterministic CUSMA rules engine.
+                </span>
+            </div>
+
+            <div
+                id="languageNotice"
+                class="language-notice"
+                role="status"
+                aria-live="polite"
+            >
+                <span
+                    class="language-notice-icon"
+                    aria-hidden="true"
+                >
+                    A
+                </span>
+
+                <span id="languageNoticeText"></span>
             </div>
 
             <div id="conversation">
-                <div class="message">
-                    <div class="agent-label">
-                        CUSMA Agent
+                <div
+                    id="welcomePanel"
+                    class="welcome-panel"
+                >
+                    <div class="welcome-heading">
+                        <div class="welcome-eyebrow">
+                            <span class="welcome-dot"></span>
+
+                            Deterministic trade analysis
+                        </div>
+
+                        <h2>
+                            What would you like to evaluate?
+                        </h2>
+
+                        <p>
+                            Ask about product qualification,
+                            sourcing, duties, or the reasoning
+                            behind a CUSMA determination.
+                        </p>
                     </div>
 
-                    <div class="bubble">
-                        Development environment online.
-                        Try asking: Does NB-0101 qualify under CUSMA?
+                    <div class="capability-grid">
+                        <div class="capability-card">
+                            <div
+                                class="capability-icon"
+                                aria-hidden="true"
+                            >
+                                ✓
+                            </div>
+
+                            <div class="capability-title">
+                                Check qualification
+                            </div>
+
+                            <div class="capability-description">
+                                Determine whether a supported
+                                product qualifies under CUSMA.
+                            </div>
+                        </div>
+
+                        <div class="capability-card">
+                            <div
+                                class="capability-icon"
+                                aria-hidden="true"
+                            >
+                                !
+                            </div>
+
+                            <div class="capability-title">
+                                Review a decision
+                            </div>
+
+                            <div class="capability-description">
+                                Understand why a product requires
+                                human review.
+                            </div>
+                        </div>
+
+                        <div class="capability-card">
+                            <div
+                                class="capability-icon"
+                                aria-hidden="true"
+                            >
+                                i
+                            </div>
+
+                            <div class="capability-title">
+                                Explain a result
+                            </div>
+
+                            <div class="capability-description">
+                                See which deterministic rule
+                                influenced the outcome.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="suggestions">
+                        <div class="suggestions-title">
+                            Suggested questions
+                        </div>
+
+                        <div class="suggestion-grid">
+                            <button
+                                class="suggestion-button"
+                                type="button"
+                                onclick="useSuggestedPrompt(
+                                    'Does NB-0101 qualify under CUSMA?'
+                                )"
+                            >
+                                Does NB-0101 qualify?
+
+                                <span
+                                    class="suggestion-arrow"
+                                    aria-hidden="true"
+                                >
+                                    →
+                                </span>
+                            </button>
+
+                            <button
+                                class="suggestion-button"
+                                type="button"
+                                onclick="useSuggestedPrompt(
+                                    'Why does NB-0413 need human review?'
+                                )"
+                            >
+                                Why does NB-0413 need review?
+
+                                <span
+                                    class="suggestion-arrow"
+                                    aria-hidden="true"
+                                >
+                                    →
+                                </span>
+                            </button>
+
+                            <button
+                                class="suggestion-button"
+                                type="button"
+                                onclick="useSuggestedPrompt(
+                                    &quot;Why doesn't NB-0414 qualify?&quot;
+                                )"
+                            >
+                                Why doesn't NB-0414 qualify?
+
+                                <span
+                                    class="suggestion-arrow"
+                                    aria-hidden="true"
+                                >
+                                    →
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="input-area">
-                <input
-                    id="message"
-                    type="text"
-                    autocomplete="off"
-                    placeholder="Example: Does NB-0101 qualify under CUSMA?"
-                >
-
-                <button
-                    id="sendButton"
-                    type="button"
-                    onclick="sendMessage()"
-                >
-                    Send
-                </button>
+            <div class="composer">
+                <div class="input-area">
+                    <input id="message" type="text" autocomplete="off"
+                        aria-label="Ask the CUSMA Trade Assistant"
+                        placeholder="Ask about qualification, sourcing, duties, or a product...">
+                    <button id="sendButton" type="button" onclick="sendMessage()"
+                        aria-label="Send question" title="Send">
+                        <span aria-hidden="true">→</span>
+                    </button>
+                </div>
+                <div class="composer-note">
+                    <span class="composer-note-icon" aria-hidden="true">✓</span>
+                    Determinations are calculated by the deterministic CUSMA rules engine.
+                </div>
             </div>
+
+            <details class="decision-disclosure">
+                <summary>How this decision is produced</summary>
+                <div class="disclosure-content">
+                    <p>Product qualification is calculated using deterministic CUSMA rules and structured product data.</p>
+                    <div class="disclosure-grid">
+                        <div><strong>Deterministic result</strong><span>Qualification, HS classification, RVC, tariff-shift results, and the applicable rules version come from the rules engine.</span></div>
+                        <div><strong>Conversational layer</strong><span>Language translation and conversational explanations change how the result is communicated, not the underlying determination.</span></div>
+                    </div>
+                </div>
+            </details>
         </div>
 
         <div class="footer">
-            <span>Status: Online</span>
-            <span>Environment: DEV</span>
-            <span>Version: 0.5.0</span>
+               <span class="footer-status">
+                    <span class="footer-dot"></span>
+                    Service online
+                </span>
+
+                <span>
+                    Deterministic CUSMA rules engine
+                </span>
+
+                <span>
+                    DEV · Version 0.6.0
+                </span>
+            </div>
         </div>
-    </div>
+
+    <div id="statusRegion" class="status-region" role="status" aria-live="polite"></div>
 
     <script>
         const input = document.getElementById("message");
@@ -342,11 +1416,46 @@
         const conversation =
             document.getElementById("conversation");
 
+        const languageSelect =
+            document.getElementById(
+                "languageSelect"
+            );
+
+        const languageNotice =
+            document.getElementById(
+                "languageNotice"
+            );
+
+        const languageNoticeText =
+            document.getElementById(
+                "languageNoticeText"
+            );
+
+        const statusRegion =
+            document.getElementById("statusRegion");
+
         let currentLanguage = "en";
+        let preferredLanguage = "auto";
 
         const rightToLeftLanguages = new Set([
             "ar"
         ]);
+
+        const languageNames = {
+            en: "English",
+            "fr-CA": "Français",
+            es: "Español",
+            "zh-CN": "中文",
+            pa: "ਪੰਜਾਬੀ",
+            ar: "العربية",
+            hi: "हिन्दी",
+            fil: "Filipino",
+            yue: "粵語",
+            it: "Italiano",
+            de: "Deutsch",
+            th: "ไทย",
+            vi: "Tiếng Việt"
+        };
 
         const uiTranslations = {
             en: {
@@ -714,6 +1823,75 @@
             );
         }
 
+        function showLanguageNotice(message) {
+            if (!message) {
+                languageNotice.classList.remove(
+                    "visible"
+                );
+
+                languageNoticeText.textContent =
+                    "";
+
+                return;
+            }
+
+            languageNoticeText.textContent =
+                message;
+
+            languageNotice.classList.add(
+                "visible"
+            );
+        }
+
+        function applyPreferredLanguage(
+            languageCode
+        ) {
+            preferredLanguage =
+                languageCode;
+
+            if (languageCode === "auto") {
+                currentLanguage = "en";
+
+                updateDocumentLanguage(
+                    currentLanguage
+                );
+
+                showLanguageNotice(
+                    "Language will be detected "
+                    + "automatically from your question."
+                );
+
+                const labels = getUiText();
+
+                button.textContent =
+                    labels.send;
+
+                return;
+            }
+
+            currentLanguage =
+                languageCode;
+
+            updateDocumentLanguage(
+                currentLanguage
+            );
+
+            const languageName =
+                languageNames[languageCode]
+                || languageCode;
+
+            showLanguageNotice(
+                languageName
+                + " selected · Responses will be returned in this language. "
+                + "Question language is detected automatically."
+            );
+
+            const labels = getUiText();
+
+            button.textContent =
+                labels.send;
+        }
+
         function isRightToLeft(languageCode) {
             return rightToLeftLanguages.has(languageCode);
         }
@@ -733,6 +1911,33 @@
                     : "ltr";
         }
 
+        function hideWelcomePanel() {
+            const welcomePanel =
+                document.getElementById("welcomePanel");
+
+            if (welcomePanel) {
+                welcomePanel.remove();
+            }
+
+            conversation.classList.add(
+                "conversation-active"
+            );
+        }
+
+        function useSuggestedPrompt(prompt) {
+            input.value = prompt;
+            sendMessage();
+        }
+
+        languageSelect.addEventListener(
+            "change",
+            function() {
+                applyPreferredLanguage(
+                    languageSelect.value
+                );
+            }
+        );
+
         input.addEventListener(
             "keydown",
             function(event) {
@@ -746,20 +1951,53 @@
             label,
             text,
             isAgent,
-            languageCode = "en"
+            languageCode = "en",
+            translationApplied = false
         ) {
             const wrapper =
                 document.createElement("div");
 
-            wrapper.className = "message";
+            wrapper.className =
+                "message "
+                + (
+                    isAgent
+                        ? "agent-message"
+                        : "user-message"
+                );
+
+            if (isAgent) {
+                const avatar =
+                    document.createElement("div");
+
+                avatar.className =
+                    "message-avatar";
+
+                avatar.textContent = "CA";
+
+                avatar.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                wrapper.appendChild(avatar);
+            }
+
+            const content =
+                document.createElement("div");
+
+            content.className =
+                "message-content";
 
             const labelElement =
                 document.createElement("div");
 
             labelElement.className =
-                isAgent
-                    ? "agent-label"
-                    : "user-label";
+                "message-label "
+                + (
+                    isAgent
+                        ? "agent-label"
+                        : "user-label"
+                );
 
             labelElement.textContent = label;
 
@@ -774,13 +2012,76 @@
                     ? "rtl"
                     : "ltr";
 
-            wrapper.appendChild(labelElement);
-            wrapper.appendChild(bubble);
+            content.appendChild(
+                labelElement
+            );
 
-            conversation.appendChild(wrapper);
+            content.appendChild(bubble);
 
-            conversation.scrollTop =
-                conversation.scrollHeight;
+            if (
+                isAgent
+                && translationApplied
+            ) {
+                const translationBadge =
+                    document.createElement("div");
+
+                translationBadge.className =
+                    "translation-badge";
+
+                const languageName =
+                    languageNames[languageCode]
+                    || languageCode;
+
+                translationBadge.textContent =
+                    languageName
+                    + " · Automatically translated";
+
+                content.appendChild(
+                    translationBadge
+                );
+            } else if (isAgent) {
+                const meta =
+                    document.createElement("div");
+
+                meta.className =
+                    "message-meta";
+
+                const languageName =
+                    languageNames[languageCode]
+                    || languageCode;
+
+                const language =
+                    document.createElement("span");
+
+                language.textContent =
+                    languageName;
+
+                const dot =
+                    document.createElement("span");
+
+                dot.className =
+                    "message-meta-dot";
+
+                const analysis =
+                    document.createElement("span");
+
+                analysis.textContent =
+                    "Deterministic analysis";
+
+                meta.appendChild(language);
+                meta.appendChild(dot);
+                meta.appendChild(analysis);
+
+                content.appendChild(meta);
+            }
+
+            wrapper.appendChild(content);
+
+            conversation.appendChild(
+                wrapper
+            );
+
+            return wrapper;
         }
 
         function addQualificationResult(result) {
@@ -789,43 +2090,115 @@
             const card =
                 document.createElement("div");
 
-            card.className = "result-card";
-
             card.dir =
                 isRightToLeft(currentLanguage)
                     ? "rtl"
                     : "ltr";
 
-            const header =
-                document.createElement("div");
-
             let verdictText = "";
             let verdictClass = "";
+            let cardClass = "";
+            let verdictIcon = "";
 
             if (result.verdict === "qualifies") {
                 verdictText = labels.qualifies;
                 verdictClass = "qualifies";
+                cardClass = "qualifies-card";
+                verdictIcon = "✓";
             } else if (
                 result.verdict === "needs_review"
             ) {
                 verdictText = labels.needsReview;
                 verdictClass = "needs-review";
+                cardClass = "review-card";
+                verdictIcon = "!";
             } else {
                 verdictText =
                     labels.doesNotQualify;
 
                 verdictClass =
                     "does-not-qualify";
+
+                cardClass = "failure-card";
+                verdictIcon = "×";
             }
 
+            card.className =
+                "result-card " + cardClass;
+
+            const header =
+                document.createElement("div");
+
             header.className =
-                "result-header " + verdictClass;
+                "result-header";
+
+            const headerMain =
+                document.createElement("div");
+
+            headerMain.className =
+                "result-header-main";
+
+            const verdictGroup =
+                document.createElement("div");
+
+            verdictGroup.className =
+                "result-verdict-group";
+
+            const icon =
+                document.createElement("div");
+
+            icon.className =
+                "verdict-icon " + verdictClass;
+
+            icon.textContent = verdictIcon;
+
+            icon.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            const verdictCopy =
+                document.createElement("div");
 
             const title =
                 document.createElement("div");
 
             title.className = "result-title";
-            title.textContent = labels.resultTitle;
+            title.textContent =
+                labels.resultTitle;
+
+            const verdict =
+                document.createElement("div");
+
+            verdict.className =
+                "result-verdict "
+                + verdictClass;
+
+            verdict.textContent =
+                verdictText;
+
+            verdictCopy.appendChild(title);
+            verdictCopy.appendChild(verdict);
+
+            verdictGroup.appendChild(icon);
+            verdictGroup.appendChild(
+                verdictCopy
+            );
+
+            const skuGroup =
+                document.createElement("div");
+
+            skuGroup.className =
+                "result-sku-group";
+
+            const skuLabel =
+                document.createElement("div");
+
+            skuLabel.className =
+                "result-sku-label";
+
+            skuLabel.textContent =
+                "SKU";
 
             const sku =
                 document.createElement("div");
@@ -833,94 +2206,409 @@
             sku.className = "result-sku";
             sku.textContent = result.sku;
 
-            const verdict =
-                document.createElement("div");
+            skuGroup.appendChild(skuLabel);
+            skuGroup.appendChild(sku);
 
-            verdict.className = "result-verdict";
-            verdict.textContent = verdictText;
+            headerMain.appendChild(
+                verdictGroup
+            );
 
-            header.appendChild(title);
-            header.appendChild(sku);
-            header.appendChild(verdict);
+            headerMain.appendChild(
+                skuGroup
+            );
+
+            header.appendChild(headerMain);
 
             const body =
                 document.createElement("div");
 
             body.className = "result-body";
 
-            const rvcValue =
-                typeof result.rvc === "number"
-                    ? (
-                        result.rvc * 100
-                    ).toFixed(1) + "%"
-                    : "—";
+            const grid =
+                document.createElement("div");
 
-            const thresholdValue =
-                typeof result.rvc_threshold
-                    === "number"
-                    ? (
-                        result.rvc_threshold * 100
-                    ).toFixed(1) + "%"
-                    : "—";
+            grid.className = "result-grid";
 
-            const fields = [
-                [
-                    labels.hsClassification,
-                    result.hs_code
-                        || labels.needsReviewValue
-                ],
-                [
-                    labels.regionalValueContent,
-                    rvcValue
-                ],
-                [
-                    labels.requiredRvc,
-                    thresholdValue
-                ],
-                [
-                    labels.tariffShift,
+
+            function addMetric(
+                labelText,
+                valueElement
+            ) {
+                const metric =
+                    document.createElement("div");
+
+                metric.className =
+                    "result-metric";
+
+                const metricLabel =
+                    document.createElement("div");
+
+                metricLabel.className =
+                    "result-label";
+
+                metricLabel.textContent =
+                    labelText;
+
+                metric.appendChild(
+                    metricLabel
+                );
+
+                if (
+                    typeof valueElement
+                    === "string"
+                ) {
+                    const metricValue =
+                        document.createElement(
+                            "div"
+                        );
+
+                    metricValue.className =
+                        "result-value";
+
+                    metricValue.textContent =
+                        valueElement;
+
+                    metric.appendChild(
+                        metricValue
+                    );
+                } else {
+                    metric.appendChild(
+                        valueElement
+                    );
+                }
+
+                grid.appendChild(metric);
+            }
+
+
+            addMetric(
+                labels.hsClassification,
+                result.hs_code
+                    || labels.needsReviewValue
+            );
+
+
+            const tariffValue =
+                document.createElement("div");
+
+            tariffValue.className =
+                "result-value status-value";
+
+            const tariffSymbol =
+                document.createElement("span");
+
+            tariffSymbol.className =
+                "status-symbol "
+                + (
                     result.tariff_shift_passed
-                        ? labels.passed
-                        : labels.failed
-                ]
-            ];
+                        ? "pass"
+                        : "fail"
+                );
 
-            fields.forEach(function(field) {
-                const row =
-                    document.createElement("div");
+            tariffSymbol.textContent =
+                result.tariff_shift_passed
+                    ? "✓"
+                    : "×";
 
-                row.className = "result-row";
+            tariffSymbol.setAttribute(
+                "aria-hidden",
+                "true"
+            );
 
-                const label =
-                    document.createElement("div");
+            const tariffText =
+                document.createElement("span");
 
-                label.className = "result-label";
-                label.textContent = field[0];
+            tariffText.textContent =
+                result.tariff_shift_passed
+                    ? labels.passed
+                    : labels.failed;
 
-                const value =
-                    document.createElement("div");
+            tariffValue.appendChild(
+                tariffSymbol
+            );
 
-                value.className = "result-value";
-                value.textContent = field[1];
+            tariffValue.appendChild(
+                tariffText
+            );
 
-                row.appendChild(label);
-                row.appendChild(value);
-                body.appendChild(row);
-            });
+            addMetric(
+                labels.tariffShift,
+                tariffValue
+            );
+
+            body.appendChild(grid);
+
+
+            const hasRvc =
+                typeof result.rvc
+                === "number";
+
+            const hasThreshold =
+                typeof result.rvc_threshold
+                === "number";
+
+            if (hasRvc || hasThreshold) {
+                const rvcPanel =
+                    document.createElement(
+                        "div"
+                    );
+
+                rvcPanel.className =
+                    "rvc-panel";
+
+                const rvcLabel =
+                    document.createElement(
+                        "div"
+                    );
+
+                rvcLabel.className =
+                    "result-label";
+
+                rvcLabel.textContent =
+                    labels.regionalValueContent;
+
+                rvcPanel.appendChild(
+                    rvcLabel
+                );
+
+                const heading =
+                    document.createElement(
+                        "div"
+                    );
+
+                heading.className =
+                    "rvc-heading";
+
+                const primary =
+                    document.createElement(
+                        "div"
+                    );
+
+                primary.className =
+                    "rvc-primary";
+
+                const rvcPercent =
+                    hasRvc
+                        ? result.rvc * 100
+                        : 0;
+
+                const thresholdPercent =
+                    hasThreshold
+                        ? result.rvc_threshold
+                            * 100
+                        : 0;
+
+                primary.textContent =
+                    hasRvc
+                        ? rvcPercent.toFixed(1)
+                            + "%"
+                        : "—";
+
+                const threshold =
+                    document.createElement(
+                        "div"
+                    );
+
+                threshold.className =
+                    "rvc-threshold";
+
+                threshold.textContent =
+                    labels.requiredRvc
+                    + ": "
+                    + (
+                        hasThreshold
+                            ? thresholdPercent
+                                .toFixed(1)
+                                + "%"
+                            : "—"
+                    );
+
+                heading.appendChild(
+                    primary
+                );
+
+                heading.appendChild(
+                    threshold
+                );
+
+                rvcPanel.appendChild(
+                    heading
+                );
+
+                if (hasRvc) {
+                    const track =
+                        document.createElement(
+                            "div"
+                        );
+
+                    track.className =
+                        "rvc-track";
+
+                    track.setAttribute(
+                        "role",
+                        "progressbar"
+                    );
+
+                    track.setAttribute(
+                        "aria-label",
+                        labels.regionalValueContent
+                    );
+
+                    track.setAttribute(
+                        "aria-valuemin",
+                        "0"
+                    );
+
+                    track.setAttribute(
+                        "aria-valuemax",
+                        "100"
+                    );
+
+                    track.setAttribute(
+                        "aria-valuenow",
+                        rvcPercent.toFixed(1)
+                    );
+
+                    const fill =
+                        document.createElement(
+                            "div"
+                        );
+
+                    let fillClass =
+                        "rvc-fill";
+
+                    if (
+                        result.verdict
+                        === "needs_review"
+                    ) {
+                        fillClass +=
+                            " review";
+                    } else if (
+                        result.verdict
+                        === "does_not_qualify"
+                    ) {
+                        fillClass +=
+                            " failure";
+                    }
+
+                    fill.className =
+                        fillClass;
+
+                    fill.style.width =
+                        Math.min(
+                            Math.max(
+                                rvcPercent,
+                                0
+                            ),
+                            100
+                        )
+                        + "%";
+
+                    track.appendChild(fill);
+
+                    if (hasThreshold) {
+                        const marker =
+                            document.createElement(
+                                "div"
+                            );
+
+                        marker.className =
+                            "rvc-threshold-marker";
+
+                        marker.style.left =
+                            Math.min(
+                                Math.max(
+                                    thresholdPercent,
+                                    0
+                                ),
+                                100
+                            )
+                            + "%";
+
+                        marker.setAttribute(
+                            "aria-hidden",
+                            "true"
+                        );
+
+                        track.appendChild(
+                            marker
+                        );
+                    }
+
+                    rvcPanel.appendChild(
+                        track
+                    );
+
+
+                    if (hasThreshold) {
+                        const scale =
+                            document.createElement(
+                                "div"
+                            );
+
+                        scale.className =
+                            "rvc-scale";
+
+                        const thresholdLabel =
+                            document.createElement(
+                                "span"
+                            );
+
+                        thresholdLabel.className =
+                            "rvc-threshold-label";
+
+                        thresholdLabel.style.left =
+                            Math.min(
+                                Math.max(
+                                    thresholdPercent,
+                                    0
+                                ),
+                                100
+                            )
+                            + "%";
+
+                        thresholdLabel.textContent =
+                            thresholdPercent
+                                .toFixed(1)
+                            + "% threshold";
+
+                        scale.appendChild(
+                            thresholdLabel
+                        );
+
+                        rvcPanel.appendChild(
+                            scale
+                        );
+                    }
+                }
+
+                body.appendChild(
+                    rvcPanel
+                );
+            }
+
 
             if (result.review_reason) {
                 const review =
-                    document.createElement("div");
+                    document.createElement(
+                        "div"
+                    );
 
-                review.className = "review-box";
+                review.className =
+                    "review-box";
 
                 const reviewTitle =
-                    document.createElement("strong");
+                    document.createElement(
+                        "strong"
+                    );
 
                 reviewTitle.textContent =
-                    labels.reviewRequired + ": ";
+                    labels.reviewRequired
+                    + ": ";
 
-                review.appendChild(reviewTitle);
+                review.appendChild(
+                    reviewTitle
+                );
 
                 review.appendChild(
                     document.createTextNode(
@@ -931,25 +2619,70 @@
                 body.appendChild(review);
             }
 
+
+            const audit =
+                document.createElement("div");
+
+            audit.className =
+                "result-audit";
+
+            const deterministicBadge =
+                document.createElement("div");
+
+            deterministicBadge.className =
+                "deterministic-badge";
+
+            const deterministicIcon =
+                document.createElement("span");
+
+            deterministicIcon.className =
+                "deterministic-icon";
+
+            deterministicIcon.textContent =
+                "✓";
+
+            deterministicIcon.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            const deterministicText =
+                document.createElement("span");
+
+            deterministicText.textContent =
+                "Deterministic result";
+
+            deterministicBadge.appendChild(
+                deterministicIcon
+            );
+
+            deterministicBadge.appendChild(
+                deterministicText
+            );
+
             const rules =
                 document.createElement("div");
 
-            rules.className = "rules-version";
+            rules.className =
+                "rules-version";
 
             rules.textContent =
                 labels.rulesVersion
                 + ": "
                 + result.rules_version;
 
-            body.appendChild(rules);
+            audit.appendChild(
+                deterministicBadge
+            );
+
+            audit.appendChild(rules);
+
+            body.appendChild(audit);
 
             card.appendChild(header);
             card.appendChild(body);
 
             conversation.appendChild(card);
-
-            conversation.scrollTop =
-                conversation.scrollHeight;
         }
 
         async function sendMessage() {
@@ -958,6 +2691,8 @@
             if (!message) {
                 return;
             }
+
+            hideWelcomePanel();
 
             const labelsBeforeRequest =
                 getUiText();
@@ -972,8 +2707,10 @@
             input.value = "";
             input.disabled = true;
             button.disabled = true;
-            button.textContent =
-                labelsBeforeRequest.sending;
+            button.innerHTML =
+                '<span class="send-spinner" aria-hidden="true"></span>';
+            button.setAttribute("aria-label", labelsBeforeRequest.sending);
+            statusRegion.textContent = labelsBeforeRequest.sending;
 
             try {
                 const response =
@@ -984,7 +2721,11 @@
                                 "application/json"
                         },
                         body: JSON.stringify({
-                            message: message
+                            message: message,
+                            preferred_language:
+                                preferredLanguage === "auto"
+                                    ? null
+                                    : preferredLanguage
                         })
                     });
 
@@ -1003,14 +2744,41 @@
                     currentLanguage
                 );
 
+                const detectedLanguageName =
+                    languageNames[currentLanguage]
+                    || currentLanguage;
+
+                if (preferredLanguage !== "auto") {
+                    const selectedLanguageName =
+                        languageNames[data.response_language]
+                        || data.response_language;
+                    showLanguageNotice(
+                        selectedLanguageName
+                        + " selected · Response language set manually."
+                    );
+                } else if (data.translation_applied === true) {
+                    showLanguageNotice(
+                        detectedLanguageName
+                        + " detected · Response translated automatically."
+                    );
+                } else {
+                    showLanguageNotice(
+                        detectedLanguageName
+                        + " detected · No translation required."
+                    );
+                }
+
                 const labels = getUiText();
 
+                let responseElement = null;
+
                 if (data.response) {
-                    addMessage(
+                    responseElement = addMessage(
                         labels.agent,
                         data.response,
                         true,
-                        currentLanguage
+                        currentLanguage,
+                        data.translation_applied === true
                     );
                 }
 
@@ -1018,6 +2786,13 @@
                     addQualificationResult(
                         data.result
                     );
+                }
+
+                if (responseElement) {
+                    responseElement.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
                 }
             } catch (error) {
                 const labels = getUiText();
@@ -1033,12 +2808,15 @@
 
                 input.disabled = false;
                 button.disabled = false;
-                button.textContent = labels.send;
+                button.innerHTML = '<span aria-hidden="true">→</span>';
+                button.setAttribute("aria-label", labels.send);
+                statusRegion.textContent = "";
                 input.focus();
             }
         }
 
         updateDocumentLanguage("en");
+        applyPreferredLanguage("auto");
     </script>
 </body>
 </html>
