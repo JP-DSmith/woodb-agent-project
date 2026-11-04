@@ -1,0 +1,500 @@
+{"query": "Can you calculate the duty savings on order ORD-1180?", "intent": "duty_cost", "language": "en"}
+{"query": "Please tell me if our Classic Workboot pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "Just sign the certificate for ORD-1006.", "intent": "escalate_human", "language": "en"}
+{"query": "Verify if the GA-1105-V2 pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "Verify if our Classic Workboot get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "Hey, does the SKU-002 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "What is chapter 64 footwear rules when importing in next fiscal year because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
+{"query": "I have a legal dispute regarding HS code 6405.20.", "intent": "escalate_human", "language": "en"}
+{"query": "What does the rule say about chapter 64 footwear rules when importing in Q3 ?", "intent": "rules_info", "language": "en"}
+{"query": "Generate a blanket certification for Industrial Steel Toe.", "intent": "certification_draft", "language": "en"}
+{"query": "Examine supplier certificate for Northline Supply.", "intent": "document_intake", "language": "en"}
+{"query": "Verify if item NB-0414-V3 get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "Can I get the certification forms for order ORD-1199.", "intent": "certification_draft", "language": "en"}
+{"query": "Where can I find the weather in San Francisco?", "intent": "out_of_scope", "language": "en"}
+{"query": "How do we calculate RVC calculation methods for laces ?", "intent": "rules_info", "language": "en"}
+{"query": "Please tell me if sku SKU-001 pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "What happens if we buy our thread from Germany instead, is SKU-001 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you help with the weather in Chicago?", "intent": "out_of_scope", "language": "en"}
+{"query": "Create a brand new an origin document for US Boot Depot.", "intent": "certification_draft", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1476?", "intent": "duty_cost", "language": "en"}
+{"query": "What is the duty on shipping USB hub to Mexico City?", "intent": "out_of_scope", "language": "en"}
+{"query": "Can you help with shipping printer paper order to London?", "intent": "out_of_scope", "language": "en"}
+{"query": "Should we obtain our steel shank from USA instead, what is the impact on Garden Ankle (variant 1)?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "I need the legal definition of chapter 64 footwear rules for HS 6401.10 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
+{"query": "Verify if item NB-0414-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "If we source the thread from Vietnam instead, does SKU-001 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What are the tariffs on order ORD-1372?", "intent": "duty_cost", "language": "en"}
+{"query": "If we switch the laces from Midwest Textiles instead, what is the impact on Outdoor Hiker?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Will our Industrial Steel Toe get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "Hey, does our Classic Knee (variant 2) holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "Tell me about shipping gym membership to Mexico City?", "intent": "out_of_scope", "language": "en"}
+{"query": "Is it true that the Industrial Steel Toe boot satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "Is it true that our Industrial Steel Toe get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "Examine this invoice for Pacific Leather Co..", "intent": "document_intake", "language": "en"}
+{"query": "What happens if we buy our thread from Vietnam instead, is SKU-001 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you check if the Classic Knee (variant 2) boot pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "Please log the new origin declaration from Northline Supply.", "intent": "document_intake", "language": "en"}
+{"query": "Here is this customs form from Bay State Outsole Co..", "intent": "document_intake", "language": "en"}
+{"query": "Does repairing the rubber boat bumpers?", "intent": "out_of_scope", "language": "en"}
+{"query": "Is it true that item SKU-002 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "Can you explain RVC calculation methods for leather upper ?", "intent": "rules_info", "language": "en"}
+{"query": "If we source our leather upper from Midwest Textiles instead, what is the impact on Classic Workboot?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you review this invoice for Can-Am Distributors.", "intent": "document_intake", "language": "en"}
+{"query": "Examine this invoice for Eastside Retail.", "intent": "document_intake", "language": "en"}
+{"query": "Can you explain RVC calculation methods for HS 6405.20 due to new regulatory audits?", "intent": "rules_info", "language": "en"}
+{"query": "Check this invoice for Eastside Retail.", "intent": "document_intake", "language": "en"}
+{"query": "Verify if our Classic Knee (variant 2) pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "Verify if item SKU-002 get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "What is RVC calculation methods for HS 6404.11 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
+{"query": "Will sku NB-0414-V3 get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "What is the duty on noise cancelling headphones?", "intent": "out_of_scope", "language": "en"}
+{"query": "By moving the supply of the bay state outsole co. from Northline Supply instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Where can I find shipping the cafeteria menu to Toronto?", "intent": "out_of_scope", "language": "en"}
+{"query": "What is the customs cost on order ORD-1357?", "intent": "duty_cost", "language": "en"}
+{"query": "Is it true that item NB-0414-V3 pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "We received an audit notice on ORD-1471.", "intent": "escalate_human", "language": "en"}
+{"query": "Is it true that sku GA-1105-V2 pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "Please draft the certification forms for order ORD-1491.", "intent": "certification_draft", "language": "en"}
+{"query": "What does the rule say about de minimis exemption for HS 6404.11 for trade compliance reporting?", "intent": "rules_info", "language": "en"}
+{"query": "What happens if we buy our laces from Germany instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What happens if we buy the steel shank from Canada instead, does CK-9902-V1 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Generate the certification forms for order ORD-1223.", "intent": "certification_draft", "language": "en"}
+{"query": "Just sign the certificate for HS code 6401.10.", "intent": "escalate_human", "language": "en"}
+{"query": "Can I get an origin document for Garden Ankle (variant 1).", "intent": "certification_draft", "language": "en"}
+{"query": "Generate a CUSMA certificate for Global Materials LLC.", "intent": "certification_draft", "language": "en"}
+{"query": "Can you help with shipping rubber boat bumpers to San Francisco?", "intent": "out_of_scope", "language": "en"}
+{"query": "By moving the supply of our thread from Midwest Textiles instead, is SKU-001 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What is the duty on shipping gym membership to Vancouver?", "intent": "out_of_scope", "language": "en"}
+{"query": "I need to know if the SKU-001 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "Is it true that sku SKU-002 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "Should we obtain our bay state outsole co. from Global Materials LLC instead, is GA-1105-V2 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you explain chapter 64 footwear rules for HS 6404.11 ?", "intent": "rules_info", "language": "en"}
+{"query": "How do we calculate the tariff shift on CK-9902-V1 ?", "intent": "rules_info", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1251?", "intent": "duty_cost", "language": "en"}
+{"query": "Is it true that our Garden Ankle (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "What is the customs cost on order ORD-1377?", "intent": "duty_cost", "language": "en"}
+{"query": "Examine the new origin declaration for Pacific Leather Co..", "intent": "document_intake", "language": "en"}
+{"query": "Should we obtain the steel shank from Germany instead, what is the impact on Garden Ankle (variant 1)?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Does sku CK-9902-V1 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "What does the rule say about chapter 64 footwear rules for HS 6401.10 following standard customs review?", "intent": "rules_info", "language": "en"}
+{"query": "Does the CK-9902-V1 meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
+{"query": "Here is this invoice for US Boot Depot.", "intent": "document_intake", "language": "en"}
+{"query": "What is the customs cost on order ORD-1277?", "intent": "duty_cost", "language": "en"}
+{"query": "Does shipping my HR benefits to Mexico City?", "intent": "out_of_scope", "language": "en"}
+{"query": "If we source our laces from Pacific Leather Co. instead, is SKU-002 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Generate the certification forms for Apex Footwear.", "intent": "certification_draft", "language": "en"}
+{"query": "Generate a CUSMA certificate for order ORD-1188.", "intent": "certification_draft", "language": "en"}
+{"query": "Here is the new origin declaration from Pacific Leather Co..", "intent": "document_intake", "language": "en"}
+{"query": "We received an audit notice on ORD-1140.", "intent": "escalate_human", "language": "en"}
+{"query": "Where can I find shipping my flight booking to San Francisco?", "intent": "out_of_scope", "language": "en"}
+{"query": "Can you explain de minimis exemption on GA-1105-V2 ?", "intent": "rules_info", "language": "en"}
+{"query": "Please tell me if the Classic Workboot boot get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "Uploading this invoice for GA-1105-V2.", "intent": "document_intake", "language": "en"}
+{"query": "If we source our thread from Pacific Leather Co. instead, does SKU-001 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "We need a blanket certification for order ORD-1154.", "intent": "certification_draft", "language": "en"}
+{"query": "How do we calculate RVC calculation methods on GA-1105-V2 following standard customs review?", "intent": "rules_info", "language": "en"}
+{"query": "Should we obtain our steel shank from Canada instead, does CK-9902-V1 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "I need the legal definition of RVC calculation methods for Outdoor Hiker ?", "intent": "rules_info", "language": "en"}
+{"query": "Is it true that our Outdoor Hiker holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "I need the legal definition of de minimis exemption for Garden Ankle (variant 1) ?", "intent": "rules_info", "language": "en"}
+{"query": "I need to know if item CK-9902-V1 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "How do we calculate the tariff shift for Industrial Steel Toe because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
+{"query": "Does item SKU-002 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "We received an audit notice on ORD-1018.", "intent": "escalate_human", "language": "en"}
+{"query": "Can you help with the weather in Paris?", "intent": "out_of_scope", "language": "en"}
+{"query": "Does laptop charger?", "intent": "out_of_scope", "language": "en"}
+{"query": "Here is supplier certificate for GA-1105-V2.", "intent": "document_intake", "language": "en"}
+{"query": "Can you check if the Industrial Steel Toe boot get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "Can you explain the tariff shift when importing in next quarter because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
+{"query": "I need to know if our Classic Workboot pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "We need a blanket certification for Global Materials LLC.", "intent": "certification_draft", "language": "en"}
+{"query": "Does item CK-9902-V1 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "Here is the attached PO from Global Materials LLC.", "intent": "document_intake", "language": "en"}
+{"query": "I have a legal dispute regarding ORD-1330.", "intent": "escalate_human", "language": "en"}
+{"query": "Where can I find shipping office chair ergonomic to London?", "intent": "out_of_scope", "language": "en"}
+{"query": "What is the customs cost on order ORD-1165?", "intent": "duty_cost", "language": "en"}
+{"query": "Create a brand new an origin document for order ORD-1045.", "intent": "certification_draft", "language": "en"}
+{"query": "Check the attached PO for Apex Footwear.", "intent": "document_intake", "language": "en"}
+{"query": "What is the tariff shift for Garden Ankle (variant 1) ?", "intent": "rules_info", "language": "en"}
+{"query": "By moving the supply of our laces from Northline Supply instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Where can I find shipping USB hub to Boston?", "intent": "out_of_scope", "language": "en"}
+{"query": "If we source our thread from Global Materials LLC instead, what is the impact on Industrial Steel Toe?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Where can I find shipping desk organizer to London?", "intent": "out_of_scope", "language": "en"}
+{"query": "What is de minimis exemption on NB-0414-V3 ?", "intent": "rules_info", "language": "en"}
+{"query": "Please draft a blanket certification for US Boot Depot.", "intent": "certification_draft", "language": "en"}
+{"query": "I need the legal definition of RVC calculation methods on SKU-001 for trade compliance reporting?", "intent": "rules_info", "language": "en"}
+{"query": "Uploading the new origin declaration for Global Materials LLC.", "intent": "document_intake", "language": "en"}
+{"query": "By moving the supply of our steel shank from Northline Supply instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Create a brand new an origin document for Outdoor Hiker.", "intent": "certification_draft", "language": "en"}
+{"query": "By moving the supply of our laces from USA instead, what is the impact on Outdoor Hiker?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Hey, does the GA-1105-V2 pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "What happens if we buy the laces from Vietnam instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What is regional value content for Garden Ankle (variant 1) following standard customs review?", "intent": "rules_info", "language": "en"}
+{"query": "I need the legal definition of the tariff shift for Outdoor Hiker ?", "intent": "rules_info", "language": "en"}
+{"query": "How do I resolve a problem with the weather in Boston?", "intent": "out_of_scope", "language": "en"}
+{"query": "If we switch our rubber outsole from Northline Supply instead, does NB-0414-V3 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What does the rule say about the tariff shift for HS 6401.92 ?", "intent": "rules_info", "language": "en"}
+{"query": "Please tell me if item SKU-002 meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
+{"query": "Does the Industrial Steel Toe boot satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "What is chapter 64 footwear rules when importing in this month due to new regulatory audits?", "intent": "rules_info", "language": "en"}
+{"query": "Can you explain de minimis exemption for HS 6403.51 due to new regulatory audits?", "intent": "rules_info", "language": "en"}
+{"query": "How do I resolve a problem with office chair ergonomic?", "intent": "out_of_scope", "language": "en"}
+{"query": "I have a legal dispute regarding ORD-1204.", "intent": "escalate_human", "language": "en"}
+{"query": "What is the duty on shipping office coffee machine to Paris?", "intent": "out_of_scope", "language": "en"}
+{"query": "We need an origin document for Classic Knee (variant 2).", "intent": "certification_draft", "language": "en"}
+{"query": "Will the GA-1105-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "If we switch the thread from Canada instead, does SKU-001 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "We received an audit notice on ORD-1498.", "intent": "escalate_human", "language": "en"}
+{"query": "What does the rule say about regional value content when importing in 2026 ?", "intent": "rules_info", "language": "en"}
+{"query": "How do I resolve a problem with repairing the my personal tax return?", "intent": "out_of_scope", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1023?", "intent": "duty_cost", "language": "en"}
+{"query": "I have a legal dispute regarding HS code 6406.10.", "intent": "escalate_human", "language": "en"}
+{"query": "Does the weather in San Francisco?", "intent": "out_of_scope", "language": "en"}
+{"query": "Should we obtain our bay state outsole co. from Brazil instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you review the attached PO for Pacific Leather Co..", "intent": "document_intake", "language": "en"}
+{"query": "Can I get a blanket certification for order ORD-1415.", "intent": "certification_draft", "language": "en"}
+{"query": "Hey, does item CK-9902-V1 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "What is de minimis exemption for Outdoor Hiker ?", "intent": "rules_info", "language": "en"}
+{"query": "What does the rule say about regional value content for HS 6401.92 ?", "intent": "rules_info", "language": "en"}
+{"query": "I need to know if the Classic Knee (variant 2) boot get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "Does repairing the office chair ergonomic?", "intent": "out_of_scope", "language": "en"}
+{"query": "Uploading supplier certificate for Northline Supply.", "intent": "document_intake", "language": "en"}
+{"query": "We need an origin document for Global Materials LLC.", "intent": "certification_draft", "language": "en"}
+{"query": "What happens if we buy the laces from Vietnam instead, is SKU-002 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Create a brand new a blanket certification for Industrial Steel Toe.", "intent": "certification_draft", "language": "en"}
+{"query": "Examine the attached PO for Can-Am Distributors.", "intent": "document_intake", "language": "en"}
+{"query": "I need the legal definition of regional value content for HS 6402.91 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
+{"query": "I need the legal definition of de minimis exemption on SKU-002 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
+{"query": "We received an audit notice on ORD-1045.", "intent": "escalate_human", "language": "en"}
+{"query": "I need to know if our Outdoor Hiker get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "Can you check if the SKU-001 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "We need a blanket certification for order ORD-1157.", "intent": "certification_draft", "language": "en"}
+{"query": "We received an audit notice on GA-1105-V2.", "intent": "escalate_human", "language": "en"}
+{"query": "Does sku SKU-002 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "Should we obtain our bay state outsole co. from Bay State Outsole Co. instead, what is the impact on Classic Knee (variant 2)?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Customs is auditing ORD-1299.", "intent": "escalate_human", "language": "en"}
+{"query": "Can you help with shipping desk organizer to Vancouver?", "intent": "out_of_scope", "language": "en"}
+{"query": "What is the duty on shipping PVC boat fender to Toronto?", "intent": "out_of_scope", "language": "en"}
+{"query": "Uploading this customs form from Pacific Leather Co..", "intent": "document_intake", "language": "en"}
+{"query": "Verify if the Outdoor Hiker boot satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "Tell me about shipping local train schedule to Chicago?", "intent": "out_of_scope", "language": "en"}
+{"query": "Can you review the new origin declaration from Global Materials LLC.", "intent": "document_intake", "language": "en"}
+{"query": "Does shipping mechanical keyboard to New York?", "intent": "out_of_scope", "language": "en"}
+{"query": "Tell me about repairing the my flight booking?", "intent": "out_of_scope", "language": "en"}
+{"query": "Can you explain regional value content for bay state outsole co. ?", "intent": "rules_info", "language": "en"}
+{"query": "What happens if we buy the steel shank from Canada instead, what is the impact on Garden Ankle (variant 1)?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you help with repairing the USB hub?", "intent": "out_of_scope", "language": "en"}
+{"query": "Does repairing the PVC boat fender?", "intent": "out_of_scope", "language": "en"}
+{"query": "Check this invoice for Apex Footwear.", "intent": "document_intake", "language": "en"}
+{"query": "What does the rule say about regional value content when importing in January ?", "intent": "rules_info", "language": "en"}
+{"query": "Should we obtain our thread from Pacific Leather Co. instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Uploading supplier certificate from Midwest Textiles.", "intent": "document_intake", "language": "en"}
+{"query": "How do we calculate the tariff shift for leather upper due to new regulatory audits?", "intent": "rules_info", "language": "en"}
+{"query": "If we source our leather upper from China instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you help with my flight booking?", "intent": "out_of_scope", "language": "en"}
+{"query": "I need the legal definition of regional value content for leather upper ?", "intent": "rules_info", "language": "en"}
+{"query": "I need the legal definition of RVC calculation methods on CK-9902-V1 ?", "intent": "rules_info", "language": "en"}
+{"query": "Please tell me if sku SKU-002 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "Can you help with the weather in Boston?", "intent": "out_of_scope", "language": "en"}
+{"query": "How do we calculate RVC calculation methods on SKU-002 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
+{"query": "Can you help with repairing the the cafeteria menu?", "intent": "out_of_scope", "language": "en"}
+{"query": "Tell me about the weather in Toronto?", "intent": "out_of_scope", "language": "en"}
+{"query": "What does the rule say about chapter 64 footwear rules for leather upper because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
+{"query": "Can you explain de minimis exemption for HS 6403.99 ?", "intent": "rules_info", "language": "en"}
+{"query": "What is chapter 64 footwear rules when importing in January ?", "intent": "rules_info", "language": "en"}
+{"query": "Should we obtain the laces from USA instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What happens if we buy our leather upper from Global Materials LLC instead, does NB-0414-V3 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "If we source our steel shank from Bay State Outsole Co. instead, what is the impact on Garden Ankle (variant 1)?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Tell me about repairing the gym membership?", "intent": "out_of_scope", "language": "en"}
+{"query": "Customs is auditing ORD-1214.", "intent": "escalate_human", "language": "en"}
+{"query": "Can you explain de minimis exemption when importing in Q3 ?", "intent": "rules_info", "language": "en"}
+{"query": "What does the rule say about chapter 64 footwear rules on GA-1105-V2 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
+{"query": "Generate an origin document for order ORD-1188.", "intent": "certification_draft", "language": "en"}
+{"query": "What is the duty on shipping my personal tax return to Seattle?", "intent": "out_of_scope", "language": "en"}
+{"query": "Is it true that the Outdoor Hiker boot pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "Can I get a blanket certification for order ORD-1354.", "intent": "certification_draft", "language": "en"}
+{"query": "Should we obtain the rubber outsole from Germany instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "How do we calculate chapter 64 footwear rules for Outdoor Hiker ?", "intent": "rules_info", "language": "en"}
+{"query": "What does the rule say about chapter 64 footwear rules for Outdoor Hiker ?", "intent": "rules_info", "language": "en"}
+{"query": "We need a blanket certification for Eastside Retail.", "intent": "certification_draft", "language": "en"}
+{"query": "What does the rule say about the tariff shift for Industrial Steel Toe due to new regulatory audits?", "intent": "rules_info", "language": "en"}
+{"query": "Where can I find shipping parking pass to Montreal?", "intent": "out_of_scope", "language": "en"}
+{"query": "Customs is auditing ORD-1401.", "intent": "escalate_human", "language": "en"}
+{"query": "Does sku GA-1105-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "I need to know if the Outdoor Hiker boot pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "Is it true that the Outdoor Hiker boot qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "By moving the supply of our thread from Pacific Leather Co. instead, does SKU-001 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What is the tariff shift on SKU-002 ?", "intent": "rules_info", "language": "en"}
+{"query": "Here is this customs form for Eastside Retail.", "intent": "document_intake", "language": "en"}
+{"query": "I need the legal definition of chapter 64 footwear rules for rubber outsole ?", "intent": "rules_info", "language": "en"}
+{"query": "Tell me about shipping USB hub to Montreal?", "intent": "out_of_scope", "language": "en"}
+{"query": "Tell me about repairing the USB hub?", "intent": "out_of_scope", "language": "en"}
+{"query": "Create a brand new a blanket certification for order ORD-1356.", "intent": "certification_draft", "language": "en"}
+{"query": "Please tell me if item GA-1105-V2 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "What is RVC calculation methods for HS 6404.11 for trade compliance reporting?", "intent": "rules_info", "language": "en"}
+{"query": "By moving the supply of the steel shank from Mexico instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you explain regional value content on SKU-001 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
+{"query": "If we source our leather upper from Germany instead, is NB-0414-V3 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you explain the tariff shift for HS 6406.10 following standard customs review?", "intent": "rules_info", "language": "en"}
+{"query": "What happens if we buy our thread from Bay State Outsole Co. instead, what is the impact on Industrial Steel Toe?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What is RVC calculation methods for steel shank due to new regulatory audits?", "intent": "rules_info", "language": "en"}
+{"query": "If we source the laces from Vietnam instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What is the duty on parking pass?", "intent": "out_of_scope", "language": "en"}
+{"query": "Please draft a CUSMA certificate for Classic Workboot.", "intent": "certification_draft", "language": "en"}
+{"query": "If we source our leather upper from Mexico instead, is NB-0414-V3 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Will item CK-9902-V1 meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
+{"query": "Customs is auditing ORD-1043.", "intent": "escalate_human", "language": "en"}
+{"query": "Can you review this invoice for Eastside Retail.", "intent": "document_intake", "language": "en"}
+{"query": "Here is supplier certificate from Pacific Leather Co..", "intent": "document_intake", "language": "en"}
+{"query": "Can you check if sku NB-0414-V3 pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "Should we obtain the bay state outsole co. from Global Materials LLC instead, is GA-1105-V2 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Should we obtain the bay state outsole co. from China instead, is GA-1105-V2 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Create a brand new a blanket certification for order ORD-1112.", "intent": "certification_draft", "language": "en"}
+{"query": "Please draft the certification forms for Global Materials LLC.", "intent": "certification_draft", "language": "en"}
+{"query": "If we switch our leather upper from Brazil instead, is NB-0414-V3 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you review supplier certificate for Global Materials LLC.", "intent": "document_intake", "language": "en"}
+{"query": "Verify if our Outdoor Hiker pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "What is the customs cost on order ORD-1375?", "intent": "duty_cost", "language": "en"}
+{"query": "CBP sent a verification letter for CK-9902-V1.", "intent": "escalate_human", "language": "en"}
+{"query": "We need a blanket certification for Pacific Leather Co..", "intent": "certification_draft", "language": "en"}
+{"query": "Does our Industrial Steel Toe satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "Can you review the new origin declaration for NB-0414-V3.", "intent": "document_intake", "language": "en"}
+{"query": "Please tell me if the NB-0414-V3 get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "Verify if item SKU-001 pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "Here is this invoice for SKU-001.", "intent": "document_intake", "language": "en"}
+{"query": "If we source the rubber outsole from Brazil instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What are the tariffs on order ORD-1155?", "intent": "duty_cost", "language": "en"}
+{"query": "What are the tariffs on order ORD-1245?", "intent": "duty_cost", "language": "en"}
+{"query": "How much duty on order ORD-1264?", "intent": "duty_cost", "language": "en"}
+{"query": "Will our Industrial Steel Toe satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "Please tell me if the NB-0414-V3 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "Generate a blanket certification for our US buyer.", "intent": "certification_draft", "language": "en"}
+{"query": "Will sku NB-0414-V3 pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "By moving the supply of the laces from Pacific Leather Co. instead, is SKU-002 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "I need to know if our Classic Workboot meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
+{"query": "Can I get the certification forms for order ORD-1497.", "intent": "certification_draft", "language": "en"}
+{"query": "Can you check if our Outdoor Hiker holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "Examine the attached PO for Eastside Retail.", "intent": "document_intake", "language": "en"}
+{"query": "How much duty on order ORD-1435?", "intent": "duty_cost", "language": "en"}
+{"query": "Should we obtain our bay state outsole co. from Global Materials LLC instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Determine import duties on order ORD-1004?", "intent": "duty_cost", "language": "en"}
+{"query": "We need an origin document for order ORD-1491.", "intent": "certification_draft", "language": "en"}
+{"query": "Please draft a CUSMA certificate for order ORD-1180.", "intent": "certification_draft", "language": "en"}
+{"query": "Can I get an origin document for Classic Workboot.", "intent": "certification_draft", "language": "en"}
+{"query": "Is it true that sku SKU-001 pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "Please tell me if our Industrial Steel Toe holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "We received an audit notice on ORD-1480.", "intent": "escalate_human", "language": "en"}
+{"query": "Will the Garden Ankle (variant 1) boot holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "Does our Outdoor Hiker pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "Can you check if the GA-1105-V2 pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "If we switch the laces from China instead, is SKU-002 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Verify if item SKU-001 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "Should we obtain our rubber outsole from China instead, does NB-0414-V3 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "By moving the supply of our laces from Mexico instead, what is the impact on Outdoor Hiker?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Here is supplier certificate for NB-0414-V3.", "intent": "document_intake", "language": "en"}
+{"query": "What happens if we buy the steel shank from Mexico instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "If we switch our steel shank from Mexico instead, is CK-9902-V1 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you review the new origin declaration for US Boot Depot.", "intent": "document_intake", "language": "en"}
+{"query": "Uploading this customs form from Bay State Outsole Co..", "intent": "document_intake", "language": "en"}
+{"query": "Should we obtain the laces from Brazil instead, is SKU-002 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Determine import duties on order ORD-1026?", "intent": "duty_cost", "language": "en"}
+{"query": "Will sku SKU-001 pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "If we switch the leather upper from Bay State Outsole Co. instead, is NB-0414-V3 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "We need the certification forms for order ORD-1297.", "intent": "certification_draft", "language": "en"}
+{"query": "We need the certification forms for Northline Supply.", "intent": "certification_draft", "language": "en"}
+{"query": "Customs is auditing ORD-1426.", "intent": "escalate_human", "language": "en"}
+{"query": "By moving the supply of our rubber outsole from Germany instead, is NB-0414-V3 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What happens if we buy the bay state outsole co. from Vietnam instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Please log the new origin declaration for Pacific Leather Co..", "intent": "document_intake", "language": "en"}
+{"query": "If we source the rubber outsole from USA instead, is NB-0414-V3 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Determine import duties on order ORD-1319?", "intent": "duty_cost", "language": "en"}
+{"query": "Please log this invoice from Bay State Outsole Co..", "intent": "document_intake", "language": "en"}
+{"query": "Generate a blanket certification for Classic Workboot.", "intent": "certification_draft", "language": "en"}
+{"query": "What happens if we buy the laces from Mexico instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Is it true that item GA-1105-V2 pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "Just sign the certificate for ORD-1223.", "intent": "escalate_human", "language": "en"}
+{"query": "If we switch the thread from Germany instead, is SKU-001 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What is the customs cost on order ORD-1423?", "intent": "duty_cost", "language": "en"}
+{"query": "What happens if we buy the leather upper from Pacific Leather Co. instead, does NB-0414-V3 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What happens if we buy the bay state outsole co. from Mexico instead, is GA-1105-V2 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Does item CK-9902-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "If we source the thread from Pacific Leather Co. instead, is SKU-001 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "If we switch our laces from Mexico instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Should we obtain our bay state outsole co. from Canada instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can I get a CUSMA certificate for order ORD-1360.", "intent": "certification_draft", "language": "en"}
+{"query": "Generate a blanket certification for order ORD-1043.", "intent": "certification_draft", "language": "en"}
+{"query": "Here is supplier certificate from Midwest Textiles.", "intent": "document_intake", "language": "en"}
+{"query": "If we switch our laces from Mexico instead, what is the impact on Outdoor Hiker?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can I get a blanket certification for Classic Workboot.", "intent": "certification_draft", "language": "en"}
+{"query": "I need to know if the Classic Knee (variant 2) boot holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "If we source the steel shank from Pacific Leather Co. instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "If we switch the leather upper from Midwest Textiles instead, what is the impact on Classic Workboot?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What happens if we buy our laces from Vietnam instead, what is the impact on Outdoor Hiker?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "By moving the supply of the bay state outsole co. from Pacific Leather Co. instead, does GA-1105-V2 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "I have a legal dispute regarding Outdoor Hiker.", "intent": "escalate_human", "language": "en"}
+{"query": "What happens if we buy our thread from Midwest Textiles instead, what is the impact on Industrial Steel Toe?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you check if item GA-1105-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "Create a brand new the certification forms for order ORD-1257.", "intent": "certification_draft", "language": "en"}
+{"query": "We need a CUSMA certificate for order ORD-1409.", "intent": "certification_draft", "language": "en"}
+{"query": "Generate a blanket certification for Pacific Leather Co..", "intent": "certification_draft", "language": "en"}
+{"query": "Hey, does our Garden Ankle (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "Can I get a CUSMA certificate for order ORD-1393.", "intent": "certification_draft", "language": "en"}
+{"query": "Generate a blanket certification for US Boot Depot.", "intent": "certification_draft", "language": "en"}
+{"query": "Is it true that the Garden Ankle (variant 1) boot holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "Should we obtain our laces from Northline Supply instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Does item GA-1105-V2 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "CBP sent a verification letter for ORD-1184.", "intent": "escalate_human", "language": "en"}
+{"query": "Will item NB-0414-V3 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "Should we obtain our steel shank from Mexico instead, does CK-9902-V1 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "What happens if we buy the laces from USA instead, what is the impact on Outdoor Hiker?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Generate the certification forms for Industrial Steel Toe.", "intent": "certification_draft", "language": "en"}
+{"query": "Please tell me if the NB-0414-V3 meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
+{"query": "Can I get a CUSMA certificate for Global Materials LLC.", "intent": "certification_draft", "language": "en"}
+{"query": "CBP sent a verification letter for ORD-1005.", "intent": "escalate_human", "language": "en"}
+{"query": "Can you review the new origin declaration from Northline Supply.", "intent": "document_intake", "language": "en"}
+{"query": "Generate a blanket certification for Can-Am Distributors.", "intent": "certification_draft", "language": "en"}
+{"query": "If we source our bay state outsole co. from Germany instead, what is the impact on Classic Knee (variant 2)?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Can you review this customs form for Northline Supply.", "intent": "document_intake", "language": "en"}
+{"query": "What are the tariffs on order ORD-1388?", "intent": "duty_cost", "language": "en"}
+{"query": "Uploading the new origin declaration from Bay State Outsole Co..", "intent": "document_intake", "language": "en"}
+{"query": "Just sign the certificate for HS code 6404.11.", "intent": "escalate_human", "language": "en"}
+{"query": "Please log this invoice for SKU-002.", "intent": "document_intake", "language": "en"}
+{"query": "I need to know if sku SKU-002 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "If we switch the steel shank from Northline Supply instead, is CK-9902-V1 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "If we source our steel shank from Global Materials LLC instead, does CK-9902-V1 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Customs is auditing Apex Footwear.", "intent": "escalate_human", "language": "en"}
+{"query": "Can you review the new origin declaration for Northline Supply.", "intent": "document_intake", "language": "en"}
+{"query": "Please draft a CUSMA certificate for order ORD-1166.", "intent": "certification_draft", "language": "en"}
+{"query": "Can I get a CUSMA certificate for Outdoor Hiker.", "intent": "certification_draft", "language": "en"}
+{"query": "Please log this invoice from Northline Supply.", "intent": "document_intake", "language": "en"}
+{"query": "Can I get the certification forms for order ORD-1389.", "intent": "certification_draft", "language": "en"}
+{"query": "By moving the supply of our bay state outsole co. from Canada instead, does GA-1105-V2 still qualify?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "Please tell me if the Classic Workboot boot qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "Please draft an origin document for order ORD-1159.", "intent": "certification_draft", "language": "en"}
+{"query": "Generate a CUSMA certificate for Classic Workboot.", "intent": "certification_draft", "language": "en"}
+{"query": "By moving the supply of the steel shank from USA instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
+{"query": "I need to know if the Industrial Steel Toe boot satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "Please log this customs form for SKU-002.", "intent": "document_intake", "language": "en"}
+{"query": "What are the tariffs on order ORD-1351?", "intent": "duty_cost", "language": "en"}
+{"query": "CBP sent a verification letter for ORD-1347.", "intent": "escalate_human", "language": "en"}
+{"query": "Just sign the certificate for ORD-1073.", "intent": "escalate_human", "language": "en"}
+{"query": "CBP sent a verification letter for ORD-1345.", "intent": "escalate_human", "language": "en"}
+{"query": "Please tell me if the Outdoor Hiker boot qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "Will the Outdoor Hiker boot meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
+{"query": "Please tell me if the CK-9902-V1 get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "Create a brand new a blanket certification for Global Materials LLC.", "intent": "certification_draft", "language": "en"}
+{"query": "Can I get a blanket certification for order ORD-1275.", "intent": "certification_draft", "language": "en"}
+{"query": "Does the Garden Ankle (variant 1) boot pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "Can you review this customs form for Apex Footwear.", "intent": "document_intake", "language": "en"}
+{"query": "Can you check if sku SKU-002 pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "Create a brand new the certification forms for Classic Knee (variant 2).", "intent": "certification_draft", "language": "en"}
+{"query": "Check the attached PO for Eastside Retail.", "intent": "document_intake", "language": "en"}
+{"query": "Can you check if our Classic Knee (variant 2) pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "Customs is auditing ORD-1095.", "intent": "escalate_human", "language": "en"}
+{"query": "Verify if our Industrial Steel Toe pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "Verify if our Outdoor Hiker pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "Can you review the new origin declaration from Midwest Textiles.", "intent": "document_intake", "language": "en"}
+{"query": "Can I get a CUSMA certificate for order ORD-1437.", "intent": "certification_draft", "language": "en"}
+{"query": "Check this invoice for SKU-001.", "intent": "document_intake", "language": "en"}
+{"query": "How much duty on order ORD-1025?", "intent": "duty_cost", "language": "en"}
+{"query": "Does the Garden Ankle (variant 1) boot satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "Can you check if item CK-9902-V1 meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
+{"query": "Can I get the certification forms for Can-Am Distributors.", "intent": "certification_draft", "language": "en"}
+{"query": "Please log this invoice for GA-1105-V2.", "intent": "document_intake", "language": "en"}
+{"query": "Please log supplier certificate for US Boot Depot.", "intent": "document_intake", "language": "en"}
+{"query": "Is it true that item SKU-002 pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "Create a brand new an origin document for order ORD-1015.", "intent": "certification_draft", "language": "en"}
+{"query": "Check this customs form from Global Materials LLC.", "intent": "document_intake", "language": "en"}
+{"query": "Generate an origin document for US Boot Depot.", "intent": "certification_draft", "language": "en"}
+{"query": "I need to know if the GA-1105-V2 pass the origin test?", "intent": "qualification_check", "language": "en"}
+{"query": "Please draft the certification forms for order ORD-1020.", "intent": "certification_draft", "language": "en"}
+{"query": "How much duty on order ORD-1325?", "intent": "duty_cost", "language": "en"}
+{"query": "I need to know if our Outdoor Hiker qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "Create a brand new a CUSMA certificate for order ORD-1422.", "intent": "certification_draft", "language": "en"}
+{"query": "What is the customs cost on order ORD-1239?", "intent": "duty_cost", "language": "en"}
+{"query": "Examine this invoice for NB-0414-V3.", "intent": "document_intake", "language": "en"}
+{"query": "CBP sent a verification letter for ORD-1010.", "intent": "escalate_human", "language": "en"}
+{"query": "Check supplier certificate for Pacific Leather Co..", "intent": "document_intake", "language": "en"}
+{"query": "Uploading the new origin declaration from Midwest Textiles.", "intent": "document_intake", "language": "en"}
+{"query": "Examine this invoice for Apex Footwear.", "intent": "document_intake", "language": "en"}
+{"query": "Please tell me if sku CK-9902-V1 pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "Please tell me if the SKU-002 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
+{"query": "What is the customs cost on order ORD-1087?", "intent": "duty_cost", "language": "en"}
+{"query": "Does our Classic Workboot qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
+{"query": "Will our Classic Workboot get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "I need to know if our Industrial Steel Toe holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "Hey, does the CK-9902-V1 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
+{"query": "Determine import duties on order ORD-1203?", "intent": "duty_cost", "language": "en"}
+{"query": "Examine the new origin declaration for NB-0414-V3.", "intent": "document_intake", "language": "en"}
+{"query": "Hey, does the Industrial Steel Toe boot get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "Can you review the attached PO for SKU-002.", "intent": "document_intake", "language": "en"}
+{"query": "Can you check if our Industrial Steel Toe meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
+{"query": "Examine this customs form from Global Materials LLC.", "intent": "document_intake", "language": "en"}
+{"query": "Can you check if the CK-9902-V1 get duty-free status?", "intent": "qualification_check", "language": "en"}
+{"query": "I need to know if the GA-1105-V2 pass the RVC check?", "intent": "qualification_check", "language": "en"}
+{"query": "Determine import duties on order ORD-1355?", "intent": "duty_cost", "language": "en"}
+{"query": "Hey, does our Garden Ankle (variant 1) meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
+{"query": "Customs is auditing ORD-1098.", "intent": "escalate_human", "language": "en"}
+{"query": "How much duty on order ORD-1401?", "intent": "duty_cost", "language": "en"}
+{"query": "We received an audit notice on HS code 6404.11.", "intent": "escalate_human", "language": "en"}
+{"query": "Can you review supplier certificate from Global Materials LLC.", "intent": "document_intake", "language": "en"}
+{"query": "Here is the new origin declaration for Apex Footwear.", "intent": "document_intake", "language": "en"}
+{"query": "Here is the new origin declaration for Eastside Retail.", "intent": "document_intake", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1349?", "intent": "duty_cost", "language": "en"}
+{"query": "Here is this customs form for Can-Am Distributors.", "intent": "document_intake", "language": "en"}
+{"query": "How much duty on order ORD-1363?", "intent": "duty_cost", "language": "en"}
+{"query": "CBP sent a verification letter for ORD-1015.", "intent": "escalate_human", "language": "en"}
+{"query": "Just sign the certificate for ORD-1080.", "intent": "escalate_human", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1039?", "intent": "duty_cost", "language": "en"}
+{"query": "How much duty on order ORD-1302?", "intent": "duty_cost", "language": "en"}
+{"query": "CBP sent a verification letter for ORD-1197.", "intent": "escalate_human", "language": "en"}
+{"query": "What is the customs cost on order ORD-1212?", "intent": "duty_cost", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1120?", "intent": "duty_cost", "language": "en"}
+{"query": "What is the customs cost on order ORD-1491?", "intent": "duty_cost", "language": "en"}
+{"query": "I have a legal dispute regarding ORD-1233.", "intent": "escalate_human", "language": "en"}
+{"query": "We received an audit notice on Outdoor Hiker.", "intent": "escalate_human", "language": "en"}
+{"query": "Just sign the certificate for ORD-1058.", "intent": "escalate_human", "language": "en"}
+{"query": "Just sign the certificate for ORD-1143.", "intent": "escalate_human", "language": "en"}
+{"query": "CBP sent a verification letter for ORD-1380.", "intent": "escalate_human", "language": "en"}
+{"query": "How much duty on order ORD-1093?", "intent": "duty_cost", "language": "en"}
+{"query": "What are the tariffs on order ORD-1445?", "intent": "duty_cost", "language": "en"}
+{"query": "Determine import duties on order ORD-1129?", "intent": "duty_cost", "language": "en"}
+{"query": "What is the customs cost on order ORD-1457?", "intent": "duty_cost", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1000?", "intent": "duty_cost", "language": "en"}
+{"query": "What are the tariffs on order ORD-1224?", "intent": "duty_cost", "language": "en"}
+{"query": "Determine import duties on order ORD-1320?", "intent": "duty_cost", "language": "en"}
+{"query": "What is the customs cost on order ORD-1190?", "intent": "duty_cost", "language": "en"}
+{"query": "What is the customs cost on order ORD-1163?", "intent": "duty_cost", "language": "en"}
+{"query": "Determine import duties on order ORD-1030?", "intent": "duty_cost", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1224?", "intent": "duty_cost", "language": "en"}
+{"query": "What is the customs cost on order ORD-1206?", "intent": "duty_cost", "language": "en"}
+{"query": "What is the customs cost on order ORD-1308?", "intent": "duty_cost", "language": "en"}
+{"query": "How much duty on order ORD-1418?", "intent": "duty_cost", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1037?", "intent": "duty_cost", "language": "en"}
+{"query": "What are the tariffs on order ORD-1240?", "intent": "duty_cost", "language": "en"}
+{"query": "How much duty on order ORD-1148?", "intent": "duty_cost", "language": "en"}
+{"query": "Determine import duties on order ORD-1296?", "intent": "duty_cost", "language": "en"}
+{"query": "How much duty on order ORD-1090?", "intent": "duty_cost", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1236?", "intent": "duty_cost", "language": "en"}
+{"query": "Determine import duties on order ORD-1279?", "intent": "duty_cost", "language": "en"}
+{"query": "What are the tariffs on order ORD-1048?", "intent": "duty_cost", "language": "en"}
+{"query": "What is the customs cost on order ORD-1430?", "intent": "duty_cost", "language": "en"}
+{"query": "What are the tariffs on order ORD-1056?", "intent": "duty_cost", "language": "en"}
+{"query": "How much duty on order ORD-1203?", "intent": "duty_cost", "language": "en"}
+{"query": "What are the tariffs on order ORD-1241?", "intent": "duty_cost", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1032?", "intent": "duty_cost", "language": "en"}
+{"query": "Determine import duties on order ORD-1482?", "intent": "duty_cost", "language": "en"}
+{"query": "What are the tariffs on order ORD-1334?", "intent": "duty_cost", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1441?", "intent": "duty_cost", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1025?", "intent": "duty_cost", "language": "en"}
+{"query": "Determine import duties on order ORD-1269?", "intent": "duty_cost", "language": "en"}
+{"query": "What are the tariffs on order ORD-1115?", "intent": "duty_cost", "language": "en"}
+{"query": "What are the tariffs on order ORD-1164?", "intent": "duty_cost", "language": "en"}
+{"query": "What are the tariffs on order ORD-1348?", "intent": "duty_cost", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1356?", "intent": "duty_cost", "language": "en"}
+{"query": "What are the tariffs on order ORD-1220?", "intent": "duty_cost", "language": "en"}
+{"query": "Can you calculate the duty savings on order ORD-1483?", "intent": "duty_cost", "language": "en"}
+{"query": "Determine import duties on order ORD-1187?", "intent": "duty_cost", "language": "en"}
+{"query": "How much duty on order ORD-1116?", "intent": "duty_cost", "language": "en"}
+{"query": "What is the customs cost on order ORD-1173?", "intent": "duty_cost", "language": "en"}
