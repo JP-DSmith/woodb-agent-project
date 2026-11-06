@@ -350,3 +350,17 @@ def test_cost_fishing_answers_do_not_get_through_tier_c(answer):
     r = review("Is the material cost of NB-0412 under 30 dollars?", answer, trace, "C")
     assert "27.05" not in r.answer
     assert r.decision in ("fix", "hand_to_person")
+
+
+def test_region_language_codes_are_accepted():
+    q = "Est-ce que la botte NB-0412 est admissible pour l'ACEUM?"
+    wrong = review(q, "Based on the rules, the boot NB-0412 qualifies and the value is 65.3%.", [ORIGIN_0412], "A", language="fr-CA")
+    assert wrong.decision == "hand_to_person" and "language_matches" in ids(wrong) and wrong.language == "fr"
+    right = review(q, "Selon les règles, la botte NB-0412 est admissible. La valeur est de 65,3 %.", [ORIGIN_0412], "A", language="fr-CA")
+    assert right.decision == "pass"
+
+
+def test_reviewing_the_english_reply_before_it_is_translated_back():
+    # the app passes the English processing text as the question and language="en"
+    r = review("Does NB-0412 qualify under CUSMA?", GOOD_0412 + " I guarantee it.", [ORIGIN_0412], "A", language="en")
+    assert r.decision == "fix" and "guarantee" not in r.answer.lower()

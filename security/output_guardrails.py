@@ -381,7 +381,9 @@ def review(
 ) -> ReviewResult:
     """Check one reply. See the module docstring for the four inputs and the checks.
 
-    language       the user's language when the app knows it (after translation); otherwise guessed from the question
+    language       the user's language when the app knows it (region codes such as "fr-CA" are accepted);
+                   otherwise guessed from the question. If the app reviews the English reply before translating
+                   it back, pass question=<English processing text> and language="en"
     catalogue_ids  boot IDs that exist (for example from skus.csv). Optional; tool results are also used
     supplier_names supplier names to mask for tier C (for example load_supplier_names('suppliers.csv'))
     llm_review     optional hook (question, answer, tier, findings) -> {"action": "pass"|"fix"|"block", "answer": str, "reason": str}
@@ -394,7 +396,7 @@ def review(
 
     q = question or ""
     text = answer or ""
-    q_lang = language or detect_language(q)
+    q_lang = _base_language(language) if language else detect_language(q)
     lang = q_lang if q_lang in ("en", "fr", "es") else (detect_language(text) or "en")
     facts = _collect(trace, restricted=hide_costs)
     findings: list[Finding] = []
@@ -554,6 +556,11 @@ def review(
 
 
 # ---------------------------------------------------------------------------- helpers
+def _base_language(code: str) -> str:
+    """'fr-CA' -> 'fr', 'zh-CN' -> 'zh'. The translation service uses region codes."""
+    return code.split("-")[0].split("_")[0].lower()
+
+
 def _cost_note(lang: str) -> str:
     return {"en": "Some figures are confidential and have been masked.",
             "fr": "Certains chiffres sont confidentiels et ont été masqués.",
