@@ -364,3 +364,29 @@ def test_reviewing_the_english_reply_before_it_is_translated_back():
     # the app passes the English processing text as the question and language="en"
     r = review("Does NB-0412 qualify under CUSMA?", GOOD_0412 + " I guarantee it.", [ORIGIN_0412], "A", language="en")
     assert r.decision == "fix" and "guarantee" not in r.answer.lower()
+
+
+LEAKY_STEPS = {
+    "tool": "check_origin", "args": {"sku": "NB-0412"},
+    "result": {"ok": True,
+               "data": {"boot_id": "NB-0412", "verdict": "qualifies", "rvc": {"value": 0.653, "threshold": 0.55}},
+               "trace": ["Net cost = materials 30.65 + labour 11.00 + overhead 8.00",
+                         "RVC = (50.55 - 17.55) / 50.55 = 65.3%, above 55%", "Verdict: qualifies"],
+               "warnings": [], "rules_version": "2026-10-24"},
+}
+
+
+def test_basis_repair_does_not_leak_costs_to_tier_b_or_c():
+    for tier in ("B", "C"):
+        r = review(Q_EN, "NB-0412 qualifies.", [LEAKY_STEPS], tier)
+        for figure in ("30.65", "11.00", "8.00", "50.55", "17.55"):
+            assert figure not in r.answer
+        assert "Verdict: qualifies" in r.answer
+    assert "30.65" in review(Q_EN, "NB-0412 qualifies.", [LEAKY_STEPS], "A").answer
+
+
+def test_sku_argument_is_used_when_there_is_no_boot_id():
+    not_found = {"tool": "get_boot", "args": {"sku": "NB-9999"},
+                 "result": {"ok": False, "error": {"code": "NOT_FOUND", "message": "not found"}}}
+    r = review("Does NB-9999 qualify?", "NB-9999 qualifies. Based on the rules, RVC is 65.3%.", [not_found], "A")
+    assert "catalogue_only" in ids(r)

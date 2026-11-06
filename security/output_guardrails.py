@@ -302,10 +302,10 @@ def _collect(trace: Any, restricted: bool) -> TraceFacts:
                     facts.steps.append(s)
             err = result.get("error")
             if isinstance(err, dict) and err.get("code") == "NOT_FOUND":
-                for m in re.finditer(r"NB-\d{4}(?:-V\d)?", f"{err.get('message', '')} {args.get('boot_id', '')}"):
+                for m in re.finditer(r"NB-\d{4}(?:-V\d)?", f"{err.get('message', '')} {args.get('boot_id') or args.get('sku') or ''}"):
                     facts.boot_ids_not_found.add(m.group(0))
             if result.get("ok") is True:
-                for m in re.finditer(r"NB-\d{4}(?:-V\d)?", f"{args.get('boot_id', '')} {result.get('data', '')}"):
+                for m in re.finditer(r"NB-\d{4}(?:-V\d)?", f"{args.get('boot_id') or args.get('sku') or ''} {result.get('data', '')}"):
                     facts.boot_ids_ok.add(m.group(0))
             data = result.get("data")
             if isinstance(data, dict) and (tool in ("duty", "import_duty") or any(re.search(r"special|additional", k) for k in data)):
@@ -313,6 +313,24 @@ def _collect(trace: Any, restricted: bool) -> TraceFacts:
         _walk(args, facts, "", restricted)
         _walk(result, facts, "", restricted)
     return facts
+
+
+_COST_WORDS = re.compile(r"(?i)\b(?:net cost|costs?|labou?r|overhead|margin|price)\b")
+
+
+def _basis_steps(steps, hide_costs, hide_names, supplier_names, facts):
+    """Rule steps that are safe to quote as the basis of an answer.
+    Tiers that cannot see costs only get steps whose figures are percentages and that name no cost.
+    Tiers that cannot see supplier names only get steps that name no supplier."""
+    names = {n.lower() for n in list(supplier_names or []) + list(facts.supplier_names) if n}
+    out = []
+    for st in steps:
+        if hide_costs and (_COST_WORDS.search(st) or any(n.kind != "pct" for n in _numbers(st))):
+            continue
+        if hide_names and (re.search(r"\bSUP-\d+\b", st) or any(nm in st.lower() for nm in names)):
+            continue
+        out.append(st)
+    return out
 
 
 def _matches(n: Num, candidates: Iterable[float]) -> bool:
@@ -526,9 +544,10 @@ def review(
     if q_lang in ("en", "fr", "es") and a_lang and a_lang != q_lang:
         block("language_matches", f"user wrote {q_lang} but the reply is in {a_lang}")
 
-    # 13. basis stated (a safe repair: quote the tools' own rule steps)
-    if (asserted or [n for n in _numbers(text) if n.kind in ("pct", "money")]) and not _BASIS.search(_fold(text)) and facts.steps:
-        basis = " ".join(facts.steps[:2])
+    # 13. basis stated (a safe repair: quote the tools' own rule steps, minus anything this tier cannot see)
+    basis_steps = _basis_steps(facts.steps, hide_costs, hide_names, supplier_names, facts)
+    if (asserted or [n for n in _numbers(text) if n.kind in ("pct", "money")]) and not _BASIS.search(_fold(text)) and basis_steps:
+        basis = " ".join(basis_steps[:2])
         if facts.rules_version:
             basis += f" (rules version {facts.rules_version})"
         text = f"{text}\n{BASIS_LABEL[lang]} {basis}"
