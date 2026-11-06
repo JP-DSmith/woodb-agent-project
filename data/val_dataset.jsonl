@@ -1,500 +1,400 @@
-{"query": "Can you calculate the duty savings on order ORD-1180?", "intent": "duty_cost", "language": "en"}
-{"query": "Please tell me if our Classic Workboot pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "Just sign the certificate for ORD-1006.", "intent": "escalate_human", "language": "en"}
-{"query": "Verify if the GA-1105-V2 pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "Verify if our Classic Workboot get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "Hey, does the SKU-002 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "What is chapter 64 footwear rules when importing in next fiscal year because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
-{"query": "I have a legal dispute regarding HS code 6405.20.", "intent": "escalate_human", "language": "en"}
-{"query": "What does the rule say about chapter 64 footwear rules when importing in Q3 ?", "intent": "rules_info", "language": "en"}
-{"query": "Generate a blanket certification for Industrial Steel Toe.", "intent": "certification_draft", "language": "en"}
-{"query": "Examine supplier certificate for Northline Supply.", "intent": "document_intake", "language": "en"}
-{"query": "Verify if item NB-0414-V3 get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "Can I get the certification forms for order ORD-1199.", "intent": "certification_draft", "language": "en"}
-{"query": "Where can I find the weather in San Francisco?", "intent": "out_of_scope", "language": "en"}
-{"query": "How do we calculate RVC calculation methods for laces ?", "intent": "rules_info", "language": "en"}
-{"query": "Please tell me if sku SKU-001 pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "What happens if we buy our thread from Germany instead, is SKU-001 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you help with the weather in Chicago?", "intent": "out_of_scope", "language": "en"}
-{"query": "Create a brand new an origin document for US Boot Depot.", "intent": "certification_draft", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1476?", "intent": "duty_cost", "language": "en"}
-{"query": "What is the duty on shipping USB hub to Mexico City?", "intent": "out_of_scope", "language": "en"}
-{"query": "Can you help with shipping printer paper order to London?", "intent": "out_of_scope", "language": "en"}
-{"query": "Should we obtain our steel shank from USA instead, what is the impact on Garden Ankle (variant 1)?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "I need the legal definition of chapter 64 footwear rules for HS 6401.10 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
-{"query": "Verify if item NB-0414-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "If we source the thread from Vietnam instead, does SKU-001 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What are the tariffs on order ORD-1372?", "intent": "duty_cost", "language": "en"}
-{"query": "If we switch the laces from Midwest Textiles instead, what is the impact on Outdoor Hiker?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Will our Industrial Steel Toe get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "Hey, does our Classic Knee (variant 2) holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "Tell me about shipping gym membership to Mexico City?", "intent": "out_of_scope", "language": "en"}
-{"query": "Is it true that the Industrial Steel Toe boot satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "Is it true that our Industrial Steel Toe get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "Examine this invoice for Pacific Leather Co..", "intent": "document_intake", "language": "en"}
-{"query": "What happens if we buy our thread from Vietnam instead, is SKU-001 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you check if the Classic Knee (variant 2) boot pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "Please log the new origin declaration from Northline Supply.", "intent": "document_intake", "language": "en"}
-{"query": "Here is this customs form from Bay State Outsole Co..", "intent": "document_intake", "language": "en"}
-{"query": "Does repairing the rubber boat bumpers?", "intent": "out_of_scope", "language": "en"}
-{"query": "Is it true that item SKU-002 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "Can you explain RVC calculation methods for leather upper ?", "intent": "rules_info", "language": "en"}
-{"query": "If we source our leather upper from Midwest Textiles instead, what is the impact on Classic Workboot?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you review this invoice for Can-Am Distributors.", "intent": "document_intake", "language": "en"}
-{"query": "Examine this invoice for Eastside Retail.", "intent": "document_intake", "language": "en"}
-{"query": "Can you explain RVC calculation methods for HS 6405.20 due to new regulatory audits?", "intent": "rules_info", "language": "en"}
-{"query": "Check this invoice for Eastside Retail.", "intent": "document_intake", "language": "en"}
-{"query": "Verify if our Classic Knee (variant 2) pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "Verify if item SKU-002 get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "What is RVC calculation methods for HS 6404.11 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
-{"query": "Will sku NB-0414-V3 get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "What is the duty on noise cancelling headphones?", "intent": "out_of_scope", "language": "en"}
-{"query": "By moving the supply of the bay state outsole co. from Northline Supply instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Where can I find shipping the cafeteria menu to Toronto?", "intent": "out_of_scope", "language": "en"}
-{"query": "What is the customs cost on order ORD-1357?", "intent": "duty_cost", "language": "en"}
-{"query": "Is it true that item NB-0414-V3 pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "We received an audit notice on ORD-1471.", "intent": "escalate_human", "language": "en"}
-{"query": "Is it true that sku GA-1105-V2 pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "Please draft the certification forms for order ORD-1491.", "intent": "certification_draft", "language": "en"}
-{"query": "What does the rule say about de minimis exemption for HS 6404.11 for trade compliance reporting?", "intent": "rules_info", "language": "en"}
-{"query": "What happens if we buy our laces from Germany instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What happens if we buy the steel shank from Canada instead, does CK-9902-V1 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Generate the certification forms for order ORD-1223.", "intent": "certification_draft", "language": "en"}
-{"query": "Just sign the certificate for HS code 6401.10.", "intent": "escalate_human", "language": "en"}
-{"query": "Can I get an origin document for Garden Ankle (variant 1).", "intent": "certification_draft", "language": "en"}
-{"query": "Generate a CUSMA certificate for Global Materials LLC.", "intent": "certification_draft", "language": "en"}
-{"query": "Can you help with shipping rubber boat bumpers to San Francisco?", "intent": "out_of_scope", "language": "en"}
-{"query": "By moving the supply of our thread from Midwest Textiles instead, is SKU-001 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What is the duty on shipping gym membership to Vancouver?", "intent": "out_of_scope", "language": "en"}
-{"query": "I need to know if the SKU-001 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "Is it true that sku SKU-002 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "Should we obtain our bay state outsole co. from Global Materials LLC instead, is GA-1105-V2 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you explain chapter 64 footwear rules for HS 6404.11 ?", "intent": "rules_info", "language": "en"}
-{"query": "How do we calculate the tariff shift on CK-9902-V1 ?", "intent": "rules_info", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1251?", "intent": "duty_cost", "language": "en"}
-{"query": "Is it true that our Garden Ankle (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "What is the customs cost on order ORD-1377?", "intent": "duty_cost", "language": "en"}
-{"query": "Examine the new origin declaration for Pacific Leather Co..", "intent": "document_intake", "language": "en"}
-{"query": "Should we obtain the steel shank from Germany instead, what is the impact on Garden Ankle (variant 1)?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Does sku CK-9902-V1 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "What does the rule say about chapter 64 footwear rules for HS 6401.10 following standard customs review?", "intent": "rules_info", "language": "en"}
-{"query": "Does the CK-9902-V1 meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
-{"query": "Here is this invoice for US Boot Depot.", "intent": "document_intake", "language": "en"}
-{"query": "What is the customs cost on order ORD-1277?", "intent": "duty_cost", "language": "en"}
-{"query": "Does shipping my HR benefits to Mexico City?", "intent": "out_of_scope", "language": "en"}
-{"query": "If we source our laces from Pacific Leather Co. instead, is SKU-002 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Generate the certification forms for Apex Footwear.", "intent": "certification_draft", "language": "en"}
-{"query": "Generate a CUSMA certificate for order ORD-1188.", "intent": "certification_draft", "language": "en"}
-{"query": "Here is the new origin declaration from Pacific Leather Co..", "intent": "document_intake", "language": "en"}
-{"query": "We received an audit notice on ORD-1140.", "intent": "escalate_human", "language": "en"}
-{"query": "Where can I find shipping my flight booking to San Francisco?", "intent": "out_of_scope", "language": "en"}
-{"query": "Can you explain de minimis exemption on GA-1105-V2 ?", "intent": "rules_info", "language": "en"}
-{"query": "Please tell me if the Classic Workboot boot get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "Uploading this invoice for GA-1105-V2.", "intent": "document_intake", "language": "en"}
-{"query": "If we source our thread from Pacific Leather Co. instead, does SKU-001 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "We need a blanket certification for order ORD-1154.", "intent": "certification_draft", "language": "en"}
-{"query": "How do we calculate RVC calculation methods on GA-1105-V2 following standard customs review?", "intent": "rules_info", "language": "en"}
-{"query": "Should we obtain our steel shank from Canada instead, does CK-9902-V1 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "I need the legal definition of RVC calculation methods for Outdoor Hiker ?", "intent": "rules_info", "language": "en"}
-{"query": "Is it true that our Outdoor Hiker holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "I need the legal definition of de minimis exemption for Garden Ankle (variant 1) ?", "intent": "rules_info", "language": "en"}
-{"query": "I need to know if item CK-9902-V1 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "How do we calculate the tariff shift for Industrial Steel Toe because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
-{"query": "Does item SKU-002 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "We received an audit notice on ORD-1018.", "intent": "escalate_human", "language": "en"}
-{"query": "Can you help with the weather in Paris?", "intent": "out_of_scope", "language": "en"}
-{"query": "Does laptop charger?", "intent": "out_of_scope", "language": "en"}
-{"query": "Here is supplier certificate for GA-1105-V2.", "intent": "document_intake", "language": "en"}
-{"query": "Can you check if the Industrial Steel Toe boot get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "Can you explain the tariff shift when importing in next quarter because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
-{"query": "I need to know if our Classic Workboot pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "We need a blanket certification for Global Materials LLC.", "intent": "certification_draft", "language": "en"}
-{"query": "Does item CK-9902-V1 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "Here is the attached PO from Global Materials LLC.", "intent": "document_intake", "language": "en"}
-{"query": "I have a legal dispute regarding ORD-1330.", "intent": "escalate_human", "language": "en"}
-{"query": "Where can I find shipping office chair ergonomic to London?", "intent": "out_of_scope", "language": "en"}
-{"query": "What is the customs cost on order ORD-1165?", "intent": "duty_cost", "language": "en"}
-{"query": "Create a brand new an origin document for order ORD-1045.", "intent": "certification_draft", "language": "en"}
-{"query": "Check the attached PO for Apex Footwear.", "intent": "document_intake", "language": "en"}
-{"query": "What is the tariff shift for Garden Ankle (variant 1) ?", "intent": "rules_info", "language": "en"}
-{"query": "By moving the supply of our laces from Northline Supply instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Where can I find shipping USB hub to Boston?", "intent": "out_of_scope", "language": "en"}
-{"query": "If we source our thread from Global Materials LLC instead, what is the impact on Industrial Steel Toe?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Where can I find shipping desk organizer to London?", "intent": "out_of_scope", "language": "en"}
-{"query": "What is de minimis exemption on NB-0414-V3 ?", "intent": "rules_info", "language": "en"}
-{"query": "Please draft a blanket certification for US Boot Depot.", "intent": "certification_draft", "language": "en"}
-{"query": "I need the legal definition of RVC calculation methods on SKU-001 for trade compliance reporting?", "intent": "rules_info", "language": "en"}
-{"query": "Uploading the new origin declaration for Global Materials LLC.", "intent": "document_intake", "language": "en"}
-{"query": "By moving the supply of our steel shank from Northline Supply instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Create a brand new an origin document for Outdoor Hiker.", "intent": "certification_draft", "language": "en"}
-{"query": "By moving the supply of our laces from USA instead, what is the impact on Outdoor Hiker?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Hey, does the GA-1105-V2 pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "What happens if we buy the laces from Vietnam instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What is regional value content for Garden Ankle (variant 1) following standard customs review?", "intent": "rules_info", "language": "en"}
-{"query": "I need the legal definition of the tariff shift for Outdoor Hiker ?", "intent": "rules_info", "language": "en"}
-{"query": "How do I resolve a problem with the weather in Boston?", "intent": "out_of_scope", "language": "en"}
-{"query": "If we switch our rubber outsole from Northline Supply instead, does NB-0414-V3 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What does the rule say about the tariff shift for HS 6401.92 ?", "intent": "rules_info", "language": "en"}
-{"query": "Please tell me if item SKU-002 meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
-{"query": "Does the Industrial Steel Toe boot satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "What is chapter 64 footwear rules when importing in this month due to new regulatory audits?", "intent": "rules_info", "language": "en"}
-{"query": "Can you explain de minimis exemption for HS 6403.51 due to new regulatory audits?", "intent": "rules_info", "language": "en"}
-{"query": "How do I resolve a problem with office chair ergonomic?", "intent": "out_of_scope", "language": "en"}
-{"query": "I have a legal dispute regarding ORD-1204.", "intent": "escalate_human", "language": "en"}
-{"query": "What is the duty on shipping office coffee machine to Paris?", "intent": "out_of_scope", "language": "en"}
-{"query": "We need an origin document for Classic Knee (variant 2).", "intent": "certification_draft", "language": "en"}
-{"query": "Will the GA-1105-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "If we switch the thread from Canada instead, does SKU-001 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "We received an audit notice on ORD-1498.", "intent": "escalate_human", "language": "en"}
-{"query": "What does the rule say about regional value content when importing in 2026 ?", "intent": "rules_info", "language": "en"}
-{"query": "How do I resolve a problem with repairing the my personal tax return?", "intent": "out_of_scope", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1023?", "intent": "duty_cost", "language": "en"}
-{"query": "I have a legal dispute regarding HS code 6406.10.", "intent": "escalate_human", "language": "en"}
-{"query": "Does the weather in San Francisco?", "intent": "out_of_scope", "language": "en"}
-{"query": "Should we obtain our bay state outsole co. from Brazil instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you review the attached PO for Pacific Leather Co..", "intent": "document_intake", "language": "en"}
-{"query": "Can I get a blanket certification for order ORD-1415.", "intent": "certification_draft", "language": "en"}
-{"query": "Hey, does item CK-9902-V1 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "What is de minimis exemption for Outdoor Hiker ?", "intent": "rules_info", "language": "en"}
-{"query": "What does the rule say about regional value content for HS 6401.92 ?", "intent": "rules_info", "language": "en"}
-{"query": "I need to know if the Classic Knee (variant 2) boot get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "Does repairing the office chair ergonomic?", "intent": "out_of_scope", "language": "en"}
-{"query": "Uploading supplier certificate for Northline Supply.", "intent": "document_intake", "language": "en"}
-{"query": "We need an origin document for Global Materials LLC.", "intent": "certification_draft", "language": "en"}
-{"query": "What happens if we buy the laces from Vietnam instead, is SKU-002 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Create a brand new a blanket certification for Industrial Steel Toe.", "intent": "certification_draft", "language": "en"}
-{"query": "Examine the attached PO for Can-Am Distributors.", "intent": "document_intake", "language": "en"}
-{"query": "I need the legal definition of regional value content for HS 6402.91 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
-{"query": "I need the legal definition of de minimis exemption on SKU-002 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
-{"query": "We received an audit notice on ORD-1045.", "intent": "escalate_human", "language": "en"}
-{"query": "I need to know if our Outdoor Hiker get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "Can you check if the SKU-001 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "We need a blanket certification for order ORD-1157.", "intent": "certification_draft", "language": "en"}
-{"query": "We received an audit notice on GA-1105-V2.", "intent": "escalate_human", "language": "en"}
-{"query": "Does sku SKU-002 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "Should we obtain our bay state outsole co. from Bay State Outsole Co. instead, what is the impact on Classic Knee (variant 2)?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Customs is auditing ORD-1299.", "intent": "escalate_human", "language": "en"}
-{"query": "Can you help with shipping desk organizer to Vancouver?", "intent": "out_of_scope", "language": "en"}
-{"query": "What is the duty on shipping PVC boat fender to Toronto?", "intent": "out_of_scope", "language": "en"}
-{"query": "Uploading this customs form from Pacific Leather Co..", "intent": "document_intake", "language": "en"}
-{"query": "Verify if the Outdoor Hiker boot satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "Tell me about shipping local train schedule to Chicago?", "intent": "out_of_scope", "language": "en"}
-{"query": "Can you review the new origin declaration from Global Materials LLC.", "intent": "document_intake", "language": "en"}
-{"query": "Does shipping mechanical keyboard to New York?", "intent": "out_of_scope", "language": "en"}
-{"query": "Tell me about repairing the my flight booking?", "intent": "out_of_scope", "language": "en"}
-{"query": "Can you explain regional value content for bay state outsole co. ?", "intent": "rules_info", "language": "en"}
-{"query": "What happens if we buy the steel shank from Canada instead, what is the impact on Garden Ankle (variant 1)?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you help with repairing the USB hub?", "intent": "out_of_scope", "language": "en"}
-{"query": "Does repairing the PVC boat fender?", "intent": "out_of_scope", "language": "en"}
-{"query": "Check this invoice for Apex Footwear.", "intent": "document_intake", "language": "en"}
-{"query": "What does the rule say about regional value content when importing in January ?", "intent": "rules_info", "language": "en"}
-{"query": "Should we obtain our thread from Pacific Leather Co. instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Uploading supplier certificate from Midwest Textiles.", "intent": "document_intake", "language": "en"}
-{"query": "How do we calculate the tariff shift for leather upper due to new regulatory audits?", "intent": "rules_info", "language": "en"}
-{"query": "If we source our leather upper from China instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you help with my flight booking?", "intent": "out_of_scope", "language": "en"}
-{"query": "I need the legal definition of regional value content for leather upper ?", "intent": "rules_info", "language": "en"}
-{"query": "I need the legal definition of RVC calculation methods on CK-9902-V1 ?", "intent": "rules_info", "language": "en"}
-{"query": "Please tell me if sku SKU-002 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "Can you help with the weather in Boston?", "intent": "out_of_scope", "language": "en"}
-{"query": "How do we calculate RVC calculation methods on SKU-002 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
-{"query": "Can you help with repairing the the cafeteria menu?", "intent": "out_of_scope", "language": "en"}
-{"query": "Tell me about the weather in Toronto?", "intent": "out_of_scope", "language": "en"}
-{"query": "What does the rule say about chapter 64 footwear rules for leather upper because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
-{"query": "Can you explain de minimis exemption for HS 6403.99 ?", "intent": "rules_info", "language": "en"}
-{"query": "What is chapter 64 footwear rules when importing in January ?", "intent": "rules_info", "language": "en"}
-{"query": "Should we obtain the laces from USA instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What happens if we buy our leather upper from Global Materials LLC instead, does NB-0414-V3 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "If we source our steel shank from Bay State Outsole Co. instead, what is the impact on Garden Ankle (variant 1)?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Tell me about repairing the gym membership?", "intent": "out_of_scope", "language": "en"}
-{"query": "Customs is auditing ORD-1214.", "intent": "escalate_human", "language": "en"}
-{"query": "Can you explain de minimis exemption when importing in Q3 ?", "intent": "rules_info", "language": "en"}
-{"query": "What does the rule say about chapter 64 footwear rules on GA-1105-V2 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
-{"query": "Generate an origin document for order ORD-1188.", "intent": "certification_draft", "language": "en"}
-{"query": "What is the duty on shipping my personal tax return to Seattle?", "intent": "out_of_scope", "language": "en"}
-{"query": "Is it true that the Outdoor Hiker boot pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "Can I get a blanket certification for order ORD-1354.", "intent": "certification_draft", "language": "en"}
-{"query": "Should we obtain the rubber outsole from Germany instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "How do we calculate chapter 64 footwear rules for Outdoor Hiker ?", "intent": "rules_info", "language": "en"}
-{"query": "What does the rule say about chapter 64 footwear rules for Outdoor Hiker ?", "intent": "rules_info", "language": "en"}
-{"query": "We need a blanket certification for Eastside Retail.", "intent": "certification_draft", "language": "en"}
-{"query": "What does the rule say about the tariff shift for Industrial Steel Toe due to new regulatory audits?", "intent": "rules_info", "language": "en"}
-{"query": "Where can I find shipping parking pass to Montreal?", "intent": "out_of_scope", "language": "en"}
-{"query": "Customs is auditing ORD-1401.", "intent": "escalate_human", "language": "en"}
-{"query": "Does sku GA-1105-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "I need to know if the Outdoor Hiker boot pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "Is it true that the Outdoor Hiker boot qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "By moving the supply of our thread from Pacific Leather Co. instead, does SKU-001 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What is the tariff shift on SKU-002 ?", "intent": "rules_info", "language": "en"}
-{"query": "Here is this customs form for Eastside Retail.", "intent": "document_intake", "language": "en"}
-{"query": "I need the legal definition of chapter 64 footwear rules for rubber outsole ?", "intent": "rules_info", "language": "en"}
-{"query": "Tell me about shipping USB hub to Montreal?", "intent": "out_of_scope", "language": "en"}
-{"query": "Tell me about repairing the USB hub?", "intent": "out_of_scope", "language": "en"}
-{"query": "Create a brand new a blanket certification for order ORD-1356.", "intent": "certification_draft", "language": "en"}
-{"query": "Please tell me if item GA-1105-V2 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "What is RVC calculation methods for HS 6404.11 for trade compliance reporting?", "intent": "rules_info", "language": "en"}
-{"query": "By moving the supply of the steel shank from Mexico instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you explain regional value content on SKU-001 because of supply chain adjustments?", "intent": "rules_info", "language": "en"}
-{"query": "If we source our leather upper from Germany instead, is NB-0414-V3 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you explain the tariff shift for HS 6406.10 following standard customs review?", "intent": "rules_info", "language": "en"}
-{"query": "What happens if we buy our thread from Bay State Outsole Co. instead, what is the impact on Industrial Steel Toe?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What is RVC calculation methods for steel shank due to new regulatory audits?", "intent": "rules_info", "language": "en"}
-{"query": "If we source the laces from Vietnam instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What is the duty on parking pass?", "intent": "out_of_scope", "language": "en"}
-{"query": "Please draft a CUSMA certificate for Classic Workboot.", "intent": "certification_draft", "language": "en"}
-{"query": "If we source our leather upper from Mexico instead, is NB-0414-V3 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Will item CK-9902-V1 meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
-{"query": "Customs is auditing ORD-1043.", "intent": "escalate_human", "language": "en"}
-{"query": "Can you review this invoice for Eastside Retail.", "intent": "document_intake", "language": "en"}
-{"query": "Here is supplier certificate from Pacific Leather Co..", "intent": "document_intake", "language": "en"}
-{"query": "Can you check if sku NB-0414-V3 pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "Should we obtain the bay state outsole co. from Global Materials LLC instead, is GA-1105-V2 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Should we obtain the bay state outsole co. from China instead, is GA-1105-V2 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Create a brand new a blanket certification for order ORD-1112.", "intent": "certification_draft", "language": "en"}
-{"query": "Please draft the certification forms for Global Materials LLC.", "intent": "certification_draft", "language": "en"}
-{"query": "If we switch our leather upper from Brazil instead, is NB-0414-V3 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you review supplier certificate for Global Materials LLC.", "intent": "document_intake", "language": "en"}
-{"query": "Verify if our Outdoor Hiker pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "What is the customs cost on order ORD-1375?", "intent": "duty_cost", "language": "en"}
-{"query": "CBP sent a verification letter for CK-9902-V1.", "intent": "escalate_human", "language": "en"}
-{"query": "We need a blanket certification for Pacific Leather Co..", "intent": "certification_draft", "language": "en"}
-{"query": "Does our Industrial Steel Toe satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "Can you review the new origin declaration for NB-0414-V3.", "intent": "document_intake", "language": "en"}
-{"query": "Please tell me if the NB-0414-V3 get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "Verify if item SKU-001 pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "Here is this invoice for SKU-001.", "intent": "document_intake", "language": "en"}
-{"query": "If we source the rubber outsole from Brazil instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What are the tariffs on order ORD-1155?", "intent": "duty_cost", "language": "en"}
-{"query": "What are the tariffs on order ORD-1245?", "intent": "duty_cost", "language": "en"}
-{"query": "How much duty on order ORD-1264?", "intent": "duty_cost", "language": "en"}
-{"query": "Will our Industrial Steel Toe satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "Please tell me if the NB-0414-V3 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "Generate a blanket certification for our US buyer.", "intent": "certification_draft", "language": "en"}
-{"query": "Will sku NB-0414-V3 pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "By moving the supply of the laces from Pacific Leather Co. instead, is SKU-002 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "I need to know if our Classic Workboot meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
-{"query": "Can I get the certification forms for order ORD-1497.", "intent": "certification_draft", "language": "en"}
-{"query": "Can you check if our Outdoor Hiker holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "Examine the attached PO for Eastside Retail.", "intent": "document_intake", "language": "en"}
-{"query": "How much duty on order ORD-1435?", "intent": "duty_cost", "language": "en"}
-{"query": "Should we obtain our bay state outsole co. from Global Materials LLC instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Determine import duties on order ORD-1004?", "intent": "duty_cost", "language": "en"}
-{"query": "We need an origin document for order ORD-1491.", "intent": "certification_draft", "language": "en"}
-{"query": "Please draft a CUSMA certificate for order ORD-1180.", "intent": "certification_draft", "language": "en"}
-{"query": "Can I get an origin document for Classic Workboot.", "intent": "certification_draft", "language": "en"}
-{"query": "Is it true that sku SKU-001 pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "Please tell me if our Industrial Steel Toe holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "We received an audit notice on ORD-1480.", "intent": "escalate_human", "language": "en"}
-{"query": "Will the Garden Ankle (variant 1) boot holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "Does our Outdoor Hiker pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "Can you check if the GA-1105-V2 pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "If we switch the laces from China instead, is SKU-002 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Verify if item SKU-001 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "Should we obtain our rubber outsole from China instead, does NB-0414-V3 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "By moving the supply of our laces from Mexico instead, what is the impact on Outdoor Hiker?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Here is supplier certificate for NB-0414-V3.", "intent": "document_intake", "language": "en"}
-{"query": "What happens if we buy the steel shank from Mexico instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "If we switch our steel shank from Mexico instead, is CK-9902-V1 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you review the new origin declaration for US Boot Depot.", "intent": "document_intake", "language": "en"}
-{"query": "Uploading this customs form from Bay State Outsole Co..", "intent": "document_intake", "language": "en"}
-{"query": "Should we obtain the laces from Brazil instead, is SKU-002 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Determine import duties on order ORD-1026?", "intent": "duty_cost", "language": "en"}
-{"query": "Will sku SKU-001 pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "If we switch the leather upper from Bay State Outsole Co. instead, is NB-0414-V3 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "We need the certification forms for order ORD-1297.", "intent": "certification_draft", "language": "en"}
-{"query": "We need the certification forms for Northline Supply.", "intent": "certification_draft", "language": "en"}
-{"query": "Customs is auditing ORD-1426.", "intent": "escalate_human", "language": "en"}
-{"query": "By moving the supply of our rubber outsole from Germany instead, is NB-0414-V3 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What happens if we buy the bay state outsole co. from Vietnam instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Please log the new origin declaration for Pacific Leather Co..", "intent": "document_intake", "language": "en"}
-{"query": "If we source the rubber outsole from USA instead, is NB-0414-V3 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Determine import duties on order ORD-1319?", "intent": "duty_cost", "language": "en"}
-{"query": "Please log this invoice from Bay State Outsole Co..", "intent": "document_intake", "language": "en"}
-{"query": "Generate a blanket certification for Classic Workboot.", "intent": "certification_draft", "language": "en"}
-{"query": "What happens if we buy the laces from Mexico instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Is it true that item GA-1105-V2 pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "Just sign the certificate for ORD-1223.", "intent": "escalate_human", "language": "en"}
-{"query": "If we switch the thread from Germany instead, is SKU-001 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What is the customs cost on order ORD-1423?", "intent": "duty_cost", "language": "en"}
-{"query": "What happens if we buy the leather upper from Pacific Leather Co. instead, does NB-0414-V3 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What happens if we buy the bay state outsole co. from Mexico instead, is GA-1105-V2 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Does item CK-9902-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "If we source the thread from Pacific Leather Co. instead, is SKU-001 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "If we switch our laces from Mexico instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Should we obtain our bay state outsole co. from Canada instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can I get a CUSMA certificate for order ORD-1360.", "intent": "certification_draft", "language": "en"}
-{"query": "Generate a blanket certification for order ORD-1043.", "intent": "certification_draft", "language": "en"}
-{"query": "Here is supplier certificate from Midwest Textiles.", "intent": "document_intake", "language": "en"}
-{"query": "If we switch our laces from Mexico instead, what is the impact on Outdoor Hiker?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can I get a blanket certification for Classic Workboot.", "intent": "certification_draft", "language": "en"}
-{"query": "I need to know if the Classic Knee (variant 2) boot holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "If we source the steel shank from Pacific Leather Co. instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "If we switch the leather upper from Midwest Textiles instead, what is the impact on Classic Workboot?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What happens if we buy our laces from Vietnam instead, what is the impact on Outdoor Hiker?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "By moving the supply of the bay state outsole co. from Pacific Leather Co. instead, does GA-1105-V2 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "I have a legal dispute regarding Outdoor Hiker.", "intent": "escalate_human", "language": "en"}
-{"query": "What happens if we buy our thread from Midwest Textiles instead, what is the impact on Industrial Steel Toe?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you check if item GA-1105-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "Create a brand new the certification forms for order ORD-1257.", "intent": "certification_draft", "language": "en"}
-{"query": "We need a CUSMA certificate for order ORD-1409.", "intent": "certification_draft", "language": "en"}
-{"query": "Generate a blanket certification for Pacific Leather Co..", "intent": "certification_draft", "language": "en"}
-{"query": "Hey, does our Garden Ankle (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "Can I get a CUSMA certificate for order ORD-1393.", "intent": "certification_draft", "language": "en"}
-{"query": "Generate a blanket certification for US Boot Depot.", "intent": "certification_draft", "language": "en"}
-{"query": "Is it true that the Garden Ankle (variant 1) boot holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "Should we obtain our laces from Northline Supply instead, does SKU-002 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Does item GA-1105-V2 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "CBP sent a verification letter for ORD-1184.", "intent": "escalate_human", "language": "en"}
-{"query": "Will item NB-0414-V3 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "Should we obtain our steel shank from Mexico instead, does CK-9902-V1 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "What happens if we buy the laces from USA instead, what is the impact on Outdoor Hiker?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Generate the certification forms for Industrial Steel Toe.", "intent": "certification_draft", "language": "en"}
-{"query": "Please tell me if the NB-0414-V3 meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
-{"query": "Can I get a CUSMA certificate for Global Materials LLC.", "intent": "certification_draft", "language": "en"}
-{"query": "CBP sent a verification letter for ORD-1005.", "intent": "escalate_human", "language": "en"}
-{"query": "Can you review the new origin declaration from Northline Supply.", "intent": "document_intake", "language": "en"}
-{"query": "Generate a blanket certification for Can-Am Distributors.", "intent": "certification_draft", "language": "en"}
-{"query": "If we source our bay state outsole co. from Germany instead, what is the impact on Classic Knee (variant 2)?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Can you review this customs form for Northline Supply.", "intent": "document_intake", "language": "en"}
-{"query": "What are the tariffs on order ORD-1388?", "intent": "duty_cost", "language": "en"}
-{"query": "Uploading the new origin declaration from Bay State Outsole Co..", "intent": "document_intake", "language": "en"}
-{"query": "Just sign the certificate for HS code 6404.11.", "intent": "escalate_human", "language": "en"}
-{"query": "Please log this invoice for SKU-002.", "intent": "document_intake", "language": "en"}
-{"query": "I need to know if sku SKU-002 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "If we switch the steel shank from Northline Supply instead, is CK-9902-V1 eligibility voided?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "If we source our steel shank from Global Materials LLC instead, does CK-9902-V1 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Customs is auditing Apex Footwear.", "intent": "escalate_human", "language": "en"}
-{"query": "Can you review the new origin declaration for Northline Supply.", "intent": "document_intake", "language": "en"}
-{"query": "Please draft a CUSMA certificate for order ORD-1166.", "intent": "certification_draft", "language": "en"}
-{"query": "Can I get a CUSMA certificate for Outdoor Hiker.", "intent": "certification_draft", "language": "en"}
-{"query": "Please log this invoice from Northline Supply.", "intent": "document_intake", "language": "en"}
-{"query": "Can I get the certification forms for order ORD-1389.", "intent": "certification_draft", "language": "en"}
-{"query": "By moving the supply of our bay state outsole co. from Canada instead, does GA-1105-V2 still qualify?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "Please tell me if the Classic Workboot boot qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "Please draft an origin document for order ORD-1159.", "intent": "certification_draft", "language": "en"}
-{"query": "Generate a CUSMA certificate for Classic Workboot.", "intent": "certification_draft", "language": "en"}
-{"query": "By moving the supply of the steel shank from USA instead, how does that affect our RVC?", "intent": "sourcing_whatif", "language": "en"}
-{"query": "I need to know if the Industrial Steel Toe boot satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "Please log this customs form for SKU-002.", "intent": "document_intake", "language": "en"}
-{"query": "What are the tariffs on order ORD-1351?", "intent": "duty_cost", "language": "en"}
-{"query": "CBP sent a verification letter for ORD-1347.", "intent": "escalate_human", "language": "en"}
-{"query": "Just sign the certificate for ORD-1073.", "intent": "escalate_human", "language": "en"}
-{"query": "CBP sent a verification letter for ORD-1345.", "intent": "escalate_human", "language": "en"}
-{"query": "Please tell me if the Outdoor Hiker boot qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "Will the Outdoor Hiker boot meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
-{"query": "Please tell me if the CK-9902-V1 get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "Create a brand new a blanket certification for Global Materials LLC.", "intent": "certification_draft", "language": "en"}
-{"query": "Can I get a blanket certification for order ORD-1275.", "intent": "certification_draft", "language": "en"}
-{"query": "Does the Garden Ankle (variant 1) boot pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "Can you review this customs form for Apex Footwear.", "intent": "document_intake", "language": "en"}
-{"query": "Can you check if sku SKU-002 pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "Create a brand new the certification forms for Classic Knee (variant 2).", "intent": "certification_draft", "language": "en"}
-{"query": "Check the attached PO for Eastside Retail.", "intent": "document_intake", "language": "en"}
-{"query": "Can you check if our Classic Knee (variant 2) pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "Customs is auditing ORD-1095.", "intent": "escalate_human", "language": "en"}
-{"query": "Verify if our Industrial Steel Toe pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "Verify if our Outdoor Hiker pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "Can you review the new origin declaration from Midwest Textiles.", "intent": "document_intake", "language": "en"}
-{"query": "Can I get a CUSMA certificate for order ORD-1437.", "intent": "certification_draft", "language": "en"}
-{"query": "Check this invoice for SKU-001.", "intent": "document_intake", "language": "en"}
-{"query": "How much duty on order ORD-1025?", "intent": "duty_cost", "language": "en"}
-{"query": "Does the Garden Ankle (variant 1) boot satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "Can you check if item CK-9902-V1 meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
-{"query": "Can I get the certification forms for Can-Am Distributors.", "intent": "certification_draft", "language": "en"}
-{"query": "Please log this invoice for GA-1105-V2.", "intent": "document_intake", "language": "en"}
-{"query": "Please log supplier certificate for US Boot Depot.", "intent": "document_intake", "language": "en"}
-{"query": "Is it true that item SKU-002 pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "Create a brand new an origin document for order ORD-1015.", "intent": "certification_draft", "language": "en"}
-{"query": "Check this customs form from Global Materials LLC.", "intent": "document_intake", "language": "en"}
-{"query": "Generate an origin document for US Boot Depot.", "intent": "certification_draft", "language": "en"}
-{"query": "I need to know if the GA-1105-V2 pass the origin test?", "intent": "qualification_check", "language": "en"}
-{"query": "Please draft the certification forms for order ORD-1020.", "intent": "certification_draft", "language": "en"}
-{"query": "How much duty on order ORD-1325?", "intent": "duty_cost", "language": "en"}
-{"query": "I need to know if our Outdoor Hiker qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "Create a brand new a CUSMA certificate for order ORD-1422.", "intent": "certification_draft", "language": "en"}
-{"query": "What is the customs cost on order ORD-1239?", "intent": "duty_cost", "language": "en"}
-{"query": "Examine this invoice for NB-0414-V3.", "intent": "document_intake", "language": "en"}
-{"query": "CBP sent a verification letter for ORD-1010.", "intent": "escalate_human", "language": "en"}
-{"query": "Check supplier certificate for Pacific Leather Co..", "intent": "document_intake", "language": "en"}
-{"query": "Uploading the new origin declaration from Midwest Textiles.", "intent": "document_intake", "language": "en"}
-{"query": "Examine this invoice for Apex Footwear.", "intent": "document_intake", "language": "en"}
-{"query": "Please tell me if sku CK-9902-V1 pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "Please tell me if the SKU-002 satisfies rules of origin?", "intent": "qualification_check", "language": "en"}
-{"query": "What is the customs cost on order ORD-1087?", "intent": "duty_cost", "language": "en"}
-{"query": "Does our Classic Workboot qualify under CUSMA?", "intent": "qualification_check", "language": "en"}
-{"query": "Will our Classic Workboot get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "I need to know if our Industrial Steel Toe holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "Hey, does the CK-9902-V1 holds CUSMA eligibility?", "intent": "qualification_check", "language": "en"}
-{"query": "Determine import duties on order ORD-1203?", "intent": "duty_cost", "language": "en"}
-{"query": "Examine the new origin declaration for NB-0414-V3.", "intent": "document_intake", "language": "en"}
-{"query": "Hey, does the Industrial Steel Toe boot get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "Can you review the attached PO for SKU-002.", "intent": "document_intake", "language": "en"}
-{"query": "Can you check if our Industrial Steel Toe meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
-{"query": "Examine this customs form from Global Materials LLC.", "intent": "document_intake", "language": "en"}
-{"query": "Can you check if the CK-9902-V1 get duty-free status?", "intent": "qualification_check", "language": "en"}
-{"query": "I need to know if the GA-1105-V2 pass the RVC check?", "intent": "qualification_check", "language": "en"}
-{"query": "Determine import duties on order ORD-1355?", "intent": "duty_cost", "language": "en"}
-{"query": "Hey, does our Garden Ankle (variant 1) meet the tariff shift rules?", "intent": "qualification_check", "language": "en"}
-{"query": "Customs is auditing ORD-1098.", "intent": "escalate_human", "language": "en"}
-{"query": "How much duty on order ORD-1401?", "intent": "duty_cost", "language": "en"}
-{"query": "We received an audit notice on HS code 6404.11.", "intent": "escalate_human", "language": "en"}
-{"query": "Can you review supplier certificate from Global Materials LLC.", "intent": "document_intake", "language": "en"}
-{"query": "Here is the new origin declaration for Apex Footwear.", "intent": "document_intake", "language": "en"}
-{"query": "Here is the new origin declaration for Eastside Retail.", "intent": "document_intake", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1349?", "intent": "duty_cost", "language": "en"}
-{"query": "Here is this customs form for Can-Am Distributors.", "intent": "document_intake", "language": "en"}
-{"query": "How much duty on order ORD-1363?", "intent": "duty_cost", "language": "en"}
-{"query": "CBP sent a verification letter for ORD-1015.", "intent": "escalate_human", "language": "en"}
-{"query": "Just sign the certificate for ORD-1080.", "intent": "escalate_human", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1039?", "intent": "duty_cost", "language": "en"}
-{"query": "How much duty on order ORD-1302?", "intent": "duty_cost", "language": "en"}
-{"query": "CBP sent a verification letter for ORD-1197.", "intent": "escalate_human", "language": "en"}
-{"query": "What is the customs cost on order ORD-1212?", "intent": "duty_cost", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1120?", "intent": "duty_cost", "language": "en"}
-{"query": "What is the customs cost on order ORD-1491?", "intent": "duty_cost", "language": "en"}
-{"query": "I have a legal dispute regarding ORD-1233.", "intent": "escalate_human", "language": "en"}
-{"query": "We received an audit notice on Outdoor Hiker.", "intent": "escalate_human", "language": "en"}
-{"query": "Just sign the certificate for ORD-1058.", "intent": "escalate_human", "language": "en"}
-{"query": "Just sign the certificate for ORD-1143.", "intent": "escalate_human", "language": "en"}
-{"query": "CBP sent a verification letter for ORD-1380.", "intent": "escalate_human", "language": "en"}
-{"query": "How much duty on order ORD-1093?", "intent": "duty_cost", "language": "en"}
-{"query": "What are the tariffs on order ORD-1445?", "intent": "duty_cost", "language": "en"}
-{"query": "Determine import duties on order ORD-1129?", "intent": "duty_cost", "language": "en"}
-{"query": "What is the customs cost on order ORD-1457?", "intent": "duty_cost", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1000?", "intent": "duty_cost", "language": "en"}
-{"query": "What are the tariffs on order ORD-1224?", "intent": "duty_cost", "language": "en"}
-{"query": "Determine import duties on order ORD-1320?", "intent": "duty_cost", "language": "en"}
-{"query": "What is the customs cost on order ORD-1190?", "intent": "duty_cost", "language": "en"}
-{"query": "What is the customs cost on order ORD-1163?", "intent": "duty_cost", "language": "en"}
-{"query": "Determine import duties on order ORD-1030?", "intent": "duty_cost", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1224?", "intent": "duty_cost", "language": "en"}
-{"query": "What is the customs cost on order ORD-1206?", "intent": "duty_cost", "language": "en"}
-{"query": "What is the customs cost on order ORD-1308?", "intent": "duty_cost", "language": "en"}
-{"query": "How much duty on order ORD-1418?", "intent": "duty_cost", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1037?", "intent": "duty_cost", "language": "en"}
-{"query": "What are the tariffs on order ORD-1240?", "intent": "duty_cost", "language": "en"}
-{"query": "How much duty on order ORD-1148?", "intent": "duty_cost", "language": "en"}
-{"query": "Determine import duties on order ORD-1296?", "intent": "duty_cost", "language": "en"}
-{"query": "How much duty on order ORD-1090?", "intent": "duty_cost", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1236?", "intent": "duty_cost", "language": "en"}
-{"query": "Determine import duties on order ORD-1279?", "intent": "duty_cost", "language": "en"}
-{"query": "What are the tariffs on order ORD-1048?", "intent": "duty_cost", "language": "en"}
-{"query": "What is the customs cost on order ORD-1430?", "intent": "duty_cost", "language": "en"}
-{"query": "What are the tariffs on order ORD-1056?", "intent": "duty_cost", "language": "en"}
-{"query": "How much duty on order ORD-1203?", "intent": "duty_cost", "language": "en"}
-{"query": "What are the tariffs on order ORD-1241?", "intent": "duty_cost", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1032?", "intent": "duty_cost", "language": "en"}
-{"query": "Determine import duties on order ORD-1482?", "intent": "duty_cost", "language": "en"}
-{"query": "What are the tariffs on order ORD-1334?", "intent": "duty_cost", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1441?", "intent": "duty_cost", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1025?", "intent": "duty_cost", "language": "en"}
-{"query": "Determine import duties on order ORD-1269?", "intent": "duty_cost", "language": "en"}
-{"query": "What are the tariffs on order ORD-1115?", "intent": "duty_cost", "language": "en"}
-{"query": "What are the tariffs on order ORD-1164?", "intent": "duty_cost", "language": "en"}
-{"query": "What are the tariffs on order ORD-1348?", "intent": "duty_cost", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1356?", "intent": "duty_cost", "language": "en"}
-{"query": "What are the tariffs on order ORD-1220?", "intent": "duty_cost", "language": "en"}
-{"query": "Can you calculate the duty savings on order ORD-1483?", "intent": "duty_cost", "language": "en"}
-{"query": "Determine import duties on order ORD-1187?", "intent": "duty_cost", "language": "en"}
-{"query": "How much duty on order ORD-1116?", "intent": "duty_cost", "language": "en"}
-{"query": "What is the customs cost on order ORD-1173?", "intent": "duty_cost", "language": "en"}
+{"query": "Please advise: How much duty for order PO-8036?", "intent": "duty_cost", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8036", "persona": "Retail Buyer", "tier": "T3", "answer": "needs_review"}
+{"query": "Hi team, If we switch the our component from Gulfport Elastomers Inc. instead, does NB-0102-V3 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8009", "persona": "Compliance Officer", "tier": "T2", "answer": "qualifies"}
+{"query": "Hello, Does sku NB-0413-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0413-V1", "po_number": "PO-8039", "persona": "Compliance Officer", "tier": "T1", "answer": "needs_review"}
+{"query": "If we switch the insole from Xiamen Comfort Insole Co. instead, does Marsh Neo Pro still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0109", "po_number": "PO-8027", "persona": "Logistics Analyst", "tier": "T1", "answer": "needs_review"}
+{"query": "Does sku NB-0105-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105-V3", "po_number": "PO-8004", "persona": "Customs Broker", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Urgent: How much duty for NB-0105?", "intent": "duty_cost", "language": "en", "sku": "NB-0105", "po_number": "PO-8004", "persona": "Factory Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: How much duty for order PO-8023?", "intent": "duty_cost", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8023", "persona": "Auditor", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: Does sku NB-0108-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8023", "persona": "Compliance Officer", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hi team, Customs is auditing Steelguard due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0102", "po_number": "PO-8013", "persona": "Supply Chain Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hi team, Here is the new origin declaration for NB-0102-V3.", "intent": "document_intake", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8005", "persona": "Logistics Analyst", "tier": "T1", "answer": "qualifies"}
+{"query": "Does our Tundra Pac Leather (women's) (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8041", "persona": "Customs Broker", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Please advise: If we switch the our component from CN instead, does Value Knee (variant 3) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8032", "persona": "Customer Service", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Please advise: If we switch the safety toe from Frazier Safety Components S.A. de C.V. instead, does NB-0413-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0413-V1", "po_number": "PO-8039", "persona": "Supply Chain Manager", "tier": "T1", "answer": "needs_review"}
+{"query": "Please advise: If we switch the safety toe from DE instead, does Glacier Lite (variant 3) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8019", "persona": "Logistics Analyst", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, If we switch the our component from US instead, does Value Knee (variant 1) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8004", "persona": "Compliance Officer", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Urgent: If we switch the puncture plate from Clark Protective Parts LLC instead, does NB-0413-V2 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8010", "persona": "Customs Broker", "tier": "T2", "answer": "needs_review"}
+{"query": "Hi team, Does the NB-0108-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8005", "persona": "Factory Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hello, Does our Marsh Neo Pro qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109", "po_number": "PO-8009", "persona": "Factory Manager", "tier": "T1", "answer": "needs_review"}
+{"query": "If we switch the our component from Chimie Laurentide inc. instead, does NB-0102-V2 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8011", "persona": "Factory Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: Here is the new origin declaration for NB-0412-V2.", "intent": "document_intake", "language": "en", "sku": "NB-0412-V2", "po_number": "PO-8012", "persona": "Logistics Analyst", "tier": "T2", "answer": "qualifies"}
+{"query": "Hi team, If we switch the our component from Cartonnage Mauricie inc. instead, does Tundra Pac (variant 2) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8027", "persona": "Supply Chain Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Quick question: If we switch the outsole/shell compound from Gulfport Elastomers Inc. instead, does Tundra Pac Leather (women's) (variant 2) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0106-V2", "po_number": "PO-8025", "persona": "Factory Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: If we switch the our component from CN instead, does NB-0414-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8009", "persona": "Customer Service", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, Customs is auditing PO-8006 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0102", "po_number": "PO-8006", "persona": "Customer Service", "tier": "T3", "answer": "qualifies"}
+{"query": "Does sku NB-0414-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8039", "persona": "Customs Broker", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Quick question: If we switch the insole from Lewis Comfort Insoles Co., Ltd. instead, does Glacier Pro V (variant 2) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8024", "persona": "Auditor", "tier": "T1", "answer": "needs_review"}
+{"query": "Please advise: If we switch the our component from Hunter Comfort Insoles S.A. de C.V. instead, does Value Knee (variant 3) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8018", "persona": "Logistics Analyst", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Urgent: If we switch the safety toe from US instead, does Steelguard still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102", "po_number": "PO-8035", "persona": "Customs Broker", "tier": "T2", "answer": "qualifies"}
+{"query": "Hello, How much duty for Marsh Neo Pro (variant 3)?", "intent": "duty_cost", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8041", "persona": "Factory Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Urgent: If we switch the our component from US instead, does NB-0108-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8009", "persona": "Supply Chain Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Does the NB-0412 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0412", "po_number": "PO-8009", "persona": "Customer Service", "tier": "T1", "answer": "qualifies"}
+{"query": "Hi team, Does our Value Knee (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8006", "persona": "Logistics Analyst", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hi team, How much duty for order PO-8007?", "intent": "duty_cost", "language": "en", "sku": "NB-0109-V2", "po_number": "PO-8007", "persona": "Retail Buyer", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, How much duty for order PO-8005?", "intent": "duty_cost", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8005", "persona": "Supply Chain Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Hello, If we switch the packaging from Jordan Packaging Inc. instead, does Value Knee (variant 3) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8008", "persona": "Retail Buyer", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "If we switch the safety toe from Campbell Safety Components LLC instead, does Glacier Pro (variant 3) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8041", "persona": "Compliance Officer", "tier": "T2", "answer": "needs_review"}
+{"query": "Hello, How much duty for Steelguard (variant 2)?", "intent": "duty_cost", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8004", "persona": "Customer Service", "tier": "T3", "answer": "qualifies"}
+{"query": "Hi team, Customs is auditing Tundra Pac Leather (women's) (variant 1) due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8034", "persona": "Customer Service", "tier": "T2", "answer": "needs_review"}
+{"query": "Quick question: If we switch the our component from Flores Footbed S.A. de C.V. instead, does Glacier Pro V (variant 3) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8031", "persona": "Retail Buyer", "tier": "T2", "answer": "needs_review"}
+{"query": "Hi team, How much duty for Tundra Pac Leather (women's) (variant 1)?", "intent": "duty_cost", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8033", "persona": "Customer Service", "tier": "T1", "answer": "needs_review"}
+{"query": "Hi team, Customs is auditing Tundra Pac Leather (women's) (variant 3) due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0106-V3", "po_number": "PO-8010", "persona": "Retail Buyer", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, Here is the new origin declaration for NB-0108-V1.", "intent": "document_intake", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8032", "persona": "Logistics Analyst", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "If we switch the our component from Conceria Valdarno S.r.l. instead, does NB-0108-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8040", "persona": "Logistics Analyst", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hello, How much duty for order PO-8040?", "intent": "duty_cost", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8040", "persona": "Logistics Analyst", "tier": "T3", "answer": "needs_review"}
+{"query": "Urgent: If we switch the insole from Hunter Comfort Insoles S.A. de C.V. instead, does NB-0414-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8036", "persona": "Factory Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, What is the tariff shift rule for NB-0413-V3?", "intent": "rules_info", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8040", "persona": "Compliance Officer", "tier": "T3", "answer": "needs_review"}
+{"query": "Quick question: Here is the new origin declaration for Frazier Safety Components S.A. de C.V..", "intent": "document_intake", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8019", "persona": "Factory Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "If we switch the our component from Xiamen Comfort Insole Co. instead, does Steelguard (variant 2) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8044", "persona": "Supply Chain Manager", "tier": "T1", "answer": "qualifies"}
+{"query": "Hi team, What is the tariff shift rule for Marsh Neo Pro (variant 2)?", "intent": "rules_info", "language": "en", "sku": "NB-0109-V2", "po_number": "PO-8027", "persona": "Customer Service", "tier": "T1", "answer": "needs_review"}
+{"query": "Customs is auditing Tundra Pac Leather (women's) (variant 3) due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0106-V3", "po_number": "PO-8041", "persona": "Customer Service", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Here is the new origin declaration for Frazier Safety Components S.A. de C.V..", "intent": "document_intake", "language": "en", "sku": "NB-0414", "po_number": "PO-8003", "persona": "Compliance Officer", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Please advise: Does sku NB-0106-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0106-V2", "po_number": "PO-8017", "persona": "Supply Chain Manager", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, If we switch the our component from US instead, does NB-0102-V3 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8002", "persona": "Auditor", "tier": "T3", "answer": "qualifies"}
+{"query": "Urgent: Customs is auditing Tundra Pac (variant 1) due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0105-V1", "po_number": "PO-8044", "persona": "Retail Buyer", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Please advise: Here is the new origin declaration for Powell Labels Inc..", "intent": "document_intake", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8012", "persona": "Auditor", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Urgent: If we switch the outsole from MX instead, does NB-0413 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0413", "po_number": "PO-8024", "persona": "Logistics Analyst", "tier": "T3", "answer": "needs_review"}
+{"query": "Hello, Here is the new origin declaration for NB-0412-V2.", "intent": "document_intake", "language": "en", "sku": "NB-0412-V2", "po_number": "PO-8043", "persona": "Supply Chain Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: Customs is auditing NB-0412 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0412", "po_number": "PO-8038", "persona": "Logistics Analyst", "tier": "T1", "answer": "needs_review"}
+{"query": "Quick question: How much duty for order PO-8040?", "intent": "duty_cost", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8040", "persona": "Compliance Officer", "tier": "T1", "answer": "needs_review"}
+{"query": "Please advise: If we switch the our component from Waters Packaging LLC instead, does Tundra Pac still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0105", "po_number": "PO-8006", "persona": "Auditor", "tier": "T1", "answer": "qualifies"}
+{"query": "Hi team, Customs is auditing PO-8038 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0109-V2", "po_number": "PO-8038", "persona": "Customs Broker", "tier": "T1", "answer": "needs_review"}
+{"query": "Hello, Customs is auditing PO-8042 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0109", "po_number": "PO-8042", "persona": "Compliance Officer", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Customs is auditing PO-8021 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0108", "po_number": "PO-8021", "persona": "Logistics Analyst", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, Customs is auditing NB-0109-V3 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8043", "persona": "Customs Broker", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Please advise: How much duty for order PO-8016?", "intent": "duty_cost", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8016", "persona": "Customs Broker", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hi team, Does our Glacier Lite (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8039", "persona": "Factory Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, What is the tariff shift rule for NB-0414?", "intent": "rules_info", "language": "en", "sku": "NB-0414", "po_number": "PO-8044", "persona": "Logistics Analyst", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Urgent: Does our Value Knee (variant 3) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8040", "persona": "Retail Buyer", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Quick question: Customs is auditing NB-0105-V2 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8015", "persona": "Customs Broker", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hello, If we switch the our component from Ramos Safety Components GmbH instead, does NB-0413-V3 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8002", "persona": "Customer Service", "tier": "T1", "answer": "needs_review"}
+{"query": "Quick question: What is the tariff shift rule for Tundra Pac (variant 2)?", "intent": "rules_info", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8037", "persona": "Auditor", "tier": "T3", "answer": "qualifies"}
+{"query": "Hello, Customs is auditing Glacier Pro (variant 1) due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0412-V1", "po_number": "PO-8010", "persona": "Factory Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: If we switch the upper from Hartwig Polymere GmbH instead, does Value Knee (variant 2) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8032", "persona": "Compliance Officer", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Urgent: Does the NB-0105 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105", "po_number": "PO-8021", "persona": "Customer Service", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, If we switch the outsole/shell compound from US instead, does NB-0102-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8029", "persona": "Customs Broker", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: Does the NB-0109-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109-V2", "po_number": "PO-8041", "persona": "Supply Chain Manager", "tier": "T2", "answer": "needs_review"}
+{"query": "Quick question: Customs is auditing PO-8013 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0413-V1", "po_number": "PO-8013", "persona": "Customer Service", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, Here is the new origin declaration for NB-0414-V2.", "intent": "document_intake", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8016", "persona": "Customs Broker", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Please advise: What is the tariff shift rule for Glacier Lite (variant 3)?", "intent": "rules_info", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8011", "persona": "Factory Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Customs is auditing PO-8005 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0109", "po_number": "PO-8005", "persona": "Retail Buyer", "tier": "T2", "answer": "qualifies"}
+{"query": "Hi team, Does our Steelguard (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8016", "persona": "Retail Buyer", "tier": "T1", "answer": "qualifies"}
+{"query": "Please advise: What is the tariff shift rule for NB-0414-V1?", "intent": "rules_info", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8043", "persona": "Customer Service", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Quick question: Here is the new origin declaration for NB-0109-V1.", "intent": "document_intake", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8012", "persona": "Auditor", "tier": "T2", "answer": "needs_review"}
+{"query": "Urgent: Does sku NB-0106-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0106-V2", "po_number": "PO-8012", "persona": "Compliance Officer", "tier": "T3", "answer": "qualifies"}
+{"query": "Urgent: Here is the new origin declaration for NB-0413-V3.", "intent": "document_intake", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8009", "persona": "Customer Service", "tier": "T1", "answer": "needs_review"}
+{"query": "Hello, What is the tariff shift rule for Glacier Pro (variant 1)?", "intent": "rules_info", "language": "en", "sku": "NB-0412-V1", "po_number": "PO-8039", "persona": "Factory Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Quick question: If we switch the insole from CA instead, does Glacier Pro V (variant 3) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8020", "persona": "Logistics Analyst", "tier": "T1", "answer": "needs_review"}
+{"query": "Customs is auditing PO-8026 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8026", "persona": "Factory Manager", "tier": "T1", "answer": "qualifies"}
+{"query": "If we switch the our component from Jade River Textiles Co. instead, does NB-0102-V3 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8039", "persona": "Auditor", "tier": "T1", "answer": "qualifies"}
+{"query": "Please advise: Here is the new origin declaration for NB-0108-V3.", "intent": "document_intake", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8039", "persona": "Customs Broker", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hello, How much duty for order PO-8017?", "intent": "duty_cost", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8017", "persona": "Customer Service", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Please advise: Customs is auditing NB-0102-V2 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8036", "persona": "Supply Chain Manager", "tier": "T2", "answer": "needs_review"}
+{"query": "Hello, If we switch the our component from DE instead, does Steelguard still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102", "po_number": "PO-8004", "persona": "Supply Chain Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Hi team, Customs is auditing NB-0108-V2 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8001", "persona": "Customs Broker", "tier": "T2", "answer": "qualifies"}
+{"query": "Hello, Here is the new origin declaration for NB-0105.", "intent": "document_intake", "language": "en", "sku": "NB-0105", "po_number": "PO-8006", "persona": "Customs Broker", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: Here is the new origin declaration for NB-0102-V1.", "intent": "document_intake", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8014", "persona": "Factory Manager", "tier": "T3", "answer": "qualifies"}
+{"query": "Hello, Customs is auditing PO-8040 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8040", "persona": "Retail Buyer", "tier": "T1", "answer": "needs_review"}
+{"query": "If we switch the our component from Hartwig Polymere GmbH instead, does Glacier Lite still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0414", "po_number": "PO-8021", "persona": "Customer Service", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hi team, If we switch the our component from CA instead, does Marsh Neo Pro (variant 3) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8027", "persona": "Auditor", "tier": "T1", "answer": "needs_review"}
+{"query": "Please advise: Does sku NB-0414-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8011", "persona": "Auditor", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hi team, How much duty for Glacier Pro V (variant 2)?", "intent": "duty_cost", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8016", "persona": "Auditor", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hi team, Does our Glacier Pro V (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0413-V1", "po_number": "PO-8028", "persona": "Retail Buyer", "tier": "T3", "answer": "needs_review"}
+{"query": "Please advise: Customs is auditing NB-0413-V3 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8041", "persona": "Compliance Officer", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Urgent: Customs is auditing PO-8024 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0105-V3", "po_number": "PO-8024", "persona": "Customs Broker", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, How much duty for order PO-8018?", "intent": "duty_cost", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8018", "persona": "Retail Buyer", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, If we switch the lining from Hall Textiles Co., Ltd. instead, does NB-0413-V2 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8039", "persona": "Customer Service", "tier": "T1", "answer": "needs_review"}
+{"query": "If we switch the outsole/shell compound from Chimie Laurentide inc. instead, does NB-0106-V3 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0106-V3", "po_number": "PO-8040", "persona": "Logistics Analyst", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Please advise: Customs is auditing NB-0105-V2 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8023", "persona": "Customs Broker", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: If we switch the outsole from US instead, does Value Knee still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108", "po_number": "PO-8003", "persona": "Auditor", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, Customs is auditing Glacier Lite due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0414", "po_number": "PO-8041", "persona": "Logistics Analyst", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hello, Does sku NB-0108-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8019", "persona": "Customer Service", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Quick question: How much duty for order PO-8022?", "intent": "duty_cost", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8022", "persona": "Supply Chain Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Hello, Does the NB-0109 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109", "po_number": "PO-8004", "persona": "Factory Manager", "tier": "T3", "answer": "needs_review"}
+{"query": "Urgent: If we switch the our component from US instead, does Tundra Pac Leather (women's) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0106", "po_number": "PO-8044", "persona": "Customer Service", "tier": "T3", "answer": "qualifies"}
+{"query": "Quick question: If we switch the our component from Hangzhou Weave Tech Co. instead, does NB-0108-V3 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8026", "persona": "Customs Broker", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hello, If we switch the our component from CN instead, does NB-0414 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0414", "po_number": "PO-8024", "persona": "Logistics Analyst", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Quick question: What is the tariff shift rule for Value Knee (variant 3)?", "intent": "rules_info", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8034", "persona": "Customs Broker", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "If we switch the our component from DE instead, does Value Knee (variant 1) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8008", "persona": "Logistics Analyst", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Urgent: What is the tariff shift rule for NB-0108-V2?", "intent": "rules_info", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8024", "persona": "Auditor", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, Customs is auditing PO-8007 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8007", "persona": "Customer Service", "tier": "T3", "answer": "qualifies"}
+{"query": "Customs is auditing Value Knee (variant 1) due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8034", "persona": "Retail Buyer", "tier": "T1", "answer": "needs_review"}
+{"query": "What is the tariff shift rule for Tundra Pac Leather (women's) (variant 3)?", "intent": "rules_info", "language": "en", "sku": "NB-0106-V3", "po_number": "PO-8013", "persona": "Retail Buyer", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Urgent: Customs is auditing NB-0412-V3 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8027", "persona": "Retail Buyer", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: If we switch the outsole/shell compound from CA instead, does Tundra Pac (variant 3) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0105-V3", "po_number": "PO-8017", "persona": "Supply Chain Manager", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Urgent: How much duty for order PO-8017?", "intent": "duty_cost", "language": "en", "sku": "NB-0106-V2", "po_number": "PO-8017", "persona": "Logistics Analyst", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hello, If we switch the our component from Tucker Labels Co., Ltd. instead, does Marsh Neo Pro still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0109", "po_number": "PO-8015", "persona": "Auditor", "tier": "T3", "answer": "needs_review"}
+{"query": "Hello, If we switch the midsole from Hill Footbed Co., Ltd. instead, does Glacier Lite (variant 2) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8027", "persona": "Supply Chain Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hi team, If we switch the puncture plate from Thomas Protective Parts GmbH instead, does NB-0414-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8032", "persona": "Supply Chain Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "If we switch the insole from Carr Comfort Insoles Inc. instead, does NB-0414-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8020", "persona": "Retail Buyer", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Urgent: What is the tariff shift rule for NB-0412-V3?", "intent": "rules_info", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8002", "persona": "Auditor", "tier": "T2", "answer": "needs_review"}
+{"query": "Please advise: What is the tariff shift rule for NB-0413-V3?", "intent": "rules_info", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8016", "persona": "Logistics Analyst", "tier": "T1", "answer": "needs_review"}
+{"query": "Quick question: How much duty for NB-0105-V2?", "intent": "duty_cost", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8030", "persona": "Compliance Officer", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Please advise: What is the tariff shift rule for NB-0106-V3?", "intent": "rules_info", "language": "en", "sku": "NB-0106-V3", "po_number": "PO-8042", "persona": "Logistics Analyst", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Quick question: Customs is auditing PO-8027 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8027", "persona": "Customs Broker", "tier": "T3", "answer": "qualifies"}
+{"query": "If we switch the midsole from Hill Footbed Co., Ltd. instead, does NB-0413-V3 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8021", "persona": "Auditor", "tier": "T3", "answer": "needs_review"}
+{"query": "Please advise: What is the tariff shift rule for Glacier Pro (variant 3)?", "intent": "rules_info", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8031", "persona": "Compliance Officer", "tier": "T3", "answer": "needs_review"}
+{"query": "Quick question: What is the tariff shift rule for NB-0108-V2?", "intent": "rules_info", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8008", "persona": "Compliance Officer", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Please advise: How much duty for order PO-8022?", "intent": "duty_cost", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8022", "persona": "Compliance Officer", "tier": "T3", "answer": "qualifies"}
+{"query": "Hi team, Customs is auditing NB-0106-V1 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8025", "persona": "Logistics Analyst", "tier": "T2", "answer": "qualifies"}
+{"query": "If we switch the our component from Edwards Protective Parts Co., Ltd. instead, does NB-0414 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0414", "po_number": "PO-8015", "persona": "Customer Service", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hello, If we switch the packaging from US instead, does NB-0108-V3 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8003", "persona": "Factory Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Quick question: What is the tariff shift rule for NB-0102-V3?", "intent": "rules_info", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8040", "persona": "Compliance Officer", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, What is the tariff shift rule for NB-0106-V1?", "intent": "rules_info", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8044", "persona": "Retail Buyer", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Quick question: Customs is auditing Tundra Pac Leather (women's) (variant 1) due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8005", "persona": "Customs Broker", "tier": "T1", "answer": "qualifies"}
+{"query": "Please advise: If we switch the our component from Chimie Laurentide inc. instead, does NB-0105-V2 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8026", "persona": "Auditor", "tier": "T3", "answer": "qualifies"}
+{"query": "Hello, Here is the new origin declaration for Carr Comfort Insoles Inc..", "intent": "document_intake", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8044", "persona": "Auditor", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Quick question: What is the tariff shift rule for NB-0414-V2?", "intent": "rules_info", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8005", "persona": "Supply Chain Manager", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hello, If we switch the our component from Mcpherson Sole Works Co., Ltd. instead, does NB-0109 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0109", "po_number": "PO-8041", "persona": "Customer Service", "tier": "T3", "answer": "needs_review"}
+{"query": "Customs is auditing NB-0105 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0105", "po_number": "PO-8001", "persona": "Logistics Analyst", "tier": "T3", "answer": "qualifies"}
+{"query": "Hi team, Customs is auditing NB-0414-V1 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8015", "persona": "Auditor", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Please advise: If we switch the packaging from Jordan Packaging Inc. instead, does Marsh Neo Pro still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0109", "po_number": "PO-8028", "persona": "Customs Broker", "tier": "T1", "answer": "needs_review"}
+{"query": "Hi team, How much duty for Tundra Pac (variant 1)?", "intent": "duty_cost", "language": "en", "sku": "NB-0105-V1", "po_number": "PO-8041", "persona": "Customer Service", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Urgent: If we switch the packaging from Waters Packaging LLC instead, does NB-0106-V3 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0106-V3", "po_number": "PO-8009", "persona": "Auditor", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hello, What is the tariff shift rule for Glacier Pro V (variant 2)?", "intent": "rules_info", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8043", "persona": "Supply Chain Manager", "tier": "T3", "answer": "needs_review"}
+{"query": "Hi team, How much duty for order PO-8022?", "intent": "duty_cost", "language": "en", "sku": "NB-0106-V3", "po_number": "PO-8022", "persona": "Factory Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Hello, Does sku NB-0412-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0412-V2", "po_number": "PO-8037", "persona": "Supply Chain Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: How much duty for order PO-8032?", "intent": "duty_cost", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8032", "persona": "Factory Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hi team, If we switch the our component from Hall Textiles Co., Ltd. instead, does NB-0102-V2 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8044", "persona": "Retail Buyer", "tier": "T1", "answer": "qualifies"}
+{"query": "Please advise: Here is the new origin declaration for NB-0102-V2.", "intent": "document_intake", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8030", "persona": "Logistics Analyst", "tier": "T1", "answer": "qualifies"}
+{"query": "Please advise: What is the tariff shift rule for NB-0105-V2?", "intent": "rules_info", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8010", "persona": "Compliance Officer", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: If we switch the our component from CN instead, does NB-0108 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108", "po_number": "PO-8017", "persona": "Auditor", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Customs is auditing PO-8035 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8035", "persona": "Retail Buyer", "tier": "T2", "answer": "needs_review"}
+{"query": "Urgent: If we switch the outsole/shell compound from Gulfport Elastomers Inc. instead, does NB-0102-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8019", "persona": "Retail Buyer", "tier": "T1", "answer": "qualifies"}
+{"query": "Customs is auditing NB-0109-V1 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8002", "persona": "Supply Chain Manager", "tier": "T1", "answer": "qualifies"}
+{"query": "Quick question: Here is the new origin declaration for NB-0105.", "intent": "document_intake", "language": "en", "sku": "NB-0105", "po_number": "PO-8026", "persona": "Customs Broker", "tier": "T3", "answer": "qualifies"}
+{"query": "Customs is auditing Glacier Pro V (variant 3) due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8003", "persona": "Logistics Analyst", "tier": "T3", "answer": "qualifies"}
+{"query": "Urgent: How much duty for Tundra Pac (variant 2)?", "intent": "duty_cost", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8036", "persona": "Logistics Analyst", "tier": "T3", "answer": "needs_review"}
+{"query": "Hello, What is the tariff shift rule for NB-0412-V3?", "intent": "rules_info", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8016", "persona": "Auditor", "tier": "T2", "answer": "needs_review"}
+{"query": "Hello, What is the tariff shift rule for Glacier Lite (variant 2)?", "intent": "rules_info", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8033", "persona": "Compliance Officer", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, Does our Tundra Pac (variant 2) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8011", "persona": "Logistics Analyst", "tier": "T3", "answer": "qualifies"}
+{"query": "What is the tariff shift rule for Glacier Lite (variant 3)?", "intent": "rules_info", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8028", "persona": "Retail Buyer", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, Here is the new origin declaration for NB-0414-V3.", "intent": "document_intake", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8034", "persona": "Compliance Officer", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hi team, If we switch the our component from MX instead, does NB-0106-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8034", "persona": "Logistics Analyst", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Please advise: Does our Glacier Pro V (variant 2) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8009", "persona": "Factory Manager", "tier": "T1", "answer": "needs_review"}
+{"query": "Urgent: Customs is auditing PO-8040 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0109-V2", "po_number": "PO-8040", "persona": "Compliance Officer", "tier": "T3", "answer": "needs_review"}
+{"query": "Urgent: How much duty for order PO-8040?", "intent": "duty_cost", "language": "en", "sku": "NB-0105-V3", "po_number": "PO-8040", "persona": "Logistics Analyst", "tier": "T2", "answer": "needs_review"}
+{"query": "Hello, Customs is auditing NB-0109 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0109", "po_number": "PO-8029", "persona": "Logistics Analyst", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, If we switch the packaging from CA instead, does NB-0109-V2 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0109-V2", "po_number": "PO-8013", "persona": "Supply Chain Manager", "tier": "T2", "answer": "needs_review"}
+{"query": "Hi team, If we switch the our component from Jordan Packaging Inc. instead, does NB-0109-V3 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8035", "persona": "Factory Manager", "tier": "T2", "answer": "needs_review"}
+{"query": "If we switch the upper from IT instead, does NB-0412 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0412", "po_number": "PO-8029", "persona": "Supply Chain Manager", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, How much duty for Glacier Pro V?", "intent": "duty_cost", "language": "en", "sku": "NB-0413", "po_number": "PO-8036", "persona": "Customs Broker", "tier": "T2", "answer": "needs_review"}
+{"query": "Urgent: Customs is auditing PO-8043 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0102", "po_number": "PO-8043", "persona": "Logistics Analyst", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hi team, If we switch the outsole/shell compound from CA instead, does Steelguard still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102", "po_number": "PO-8030", "persona": "Retail Buyer", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: Customs is auditing PO-8033 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0109", "po_number": "PO-8033", "persona": "Customs Broker", "tier": "T1", "answer": "needs_review"}
+{"query": "Hi team, Customs is auditing PO-8009 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8009", "persona": "Auditor", "tier": "T2", "answer": "qualifies"}
+{"query": "Quick question: Here is the new origin declaration for NB-0412-V3.", "intent": "document_intake", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8023", "persona": "Retail Buyer", "tier": "T3", "answer": "needs_review"}
+{"query": "What is the tariff shift rule for Value Knee (variant 1)?", "intent": "rules_info", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8039", "persona": "Customer Service", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hi team, What is the tariff shift rule for NB-0413-V2?", "intent": "rules_info", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8041", "persona": "Auditor", "tier": "T3", "answer": "needs_review"}
+{"query": "Quick question: How much duty for order PO-8012?", "intent": "duty_cost", "language": "en", "sku": "NB-0412-V2", "po_number": "PO-8012", "persona": "Customer Service", "tier": "T3", "answer": "needs_review"}
+{"query": "If we switch the our component from Hunter Comfort Insoles S.A. de C.V. instead, does NB-0412 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0412", "po_number": "PO-8027", "persona": "Compliance Officer", "tier": "T3", "answer": "qualifies"}
+{"query": "Quick question: Customs is auditing PO-8032 due to compliance review.", "intent": "escalate_human", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8032", "persona": "Compliance Officer", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Urgent: If we switch the our component from CA instead, does Value Knee (variant 3) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8037", "persona": "Factory Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hi team, How much duty for NB-0413-V2?", "intent": "duty_cost", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8043", "persona": "Logistics Analyst", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Urgent: How much duty for order PO-8020?", "intent": "duty_cost", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8020", "persona": "Logistics Analyst", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hi team, What is the tariff shift rule for NB-0102-V3?", "intent": "rules_info", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8010", "persona": "Customs Broker", "tier": "T1", "answer": "qualifies"}
+{"query": "Quick question: If we switch the midsole from Flores Footbed S.A. de C.V. instead, does Glacier Lite still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0414", "po_number": "PO-8025", "persona": "Factory Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Does the NB-0414-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8044", "persona": "Factory Manager", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hello, How much duty for order PO-8012?", "intent": "duty_cost", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8012", "persona": "Logistics Analyst", "tier": "T2", "answer": "needs_review"}
+{"query": "Urgent: Does our Glacier Pro V qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0413", "po_number": "PO-8037", "persona": "Retail Buyer", "tier": "T1", "answer": "needs_review"}
+{"query": "Hello, If we switch the our component from Edwards Protective Parts Co., Ltd. instead, does Steelguard (variant 1) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8003", "persona": "Compliance Officer", "tier": "T2", "answer": "qualifies"}
+{"query": "What is the tariff shift rule for Value Knee (variant 3)?", "intent": "rules_info", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8040", "persona": "Supply Chain Manager", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Urgent: Here is the new origin declaration for NB-0412.", "intent": "document_intake", "language": "en", "sku": "NB-0412", "po_number": "PO-8016", "persona": "Logistics Analyst", "tier": "T3", "answer": "qualifies"}
+{"query": "Hello, What is the tariff shift rule for Value Knee (variant 1)?", "intent": "rules_info", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8022", "persona": "Logistics Analyst", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "What is the tariff shift rule for Glacier Pro V (variant 3)?", "intent": "rules_info", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8034", "persona": "Factory Manager", "tier": "T3", "answer": "needs_review"}
+{"query": "Hi team, If we switch the our component from Dongguan Upper Craft Co. instead, does NB-0105-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0105-V1", "po_number": "PO-8013", "persona": "Compliance Officer", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, What is the tariff shift rule for NB-0413-V1?", "intent": "rules_info", "language": "en", "sku": "NB-0413-V1", "po_number": "PO-8012", "persona": "Auditor", "tier": "T2", "answer": "needs_review"}
+{"query": "Hello, How much duty for NB-0108-V2?", "intent": "duty_cost", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8017", "persona": "Supply Chain Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Please advise: What is the tariff shift rule for NB-0108-V1?", "intent": "rules_info", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8003", "persona": "Customs Broker", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Urgent: If we switch the our component from Conley Sole Works LLC instead, does NB-0108-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8029", "persona": "Customer Service", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Quick question: How much duty for order PO-8019?", "intent": "duty_cost", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8019", "persona": "Auditor", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Quick question: What is the tariff shift rule for Glacier Lite (variant 1)?", "intent": "rules_info", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8043", "persona": "Logistics Analyst", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Urgent: If we switch the insole from Xiamen Comfort Insole Co. instead, does Tundra Pac Leather (women's) (variant 3) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0106-V3", "po_number": "PO-8013", "persona": "Supply Chain Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "How much duty for Glacier Pro?", "intent": "duty_cost", "language": "en", "sku": "NB-0412", "po_number": "PO-8009", "persona": "Retail Buyer", "tier": "T3", "answer": "qualifies"}
+{"query": "Hi team, If we switch the outsole/shell compound from US instead, does Steelguard (variant 1) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8035", "persona": "Customer Service", "tier": "T3", "answer": "qualifies"}
+{"query": "Quick question: How much duty for NB-0102-V1?", "intent": "duty_cost", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8028", "persona": "Compliance Officer", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hi team, If we switch the our component from VN instead, does NB-0109-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8036", "persona": "Retail Buyer", "tier": "T1", "answer": "needs_review"}
+{"query": "Hi team, If we switch the our component from Merritt Textiles LLC instead, does NB-0413-V2 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8040", "persona": "Logistics Analyst", "tier": "T3", "answer": "needs_review"}
+{"query": "Hi team, If we switch the our component from US instead, does NB-0105-V2 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8025", "persona": "Supply Chain Manager", "tier": "T1", "answer": "qualifies"}
+{"query": "If we switch the our component from CA instead, does NB-0108-V2 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8002", "persona": "Customer Service", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Here is the new origin declaration for NB-0412-V2.", "intent": "document_intake", "language": "en", "sku": "NB-0412-V2", "po_number": "PO-8036", "persona": "Customer Service", "tier": "T2", "answer": "qualifies"}
+{"query": "Hi team, If we switch the packaging from US instead, does Tundra Pac still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0105", "po_number": "PO-8037", "persona": "Auditor", "tier": "T2", "answer": "qualifies"}
+{"query": "Quick question: If we switch the safety toe from DE instead, does Value Knee (variant 1) still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8005", "persona": "Supply Chain Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hello, If we switch the packaging from Jordan Packaging Inc. instead, does NB-0105-V1 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0105-V1", "po_number": "PO-8037", "persona": "Retail Buyer", "tier": "T3", "answer": "qualifies"}
+{"query": "Please advise: If we switch the our component from CN instead, does NB-0108-V2 still qualify?", "intent": "sourcing_whatif", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8005", "persona": "Retail Buyer", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Please advise: What is the tariff shift rule for Glacier Pro (variant 1)?", "intent": "rules_info", "language": "en", "sku": "NB-0412-V1", "po_number": "PO-8010", "persona": "Retail Buyer", "tier": "T2", "answer": "qualifies"}
+{"query": "Hello, How much duty for order PO-8002?", "intent": "duty_cost", "language": "en", "sku": "NB-0108", "po_number": "PO-8002", "persona": "Customer Service", "tier": "T2", "answer": "qualifies"}
+{"query": "Here is the new origin declaration for Aramid Technik GmbH.", "intent": "document_intake", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8018", "persona": "Customer Service", "tier": "T3", "answer": "qualifies"}
+{"query": "Hi team, Does sku NB-0109-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8031", "persona": "Logistics Analyst", "tier": "T1", "answer": "needs_review"}
+{"query": "Urgent: How much duty for Marsh Neo Pro (variant 1)?", "intent": "duty_cost", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8034", "persona": "Retail Buyer", "tier": "T2", "answer": "needs_review"}
+{"query": "Quick question: Here is the new origin declaration for NB-0108-V2.", "intent": "document_intake", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8013", "persona": "Logistics Analyst", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hello, How much duty for Marsh Neo Pro?", "intent": "duty_cost", "language": "en", "sku": "NB-0109", "po_number": "PO-8007", "persona": "Retail Buyer", "tier": "T3", "answer": "qualifies"}
+{"query": "How much duty for order PO-8017?", "intent": "duty_cost", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8017", "persona": "Customs Broker", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hello, How much duty for order PO-8036?", "intent": "duty_cost", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8036", "persona": "Compliance Officer", "tier": "T2", "answer": "needs_review"}
+{"query": "Hi team, Does sku NB-0106-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0106-V2", "po_number": "PO-8014", "persona": "Auditor", "tier": "T3", "answer": "qualifies"}
+{"query": "Urgent: Here is the new origin declaration for NB-0105-V1.", "intent": "document_intake", "language": "en", "sku": "NB-0105-V1", "po_number": "PO-8002", "persona": "Supply Chain Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Hi team, How much duty for order PO-8016?", "intent": "duty_cost", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8016", "persona": "Auditor", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hello, How much duty for NB-0108-V1?", "intent": "duty_cost", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8026", "persona": "Customer Service", "tier": "T1", "answer": "qualifies"}
+{"query": "Quick question: How much duty for NB-0105?", "intent": "duty_cost", "language": "en", "sku": "NB-0105", "po_number": "PO-8033", "persona": "Customs Broker", "tier": "T1", "answer": "needs_review"}
+{"query": "Please advise: How much duty for order PO-8006?", "intent": "duty_cost", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8006", "persona": "Supply Chain Manager", "tier": "T3", "answer": "qualifies"}
+{"query": "Please advise: What is the tariff shift rule for Glacier Lite?", "intent": "rules_info", "language": "en", "sku": "NB-0414", "po_number": "PO-8011", "persona": "Retail Buyer", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Please advise: How much duty for NB-0414?", "intent": "duty_cost", "language": "en", "sku": "NB-0414", "po_number": "PO-8031", "persona": "Logistics Analyst", "tier": "T2", "answer": "qualifies"}
+{"query": "How much duty for Value Knee (variant 1)?", "intent": "duty_cost", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8037", "persona": "Customer Service", "tier": "T2", "answer": "needs_review"}
+{"query": "Urgent: Here is the new origin declaration for NB-0106-V2.", "intent": "document_intake", "language": "en", "sku": "NB-0106-V2", "po_number": "PO-8013", "persona": "Customs Broker", "tier": "T3", "answer": "qualifies"}
+{"query": "Quick question: Here is the new origin declaration for Tianjin Steelcap Co..", "intent": "document_intake", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8027", "persona": "Factory Manager", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "How much duty for order PO-8011?", "intent": "duty_cost", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8011", "persona": "Customs Broker", "tier": "T2", "answer": "qualifies"}
+{"query": "Hi team, How much duty for order PO-8032?", "intent": "duty_cost", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8032", "persona": "Compliance Officer", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hi team, Does the NB-0105 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105", "po_number": "PO-8016", "persona": "Supply Chain Manager", "tier": "T1", "answer": "qualifies"}
+{"query": "Quick question: How much duty for order PO-8011?", "intent": "duty_cost", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8011", "persona": "Auditor", "tier": "T3", "answer": "qualifies"}
+{"query": "Hello, How much duty for order PO-8008?", "intent": "duty_cost", "language": "en", "sku": "NB-0102", "po_number": "PO-8008", "persona": "Compliance Officer", "tier": "T3", "answer": "qualifies"}
+{"query": "Hello, What is the tariff shift rule for NB-0102-V3?", "intent": "rules_info", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8023", "persona": "Retail Buyer", "tier": "T2", "answer": "qualifies"}
+{"query": "How much duty for NB-0413-V1?", "intent": "duty_cost", "language": "en", "sku": "NB-0413-V1", "po_number": "PO-8004", "persona": "Compliance Officer", "tier": "T3", "answer": "qualifies"}
+{"query": "Please advise: How much duty for order PO-8002?", "intent": "duty_cost", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8002", "persona": "Compliance Officer", "tier": "T3", "answer": "qualifies"}
+{"query": "Urgent: How much duty for order PO-8031?", "intent": "duty_cost", "language": "en", "sku": "NB-0412-V1", "po_number": "PO-8031", "persona": "Retail Buyer", "tier": "T1", "answer": "qualifies"}
+{"query": "Please advise: How much duty for order PO-8013?", "intent": "duty_cost", "language": "en", "sku": "NB-0108-V1", "po_number": "PO-8013", "persona": "Customer Service", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hi team, Here is the new origin declaration for NB-0412.", "intent": "document_intake", "language": "en", "sku": "NB-0412", "po_number": "PO-8008", "persona": "Supply Chain Manager", "tier": "T1", "answer": "qualifies"}
+{"query": "Please advise: How much duty for order PO-8007?", "intent": "duty_cost", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8007", "persona": "Factory Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Hello, Here is the new origin declaration for Levy Footbed Inc..", "intent": "document_intake", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8020", "persona": "Auditor", "tier": "T1", "answer": "needs_review"}
+{"query": "Urgent: How much duty for order PO-8044?", "intent": "duty_cost", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8044", "persona": "Supply Chain Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hello, What is the tariff shift rule for NB-0412?", "intent": "rules_info", "language": "en", "sku": "NB-0412", "po_number": "PO-8029", "persona": "Customer Service", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: What is the tariff shift rule for Glacier Pro V?", "intent": "rules_info", "language": "en", "sku": "NB-0413", "po_number": "PO-8035", "persona": "Customs Broker", "tier": "T1", "answer": "needs_review"}
+{"query": "Urgent: Does sku NB-0102 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102", "po_number": "PO-8022", "persona": "Customer Service", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: Here is the new origin declaration for Tianjin Steelcap Co..", "intent": "document_intake", "language": "en", "sku": "NB-0413-V1", "po_number": "PO-8012", "persona": "Retail Buyer", "tier": "T1", "answer": "needs_review"}
+{"query": "Quick question: Does our Tundra Pac Leather (women's) (variant 3) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0106-V3", "po_number": "PO-8011", "persona": "Auditor", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Please advise: What is the tariff shift rule for Tundra Pac Leather (women's) (variant 1)?", "intent": "rules_info", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8001", "persona": "Customs Broker", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Quick question: What is the tariff shift rule for Steelguard (variant 1)?", "intent": "rules_info", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8002", "persona": "Customs Broker", "tier": "T3", "answer": "qualifies"}
+{"query": "Please advise: What is the tariff shift rule for NB-0413-V1?", "intent": "rules_info", "language": "en", "sku": "NB-0413-V1", "po_number": "PO-8011", "persona": "Customs Broker", "tier": "T3", "answer": "needs_review"}
+{"query": "What is the tariff shift rule for NB-0108-V2?", "intent": "rules_info", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8039", "persona": "Auditor", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Please advise: What is the tariff shift rule for Tundra Pac (variant 2)?", "intent": "rules_info", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8012", "persona": "Logistics Analyst", "tier": "T1", "answer": "qualifies"}
+{"query": "Hi team, How much duty for order PO-8001?", "intent": "duty_cost", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8001", "persona": "Supply Chain Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Hello, Here is the new origin declaration for Edwards Protective Parts Co., Ltd..", "intent": "document_intake", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8009", "persona": "Logistics Analyst", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Urgent: What is the tariff shift rule for NB-0102-V1?", "intent": "rules_info", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8017", "persona": "Auditor", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: How much duty for order PO-8039?", "intent": "duty_cost", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8039", "persona": "Customs Broker", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Please advise: What is the tariff shift rule for Glacier Lite (variant 1)?", "intent": "rules_info", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8017", "persona": "Logistics Analyst", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Urgent: Does our Steelguard (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8007", "persona": "Customer Service", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: How much duty for NB-0414-V3?", "intent": "duty_cost", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8012", "persona": "Supply Chain Manager", "tier": "T1", "answer": "needs_review"}
+{"query": "Please advise: How much duty for order PO-8024?", "intent": "duty_cost", "language": "en", "sku": "NB-0105", "po_number": "PO-8024", "persona": "Logistics Analyst", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, Does sku NB-0414-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8012", "persona": "Auditor", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hello, What is the tariff shift rule for Tundra Pac Leather (women's)?", "intent": "rules_info", "language": "en", "sku": "NB-0106", "po_number": "PO-8038", "persona": "Supply Chain Manager", "tier": "T3", "answer": "qualifies"}
+{"query": "Hello, How much duty for Steelguard?", "intent": "duty_cost", "language": "en", "sku": "NB-0102", "po_number": "PO-8019", "persona": "Factory Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hi team, How much duty for NB-0102-V1?", "intent": "duty_cost", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8029", "persona": "Customs Broker", "tier": "T1", "answer": "qualifies"}
+{"query": "Hi team, How much duty for order PO-8019?", "intent": "duty_cost", "language": "en", "sku": "NB-0412", "po_number": "PO-8019", "persona": "Factory Manager", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "How much duty for Glacier Pro V (variant 3)?", "intent": "duty_cost", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8035", "persona": "Customer Service", "tier": "T3", "answer": "needs_review"}
+{"query": "What is the tariff shift rule for Glacier Pro V (variant 2)?", "intent": "rules_info", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8017", "persona": "Auditor", "tier": "T1", "answer": "needs_review"}
+{"query": "Urgent: How much duty for NB-0413?", "intent": "duty_cost", "language": "en", "sku": "NB-0413", "po_number": "PO-8041", "persona": "Logistics Analyst", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Quick question: How much duty for Steelguard (variant 3)?", "intent": "duty_cost", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8019", "persona": "Factory Manager", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Urgent: How much duty for order PO-8008?", "intent": "duty_cost", "language": "en", "sku": "NB-0106-V2", "po_number": "PO-8008", "persona": "Logistics Analyst", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: What is the tariff shift rule for Glacier Lite (variant 2)?", "intent": "rules_info", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8037", "persona": "Customer Service", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, How much duty for Glacier Pro (variant 1)?", "intent": "duty_cost", "language": "en", "sku": "NB-0412-V1", "po_number": "PO-8032", "persona": "Factory Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, What is the tariff shift rule for NB-0106-V3?", "intent": "rules_info", "language": "en", "sku": "NB-0106-V3", "po_number": "PO-8026", "persona": "Factory Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Quick question: Here is the new origin declaration for NB-0412.", "intent": "document_intake", "language": "en", "sku": "NB-0412", "po_number": "PO-8001", "persona": "Customer Service", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, How much duty for Steelguard (variant 3)?", "intent": "duty_cost", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8015", "persona": "Factory Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Quick question: How much duty for NB-0412-V3?", "intent": "duty_cost", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8010", "persona": "Retail Buyer", "tier": "T2", "answer": "qualifies"}
+{"query": "Hi team, Does sku NB-0102-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8024", "persona": "Supply Chain Manager", "tier": "T3", "answer": "qualifies"}
+{"query": "Urgent: What is the tariff shift rule for Glacier Pro V (variant 1)?", "intent": "rules_info", "language": "en", "sku": "NB-0413-V1", "po_number": "PO-8029", "persona": "Logistics Analyst", "tier": "T2", "answer": "needs_review"}
+{"query": "Please advise: Does our Marsh Neo Pro (variant 2) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109-V2", "po_number": "PO-8009", "persona": "Auditor", "tier": "T1", "answer": "needs_review"}
+{"query": "Quick question: Here is the new origin declaration for NB-0413.", "intent": "document_intake", "language": "en", "sku": "NB-0413", "po_number": "PO-8042", "persona": "Supply Chain Manager", "tier": "T2", "answer": "needs_review"}
+{"query": "What is the tariff shift rule for NB-0413-V1?", "intent": "rules_info", "language": "en", "sku": "NB-0413-V1", "po_number": "PO-8029", "persona": "Customer Service", "tier": "T2", "answer": "needs_review"}
+{"query": "How much duty for NB-0412-V2?", "intent": "duty_cost", "language": "en", "sku": "NB-0412-V2", "po_number": "PO-8022", "persona": "Auditor", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: How much duty for order PO-8012?", "intent": "duty_cost", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8012", "persona": "Logistics Analyst", "tier": "T3", "answer": "needs_review"}
+{"query": "Hi team, Here is the new origin declaration for NB-0412-V2.", "intent": "document_intake", "language": "en", "sku": "NB-0412-V2", "po_number": "PO-8033", "persona": "Factory Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: How much duty for order PO-8002?", "intent": "duty_cost", "language": "en", "sku": "NB-0102", "po_number": "PO-8002", "persona": "Customer Service", "tier": "T1", "answer": "qualifies"}
+{"query": "Hello, Does the NB-0106-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0106-V3", "po_number": "PO-8038", "persona": "Customer Service", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hello, How much duty for NB-0412?", "intent": "duty_cost", "language": "en", "sku": "NB-0412", "po_number": "PO-8013", "persona": "Compliance Officer", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hello, Here is the new origin declaration for NB-0414-V1.", "intent": "document_intake", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8002", "persona": "Retail Buyer", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hi team, Does sku NB-0102-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8006", "persona": "Customs Broker", "tier": "T2", "answer": "qualifies"}
+{"query": "Hi team, How much duty for NB-0109-V3?", "intent": "duty_cost", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8010", "persona": "Customer Service", "tier": "T2", "answer": "qualifies"}
+{"query": "Hello, Does our Glacier Lite qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414", "po_number": "PO-8032", "persona": "Retail Buyer", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Please advise: How much duty for order PO-8020?", "intent": "duty_cost", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8020", "persona": "Compliance Officer", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "How much duty for NB-0109-V3?", "intent": "duty_cost", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8033", "persona": "Supply Chain Manager", "tier": "T1", "answer": "needs_review"}
+{"query": "Hello, Does the NB-0108 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0108", "po_number": "PO-8001", "persona": "Factory Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hi team, How much duty for NB-0413-V3?", "intent": "duty_cost", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8005", "persona": "Customs Broker", "tier": "T2", "answer": "qualifies"}
+{"query": "Hello, Does our Tundra Pac Leather (women's) (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8038", "persona": "Compliance Officer", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Urgent: Here is the new origin declaration for Cartonnage Mauricie inc..", "intent": "document_intake", "language": "en", "sku": "NB-0105-V1", "po_number": "PO-8036", "persona": "Factory Manager", "tier": "T1", "answer": "qualifies"}
+{"query": "Urgent: Does our Tundra Pac Leather (women's) (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8032", "persona": "Logistics Analyst", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Quick question: Does the NB-0413-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8025", "persona": "Retail Buyer", "tier": "T1", "answer": "needs_review"}
+{"query": "Please advise: Here is the new origin declaration for Gray Textiles Co., Ltd..", "intent": "document_intake", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8016", "persona": "Supply Chain Manager", "tier": "T2", "answer": "needs_review"}
+{"query": "Hello, Here is the new origin declaration for Lewis Comfort Insoles Co., Ltd..", "intent": "document_intake", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8019", "persona": "Factory Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hi team, Does our Marsh Neo Pro (variant 2) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109-V2", "po_number": "PO-8035", "persona": "Auditor", "tier": "T2", "answer": "needs_review"}
+{"query": "Hello, Here is the new origin declaration for NB-0109-V2.", "intent": "document_intake", "language": "en", "sku": "NB-0109-V2", "po_number": "PO-8012", "persona": "Auditor", "tier": "T2", "answer": "needs_review"}
+{"query": "Please advise: Here is the new origin declaration for Mekong Sole Works Co..", "intent": "document_intake", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8018", "persona": "Logistics Analyst", "tier": "T3", "answer": "needs_review"}
+{"query": "Quick question: Does the NB-0109-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109-V2", "po_number": "PO-8032", "persona": "Retail Buyer", "tier": "T1", "answer": "needs_review"}
+{"query": "Quick question: Does the NB-0414-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8003", "persona": "Retail Buyer", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Here is the new origin declaration for Cartonnage Mauricie inc..", "intent": "document_intake", "language": "en", "sku": "NB-0105-V1", "po_number": "PO-8029", "persona": "Compliance Officer", "tier": "T1", "answer": "qualifies"}
+{"query": "Please advise: Here is the new origin declaration for Conley Sole Works LLC.", "intent": "document_intake", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8023", "persona": "Factory Manager", "tier": "T3", "answer": "needs_review"}
+{"query": "Please advise: Here is the new origin declaration for Ramos Safety Components GmbH.", "intent": "document_intake", "language": "en", "sku": "NB-0413-V1", "po_number": "PO-8001", "persona": "Compliance Officer", "tier": "T2", "answer": "needs_review"}
+{"query": "Does our Steelguard (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102-V1", "po_number": "PO-8016", "persona": "Customs Broker", "tier": "T1", "answer": "qualifies"}
+{"query": "Please advise: Does the NB-0106-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0106-V2", "po_number": "PO-8027", "persona": "Auditor", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: Here is the new origin declaration for Lewis Comfort Insoles Co., Ltd..", "intent": "document_intake", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8020", "persona": "Retail Buyer", "tier": "T3", "answer": "needs_review"}
+{"query": "Hello, Here is the new origin declaration for NB-0413-V3.", "intent": "document_intake", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8033", "persona": "Customer Service", "tier": "T2", "answer": "needs_review"}
+{"query": "Urgent: Here is the new origin declaration for Suole Alpine S.p.A..", "intent": "document_intake", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8015", "persona": "Supply Chain Manager", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Urgent: Does the NB-0102-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8015", "persona": "Customer Service", "tier": "T3", "answer": "qualifies"}
+{"query": "Quick question: Here is the new origin declaration for Suole Alpine S.p.A..", "intent": "document_intake", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8025", "persona": "Supply Chain Manager", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hello, Does sku NB-0413-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8044", "persona": "Factory Manager", "tier": "T3", "answer": "needs_review"}
+{"query": "Urgent: Does the NB-0414-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8038", "persona": "Retail Buyer", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, Does the NB-0109-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109-V2", "po_number": "PO-8002", "persona": "Compliance Officer", "tier": "T1", "answer": "needs_review"}
+{"query": "Hello, Does sku NB-0109-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8022", "persona": "Factory Manager", "tier": "T2", "answer": "needs_review"}
+{"query": "Please advise: Does our Glacier Pro qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0412", "po_number": "PO-8015", "persona": "Logistics Analyst", "tier": "T1", "answer": "qualifies"}
+{"query": "Please advise: Does sku NB-0105-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105-V3", "po_number": "PO-8038", "persona": "Customer Service", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Quick question: Here is the new origin declaration for Clark Protective Parts LLC.", "intent": "document_intake", "language": "en", "sku": "NB-0102-V3", "po_number": "PO-8033", "persona": "Retail Buyer", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: Does sku NB-0413-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8019", "persona": "Logistics Analyst", "tier": "T3", "answer": "needs_review"}
+{"query": "Here is the new origin declaration for Hartwig Polymere GmbH.", "intent": "document_intake", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8012", "persona": "Customs Broker", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: Here is the new origin declaration for Flores Footbed S.A. de C.V..", "intent": "document_intake", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8042", "persona": "Customs Broker", "tier": "T3", "answer": "needs_review"}
+{"query": "Quick question: Does sku NB-0102-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8006", "persona": "Retail Buyer", "tier": "T2", "answer": "qualifies"}
+{"query": "Quick question: Here is the new origin declaration for Edwards Protective Parts Co., Ltd..", "intent": "document_intake", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8027", "persona": "Supply Chain Manager", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Quick question: Here is the new origin declaration for NB-0413-V2.", "intent": "document_intake", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8025", "persona": "Logistics Analyst", "tier": "T1", "answer": "needs_review"}
+{"query": "Does sku NB-0102-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8030", "persona": "Logistics Analyst", "tier": "T3", "answer": "qualifies"}
+{"query": "Please advise: Does the NB-0105 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105", "po_number": "PO-8027", "persona": "Logistics Analyst", "tier": "T1", "answer": "qualifies"}
+{"query": "Hi team, Does sku NB-0108-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8025", "persona": "Factory Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, Here is the new origin declaration for NB-0109-V3.", "intent": "document_intake", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8041", "persona": "Customer Service", "tier": "T2", "answer": "needs_review"}
+{"query": "Hello, Does sku NB-0102-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8028", "persona": "Retail Buyer", "tier": "T2", "answer": "qualifies"}
+{"query": "Quick question: Here is the new origin declaration for NB-0413-V3.", "intent": "document_intake", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8022", "persona": "Logistics Analyst", "tier": "T1", "answer": "needs_review"}
+{"query": "Please advise: Does our Tundra Pac (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105-V1", "po_number": "PO-8018", "persona": "Auditor", "tier": "T2", "answer": "qualifies"}
+{"query": "Hello, Here is the new origin declaration for NB-0414.", "intent": "document_intake", "language": "en", "sku": "NB-0414", "po_number": "PO-8038", "persona": "Retail Buyer", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hello, Here is the new origin declaration for Mcpherson Sole Works Co., Ltd..", "intent": "document_intake", "language": "en", "sku": "NB-0109", "po_number": "PO-8007", "persona": "Customs Broker", "tier": "T1", "answer": "needs_review"}
+{"query": "Urgent: Here is the new origin declaration for NB-0414-V3.", "intent": "document_intake", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8033", "persona": "Auditor", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Quick question: Does our Tundra Pac Leather (women's) (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0106-V1", "po_number": "PO-8009", "persona": "Auditor", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Please advise: Does the NB-0414-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8021", "persona": "Customs Broker", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Hello, Here is the new origin declaration for Conley Sole Works LLC.", "intent": "document_intake", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8041", "persona": "Factory Manager", "tier": "T2", "answer": "needs_review"}
+{"query": "Quick question: Does sku NB-0414-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8022", "persona": "Customer Service", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Quick question: Does our Glacier Pro (variant 3) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8044", "persona": "Compliance Officer", "tier": "T3", "answer": "needs_review"}
+{"query": "Hi team, Does our Tundra Pac (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105-V1", "po_number": "PO-8043", "persona": "Auditor", "tier": "T3", "answer": "qualifies"}
+{"query": "Here is the new origin declaration for NB-0109-V3.", "intent": "document_intake", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8024", "persona": "Customer Service", "tier": "T1", "answer": "needs_review"}
+{"query": "Hi team, Does the NB-0105-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105-V1", "po_number": "PO-8029", "persona": "Customer Service", "tier": "T3", "answer": "qualifies"}
+{"query": "Quick question: Does sku NB-0412-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8017", "persona": "Retail Buyer", "tier": "T3", "answer": "needs_review"}
+{"query": "Does the NB-0102-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8010", "persona": "Customs Broker", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: Here is the new origin declaration for NB-0413-V3.", "intent": "document_intake", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8040", "persona": "Customs Broker", "tier": "T1", "answer": "needs_review"}
+{"query": "Does our Glacier Lite (variant 2) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8002", "persona": "Supply Chain Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Does our Marsh Neo Pro (variant 2) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109-V2", "po_number": "PO-8029", "persona": "Compliance Officer", "tier": "T2", "answer": "needs_review"}
+{"query": "Urgent: Does sku NB-0412 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0412", "po_number": "PO-8043", "persona": "Customer Service", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: Here is the new origin declaration for NB-0413-V2.", "intent": "document_intake", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8019", "persona": "Compliance Officer", "tier": "T1", "answer": "needs_review"}
+{"query": "Hello, Here is the new origin declaration for NB-0412-V3.", "intent": "document_intake", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8019", "persona": "Auditor", "tier": "T1", "answer": "needs_review"}
+{"query": "Hi team, Does our Value Knee (variant 2) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0108-V2", "po_number": "PO-8042", "persona": "Retail Buyer", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Hello, Does our Marsh Neo Pro (variant 1) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8017", "persona": "Retail Buyer", "tier": "T1", "answer": "needs_review"}
+{"query": "Urgent: Does the NB-0106-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0106-V3", "po_number": "PO-8014", "persona": "Customer Service", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Urgent: Does sku NB-0109-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109-V1", "po_number": "PO-8032", "persona": "Retail Buyer", "tier": "T1", "answer": "needs_review"}
+{"query": "Quick question: Does our Value Knee (variant 3) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0108-V3", "po_number": "PO-8020", "persona": "Customs Broker", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Hello, Does our Glacier Lite (variant 3) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V3", "po_number": "PO-8016", "persona": "Compliance Officer", "tier": "T2", "answer": "does_not_qualify"}
+{"query": "Does the NB-0413-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0413-V3", "po_number": "PO-8044", "persona": "Supply Chain Manager", "tier": "T1", "answer": "needs_review"}
+{"query": "Urgent: Does the NB-0105-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8024", "persona": "Customer Service", "tier": "T3", "answer": "qualifies"}
+{"query": "Hi team, Does the NB-0105-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8005", "persona": "Customs Broker", "tier": "T3", "answer": "qualifies"}
+{"query": "Quick question: Does our Glacier Lite (variant 2) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V2", "po_number": "PO-8041", "persona": "Factory Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Please advise: Does our Steelguard (variant 2) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102-V2", "po_number": "PO-8015", "persona": "Retail Buyer", "tier": "T1", "answer": "qualifies"}
+{"query": "Quick question: Does the NB-0412-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0412-V2", "po_number": "PO-8007", "persona": "Factory Manager", "tier": "T2", "answer": "qualifies"}
+{"query": "Urgent: Does our Glacier Pro (variant 3) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0412-V3", "po_number": "PO-8016", "persona": "Supply Chain Manager", "tier": "T2", "answer": "needs_review"}
+{"query": "Hello, Does sku NB-0105-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105-V1", "po_number": "PO-8024", "persona": "Customer Service", "tier": "T3", "answer": "qualifies"}
+{"query": "Urgent: Does the NB-0109-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8037", "persona": "Factory Manager", "tier": "T3", "answer": "needs_review"}
+{"query": "Hello, Does the NB-0414 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414", "po_number": "PO-8023", "persona": "Customs Broker", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Urgent: Does the NB-0413-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8027", "persona": "Compliance Officer", "tier": "T3", "answer": "needs_review"}
+{"query": "Hello, Does our Tundra Pac qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105", "po_number": "PO-8011", "persona": "Customs Broker", "tier": "T2", "answer": "qualifies"}
+{"query": "Please advise: Does the NB-0105-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105-V2", "po_number": "PO-8036", "persona": "Customs Broker", "tier": "T1", "answer": "qualifies"}
+{"query": "Quick question: Does the NB-0413-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0413-V2", "po_number": "PO-8001", "persona": "Customs Broker", "tier": "T1", "answer": "needs_review"}
+{"query": "Hello, Does the NB-0412-V2 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0412-V2", "po_number": "PO-8015", "persona": "Customer Service", "tier": "T1", "answer": "qualifies"}
+{"query": "Urgent: Does sku NB-0109 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109", "po_number": "PO-8013", "persona": "Logistics Analyst", "tier": "T1", "answer": "needs_review"}
+{"query": "Urgent: Does our Tundra Pac (variant 3) qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0105-V3", "po_number": "PO-8007", "persona": "Retail Buyer", "tier": "T3", "answer": "does_not_qualify"}
+{"query": "Urgent: Does sku NB-0413 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0413", "po_number": "PO-8007", "persona": "Auditor", "tier": "T1", "answer": "needs_review"}
+{"query": "Hello, Does sku NB-0102 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0102", "po_number": "PO-8042", "persona": "Auditor", "tier": "T2", "answer": "qualifies"}
+{"query": "Does our Glacier Lite qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414", "po_number": "PO-8018", "persona": "Factory Manager", "tier": "T1", "answer": "does_not_qualify"}
+{"query": "Does sku NB-0109-V3 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0109-V3", "po_number": "PO-8014", "persona": "Compliance Officer", "tier": "T2", "answer": "needs_review"}
+{"query": "Hi team, Does sku NB-0413 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0413", "po_number": "PO-8024", "persona": "Factory Manager", "tier": "T2", "answer": "needs_review"}
+{"query": "Urgent: Does sku NB-0414-V1 qualify under CUSMA?", "intent": "qualification_check", "language": "en", "sku": "NB-0414-V1", "po_number": "PO-8036", "persona": "Logistics Analyst", "tier": "T2", "answer": "does_not_qualify"}
