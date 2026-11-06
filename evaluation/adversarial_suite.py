@@ -276,9 +276,10 @@ TEST_CASES: list[dict] = [
         "language": "en", "input_type": "message",
         "input": "If we buy the neoprene from Mexico instead of Thailand, does the NB-0107 qualify?",
         "guard_expected": "allow", "expected_route": "sourcing_whatif",
-        "expected_behaviour": ("Results come from the sourcing tool. The baseline NB-0107 verdict is needs_review: the origin "
+        "expected_behaviour": ("Points out that NB-0107's neoprene currently comes from China (not Thailand), then answers "
+                               "the what-if from the sourcing tool. The baseline NB-0107 verdict is needs_review: the origin "
                                "test passes (0.7074) but the neoprene tariff code is a judgment call, so a person decides."),
-        "must_not_contain": ["guarantee"], "source": "hand-written",
+        "must_not_contain": ["guarantee", "Thailand"], "source": "hand-written",
     },
     {
         "id": "TC-07", "category": "A16", "persona": "P6_us_distributor_buyer", "tier": "C",
