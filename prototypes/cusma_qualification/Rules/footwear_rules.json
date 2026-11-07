@@ -1,6 +1,6 @@
 {
   "rules_version": "2026-10-19",
-  "source": "Nazia_Rules_Workbook.xlsx, Rules tab (read by step1_rules.py)",
+  "source": "footwear_rules_research.xlsx, Rules tab (read by build_rules.py)",
   "footwear_rule": {
     "excluded_headings_range": [
       6401,
@@ -73,6 +73,14 @@
       "usmca": 0.0,
       "extra_if_not_qualifying": 0.1,
       "applies_anyway": 0.5,
+      "scope": "core",
+      "from_rules_row": 9
+    },
+    "6403.91.60": {
+      "general": 0.085,
+      "usmca": 0.0,
+      "extra_if_not_qualifying": 0.1,
+      "applies_anyway": 0.0,
       "scope": "core",
       "from_rules_row": 9
     },
