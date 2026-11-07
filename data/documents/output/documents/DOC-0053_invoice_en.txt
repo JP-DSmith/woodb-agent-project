@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-53784            Date: 2026-10-08
+Seller: Foshan Hardware Fittings Co.
+        978 Jason Overpass Apt. 911, Cynthiamouth, WI 26258
+        Tax ID: 803270874
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0053        Terms: EXW        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-029-01  Plastic buckles, eyelets, laces  1500  pair  1.10  1,650.00  China  3926.90
+
+Subtotal: 1,650.00 CAD
+Freight:  369.96 CAD
+TOTAL:    2,019.96 CAD
+
+Ship via: DHL      Ship date: 2026-10-08
+Authorized signature: Elaine Keller

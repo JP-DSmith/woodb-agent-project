@@ -1,0 +1,12 @@
+PURCHASE ORDER
+PO No.: SPO-0172        Date: 2026-08-28
+Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
+Supplier: Suole Alpine S.p.A., Borgo Luigi, 2, 85043, Agromonte (PZ)
+Terms: FCA      Currency: CAD      Required by: 2026-08-28
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount
+1     SUP-033-01  Premium branded rubber outsole, bought finished  1000  pair  9.83  9,830.00
+
+TOTAL: 9,944.08 CAD
+Please send a supplier's declaration of origin with the first shipment.
+Approved by: Sam Lee

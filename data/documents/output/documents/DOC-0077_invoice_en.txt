@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-77073            Date: 2027-01-23
+Seller: Conceria Valdarno S.r.l.
+        Strada Gianna, 95 Appartamento 29, 81021, Arienzo (CE)
+        Tax ID: 356592022
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0077        Terms: EXW        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-026-01  Finished bovine leather  300  pair  5.80  1,740.00  Italy  4107.92
+
+Subtotal: 1,740.00 CAD
+Freight:  202.11 CAD
+TOTAL:    1,942.11 CAD
+
+Ship via: DHL      Ship date: 2027-01-23
+Authorized signature: Tullio Perini

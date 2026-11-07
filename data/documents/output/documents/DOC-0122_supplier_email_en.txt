@@ -1,0 +1,14 @@
+From: Tonya Kirby <tonya@mekong.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2026-08-03
+Subject: Shipment for PO SPO-0122
+
+Hi Sam,
+
+Your order SPO-0122 shipped on 2026-08-03 via UPS Freight. Invoice INV-62646 is attached.
+Quantity: 1500 pairs of misc. parts.
+
+[handwritten: check origin]
+Best regards,
+Tonya Kirby
+Mekong Sole Works Co.

@@ -1,0 +1,14 @@
+From: Heather Robinson <heather@hangzhou.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2026-09-15
+Subject: Shipment for PO SPO-0047
+
+Hi Sam,
+
+Your order SPO-0047 shipped on 2026-09-15 via UPS Freight. Invoice INV-42181 is attached.
+Quantity: 500 pairs of Nylon upper fabric. Our origin declaration is attached.
+
+[handwritten: ask supplier]
+Best regards,
+Heather Robinson
+Hangzhou Weave Tech Co.

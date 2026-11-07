@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-12405            Date: 2026-09-26
+Seller: Ningbo Safeguard Parts Co.
+        USNV Gillespie, FPO AE 68275
+        Tax ID: 129190819
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0138        Terms: EXW        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-017-01  misc. parts  500  pair  2.73  1,365.00  [crossed out: Taiwan] China  6406.10
+
+Subtotal: 1,365.00 CAD
+Freight:  160.25 CAD
+TOTAL:    1,525.25 CAD
+
+Ship via: Purolator      Ship date: 2026-09-26
+Authorized signature: Jared Kim

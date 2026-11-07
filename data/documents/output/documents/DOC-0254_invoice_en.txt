@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-64869            Date: 
+Seller: Tucker Labels Co., Ltd.
+        58953 Lisa Road, Joshuaview, SD 28958
+        Tax ID: 627869825
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0254        Terms: FCA        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-120-01  Labels, patch, pull loop  500  pair  0.37  185.00  China  5807.10
+
+Subtotal: 185.00 CAD
+Freight:  367.97 CAD
+TOTAL:    552.97 CAD
+
+Ship via: UPS Freight      Ship date: 2026-10-24
+Authorized signature: Arthur Jones MD

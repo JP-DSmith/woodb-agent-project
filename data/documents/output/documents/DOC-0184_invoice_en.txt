@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-81350            Date: 2027-01-06
+Seller: Ningbo Safeguard Parts Co.
+        USNV Gillespie, FPO AE 68275
+        Tax ID: 129190819
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0184        Terms: EXW        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-017-01  Composite toe cap  200  pair  2.76  552.00  China  6406.10
+
+Subtotal: 552.00 CAD
+Freight:  214.09 CAD
+TOTAL:    766.09 CAD
+
+Ship via: DHL      Ship date: 2027-01-06
+Authorized signature: Jared Kim

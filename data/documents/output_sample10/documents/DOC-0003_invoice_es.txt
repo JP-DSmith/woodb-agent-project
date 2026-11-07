@@ -1,0 +1,18 @@
+FACTURA COMERCIAL
+Factura No.: INV-13044            Fecha: 2026-08-09
+Vendedor: Hunter Comfort Insoles S.A. de C.V.
+          Calzada Camboya 824 250, Vieja Lituania, COAH 31076
+          RFC: 787159950
+Comprador: Northfield Rubber Footwear Inc.
+           45 Factory Rd, Kitchener, ON N2G 1A1
+Orden de compra: SPO-0003     Términos: FCA     Moneda: CAD
+
+Línea  No. parte    Descripción                          Cant.  Unidad Precio unit. Importe   País de origen   Fracción arancelaria
+1     SUP-105-01  Anti-fatigue PU insole  1500  pair  1.27  1,905.00  Méx1c0  6406.90
+
+Subtotal: 2,541.61 CAD
+Flete:    380.13 CAD
+TOTAL:    2,921.74 CAD
+
+Enviado por: Purolator      Fecha de envío: 2026-08-09
+Firma autorizada: Verónica Aida Flores

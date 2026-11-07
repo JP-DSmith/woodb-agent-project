@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-52686            Date: 2026-10-25
+Seller: Xiamen Comfort Insole Co.
+        25293 Stuart Row Suite 016, West Richardport, HI 91945
+        Tax ID: 216179415
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0225        Terms: DAP        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-032-01  PU insole  800  pair  0.79  632.00  China  6406.90
+
+Subtotal: 632.00 CAD
+Freight:  333.75 CAD
+TOTAL:    965.75 CAD
+
+Ship via: DHL      Ship date: 2026-10-25
+Authorized signature: Jason Gallegos

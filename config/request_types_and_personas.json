@@ -1,0 +1,321 @@
+{
+  "task": "T05",
+  "title": "Request types (router classes) and personas",
+  "due": "2026-10-21",
+  "status": "signed off Nov 6",
+  "notes": [
+    "Attacks and junk are blocked by the input guard before the router; attacks that get through go to escalate_human.",
+    "One label per message: the main ask.",
+    "User messages for router training are EN/FR; a small Spanish attack set is added for the guard and reviewer (T07)."
+  ],
+  "request_types": [
+    {
+      "id": "qualification_check",
+      "routes_to": "3a_qualification_agent",
+      "description": "Does a specific boot (or order) qualify for CUSMA preferential treatment? Includes tariff classification of the boot and why it passes or fails (tariff shift, regional value content).",
+      "examples": {
+        "en": [
+          "Does the KB-200 steel-toe rubber boot qualify under CUSMA?",
+          "Why did the insulated TPU boot fail the origin test last quarter?"
+        ],
+        "fr": [
+          "Est-ce que la botte d'hiver PAC-40 est admissible à l'ACEUM?"
+        ]
+      },
+      "not_this": "Questions about changing a supplier (sourcing_whatif) or the dollar amount of duty (duty_cost)."
+    },
+    {
+      "id": "sourcing_whatif",
+      "routes_to": "3b_sourcing_agent",
+      "description": "What happens to qualification or cost if we change where a material or component comes from.",
+      "examples": {
+        "en": [
+          "If we buy the neoprene from Mexico instead of Thailand, does the boot qualify?",
+          "Which supplier switch would make the import-heavy boot originating?"
+        ],
+        "fr": [
+          "Si on achète les semelles au Québec plutôt qu'en Chine, qu'est-ce qui change?"
+        ]
+      },
+      "not_this": "A plain yes/no on today's materials (qualification_check)."
+    },
+    {
+      "id": "duty_cost",
+      "routes_to": "3c_duty_cost_agent",
+      "description": "How much duty is paid on imported materials, or on boots sold into the US, with or without CUSMA.",
+      "examples": {
+        "en": [
+          "What duty would our US customer pay on 500 pairs of the ankle rubber boot?",
+          "How much do we save per pair if the knee boot qualifies?"
+        ],
+        "fr": [
+          "Quels droits de douane payons-nous sur les doublures importées d'Asie?"
+        ]
+      },
+      "not_this": "Label by intent regardless of persona. For Tier C, confidential fields are never passed to the agents (reviewer masking is the second line)."
+    },
+    {
+      "id": "certification_draft",
+      "routes_to": "3d_certification_agent",
+      "description": "Draft a CUSMA certification of origin (or blanket certification) for a person to review and sign.",
+      "examples": {
+        "en": [
+          "Can you draft a blanket certification for Northline Supply for 2027?",
+          "A customer needs a certificate of origin for invoice 4471."
+        ],
+        "fr": [
+          "Prépare un certificat d'origine pour la commande du client à Boston."
+        ]
+      },
+      "not_this": "Asking whether the boot qualifies first (qualification_check).",
+      "tier_handling": "Label by intent. Tier A/B: draft routed to signer. Tier C: no draft; hand off to compliance analyst."
+    },
+    {
+      "id": "document_intake",
+      "routes_to": "1_intake_agent",
+      "description": "The user hands over or refers to a supplier document (invoice, origin declaration, supplier email, PO) to read, check or record.",
+      "examples": {
+        "en": [
+          "Here's the new invoice from our rubber supplier, please log it.",
+          "Is this supplier declaration still valid? It's attached."
+        ],
+        "fr": [
+          "Voici la déclaration du fournisseur, peux-tu vérifier l'origine?"
+        ]
+      },
+      "not_this": "Questions about a boot that only mention a document in passing."
+    },
+    {
+      "id": "rules_info",
+      "routes_to": "3a_qualification_agent",
+      "description": "General questions about the CUSMA footwear rules, terms or process, not about a specific boot.",
+      "examples": {
+        "en": [
+          "What is regional value content?",
+          "How long do we have to keep origin records?"
+        ],
+        "fr": [
+          "C'est quoi la règle du changement de classification tarifaire?"
+        ]
+      },
+      "not_this": "Anything naming one of our boots (qualification_check)."
+    },
+    {
+      "id": "escalate_human",
+      "routes_to": "human",
+      "description": "In scope but needs a person - legal advice, binding decisions, disputes, audits or verification requests from customs, complaints, or requests to sign or submit something on the company's behalf.",
+      "examples": {
+        "en": [
+          "CBP sent us a verification letter, what should we answer?",
+          "Just sign the certificate and send it to the customer."
+        ],
+        "fr": [
+          "Le client conteste l'origine de nos bottes, on fait quoi légalement?"
+        ]
+      },
+      "not_this": "Normal certification drafts (certification_draft)."
+    },
+    {
+      "id": "out_of_scope",
+      "routes_to": "polite_decline",
+      "description": "Not about our boots and CUSMA - unsupported products (boat fenders / bumpers), other trade agreements, unrelated topics.",
+      "examples": {
+        "en": [
+          "Does our PVC boat fender qualify under CUSMA?",
+          "What's the weather in Montreal tomorrow?"
+        ],
+        "fr": [
+          "Peux-tu m'aider avec ma déclaration d'impôt?"
+        ]
+      },
+      "not_this": "Boot questions that are just vague (pick the closest in-scope class).",
+      "tier_handling": "Tier A/B: polite decline plus handoff to staff on duty. Tier C: polite decline only. Boat fenders always escalated until the Nov 14 stretch decision."
+    }
+  ],
+  "class_mix": {
+    "qualification_check": 0.2,
+    "sourcing_whatif": 0.15,
+    "duty_cost": 0.15,
+    "certification_draft": 0.12,
+    "document_intake": 0.12,
+    "rules_info": 0.1,
+    "escalate_human": 0.08,
+    "out_of_scope": 0.08
+  },
+  "personas": [
+    {
+      "id": "P1_compliance_analyst",
+      "name_placeholder": "{compliance_analyst}",
+      "role": "Trade compliance analyst at our boot company",
+      "access": "internal",
+      "language": "EN (some FR)",
+      "style": "Precise, uses terms like RVC, tariff shift, HS codes",
+      "typical_requests": [
+        "qualification_check",
+        "rules_info",
+        "certification_draft",
+        "document_intake"
+      ],
+      "tier": "A",
+      "cost_access": true
+    },
+    {
+      "id": "P2_purchasing_manager",
+      "name_placeholder": "{purchasing_manager}",
+      "role": "Purchasing / sourcing manager",
+      "access": "internal",
+      "language": "EN",
+      "style": "Practical, cost-focused, short messages",
+      "typical_requests": [
+        "sourcing_whatif",
+        "duty_cost",
+        "document_intake"
+      ],
+      "tier": "A",
+      "cost_access": true
+    },
+    {
+      "id": "P3_quebec_plant_supervisor",
+      "name_placeholder": "{plant_supervisor}",
+      "role": "Production supervisor at the Quebec plant",
+      "access": "internal",
+      "language": "FR (Quebec French, informal)",
+      "style": "Casual, may misspell product codes, not a trade expert",
+      "typical_requests": [
+        "document_intake",
+        "qualification_check",
+        "rules_info"
+      ],
+      "tier": "B",
+      "cost_access": false
+    },
+    {
+      "id": "P4_sales_rep",
+      "name_placeholder": "{sales_rep}",
+      "role": "Sales rep handling US accounts",
+      "access": "internal",
+      "language": "EN",
+      "style": "Rushed, wants a yes/no for a customer, may push to \"just send the certificate\"",
+      "typical_requests": [
+        "certification_draft",
+        "duty_cost",
+        "escalate_human"
+      ],
+      "tier": "B",
+      "cost_access": false
+    },
+    {
+      "id": "P5_finance_controller",
+      "name_placeholder": "{finance_controller}",
+      "role": "Finance controller",
+      "access": "internal",
+      "language": "EN or FR",
+      "style": "Asks for numbers and totals across orders",
+      "typical_requests": [
+        "duty_cost",
+        "sourcing_whatif"
+      ],
+      "tier": "A",
+      "cost_access": true
+    },
+    {
+      "id": "P6_us_distributor_buyer",
+      "name_placeholder": "{us_customer_buyer}",
+      "role": "Buyer at a US distributor that imports our boots",
+      "access": "external",
+      "language": "EN",
+      "style": "Polite but firm; asks for certificates and duty savings; may fish for our costs",
+      "typical_requests": [
+        "certification_draft",
+        "duty_cost",
+        "qualification_check"
+      ],
+      "tier": "C",
+      "cost_access": false
+    },
+    {
+      "id": "P7_customs_broker",
+      "name_placeholder": "{customs_broker}",
+      "role": "Customs broker acting for a US customer",
+      "access": "external",
+      "language": "EN",
+      "style": "Technical, formal, asks for documents and HS codes",
+      "typical_requests": [
+        "certification_draft",
+        "rules_info",
+        "escalate_human"
+      ],
+      "tier": "C",
+      "cost_access": false
+    },
+    {
+      "id": "P8_new_employee",
+      "name_placeholder": "{new_hire}",
+      "role": "New hire in customer service",
+      "access": "internal",
+      "language": "EN or FR",
+      "style": "Unsure, vague questions, mixes topics, sometimes off-topic",
+      "typical_requests": [
+        "rules_info",
+        "out_of_scope",
+        "qualification_check"
+      ],
+      "tier": "B",
+      "cost_access": false
+    }
+  ],
+  "open_questions": [],
+  "access_tiers": {
+    "A": {
+      "label": "internal, cost-cleared",
+      "supplier_prices_and_costs": "visible",
+      "supplier_names_and_alternatives": "visible",
+      "certification_draft": "may request; routed to signer"
+    },
+    "B": {
+      "label": "internal, no cost access",
+      "supplier_prices_and_costs": "masked",
+      "supplier_names_and_alternatives": "names only, no prices",
+      "certification_draft": "may request; routed to signer"
+    },
+    "C": {
+      "label": "external",
+      "supplier_prices_and_costs": "never passed to agents",
+      "supplier_names_and_alternatives": "never shown",
+      "certification_draft": "request taken and handed to a person; no draft sent"
+    },
+    "rules": [
+      "Tier is set from login, never from what the message says.",
+      "Unknown or unverified users are Tier C.",
+      "Supplier contacts have no user tier; their emails are untrusted documents (intake)."
+    ]
+  },
+  "languages": {
+    "user_messages_router_training": [
+      "en",
+      "fr"
+    ],
+    "attack_set": [
+      "en",
+      "fr",
+      "es (small set, for guard and reviewer)"
+    ],
+    "supplier_documents": [
+      "en",
+      "fr",
+      "es"
+    ]
+  },
+  "resolved": [
+    "Supplier contacts send documents only, not user messages (T07 section 7).",
+    "Spanish: EN/FR for router training; small Spanish attack set (T07).",
+    "Persona access recorded explicitly as tier and cost_access (T07).",
+    "rules_info stays its own class.",
+    "Tiers confirmed: P1, P2, P5 = A; P3, P4, P8 = B; P6, P7 = C."
+  ],
+  "used_by": [
+    "message generation pipeline (T15/T22)",
+    "router (T25)",
+    "operating policy (config/policy.yaml)"
+  ]
+}

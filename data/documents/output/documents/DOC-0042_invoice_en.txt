@@ -1,0 +1,20 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-57846            Date: 2027-02-03
+Seller: Shenzhen NeoFlex Materials Co.
+        226 Smith Burgs Apt. 583, Ronaldburgh, VI 27919
+        Tax ID: 366217228
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0042        Terms: FCA        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-030-01  Jersey-laminated neoprene sheet, cut and sewn in-house  1000  pair  7.50  7,500.00  China  5906.99
+
+Subtotal: 7,500.00 CAD
+Freight:  121.65 CAD
+TOTAL:    7,621.65 CAD
+
+Ship via: DHL      Ship date: 2027-02-03
+Authorized signature: William Hart
+
+[handwritten: check origin]

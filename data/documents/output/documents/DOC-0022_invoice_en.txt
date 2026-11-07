@@ -1,0 +1,19 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-71682            Date: 2027-01-23
+Seller: Dongguan Upper Craft Co.
+        36851 Bethany Path, Port Brandy, NC 61850
+        Tax ID: 615710420
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0022        Terms: EXW        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-024-02  Pre-formed rubber upper with lining, bought  800  pair  9.17  7,336.00  China  6406.10
+2     SUP-024-01  Pre-formed TPU upper, bought  200  pair  11.00  2,200.00  China  6406.10
+
+Subtotal: 9,536.00 CAD
+Freight:  165.01 CAD
+TOTAL:    9,701.01 CAD
+
+Ship via: Ocean freight      Ship date: 2027-01-23
+Authorized signature: Dr. Brian Simmons
