@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-46097            Date: 2026-11-12
+Seller: Merritt Textiles LLC
+        PSC 6230, Box 8046, APO AA 01550
+        Tax ID: 108187055
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0015        Terms: EXW        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-111-01  Polyester knit lining  1000  pair  1.29  1,290.00  Mexico  6006.32
+
+Subtotal: 1,290.00 CAD
+Freight:  318.41 CAD
+TOTAL:    1,608.41 CAD
+
+Ship via: Purolator      Ship date: 2026-11-12
+Authorized signature: Joseph Mendoza

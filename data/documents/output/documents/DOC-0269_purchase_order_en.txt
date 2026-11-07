@@ -1,0 +1,12 @@
+PURCHASE ORDER
+PO No.: SPO-0269        Date: 2026-10-01
+Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
+Supplier: Conceria Valdarno S.r.l., Strada Gianna, 95 Appartamento 29, 81021, Arienzo (CE)
+Terms: DAP      Currency: CAD      Required by: 2026-10-01
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount
+1     SUP-026-01  Finished bovine leather  1500  pair  6.53  9,795.00
+
+TOTAL: 9,883.66 CAD
+Please send a supplier's declaration of origin with the first shipment.
+Approved by: Sam Lee

@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-15283            Date: 2026-12-31
+Seller: Dongguan Upper Craft Co.
+        36851 Bethany Path, Port Brandy, NC 61850
+        Tax ID: 615710420
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0143        Terms: FCA        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-024-01  PVC boat fender, 8 x 26 in  300  pair  11.00  3,300.00  China  3926.90
+
+Subtotal: 3,300.00 CAD
+Freight:  306.09 CAD
+TOTAL:    3,606.09 CAD
+
+Ship via: Purolator      Ship date: 2026-12-31
+Authorized signature: Dr. Brian Simmons

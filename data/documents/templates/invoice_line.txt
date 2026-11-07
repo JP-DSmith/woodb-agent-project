@@ -1,0 +1,1 @@
+${line_no}     ${part_no}  ${description}  ${qty}  ${unit}  ${unit_price}  ${amount}  ${origin_country}  ${hs_code}

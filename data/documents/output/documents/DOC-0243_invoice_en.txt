@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-38090            Date: 
+Seller: Prairie Foam Systems LLC
+        47430 Spencer Meadow, Joneston, MH 17787
+        Tax ID: 852788989
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0243        Terms: EXW        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-012-72  PU foam system, foamed in place  500  pair  3.10  1,550.00  United States  3907.29 / 3909.31
+
+Subtotal: 1,550.00 CAD
+Freight:  383.87 CAD
+TOTAL:    1,933.87 CAD
+
+Ship via: Purolator      Ship date: 2027-02-16
+Authorized signature: Sarah Johnson

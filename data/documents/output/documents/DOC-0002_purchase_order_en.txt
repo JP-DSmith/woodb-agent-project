@@ -1,0 +1,12 @@
+PURCHASE ORDER
+PO No.: SPO-0002        Date: 2026-12-12
+Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
+Supplier: Prairie Foam Systems LLC, 47430 Spencer Meadow, Joneston, MH 17787
+Terms: DAP      Currency: CAD      Required by: 2026-12-12
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount
+1     SUP-012-01  PU foam system, foamed in place  300  pair  2.65  795.00
+
+TOTAL: 1,057.72 CAD
+Please send a supplier's declaration of origin with the first shipment.
+Approved by: Sam Lee

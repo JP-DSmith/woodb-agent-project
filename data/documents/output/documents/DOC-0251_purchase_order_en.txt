@@ -1,0 +1,13 @@
+PURCHASE ORDER
+PO No.: SPO-0251        Date: 2026-11-13
+Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
+Supplier: Hebei Felt Products Co., 7053 Miller Harbor, Evelynland, VI 39776
+Terms: DAP      Currency: CAD      Required by: 2026-11-13
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount
+1     SUP-028-76  black compound, 25 kg  800  pair  2.09  1,672.00
+2     SUP-028-01  Removable felt liner, bought finished  500  pair  5.20  2,600.00
+
+TOTAL: 4,495.74 CAD
+Please send a supplier's declaration of origin with the first shipment.
+Approved by: Sam Lee

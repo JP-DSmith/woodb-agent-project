@@ -1,0 +1,14 @@
+De : ${sender_name} <${sender_email}>
+À : ${recipient_name} <${recipient_email}>
+Date : ${email_date}
+Objet : Expédition pour le bon de commande ${po_no}
+
+Bonjour ${recipient_first},
+
+Votre commande ${po_no} a été expédiée le ${ship_date} par ${ship_via}. Vous trouverez la facture ${invoice_no} ci-jointe.
+${body_detail}
+
+${extra_note}
+Cordialement,
+${sender_name}
+${supplier_name}

@@ -1,0 +1,14 @@
+De : Pierre Lemay <pierre@gelconfort.example>
+À : Sam Lee <s.lee@northfield.example>
+Date : 2026-09-16
+Objet : Expédition pour le bon de commande SPO-0010
+
+Bonjour Sam,
+
+Votre commande SPO-0010 a été expédiée le 2026-09-16 par UPS Freight. Vous trouverez la facture INV-32987 ci-jointe.
+Quantité : 500 paires (misc. parts).
+
+
+Cordialement,
+Pierre Lemay
+Gel-Confort Quebec inc.

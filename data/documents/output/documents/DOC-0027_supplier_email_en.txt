@@ -1,0 +1,14 @@
+From: Jason Gallegos <jason@xiamen.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2026-11-03
+Subject: Shipment for PO SPO-0027
+
+Hi Sam,
+
+Your order SPO-0027 shipped on 2026-11-03 via UPS Freight. Invoice INV-85585 is attached.
+Quantity: 500 pairs of misc. parts. Our origin declaration is attached.
+
+
+Best regards,
+Jason Gallegos
+Xiamen Comfort Insole Co.

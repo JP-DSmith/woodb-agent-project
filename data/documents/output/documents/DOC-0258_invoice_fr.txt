@@ -1,0 +1,18 @@
+FACTURE COMMERCIALE
+N° de facture : INV-39654            Date : 2027-01-26
+Vendeur : Gel-Confort Quebec inc.
+          7630 rue Odette Apt. 185, Desrochers Est, NB A7V 4M9
+          N° TPS/TVQ : 182271462
+Acheteur : Chaussures de caoutchouc Northfield inc.
+           45 Factory Rd, Kitchener, ON N2G 1A1
+Réf. bon de commande : SPO-0258     Conditions : DAP     Devise : CAD
+
+Ligne  N° pièce     Description                          Qté    Unité  Prix unit.   Montant   Pays d'origine   Code SH
+1     SUP-020-01  Gel midsole  800  pair  1.18  944.00  Canada  6406.90
+
+Sous-total : 944.00 CAD
+Transport :  166.01 CAD
+TOTAL :      1,110.01 CAD
+
+Expédié par : Purolator      Date d'expédition : 2027-01-26
+Signature autorisée : Pierre Lemay

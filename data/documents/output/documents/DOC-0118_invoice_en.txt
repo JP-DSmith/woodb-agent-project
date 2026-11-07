@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-46376            Date: 2027-01-03
+Seller: Suole Alpine S.p.A.
+        Borgo Luigi, 2, 85043, Agromonte (PZ)
+        Tax ID: 471181153
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0118        Terms: FCA        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-033-01  Premium branded rubber outsole, bought finished  500  pair  9.83  4,915.00  Italy  6406.20
+
+Subtotal: 4,915.00 CAD
+Freight:  284.28 CAD
+TOTAL:    5,199.28 CAD
+
+Ship via: UPS Freight      Ship date: 2027-01-03
+Authorized signature: Dott. Valerio Turci

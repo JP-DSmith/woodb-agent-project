@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-84786            Date: 2026-10-17
+Seller: Conceria Valdarno S.r.l.
+        Strada Gianna, 95 Appartamento 29, 81021, Arienzo (CE)
+        Tax ID: 356592022
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0069        Terms: FCA        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-026-01  material as per sample  1500  pair  5.80  8,700.00  It4ly  4107.92
+
+Subtotal: 8,700.00 CAD
+Freight:  150.14 CAD
+TOTAL:    8,850.14 CAD
+
+Ship via: Ocean freight      Ship date: 2026-10-17
+Authorized signature: Tullio Perini

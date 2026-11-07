@@ -1,0 +1,12 @@
+PURCHASE ORDER
+PO No.: SPO-0198        Date: 2026-12-31
+Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
+Supplier: Hartwig Polymere GmbH, Adem-Klapp-Weg 968, 19425 Genthin
+Terms: DAP      Currency: CAD      Required by: 2026-12-31
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount
+1     SUP-010-85  TPU compound pellets, moulded in-house  800  pair  6.54  5,232.00
+
+TOTAL: 5,611.03 CAD
+Please send a supplier's declaration of origin with the first shipment.
+Approved by: Sam Lee

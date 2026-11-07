@@ -1,0 +1,18 @@
+FACTURA COMERCIAL
+Factura No.: INV-30076            Fecha: 2026-11-04
+Vendedor: Plantillas del Pacifico S.A. de C.V.
+          Periférico Madagascar 660 Interior 375, Vieja Georgia, YUC 73725-3430
+          RFC: 993050310
+Comprador: Northfield Rubber Footwear Inc.
+           45 Factory Rd, Kitchener, ON N2G 1A1
+Orden de compra: SPO-0062     Términos: FCA     Moneda: CAD
+
+Línea  No. parte    Descripción                          Cant.  Unidad Precio unit. Importe   País de origen   Fracción arancelaria
+1     SUP-019-01  Anti-fatigue PU insole  1500  pair  1.30  1,950.00  [crossed out: Italia] México  6406.90
+
+Subtotal: 1,950.00 CAD
+Flete:    307.65 CAD
+TOTAL:    2,257.65 CAD
+
+Enviado por: UPS Freight      Fecha de envío: 2026-11-04
+Firma autorizada: Abel Cervantes Ulibarri
