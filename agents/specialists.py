@@ -29,7 +29,8 @@ _KEYWORDS = [
     ("rules_info", r"\b(de minimis|rvc|regional value|tariff shift|section 338|knee band|declarations?)\b|"
                    r"\b(what is|what does|what are|explain|why)\b.*\b(rules?|cusma|usmca|origin|tariff|duty|height)\b"),
     ("qualification_check", r"\b(qualif\w*|origin|cusma|usmca|passe|parts?|materials?|components?|"
-                            r"bill of materials|come from|made in|admissible|ACEUM)\b"),
+                            r"bill of materials|come from|made in|admissible|ACEUM|net cost|costs?|prices?|pay for|"
+                            r"(?:do|did) (?:we|you) pay)\b"),
 ]
 
 

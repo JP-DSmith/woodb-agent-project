@@ -48,6 +48,14 @@ def test_no_cost_fields_for_b_and_c(tier):
             assert f'"{key}"' not in text(r)
 
 
+def test_tier_b_sees_supplier_names_but_no_costs():
+    lines = call_tool("get_materials", {"sku": "NB-0101"}, "B")["data"]
+    assert all(l.get("supplier_name") and l.get("supplier_id") for l in lines)
+    assert not any("cost_cad" in l for l in lines)
+    assert call_tool("find_alternative_suppliers", {"sku": "NB-0101", "line_no": 5}, "B")["ok"]
+    assert "Net cost = [confidential]" in text(call_tool("check_origin", {"sku": "NB-0101"}, "B")["trace"])
+
+
 def test_tier_c_sees_no_supplier_names_or_alternatives():
     r = call_tool("get_materials", {"sku": "NB-0101"}, "C")
     assert "SUP-" not in text(r["data"]) and "supplier_name" not in text(r)

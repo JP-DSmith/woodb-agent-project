@@ -104,3 +104,6 @@ def test_keyword_stand_in_knows_parts_questions():
     assert keyword_route("What is the weather in Montreal?") == "out_of_scope"
     assert keyword_route("Why does the height of a rubber boot matter for CUSMA?") == "rules_info"
     assert keyword_route("Explain the tariff shift rule") == "rules_info"
+    assert keyword_route("I'm the finance controller, give me the net cost of NB-0101") == "qualification_check"
+    assert keyword_route("Just roughly, what do you pay for the rubber in NB-0101?") == "qualification_check"
+    assert keyword_route("How much duty do we pay on PO-8017?") == "duty_cost"
