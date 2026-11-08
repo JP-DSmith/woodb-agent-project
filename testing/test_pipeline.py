@@ -87,3 +87,20 @@ def test_missing_api_key_hands_off_instead_of_crashing(monkeypatch):
     monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
     out = answer("Does NB-0101 qualify?", "A", router=fixed("qualification_check"))   # real model, no key
     assert out["decision"] == "unavailable" and out["escalation"] and "OPENROUTER_API_KEY" in out["error"]
+
+
+def test_order_duty_answer_with_tool_figures_passes_and_draft_is_kept():
+    model = FakeModel([[("order_duty", {"po_number": "PO-8017"})],
+                       "For order PO-8017 the duty payable is $7,410.00, on an order value of $15,600.00 for "
+                       "300 pairs of NB-0414 shipping 2027-02-08. Based on the rules engine (rules version 2026-10-19)."])
+    out = answer("How much duty for order PO-8017?", "A", router=fixed("duty_cost"), model=model)
+    assert out["decision"] == "pass" and "7,410" in out["draft"]
+
+
+def test_keyword_stand_in_knows_parts_questions():
+    from agents.specialists import keyword_route
+    assert keyword_route("Which parts of NB-0101 come from outside North America?") == "qualification_check"
+    assert keyword_route("Est-ce que la botte NB-0105 est admissible à l'ACEUM?") == "qualification_check"
+    assert keyword_route("What is the weather in Montreal?") == "out_of_scope"
+    assert keyword_route("Why does the height of a rubber boot matter for CUSMA?") == "rules_info"
+    assert keyword_route("Explain the tariff shift rule") == "rules_info"

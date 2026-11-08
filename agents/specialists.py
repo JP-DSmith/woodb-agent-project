@@ -24,10 +24,12 @@ _KEYWORDS = [
     ("escalate_human", r"\b(sign|signature|audit|verification letter|lawyer|legal|dispute|guarantee)\w*"),
     ("certification_draft", r"\b(certificat\w*|certification)\b"),
     ("sourcing_whatif", r"\b(what if|switch|instead|source|sourcing|supplier)\b"),
-    ("duty_cost", r"\b(duty|duties|tariff|droits?)\b"),
+    ("duty_cost", r"\b(duty|duties|tariff(?! shift)|droits?)\b"),
     ("document_intake", r"\b(invoice|declaration|attached|log this|facture)\b"),
-    ("rules_info", r"\b(what is|what does|explain|rule|de minimis|rvc)\b"),
-    ("qualification_check", r"\b(qualif\w*|origin|cusma|usmca|passe)\b"),
+    ("rules_info", r"\b(de minimis|rvc|regional value|tariff shift|section 338|knee band|declarations?)\b|"
+                   r"\b(what is|what does|what are|explain|why)\b.*\b(rules?|cusma|usmca|origin|tariff|duty|height)\b"),
+    ("qualification_check", r"\b(qualif\w*|origin|cusma|usmca|passe|parts?|materials?|components?|"
+                            r"bill of materials|come from|made in|admissible|ACEUM)\b"),
 ]
 
 

@@ -73,10 +73,10 @@ def answer(message: str, tier: str | None, *, original: str | None = None, langu
            input_type: str = "message", router: Callable | None = None, model=None) -> dict:
     """Answer one message. `message` is the English text; `original` is the text as typed (if translated).
     Returns {"response", "decision", "label", "agent", "router", "tier", "trace", "escalation",
-             "guard", "review", "result"}."""
+             "guard", "review", "result", "draft"}. Only "response" and "result" are for the user."""
     tier = normalise_tier(tier)
     out = {"tier": tier, "language": language, "label": None, "agent": None, "router": None,
-           "trace": [], "escalation": None, "guard": None, "review": None, "result": None}
+           "trace": [], "escalation": None, "guard": None, "review": None, "result": None, "draft": None}
 
     # 1. Input guard: the text as typed, then its English translation.
     mode = "document" if input_type == "document" else "message"
@@ -110,6 +110,7 @@ def answer(message: str, tier: str | None, *, original: str | None = None, langu
                 "error": f"{type(err).__name__}: {err}"[:200],
                 "trace": [{"tool": "create_escalation", "args": {"reason": "assistant_unavailable"}, "result": esc}]}
     out.update(agent=spec["agent"], trace=spec["trace"], escalation=spec["escalation"])
+    out["draft"] = spec["answer"]          # the agent's own answer, before the reviewer (for testing; never shown)
 
     # 4. Reviewer: checks the reply against the trace and the tier, in English.
     res = review(message, spec["answer"], spec["trace"], tier, language="en",

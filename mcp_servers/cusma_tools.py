@@ -286,7 +286,8 @@ def order_duty(po_number: str, tier: str) -> dict:
         return _err("NOT_FOUND", f"No order with number {po_number}")
     res = import_duty(o["sku"], int(o["quantity"]), float(o["unit_price_usd"]), tier, o["ship_date"])
     if res["ok"]:
-        res["data"].update(po_number=o["po_number"], sku=o["sku"], ship_date=o["ship_date"])
+        res["data"].update(po_number=o["po_number"], sku=o["sku"], ship_date=o["ship_date"],
+                           quantity=int(o["quantity"]), unit_price_usd=float(o["unit_price_usd"]))
         res["trace"].insert(0, f"Order {o['po_number']}: {o['quantity']} pairs of {o['sku']} at "
                                f"{float(o['unit_price_usd']):.2f} USD, ships {o['ship_date']}")
     return res
