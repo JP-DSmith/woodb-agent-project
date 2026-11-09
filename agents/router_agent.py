@@ -1,12 +1,20 @@
-import json
+"""Lightweight semantic router for the CUSMA Trade Assistant.
+
+Runtime design:
+- ONNX Runtime instead of PyTorch
+- precomputed reference embeddings
+- one embedding generated per incoming question
+- confidence-based human escalation
+"""
+
 import os
 import threading
 from collections.abc import Iterator, Sequence
 from pathlib import Path
 
 import numpy as np
-import torch
-from transformers import AutoModel, AutoTokenizer
+import onnxruntime as ort
+from tokenizers import Tokenizer
 
 
 # ============================================================
@@ -15,26 +23,30 @@ from transformers import AutoModel, AutoTokenizer
 
 ROOT = Path(__file__).resolve().parent.parent
 
-CONFIG_PATH = (
+MODEL_PATH = (
     ROOT
-    / "config"
-    / "request_types_and_personas.json"
+    / "models"
+    / "router"
+    / "model.onnx"
 )
 
-TRAIN_PATH = (
+TOKENIZER_PATH = (
+    ROOT
+    / "models"
+    / "router"
+    / "tokenizer.json"
+)
+
+REFERENCE_PATH = (
     ROOT
     / "data"
-    / "train_dataset.jsonl"
+    / "router_reference_embeddings.npz"
 )
 
 
 # ============================================================
-# Router configuration
+# Configuration
 # ============================================================
-
-MODEL_NAME = (
-    "sentence-transformers/all-MiniLM-L6-v2"
-)
 
 SIMILARITY_THRESHOLD = float(
     os.getenv(
@@ -43,10 +55,6 @@ SIMILARITY_THRESHOLD = float(
     )
 )
 
-
-# ============================================================
-# Agent mapping
-# ============================================================
 
 AGENT_MAPPING = {
     "qualification_check": (
@@ -83,27 +91,23 @@ AGENT_MAPPING = {
 
 
 # ============================================================
-# Lazy router state
+# Lazy runtime state
 # ============================================================
 
-_reference_texts = []
-_reference_labels = []
-
 _tokenizer = None
-_embedding_model = None
+_session = None
+
 _reference_embeddings = None
-_device = None
+_reference_texts = None
+_reference_labels = None
 
-_examples_loaded = False
-_router_loaded = False
+_runtime_loaded = False
 
-# Re-entrant because _load_router() calls
-# _load_reference_examples().
 _load_lock = threading.RLock()
 
 
 # ============================================================
-# Required-file validation
+# File validation
 # ============================================================
 
 def _require_file(path: Path) -> None:
@@ -115,127 +119,119 @@ def _require_file(path: Path) -> None:
 
 
 # ============================================================
-# Lazy example loading
+# Lightweight runtime initialization
 # ============================================================
 
-def _load_reference_examples() -> None:
-    global _examples_loaded
+def _load_runtime() -> None:
+    global _tokenizer
+    global _session
+    global _reference_embeddings
+    global _reference_texts
+    global _reference_labels
+    global _runtime_loaded
 
-    if _examples_loaded:
+    if _runtime_loaded:
         return
 
     with _load_lock:
-
-        if _examples_loaded:
+        if _runtime_loaded:
             return
 
-        _require_file(CONFIG_PATH)
-        _require_file(TRAIN_PATH)
+        _require_file(MODEL_PATH)
+        _require_file(TOKENIZER_PATH)
+        _require_file(REFERENCE_PATH)
 
         # --------------------------------------------
-        # Request-type examples
+        # Precomputed references
         # --------------------------------------------
 
-        with CONFIG_PATH.open(
-            "r",
-            encoding="utf-8",
-        ) as file:
-            config_data = json.load(file)
+        reference_data = np.load(
+            REFERENCE_PATH
+        )
 
-        for request_type in config_data.get(
-            "request_types",
-            [],
-        ):
-            label = request_type["id"]
-
-            examples = request_type.get(
-                "examples",
-                {},
+        _reference_embeddings = (
+            reference_data[
+                "embeddings"
+            ].astype(
+                np.float32,
+                copy=False,
             )
+        )
 
-            for language in (
-                "en",
-                "fr",
-            ):
-                for example in examples.get(
-                    language,
-                    [],
-                ):
-                    _reference_texts.append(
-                        example
-                    )
+        _reference_texts = (
+            reference_data[
+                "texts"
+            ]
+        )
 
-                    _reference_labels.append(
-                        label
-                    )
-
-        # --------------------------------------------
-        # Synthetic training dataset
-        # --------------------------------------------
-
-        with TRAIN_PATH.open(
-            "r",
-            encoding="utf-8",
-        ) as file:
-
-            for line_number, line in enumerate(
-                file,
-                start=1,
-            ):
-
-                if not line.strip():
-                    continue
-
-                try:
-                    item = json.loads(line)
-
-                    query = item["query"]
-                    intent = item["intent"]
-
-                except (
-                    json.JSONDecodeError,
-                    KeyError,
-                    TypeError,
-                ) as error:
-
-                    raise ValueError(
-                        "Invalid router training "
-                        "record at "
-                        f"{TRAIN_PATH}:"
-                        f"{line_number}"
-                    ) from error
-
-                _reference_texts.append(
-                    query
-                )
-
-                _reference_labels.append(
-                    intent
-                )
-
-        if not _reference_texts:
-            raise RuntimeError(
-                "Router loaded zero "
-                "reference examples."
-            )
+        _reference_labels = (
+            reference_data[
+                "labels"
+            ]
+        )
 
         if (
-            len(_reference_texts)
-            != len(_reference_labels)
+            len(_reference_embeddings)
+            == 0
         ):
             raise RuntimeError(
-                "Router reference texts and "
-                "labels are not aligned."
+                "Router reference embeddings "
+                "are empty."
             )
 
-        _examples_loaded = True
+        if not (
+            len(_reference_embeddings)
+            == len(_reference_texts)
+            == len(_reference_labels)
+        ):
+            raise RuntimeError(
+                "Router reference data "
+                "is not aligned."
+            )
+
+        # --------------------------------------------
+        # Tokenizer
+        # --------------------------------------------
+
+        _tokenizer = (
+            Tokenizer.from_file(
+                str(TOKENIZER_PATH)
+            )
+        )
+
+        _tokenizer.enable_truncation(
+            max_length=256
+        )
+
+        _tokenizer.enable_padding(
+            pad_id=0,
+            pad_token="[PAD]",
+        )
+
+        # --------------------------------------------
+        # ONNX Runtime
+        # --------------------------------------------
+
+        options = ort.SessionOptions()
+
+        options.intra_op_num_threads = 1
+        options.inter_op_num_threads = 1
+
+        _session = ort.InferenceSession(
+            str(MODEL_PATH),
+            sess_options=options,
+            providers=[
+                "CPUExecutionProvider"
+            ],
+        )
+
+        _runtime_loaded = True
 
 
 # ============================================================
 # Compatibility wrapper
 #
 # Existing tests import reference_texts and call len().
-# This allows that behavior without loading the model.
 # ============================================================
 
 class _LazyReferenceTexts(
@@ -243,7 +239,7 @@ class _LazyReferenceTexts(
 ):
 
     def __len__(self) -> int:
-        _load_reference_examples()
+        _load_runtime()
 
         return len(
             _reference_texts
@@ -253,19 +249,23 @@ class _LazyReferenceTexts(
         self,
         index,
     ):
-        _load_reference_examples()
+        _load_runtime()
 
-        return _reference_texts[
-            index
-        ]
+        return str(
+            _reference_texts[
+                index
+            ]
+        )
 
     def __iter__(
         self,
     ) -> Iterator[str]:
-        _load_reference_examples()
+        _load_runtime()
 
-        return iter(
-            _reference_texts
+        return (
+            str(value)
+            for value
+            in _reference_texts
         )
 
 
@@ -275,143 +275,109 @@ reference_texts = (
 
 
 # ============================================================
-# Embeddings
+# ONNX embedding
 # ============================================================
 
-def _get_embeddings(
-    texts: list[str],
+def _get_embedding(
+    text: str,
 ) -> np.ndarray:
 
+    _load_runtime()
+
+    encoding = (
+        _tokenizer.encode(
+            text
+        )
+    )
+
+    input_ids = np.asarray(
+        [encoding.ids],
+        dtype=np.int64,
+    )
+
+    attention_mask = np.asarray(
+        [
+            encoding.attention_mask
+        ],
+        dtype=np.int64,
+    )
+
+    available_inputs = {
+        item.name
+        for item
+        in _session.get_inputs()
+    }
+
+    inputs = {
+        "input_ids": input_ids,
+        "attention_mask": (
+            attention_mask
+        ),
+    }
+
     if (
-        _tokenizer is None
-        or _embedding_model is None
-        or _device is None
+        "token_type_ids"
+        in available_inputs
     ):
-        raise RuntimeError(
-            "Router model has not "
-            "been initialized."
-        )
-
-    inputs = _tokenizer(
-        texts,
-        padding=True,
-        truncation=True,
-        return_tensors="pt",
-    ).to(_device)
-
-    with torch.no_grad():
-        outputs = (
-            _embedding_model(
-                **inputs
-            )
-        )
-
-    attention_mask = (
         inputs[
-            "attention_mask"
-        ]
+            "token_type_ids"
+        ] = np.asarray(
+            [encoding.type_ids],
+            dtype=np.int64,
+        )
+
+    outputs = _session.run(
+        None,
+        inputs,
     )
 
     token_embeddings = (
         outputs[0]
     )
 
-    expanded_mask = (
-        attention_mask
-        .unsqueeze(-1)
-        .expand(
-            token_embeddings.size()
-        )
-        .float()
+    mask = attention_mask[
+        ...,
+        None,
+    ].astype(
+        np.float32
     )
 
-    sum_embeddings = (
-        torch.sum(
-            token_embeddings
-            * expanded_mask,
-            dim=1,
-        )
+    summed = np.sum(
+        token_embeddings * mask,
+        axis=1,
     )
 
-    sum_mask = torch.clamp(
-        expanded_mask.sum(
-            dim=1
+    counts = np.maximum(
+        np.sum(
+            mask,
+            axis=1,
         ),
-        min=1e-9,
+        1e-9,
     )
 
-    embeddings = (
-        sum_embeddings
-        / sum_mask
+    embedding = (
+        summed / counts
     )
 
-    return (
-        embeddings
-        .cpu()
-        .numpy()
+    norm = np.linalg.norm(
+        embedding,
+        axis=1,
+        keepdims=True,
     )
+
+    embedding = (
+        embedding
+        / np.maximum(
+            norm,
+            1e-12,
+        )
+    )
+
+    return embedding[0]
 
 
 # ============================================================
-# Lazy model loading
-# ============================================================
-
-def _load_router() -> None:
-    global _tokenizer
-    global _embedding_model
-    global _reference_embeddings
-    global _device
-    global _router_loaded
-
-    if _router_loaded:
-        return
-
-    with _load_lock:
-
-        if _router_loaded:
-            return
-
-        _load_reference_examples()
-
-        _device = torch.device(
-            "cuda"
-            if torch.cuda.is_available()
-            else "cpu"
-        )
-
-        _tokenizer = (
-            AutoTokenizer
-            .from_pretrained(
-                MODEL_NAME
-            )
-        )
-
-        _embedding_model = (
-            AutoModel
-            .from_pretrained(
-                MODEL_NAME
-            )
-        )
-
-        _embedding_model = (
-            _embedding_model.to(
-                _device
-            )
-        )
-
-        _embedding_model.eval()
-
-        _reference_embeddings = (
-            _get_embeddings(
-                _reference_texts
-            )
-        )
-
-        _router_loaded = True
-
-
-# ============================================================
-# Human escalation result
+# Escalation result
 # ============================================================
 
 def _escalation_result(
@@ -446,8 +412,8 @@ def _escalation_result(
 
 
 # ============================================================
-# Few-shot router
-# =============================================
+# Router
+# ============================================================
 
 def route_message_few_shot(
     message: str,
@@ -468,85 +434,42 @@ def route_message_few_shot(
         return _escalation_result(
             message=""
         )
-
-    # Model and embeddings are loaded
-    # only when routing is first needed.
-    _load_router()
-
-    if (
-        _reference_embeddings is None
-        or len(
-            _reference_embeddings
-        ) == 0
-    ):
-        raise RuntimeError(
-            "Router reference embeddings "
-            "were not created."
-        )
-
     query_embedding = (
-        _get_embeddings(
-            [message]
+        _get_embedding(
+            message
         )
     )
 
-    dot_product = np.dot(
-        query_embedding,
-        _reference_embeddings.T,
-    )
-
-    query_norm = np.linalg.norm(
-        query_embedding,
-        axis=1,
-        keepdims=True,
-    )
-
-    reference_norms = (
-        np.linalg.norm(
-            _reference_embeddings,
-            axis=1,
-            keepdims=True,
-        ).T
-    )
-
-    denominator = np.maximum(
-        query_norm
-        * reference_norms,
-        1e-12,
-    )
-
+    # Reference embeddings are
+    # already normalized.
     similarities = (
-        dot_product
-        / denominator
+        _reference_embeddings
+        @ query_embedding
     )
 
     best_index = int(
         np.argmax(
-            similarities[0]
+            similarities
         )
     )
 
     best_score = float(
-        similarities[0][
+        similarities[
             best_index
         ]
     )
 
-    best_label = (
+    best_label = str(
         _reference_labels[
             best_index
         ]
     )
 
-    matched_example = (
+    matched_example = str(
         _reference_texts[
             best_index
         ]
     )
-
-    # --------------------------------------------
-    # Not sure / low-confidence behavior
-    # --------------------------------------------
 
     if (
         best_score
@@ -589,10 +512,6 @@ def route_message_few_shot(
         "router": "router_agent",
     }
 
-
-# ============================================================
-# Public router entry point
-# ============================================================
 
 def route_user_input(
     message: str,
