@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-76433            Date: 2026-08-17
 Seller: Siam Latex Trading Ltd.
-        99101 Stephenson Circle, Lake Amystad, HI 69315
+        No. 124 Bangna-Trad Road, Rayong, Rayong 21000, Thailand
         Tax ID: 932184269
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -16,4 +16,4 @@ Freight:  240.24 CAD
 TOTAL:    2,800.24 CAD
 
 Ship via: DHL      Ship date: 2026-08-17
-Authorized signature: Cheryl Marsh
+Authorized signature: Anong Chaiyaporn

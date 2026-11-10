@@ -1,4 +1,4 @@
-From: Jason Gallegos <jason@xiamen.example>
+From: Yan Zhou <yan@xiamen.example>
 To: Sam Lee <s.lee@northfield.example>
 Date: 2026-12-18
 Subject: RE: Origin of black compound, 25 kg
@@ -10,5 +10,5 @@ Quantity: 1000 pairs of black compound, 25 kg.
 
 [handwritten: check origin]
 Thanks,
-Jason Gallegos
+Yan Zhou
 Xiamen Comfort Insole Co.

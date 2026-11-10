@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-65864            Date: 2027-01-30
 Seller: Xiamen Comfort Insole Co.
-        25293 Stuart Row Suite 016, West Richardport, HI 91945
+        No. 26 Xinhua Road, Xiamen, Fujian 361000, China
         Tax ID: 216179415
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -15,4 +15,4 @@ Freight:  253.61 CAD
 TOTAL:    805.61 CAD
 
 Ship via: Ocean freight      Ship date: 2027-01-30
-Authorized signature: Jason Gallegos
+Authorized signature: Yan Zhou

@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-94690            Date: 2026-10-25
 Seller: Hangzhou Weave Tech Co.
-        7865 Bautista Trafficway, Rileyside, ND 16978
+        No. 186 Industrial Road, Hangzhou, Zhejiang 310000, China
         Tax ID: 781085129
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -15,4 +15,4 @@ Freight:  231.05 CAD
 TOTAL:    1,704.27 CAD
 
 Ship via: DHL      Ship date: 2026-10-25
-Authorized signature: Heather Robinson
+Authorized signature: Yan Liu

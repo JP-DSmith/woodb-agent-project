@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-57846            Date: 2027-02-03
 Seller: Shenzhen NeoFlex Materials Co.
-        226 Smith Burgs Apt. 583, Ronaldburgh, VI 27919
+        No. 630 Xinhua Road, Shenzhen, Guangdong 518000, China
         Tax ID: 366217228
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -15,6 +15,6 @@ Freight:  121.65 CAD
 TOTAL:    7,621.65 CAD
 
 Ship via: DHL      Ship date: 2027-02-03
-Authorized signature: William Hart
+Authorized signature: Min Wu
 
 [handwritten: check origin]

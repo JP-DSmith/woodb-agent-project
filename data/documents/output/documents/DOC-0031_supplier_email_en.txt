@@ -1,4 +1,4 @@
-From: Arthur Jones MD <arthur@tucker.example>
+From: Wei Wu <wei@tucker.example>
 To: Sam Lee <s.lee@northfield.example>
 Date: 2026-08-20
 Subject: RE: Origin of Labels, patch, pull loop
@@ -10,5 +10,5 @@ Quantity: 1500 pairs of Labels, patch, pull loop.
 
 
 Thanks,
-Arthur Jones MD
+Wei Wu
 Tucker Labels Co., Ltd.

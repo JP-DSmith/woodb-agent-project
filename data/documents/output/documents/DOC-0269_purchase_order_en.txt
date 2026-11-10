@@ -1,7 +1,7 @@
 PURCHASE ORDER
 PO No.: SPO-0269        Date: 2026-10-01
 Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
-Supplier: Conceria Valdarno S.r.l., Strada Gianna, 95 Appartamento 29, 81021, Arienzo (CE)
+Supplier: Conceria Valdarno S.r.l., Via dei Conciatori 38, 27029 Vigevano (PV), Italy
 Terms: DAP      Currency: CAD      Required by: 2026-10-01
 
 Line  Part No.     Description                          Qty    Unit   Unit Price   Amount

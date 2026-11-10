@@ -1,4 +1,4 @@
-From: Jason Gallegos <jason@xiamen.example>
+From: Yan Zhou <yan@xiamen.example>
 To: Sam Lee <s.lee@northfield.example>
 Date: 2027-01-07
 Subject: RE: Origin of PU insole
@@ -10,5 +10,5 @@ Quantity: 300 pairs of PU insole.
 
 [handwritten: Mexico?]
 Thanks,
-Jason Gallegos
+Yan Zhou
 Xiamen Comfort Insole Co.

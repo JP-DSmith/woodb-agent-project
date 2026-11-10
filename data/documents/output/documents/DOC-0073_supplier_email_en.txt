@@ -1,4 +1,4 @@
-From: Elaine Keller <elaine@foshan.example>
+From: Qiang Zhang <qiang@foshan.example>
 To: Sam Lee <s.lee@northfield.example>
 Date: 2026-11-11
 Subject: RE: Origin of Plastic buckles, eyelets, laces
@@ -10,5 +10,5 @@ Quantity: 300 pairs of Plastic buckles, eyelets, laces.
 
 [handwritten: China??]
 Thanks,
-Elaine Keller
+Qiang Zhang
 Foshan Hardware Fittings Co.

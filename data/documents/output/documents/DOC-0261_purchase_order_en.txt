@@ -1,7 +1,7 @@
 PURCHASE ORDER
 PO No.: SPO-0261        Date: 2026-10-07
 Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
-Supplier: Mekong Sole Works Co., 91270 Evans Radial Apt. 512, Johnshire, WV 86777
+Supplier: Mekong Sole Works Co., No. 228 Tran Hung Dao Street, Hai Phong, Hai Phong 180000, Vietnam
 Terms: EXW      Currency: CAD      Required by: 2026-10-07
 
 Line  Part No.     Description                          Qty    Unit   Unit Price   Amount

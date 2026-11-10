@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-78244            Date: 
 Seller: Hill Footbed Co., Ltd.
-        1164 White Tunnel Apt. 364, Baileyton, SD 07399
+        No. 858 Industrial Road, Jinjiang, Fujian 362200, China
         Tax ID: 409734895
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -15,4 +15,4 @@ Freight:  147.47 CAD
 TOTAL:    955.47 CAD
 
 Ship via: Purolator      Ship date: 2026-12-17
-Authorized signature: Kenneth Davis
+Authorized signature: Fang Zhang

@@ -1,4 +1,4 @@
-From: Jason Gallegos <jason@xiamen.example>
+From: Yan Zhou <yan@xiamen.example>
 To: Sam Lee <s.lee@northfield.example>
 Date: 2026-11-03
 Subject: Shipment for PO SPO-0027
@@ -10,5 +10,5 @@ Quantity: 500 pairs of misc. parts. Our origin declaration is attached.
 
 
 Best regards,
-Jason Gallegos
+Yan Zhou
 Xiamen Comfort Insole Co.

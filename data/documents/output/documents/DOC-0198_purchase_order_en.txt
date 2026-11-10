@@ -1,7 +1,7 @@
 PURCHASE ORDER
 PO No.: SPO-0198        Date: 2026-12-31
 Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
-Supplier: Hartwig Polymere GmbH, Adem-Klapp-Weg 968, 19425 Genthin
+Supplier: Hartwig Polymere GmbH, Hafenstraße 712, 30159 Hannover, Germany
 Terms: DAP      Currency: CAD      Required by: 2026-12-31
 
 Line  Part No.     Description                          Qty    Unit   Unit Price   Amount

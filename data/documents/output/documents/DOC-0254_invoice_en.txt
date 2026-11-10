@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-64869            Date: 
 Seller: Tucker Labels Co., Ltd.
-        58953 Lisa Road, Joshuaview, SD 28958
+        No. 745 Xinhua Road, Tianjin, Tianjin 300000, China
         Tax ID: 627869825
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -15,4 +15,4 @@ Freight:  367.97 CAD
 TOTAL:    552.97 CAD
 
 Ship via: UPS Freight      Ship date: 2026-10-24
-Authorized signature: Arthur Jones MD
+Authorized signature: Wei Wu

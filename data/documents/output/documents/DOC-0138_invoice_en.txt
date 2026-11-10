@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-12405            Date: 2026-09-26
 Seller: Ningbo Safeguard Parts Co.
-        USNV Gillespie, FPO AE 68275
+        No. 414 Keji Road, Ningbo, Zhejiang 315000, China
         Tax ID: 129190819
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -15,4 +15,4 @@ Freight:  160.25 CAD
 TOTAL:    1,525.25 CAD
 
 Ship via: Purolator      Ship date: 2026-09-26
-Authorized signature: Jared Kim
+Authorized signature: Yan Huang

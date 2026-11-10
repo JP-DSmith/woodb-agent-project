@@ -1,7 +1,7 @@
 PURCHASE ORDER
 PO No.: SPO-0014        Date: 2026-10-24
 Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
-Supplier: Brightline Color Inc., USCGC Hart, FPO AA 29618
+Supplier: Brightline Color Inc., 26 Market Street, Akron, OH 44308, USA
 Terms: EXW      Currency: CAD      Required by: 2026-10-24
 
 Line  Part No.     Description                          Qty    Unit   Unit Price   Amount

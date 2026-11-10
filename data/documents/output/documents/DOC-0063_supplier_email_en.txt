@@ -1,4 +1,4 @@
-From: Jared Kim <jared@ningbo.example>
+From: Yan Huang <yan@ningbo.example>
 To: Sam Lee <s.lee@northfield.example>
 Date: 2026-12-19
 Subject: RE: Origin of material as per sample
@@ -10,5 +10,5 @@ Quantity: 1500 pairs of material as per sample.
 
 
 Thanks,
-Jared Kim
+Yan Huang
 Ningbo Safeguard Parts Co.

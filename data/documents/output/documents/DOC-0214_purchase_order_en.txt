@@ -1,7 +1,7 @@
 PURCHASE ORDER
 PO No.: SPO-0214        Date: 2026-09-23
 Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
-Supplier: Shenzhen NeoFlex Materials Co., 226 Smith Burgs Apt. 583, Ronaldburgh, VI 27919
+Supplier: Shenzhen NeoFlex Materials Co., No. 630 Xinhua Road, Shenzhen, Guangdong 518000, China
 Terms: DAP      Currency: CAD      Required by: 2026-09-23
 
 Line  Part No.     Description                          Qty    Unit   Unit Price   Amount

@@ -1,7 +1,7 @@
 PURCHASE ORDER
 PO No.: SPO-0251        Date: 2026-11-13
 Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
-Supplier: Hebei Felt Products Co., 7053 Miller Harbor, Evelynland, VI 39776
+Supplier: Hebei Felt Products Co., No. 882 Xinhua Road, Shijiazhuang, Hebei 050000, China
 Terms: DAP      Currency: CAD      Required by: 2026-11-13
 
 Line  Part No.     Description                          Qty    Unit   Unit Price   Amount

@@ -1,7 +1,7 @@
 PURCHASE ORDER
 PO No.: SPO-0194        Date: 2026-09-06
 Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
-Supplier: Siam Latex Trading Ltd., 99101 Stephenson Circle, Lake Amystad, HI 69315
+Supplier: Siam Latex Trading Ltd., No. 124 Bangna-Trad Road, Rayong, Rayong 21000, Thailand
 Terms: FCA      Currency: CAD      Required by: 2026-09-06
 
 Line  Part No.     Description                          Qty    Unit   Unit Price   Amount

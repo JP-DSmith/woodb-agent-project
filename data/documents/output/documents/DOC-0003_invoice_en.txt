@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-50597            Date: 2026-11-23
 Seller: Hangzhou Weave Tech Co.
-        5610 Danielle Spring, North Lisamouth, AZ 05365
+        No. 419 Industrial Road, Hangzhou, Zhejiang 310000, China
         Tax ID: 781085129
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -15,4 +15,4 @@ Freight:  387.54 CAD
 TOTAL:    5,187.54 CAD
 
 Ship via: Ocean freight      Ship date: 2026-11-23
-Authorized signature: Heather Robinson
+Authorized signature: Yan Liu

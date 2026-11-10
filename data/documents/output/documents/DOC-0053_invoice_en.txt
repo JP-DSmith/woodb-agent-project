@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-53784            Date: 2026-10-08
 Seller: Foshan Hardware Fittings Co.
-        978 Jason Overpass Apt. 911, Cynthiamouth, WI 26258
+        No. 896 Industrial Road, Foshan, Guangdong 528000, China
         Tax ID: 803270874
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -15,4 +15,4 @@ Freight:  369.96 CAD
 TOTAL:    2,019.96 CAD
 
 Ship via: DHL      Ship date: 2026-10-08
-Authorized signature: Elaine Keller
+Authorized signature: Qiang Zhang
