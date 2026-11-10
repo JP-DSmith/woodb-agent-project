@@ -1,0 +1,122 @@
+[
+  {
+    "doc_id": "HID-001",
+    "language": "en",
+    "doc_type": "invoice",
+    "defects": [
+      "T5"
+    ]
+  },
+  {
+    "doc_id": "HID-002",
+    "language": "en",
+    "doc_type": "supplier_email",
+    "defects": [
+      "T5"
+    ]
+  },
+  {
+    "doc_id": "HID-003",
+    "language": "en",
+    "doc_type": "origin_declaration",
+    "defects": [
+      "T5"
+    ]
+  },
+  {
+    "doc_id": "HID-004",
+    "language": "fr",
+    "doc_type": "invoice",
+    "defects": [
+      "T5"
+    ]
+  },
+  {
+    "doc_id": "HID-005",
+    "language": "fr",
+    "doc_type": "supplier_email",
+    "defects": [
+      "T5"
+    ]
+  },
+  {
+    "doc_id": "HID-006",
+    "language": "es",
+    "doc_type": "supplier_email",
+    "defects": [
+      "T5"
+    ]
+  },
+  {
+    "doc_id": "HID-007",
+    "language": "en",
+    "doc_type": "invoice",
+    "defects": [
+      "T1"
+    ]
+  },
+  {
+    "doc_id": "HID-008",
+    "language": "en",
+    "doc_type": "origin_declaration",
+    "defects": [
+      "T1"
+    ]
+  },
+  {
+    "doc_id": "HID-009",
+    "language": "fr",
+    "doc_type": "invoice",
+    "defects": [
+      "T2"
+    ]
+  },
+  {
+    "doc_id": "HID-010",
+    "language": "fr",
+    "doc_type": "origin_declaration",
+    "defects": [
+      "T2"
+    ]
+  },
+  {
+    "doc_id": "HID-011",
+    "language": "es",
+    "doc_type": "invoice",
+    "defects": [
+      "T3"
+    ]
+  },
+  {
+    "doc_id": "HID-012",
+    "language": "es",
+    "doc_type": "origin_declaration",
+    "defects": [
+      "T3"
+    ]
+  },
+  {
+    "doc_id": "HID-013",
+    "language": "en",
+    "doc_type": "invoice",
+    "defects": [
+      "T4"
+    ]
+  },
+  {
+    "doc_id": "HID-014",
+    "language": "fr",
+    "doc_type": "supplier_email",
+    "defects": [
+      "T4"
+    ]
+  },
+  {
+    "doc_id": "HID-015",
+    "language": "es",
+    "doc_type": "origin_declaration",
+    "defects": [
+      "T4"
+    ]
+  }
+]

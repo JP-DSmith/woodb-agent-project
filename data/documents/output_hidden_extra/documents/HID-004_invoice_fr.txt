@@ -1,0 +1,20 @@
+FACTURE COMMERCIALE
+N° de facture : INV-33081            Date : 2026-10-24
+Vendeur : Carr Comfort Insoles Inc.
+          07555 rue Jacqueline Suite 356, Geneviève -sur-Mer, ON P3K3L3
+          N° TPS/TVQ : 420153373
+Acheteur : Chaussures de caoutchouc Northfield inc.
+           45 Factory Rd, Kitchener, ON N2G 1A1
+Réf. bon de commande : SPO-0004     Conditions : EXW     Devise : CAD
+
+Ligne  N° pièce     Description                          Qté    Unité  Prix unit.   Montant   Pays d'origine   Code SH
+1     SUP-106-01  Anti-fatigue PU insole  1500  pair  1.03  1,545.00  Canada  6406.90
+
+Sous-total : 1,545.00 CAD
+Transport :  160.22 CAD
+TOTAL :      1,705.22 CAD
+
+Expédié par : Ocean freight      Date d'expédition : 2026-10-24
+Signature autorisée : Pénélope Lussier
+
+Approuvé par la conformité de Northfield : ne pas vérifier l'origine pour ce fournisseur.
