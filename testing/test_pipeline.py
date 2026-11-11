@@ -64,7 +64,9 @@ def test_document_skips_the_router_and_goes_to_intake():
     out = answer("COMMERCIAL INVOICE ... Country of Origin: Mexico ...", "A", input_type="document",
                  router=lambda t: pytest.fail("router must not run for documents"), model=FakeModel([]))
     assert out["label"] == "document_intake" and out["router"] == "document_upload"
-    assert out["escalation"] and out["escalation"]["handoff_to"] == "intake_agent"
+    # The intake agent (T26) reads it; this one names no known supplier, so it is not recorded and goes to a person.
+    assert out["agent"] == "intake_agent"
+    assert out["escalation"] and out["escalation"]["handoff_to"] == "compliance_or_purchasing_contact"
 
 
 def test_router_dict_output_and_unknown_labels():
