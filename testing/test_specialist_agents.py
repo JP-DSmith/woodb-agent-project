@@ -137,9 +137,46 @@ def test_certification_flow_hands_to_signer():
     assert out["escalation"] and out["escalation"]["handoff_to"] == "authorized_signer"
 
 
-def test_types_without_an_agent_are_handed_off():
-    out = run_specialist("escalate_human", "Customs is auditing us", "B")
-    assert out["agent"] is None and out["escalation"] and out["trace"][0]["tool"] == "create_escalation"
+def test_escalate_human_uses_escalation_agent():
+    out = run_specialist(
+        "escalate_human",
+        "Customs is auditing us",
+        "B",
+    )
+
+    assert out["agent"] == "escalation_agent"
+    assert out["escalation"]
+
+    assert (
+        out["escalation"]["handoff_to"]
+        == "compliance_contact"
+    )
+
+    assert (
+        out["trace"][0]["tool"]
+        == "create_escalation"
+    )
+
+    assert (
+        "northfield.compliance@outlook.com"
+        in out["answer"]
+    )
+
+
+def test_out_of_scope_does_not_show_compliance_email():
+    out = run_specialist(
+        "out_of_scope",
+        "What's the weather tomorrow?",
+        "C",
+    )
+
+    assert out["agent"] is None
+    assert out["escalation"] is None
+
+    assert (
+        "northfield.compliance@outlook.com"
+        not in out["answer"]
+    )
 
 
 def test_keyword_route_stand_in():
