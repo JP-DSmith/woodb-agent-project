@@ -1,7 +1,7 @@
 PURCHASE ORDER
 PO No.: SPO-0002        Date: 2026-12-12
 Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
-Supplier: Prairie Foam Systems LLC, 47430 Spencer Meadow, Joneston, MH 17787
+Supplier: Prairie Foam Systems LLC, 400 Enterprise Boulevard, Charlotte, NC 28202, USA
 Terms: DAP      Currency: CAD      Required by: 2026-12-12
 
 Line  Part No.     Description                          Qty    Unit   Unit Price   Amount

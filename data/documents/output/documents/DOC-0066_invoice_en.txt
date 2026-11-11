@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-28640            Date: 2027-02-19
 Seller: Hill Footbed Co., Ltd.
-        42891 Martin Gardens, Brayhaven, NH 75015
+        No. 295 Xinhua Road, Dongguan, Guangdong 523000, China
         Tax ID: 409734895
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -15,4 +15,4 @@ Freight:  229.06 CAD
 TOTAL:    431.06 CAD
 
 Ship via: DHL      Ship date: 2027-02-19
-Authorized signature: Kenneth Davis
+Authorized signature: Fang Zhang

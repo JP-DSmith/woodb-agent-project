@@ -1,4 +1,4 @@
-From: Arthur Jones MD <arthur@tucker.example>
+From: Wei Wu <wei@tucker.example>
 To: Sam Lee <s.lee@northfield.example>
 Date: 2027-01-03
 Subject: RE: Origin of black compound, 25 kg
@@ -10,5 +10,5 @@ Quantity: 300 pairs of black compound, 25 kg. Our origin declaration is attached
 
 
 Thanks,
-Arthur Jones MD
+Wei Wu
 Tucker Labels Co., Ltd.

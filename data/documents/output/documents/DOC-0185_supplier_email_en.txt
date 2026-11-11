@@ -1,4 +1,4 @@
-From: Elaine Keller <elaine@foshan.example>
+From: Qiang Zhang <qiang@foshan.example>
 To: Sam Lee <s.lee@northfield.example>
 Date: 2026-12-12
 Subject: Shipment for PO SPO-0185
@@ -10,5 +10,5 @@ Quantity: 200 pairs of Plastic buckles, eyelets, laces.
 
 
 Best regards,
-Elaine Keller
+Qiang Zhang
 Foshan Hardware Fittings Co.

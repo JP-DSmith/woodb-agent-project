@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-51730            Date: 2027-02-27
 Seller: Mekong Sole Works Co.
-        91270 Evans Radial Apt. 512, Johnshire, WV 86777
+        No. 228 Tran Hung Dao Street, Hai Phong, Hai Phong 180000, Vietnam
         Tax ID: 974250019
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -15,4 +15,4 @@ Freight:  299.80 CAD
 TOTAL:    2,964.80 CAD
 
 Ship via: Ocean freight      Ship date: 2027-02-27
-Authorized signature: Tonya Kirby
+Authorized signature: Minh Hoang

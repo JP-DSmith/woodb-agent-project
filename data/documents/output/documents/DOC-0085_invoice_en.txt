@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-31929            Date: 2026-12-06
 Seller: Jade River Textiles Co.
-        9103 Chang Shoals Suite 345, New Alexandra, RI 21761
+        No. 455 Xinhua Road, Jinjiang, Fujian 362200, China
         Tax ID: 458195305
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -17,4 +17,4 @@ Freight:  229.52 CAD
 TOTAL:    1,229.52 CAD
 
 Ship via: Purolator      Ship date: 2026-12-06
-Authorized signature: Ralph Lynch
+Authorized signature: Wei Huang

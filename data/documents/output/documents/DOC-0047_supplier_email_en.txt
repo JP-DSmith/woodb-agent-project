@@ -1,4 +1,4 @@
-From: Heather Robinson <heather@hangzhou.example>
+From: Yan Liu <yan@hangzhou.example>
 To: Sam Lee <s.lee@northfield.example>
 Date: 2026-09-15
 Subject: Shipment for PO SPO-0047
@@ -10,5 +10,5 @@ Quantity: 500 pairs of Nylon upper fabric. Our origin declaration is attached.
 
 [handwritten: ask supplier]
 Best regards,
-Heather Robinson
+Yan Liu
 Hangzhou Weave Tech Co.

@@ -1,7 +1,7 @@
 PURCHASE ORDER
 PO No.: SPO-0172        Date: 2026-08-28
 Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
-Supplier: Suole Alpine S.p.A., Borgo Luigi, 2, 85043, Agromonte (PZ)
+Supplier: Suole Alpine S.p.A., Via Roma 193, 56029 Santa Croce sull'Arno (PI), Italy
 Terms: FCA      Currency: CAD      Required by: 2026-08-28
 
 Line  Part No.     Description                          Qty    Unit   Unit Price   Amount

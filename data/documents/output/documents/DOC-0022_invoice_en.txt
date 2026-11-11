@@ -1,7 +1,7 @@
 COMMERCIAL INVOICE
 Invoice No.: INV-71682            Date: 2027-01-23
 Seller: Dongguan Upper Craft Co.
-        36851 Bethany Path, Port Brandy, NC 61850
+        No. 536 Binhai Avenue, Dongguan, Guangdong 523000, China
         Tax ID: 615710420
 Buyer:  Northfield Rubber Footwear Inc.
         45 Factory Rd, Kitchener, ON N2G 1A1
@@ -16,4 +16,4 @@ Freight:  165.01 CAD
 TOTAL:    9,701.01 CAD
 
 Ship via: Ocean freight      Ship date: 2027-01-23
-Authorized signature: Dr. Brian Simmons
+Authorized signature: Wei Li

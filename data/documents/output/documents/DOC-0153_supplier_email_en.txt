@@ -1,4 +1,4 @@
-From: Kenneth Davis <kenneth@hill.example>
+From: Fang Zhang <fang@hill.example>
 To: Sam Lee <s.lee@northfield.example>
 Date: 2026-09-25
 Subject: RE: Origin of Gel midsole
@@ -10,5 +10,5 @@ Quantity: 200 pairs of Gel midsole.
 
 
 Thanks,
-Kenneth Davis
+Fang Zhang
 Hill Footbed Co., Ltd.

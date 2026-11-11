@@ -1,4 +1,4 @@
-From: Tonya Kirby <tonya@mekong.example>
+From: Minh Hoang <minh@mekong.example>
 To: Sam Lee <s.lee@northfield.example>
 Date: 2026-08-03
 Subject: Shipment for PO SPO-0122
@@ -10,5 +10,5 @@ Quantity: 1500 pairs of misc. parts.
 
 [handwritten: check origin]
 Best regards,
-Tonya Kirby
+Minh Hoang
 Mekong Sole Works Co.

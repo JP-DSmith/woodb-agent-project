@@ -74,6 +74,76 @@ SAMPLE_PLAN = [  # (doc_type, language, defects) - supplier chosen to match the 
 ]
 
 
+# ---------------------------------------------------------------- supplier addresses
+# (city, region, postal code) per country; a city named in the supplier's name is used first.
+CITIES = {
+    "US": [("Akron", "OH", "44308"), ("Dalton", "GA", "30720"), ("Louisville", "KY", "40202"),
+           ("Grand Rapids", "MI", "49503"), ("Greenville", "SC", "29601"), ("Erie", "PA", "16501"),
+           ("Houston", "TX", "77002"), ("Charlotte", "NC", "28202")],
+    "CA-QC": [("Drummondville", "QC", "J2C 1A1"), ("Trois-Rivières", "QC", "G9A 5H3"), ("Saint-Hyacinthe", "QC", "J2S 2M3"),
+              ("Sherbrooke", "QC", "J1H 4G9"), ("Granby", "QC", "J2G 3T2"), ("Laval", "QC", "H7S 1Z5")],
+    "CA": [("Mississauga", "ON", "L5T 2J3"), ("Kitchener", "ON", "N2H 6M3"), ("Calgary", "AB", "T2E 7H7"),
+           ("Winnipeg", "MB", "R3H 0Y4"), ("Burnaby", "BC", "V5J 5K9")],
+    "MX": [("Monterrey", "N.L.", "64000"), ("León", "Gto.", "37000"), ("Guadalajara", "Jal.", "44100"),
+           ("Querétaro", "Qro.", "76000"), ("Puebla", "Pue.", "72000")],
+    "DE": [("Bremen", "", "28195"), ("Ludwigshafen", "", "67059"), ("Pirmasens", "", "66953"), ("Hannover", "", "30159")],
+    "IT": [("Santa Croce sull'Arno", "PI", "56029"), ("Montebelluna", "TV", "31044"), ("Vigevano", "PV", "27029")],
+    "CN": [("Ningbo", "Zhejiang", "315000"), ("Hangzhou", "Zhejiang", "310000"), ("Shenzhen", "Guangdong", "518000"),
+           ("Foshan", "Guangdong", "528000"), ("Dongguan", "Guangdong", "523000"), ("Xiamen", "Fujian", "361000"),
+           ("Tianjin", "Tianjin", "300000"), ("Shijiazhuang", "Hebei", "050000"), ("Chengdu", "Sichuan", "610000"),
+           ("Jinjiang", "Fujian", "362200")],
+    "TH": [("Hat Yai", "Songkhla", "90110"), ("Rayong", "Rayong", "21000"), ("Samut Prakan", "Samut Prakan", "10270")],
+    "VN": [("Bien Hoa", "Dong Nai", "810000"), ("Thu Dau Mot", "Binh Duong", "820000"), ("Hai Phong", "Hai Phong", "180000")],
+    "TW": [("Taichung", "Taichung City", "407"), ("Tainan", "Tainan City", "700")],
+}
+NAME_HINTS = {"hebei": "Shijiazhuang", "sichuan": "Chengdu", "mauricie": "Trois-Rivières", "laurentide": "Saint-Jérôme",
+              "quebec": "Drummondville", "pacifico": "Guadalajara", "bajio": "León"}
+CITIES["CA-QC"].append(("Saint-Jérôme", "QC", "J7Z 5T3"))
+COUNTRY_EN = {"CA": "Canada", "US": "USA", "MX": "Mexico", "DE": "Germany", "IT": "Italy", "CN": "China",
+              "TH": "Thailand", "VN": "Vietnam", "TW": "Taiwan"}
+STREETS = {
+    "CN": ["Industrial Road", "Jiangnan Road", "Xinhua Road", "Binhai Avenue", "Keji Road", "Changjiang Road"],
+    "TH": ["Kanchanavanich Road", "Sukhumvit Road", "Phetkasem Road", "Bangna-Trad Road"],
+    "VN": ["Nguyen Van Linh Street", "Le Loi Street", "Tran Hung Dao Street", "Industrial Zone Road 3"],
+    "TW": ["Zhongshan Road", "Wenxin Road", "Taiwan Boulevard"],
+    "US": ["Commerce Drive", "Industrial Parkway", "Market Street", "Mill Road", "Enterprise Boulevard"],
+    "CA": ["Industrial Road", "Dixie Road", "Commerce Drive", "Wellington Street"],
+    "CA-QC": ["rue Saint-Pierre", "boulevard Industriel", "rue des Forges", "chemin du Parc", "rue Principale"],
+    "MX": ["Av. Industrial", "Blvd. Adolfo López Mateos", "Calle Hidalgo", "Av. Constitución"],
+    "DE": ["Industriestraße", "Hafenstraße", "Gewerbering", "Hauptstraße"],
+    "IT": ["Via dell'Industria", "Via Roma", "Via dei Conciatori", "Via Garibaldi"],
+}
+ASIA_NAMES = {
+    "CN": (["Wang", "Li", "Zhang", "Liu", "Chen", "Yang", "Zhao", "Huang", "Zhou", "Wu"],
+           ["Wei", "Fang", "Lei", "Min", "Jun", "Hui", "Yan", "Tao", "Ling", "Qiang"]),
+    "TW": (["Chen", "Lin", "Huang", "Chang", "Lee"], ["Mei-Ling", "Chih-Wei", "Yu-Ting", "Chun-Hao"]),
+    "TH": (["Saetang", "Wongsakul", "Chaiyaporn", "Srisuk"], ["Somchai", "Anong", "Kittisak", "Nattaya"]),
+    "VN": (["Nguyen", "Tran", "Le", "Pham", "Hoang"], ["Minh", "Lan", "Huong", "Tuan", "Thanh"]),
+}
+
+
+def make_address(s, rng):
+    """One street address in the supplier's own country, ending with the country name."""
+    country = s["country"]
+    key = "CA-QC" if country == "CA" and s["language"] == "fr" else country
+    cities = CITIES.get(key, CITIES["US"])
+    low = s["name"].lower()
+    named = [c for c in cities if c[0].lower() in low] or \
+            [c for c in cities for hint, city in NAME_HINTS.items() if hint in low and c[0] == city]
+    city, region, postal = named[0] if named else rng.choice(cities)
+    street, no = rng.choice(STREETS.get(key, STREETS["US"])), rng.randint(2, 980)
+    country_name = COUNTRY_EN.get(country, country)
+    if key in ("CN", "TH", "VN", "TW"):
+        return f"No. {no} {street}, {city}, {region} {postal}, {country_name}"
+    if key in ("US", "CA", "CA-QC"):
+        return f"{no} {street}, {city}, {region} {postal}, {country_name}"
+    if key == "MX":
+        return f"{street} {no}, {city}, {region} C.P. {postal}, {country_name}"
+    if key == "DE":
+        return f"{street} {no}, {postal} {city}, {country_name}"
+    return f"{street} {no}, {postal} {city} ({region}), {country_name}"
+
+
 def read_csv(p):
     with open(p, newline="", encoding="utf-8") as f:
         return list(csv.DictReader(f))
@@ -114,13 +184,22 @@ class Generator:
         return self.fakers[loc]
 
     def _contact(self, s):
-        loc = FR_LOCALE if s["language"] == "fr" else FAKER_LOCALE.get(s["country"], "en_US")
-        f = Faker(loc)
-        f.seed_instance(s["supplier_id"])   # seeded by supplier_id: stable across runs and --n
-        name = f.name()
+        """Contact person and addresses, seeded by supplier_id (same supplier, same contact in every run).
+        Addresses are always in the supplier's own country (French-speaking Canadian suppliers in Quebec)
+        and end with the country name."""
+        rng = random.Random("contact-" + s["supplier_id"])
+        country = s["country"]
+        if country in ASIA_NAMES:
+            family, given = ASIA_NAMES[country]
+            name = f"{rng.choice(given)} {rng.choice(family)}"
+        else:
+            loc = FR_LOCALE if s["language"] == "fr" else FAKER_LOCALE.get(country, "en_US")
+            f = Faker(loc)
+            f.seed_instance(s["supplier_id"])
+            name = f.name()
         domain = "".join(ch for ch in s["name"].lower().split()[0] if ch.isalnum()) + ".example"
         return {"name": name, "email": f"{name.split()[0].lower()}@{domain}",
-                "address": f.address().replace("\n", ", "), "old_address": f.address().replace("\n", ", "),
+                "address": make_address(s, rng), "old_address": make_address(s, rng),
                 "tax_id": str(random.Random(s["supplier_id"]).randint(100000000, 999999999))}
 
     def fill(self, name, vals):

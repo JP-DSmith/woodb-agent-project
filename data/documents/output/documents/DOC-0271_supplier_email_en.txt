@@ -1,4 +1,4 @@
-From: Ralph Lynch <ralph@jade.example>
+From: Wei Huang <wei@jade.example>
 To: Sam Lee <s.lee@northfield.example>
 Date: 2027-01-08
 Subject: Shipment for PO SPO-0271
@@ -10,5 +10,5 @@ Quantity: 1500 pairs of material as per sample. Our origin declaration is attach
 
 
 Best regards,
-Ralph Lynch
+Wei Huang
 Jade River Textiles Co.
