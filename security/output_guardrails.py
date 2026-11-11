@@ -44,6 +44,12 @@ UNKNOWN_TIER = "C"
 MASK_COST = "[confidential]"
 MASK_PERSONAL = "[personal data removed]"
 
+# This fictional shared mailbox may be shown only when the
+# tool trace confirms a handoff to the compliance team.
+APPROVED_COMPLIANCE_EMAIL = (
+    "northfield.compliance@outlook.com"
+)
+
 # Built-in defaults that mirror config/policy.yaml (keys: costs, supplier_names).
 DEFAULT_POLICY: dict[str, Any] = {
     "unknown_user_tier": "C",
@@ -425,6 +431,33 @@ def review(
     def fix(rule_id: str, detail: str, failed: bool = False) -> None:
         findings.append(Finding(rule_id, "fix", detail, "handoff", failed))
 
+    # A shared compliance mailbox may be shown only when the
+    # tool trace proves that the request was handed to the
+    # compliance-contact workflow.
+    approved_compliance_handoff = any(
+        isinstance(step, dict)
+        and step.get("tool") == "create_escalation"
+        and (
+            (
+                step.get("args") or {}
+            ).get("handoff_to")
+            == "compliance_contact"
+            or (
+                (
+                    (
+                        step.get("result") or {}
+                    ).get("data") or {}
+                ).get("handoff_to")
+                == "compliance_contact"
+            )
+        )
+        for step in (
+            trace
+            if isinstance(trace, (list, tuple))
+            else ([trace] if trace else [])
+        )
+    )
+
     # 1. configuration leak
     folded = _fold(text)
     tools_named = {t for t in _TOOL_NAMES if t in folded}
@@ -447,12 +480,68 @@ def review(
         fix("certification_rules", "added the DRAFT, FOR SIGNATURE label", True)
 
     # 4. personal data
-    contacts = {m.group(0) for m in _EMAIL.finditer(text)} | {m.group(0) for m in _PHONE.finditer(text)}
-    if len(contacts) >= 2:
-        block("personal_data", "bulk list of personal contact details", "confidential", True)
-    elif contacts and tier == "C":
-        text = _PHONE.sub(MASK_PERSONAL, _EMAIL.sub(MASK_PERSONAL, text))
-        fix("personal_data", "masked a personal contact detail for tier C", True)
+    #
+    # The fictional shared compliance mailbox is permitted only
+    # when the tool trace confirms a compliance-contact escalation.
+    # All other email addresses and phone numbers continue to use
+    # the existing masking and blocking rules.
+    email_contacts = {
+        match.group(0)
+        for match in _EMAIL.finditer(text)
+    }
+
+    phone_contacts = {
+        match.group(0)
+        for match in _PHONE.finditer(text)
+    }
+
+    allowed_emails = set()
+
+    if approved_compliance_handoff:
+        allowed_emails.add(
+            APPROVED_COMPLIANCE_EMAIL.lower()
+        )
+
+    unapproved_emails = {
+        email
+        for email in email_contacts
+        if email.lower() not in allowed_emails
+    }
+
+    unapproved_contacts = (
+        unapproved_emails
+        | phone_contacts
+    )
+
+    if len(unapproved_contacts) >= 2:
+        block(
+            "personal_data",
+            "bulk list of personal contact details",
+            "confidential",
+            True,
+        )
+
+    elif unapproved_contacts and tier == "C":
+        text = _PHONE.sub(
+            MASK_PERSONAL,
+            text,
+        )
+
+        text = _EMAIL.sub(
+            lambda match: (
+                match.group(0)
+                if match.group(0).lower()
+                in allowed_emails
+                else MASK_PERSONAL
+            ),
+            text,
+        )
+
+        fix(
+            "personal_data",
+            "masked a personal contact detail for tier C",
+            True,
+        )
 
     # 5. confidential figures and supplier names
     if hide_costs:
@@ -518,6 +607,15 @@ def review(
     unknown = (ids & facts.boot_ids_not_found) | ({i for i in ids if i not in set(catalogue_ids)} if catalogue_ids is not None else set())
     figures = [n for n in _numbers(text) if n.kind in ("pct", "money")]
     asserted = _asserted_verdicts(text)
+
+    # In a verified compliance handoff, wording such as
+    # "needs review" describes the human escalation. It is not a
+    # qualification verdict about a product.
+    if approved_compliance_handoff:
+        asserted.discard(
+            "needs_review"
+        )
+
     if unknown and (asserted or figures or _VERDICT_REVIEW.search(_fold(text))):
         block("catalogue_only", f"verdict or figures for a boot the tools do not know: {', '.join(sorted(unknown))}", "not_in_catalogue", False)
 
