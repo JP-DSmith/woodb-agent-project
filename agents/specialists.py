@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import re
 
-from agents import certification_agent, duty_agent, qualification_agent, sourcing_agent
+from agents import certification_agent, duty_agent, intake_agent, qualification_agent, sourcing_agent
 from mcp_servers.cusma_tools import call_tool, normalise_tier
 
 AGENTS = {
@@ -16,9 +16,10 @@ AGENTS = {
     "duty_cost": duty_agent.AGENT,
     "sourcing_whatif": sourcing_agent.AGENT,
     "certification_draft": certification_agent.AGENT,
+    "document_intake": intake_agent.AGENT,
 }
-# Types with no specialist agent here: handled by a person, a polite decline, or the intake agent (T26).
-NOT_HANDLED_HERE = {"escalate_human", "out_of_scope", "document_intake"}
+# Types with no specialist agent here: handled by a person or a polite decline.
+NOT_HANDLED_HERE = {"escalate_human", "out_of_scope"}
 
 _KEYWORDS = [
     ("escalate_human", r"\b(sign|signature|audit|verification letter|lawyer|legal|dispute|guarantee)\w*"),
