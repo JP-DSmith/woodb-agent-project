@@ -330,13 +330,38 @@ def lookup_rule(topic: str, tier: str) -> dict:
         return _err("NOT_FOUND", f"No rule topic '{topic}'. Topics: {', '.join(RULE_TOPICS)}. If none fits, "
                                  "say this rule isn't covered and hand off with create_escalation.")
     out, figures = {}, []
+
     for k in keys:
-        text = _section_338_text() if k == "section_338" else RULE_TOPICS[k]["text"].format(**fill)
-        out[k] = f"{text} (Source: {RULE_TOPICS[k]['source']})"
-        # Published legal figures (5 years, 12 months, US$1,000 ...) are public, so every tier may quote them.
-        # Listing them as plain numbers lets the reviewer accept them for tiers that cannot see costs.
-        figures += [float(n.replace(",", "")) for n in re.findall(r"\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?", out[k])]
-    out["rule_figures"] = sorted(set(figures))
+        topic_data = RULE_TOPICS[k]
+
+        rule_text = (
+            _section_338_text()
+            if k == "section_338"
+            else topic_data["text"].format(**fill)
+        )
+
+        source = topic_data["source"]
+
+        out[k] = (
+            f"{rule_text} "
+            f"(Source: {source})"
+        )
+
+        # Published figures in the substantive rule text are public
+        # and may be quoted by every tier. Do not extract numbers
+        # from the citation itself, because article, heading and
+        # section numbers are references rather than answer figures.
+        figures += [
+            float(number.replace(",", ""))
+            for number in re.findall(
+                r"\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?",
+                rule_text,
+            )
+        ]
+
+    out["rule_figures"] = sorted(
+        set(figures)
+    )
     return _ok(out, [f"Rules file version {eng.RULES['rules_version']}"])
 
 
