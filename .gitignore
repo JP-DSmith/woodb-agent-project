@@ -221,3 +221,5 @@ __marimo__/
 
 # Google GitHub Actions temporary credentials
 gha-creds-*.json
+# T32 evaluation run outputs
+evaluation/results/
