@@ -293,18 +293,17 @@ def order_duty(po_number: str, tier: str) -> dict:
     return res
 
 
-RULE_TOPICS = {
-    "rvc": "Regional value content (net cost method): (net cost - value of non-originating materials) / net cost. "
-           "Footwear needs at least {rvc:.0%}.",
-    "tariff_shift": "Tariff shift: non-originating inputs may not come from headings 6401-6405 or subheading 6406.10 "
-                    "(uppers and parts of uppers, including safety toe caps).",
-    "de_minimis": "De minimis: excluded non-originating inputs worth {dm:.0%} or less of net cost do not break the "
-                  "tariff shift; if all imported inputs are within {dm:.0%}, the value test is waived.",
-    "declarations": "A Canadian, US or Mexican part counts as originating only with a valid, unexpired supplier declaration.",
-    "review_band": "Boots within {margin:.0%} of the threshold, boots {lo}-{hi} in. tall (knee band), and neoprene "
-                   "uppers go to a person.",
-    "section_338": "Women's and unisex leather boots (6403.91.90) carry an extra 50% US tariff even when they qualify.",
-}
+RULE_TOPICS_FILE = REPO_ROOT / "config" / "rule_topics.json"
+
+
+def _load_rule_topics(path: Path = RULE_TOPICS_FILE) -> dict:
+    """Rule texts live in config/rule_topics.json (topic -> summary, text, source) so a rule can be added or
+    corrected without touching code. JSON, not YAML, so it loads without extra libraries on Cloud Run."""
+    import json
+    return json.loads(path.read_text(encoding="utf-8"))["topics"]
+
+
+RULE_TOPICS = _load_rule_topics()
 
 
 def _section_338_text() -> str:
@@ -322,16 +321,27 @@ def _section_338_text() -> str:
 
 
 def lookup_rule(topic: str, tier: str) -> dict:
-    """Plain-language explanation of a CUSMA footwear rule. Topics: rvc, tariff_shift, de_minimis,
-    declarations, review_band, section_338, or 'all'."""
+    """Plain-language explanation of a CUSMA rule, with its source. Topics are listed below."""
     fr = eng.RULES["footwear_rule"]
     lo, hi = eng.RULES["classification"]["knee_review_band_in"]
     fill = dict(rvc=fr["rvc_threshold"], dm=fr["de_minimis_share"], margin=fr["escalation_margin"], lo=lo, hi=hi)
     keys = list(RULE_TOPICS) if topic in ("all", "", None) else [t for t in RULE_TOPICS if t == topic]
     if not keys:
-        return _err("NOT_FOUND", f"Unknown topic {topic}. Topics: {', '.join(RULE_TOPICS)}")
-    out = {k: (_section_338_text() if k == "section_338" else RULE_TOPICS[k].format(**fill)) for k in keys}
+        return _err("NOT_FOUND", f"No rule topic '{topic}'. Topics: {', '.join(RULE_TOPICS)}. If none fits, "
+                                 "say this rule isn't covered and hand off with create_escalation.")
+    out, figures = {}, []
+    for k in keys:
+        text = _section_338_text() if k == "section_338" else RULE_TOPICS[k]["text"].format(**fill)
+        out[k] = f"{text} (Source: {RULE_TOPICS[k]['source']})"
+        # Published legal figures (5 years, 12 months, US$1,000 ...) are public, so every tier may quote them.
+        # Listing them as plain numbers lets the reviewer accept them for tiers that cannot see costs.
+        figures += [float(n.replace(",", "")) for n in re.findall(r"\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?", out[k])]
+    out["rule_figures"] = sorted(set(figures))
     return _ok(out, [f"Rules file version {eng.RULES['rules_version']}"])
+
+
+lookup_rule.__doc__ += " " + "; ".join(f"{k} ({v['summary']})" for k, v in RULE_TOPICS.items()) + \
+    ". Use 'all' to get every topic. If no topic covers the question, do not answer from memory."
 
 
 _ticket = itertools.count(1)
