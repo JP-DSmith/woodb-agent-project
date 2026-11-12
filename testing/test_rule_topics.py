@@ -77,3 +77,32 @@ def test_uncovered_rule_question_is_handed_to_a_person():
                        "I don't have that rule, so I've passed your question to a colleague."])
     out = answer("Do anti-dumping duties apply to our boots?", "B", router=fixed("rules_info"), model=model)
     assert out["escalation"] and out["escalation"]["reason"] == "rule_not_covered"
+
+
+# ---- rule questions that the router sends to another specialist (seen with the real router) ----
+from agents import certification_agent, duty_agent, sourcing_agent  # noqa: E402
+from agents.base import COMMON_INSTRUCTIONS  # noqa: E402
+
+
+def test_every_specialist_can_look_up_rules():
+    for agent in (qualification_agent.AGENT, duty_agent.AGENT, sourcing_agent.AGENT, certification_agent.AGENT):
+        assert "lookup_rule" in agent.tools, agent.name
+    assert "Never answer a rule from memory" in COMMON_INSTRUCTIONS and "rule_not_covered" in COMMON_INSTRUCTIONS
+
+
+def test_packaging_question_routed_to_duty_is_answered_from_the_rule():
+    model = FakeModel([[("lookup_rule", {"topic": "packaging_and_relabelling"})],
+                       "Packaging or relabelling a finished boot does not change its tariff classification, so it "
+                       "cannot meet the footwear tariff shift rule that way. Source: CUSMA Articles 4.15, 4.16 and 4.19."])
+    out = answer("Do goods simply packaged or relabeld in Canada qualify?", "C", router=fixed("duty_cost"), model=model)
+    assert out["agent"] == "duty_agent"
+    assert out["trace"][0]["tool"] == "lookup_rule" and out["trace"][0]["result"]["ok"]   # not NOT_ALLOWED
+    assert out["decision"] == "pass"
+
+
+def test_anti_dumping_routed_to_duty_is_handed_off():
+    assert "anti-dumping" in duty_agent.INSTRUCTIONS and "rule_not_covered" in duty_agent.INSTRUCTIONS
+    model = FakeModel([[("create_escalation", {"reason": "rule_not_covered", "summary": "anti-dumping duties"})],
+                       "Anti-dumping duties are not something I can check, so I've passed your question to a colleague."])
+    out = answer("Do anti-dumping duties apply to our boots?", "C", router=fixed("duty_cost"), model=model)
+    assert out["agent"] == "duty_agent" and out["escalation"]["reason"] == "rule_not_covered"

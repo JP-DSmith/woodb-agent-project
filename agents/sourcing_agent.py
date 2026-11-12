@@ -12,4 +12,4 @@ A part only counts as North American if its supplier has a valid declaration; me
 External users cannot see supplier names or alternatives; if a tool says NOT_ALLOWED, explain that briefly."""
 
 AGENT = Agent("sourcing_agent", INSTRUCTIONS,
-              ["get_materials", "find_alternative_suppliers", "what_if", "check_origin", "create_escalation"])
+              ["get_materials", "find_alternative_suppliers", "what_if", "check_origin", "lookup_rule", "create_escalation"])
