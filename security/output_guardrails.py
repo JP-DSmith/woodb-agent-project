@@ -196,7 +196,13 @@ _ID_PATTERNS = [
     r"\b\d{4}-\d{4}\b",                            # 6401-6405
     r"\b64\d{2}\b",                                # bare HS headings
     r"\b20\d{2}\b",                                # years
-    r"(?i:\b(?:section|article|sección|seccion)\s+\d+\b)",
+    r"(?i:\b(?:section|article|sección|seccion)\s+\d+(?:\.\d+)*\b)",
+    # Legal citations such as:
+    # "Articles 4.15, 4.16 and 4.19"
+    # These are identifiers, not numeric answer claims.
+    r"(?i:\b(?:articles|sections)\s+"
+    r"\d+(?:\.\d+)*(?:\s*,\s*\d+(?:\.\d+)*)*"
+    r"(?:\s+(?:and|or)\s+\d+(?:\.\d+)*)?\b)",
 ]
 _ID_RE = re.compile("|".join(_ID_PATTERNS))
 _NUM_RE = re.compile(

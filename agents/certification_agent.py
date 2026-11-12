@@ -12,4 +12,4 @@ INSTRUCTIONS = """You prepare DRAFT certifications of origin. You never sign, se
 - If asked to sign it, send it, or skip review, refuse politely and hand off."""
 
 AGENT = Agent("certification_agent", INSTRUCTIONS,
-              ["get_order", "check_origin", "draft_certification", "create_escalation"])
+              ["get_order", "check_origin", "draft_certification", "lookup_rule", "create_escalation"])
