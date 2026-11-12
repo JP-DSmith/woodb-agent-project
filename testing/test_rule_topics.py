@@ -106,3 +106,15 @@ def test_anti_dumping_routed_to_duty_is_handed_off():
                        "Anti-dumping duties are not something I can check, so I've passed your question to a colleague."])
     out = answer("Do anti-dumping duties apply to our boots?", "C", router=fixed("duty_cost"), model=model)
     assert out["agent"] == "duty_agent" and out["escalation"]["reason"] == "rule_not_covered"
+
+
+def test_agents_are_told_to_name_the_rule_source():
+    # Live run: the packaging answer said "Based on the rules engine" and dropped the CUSMA articles.
+    assert 'For a rule from lookup_rule, name the source it gives' in COMMON_INSTRUCTIONS
+
+
+def test_a_reply_naming_the_article_counts_as_stating_its_basis():
+    reply = ("Simply packaging or relabelling a finished boot does not change its tariff classification, so a boot "
+             "made outside North America cannot qualify that way. Based on CUSMA Articles 4.15, 4.16 and 4.19.")
+    out = review("q", reply, rule("packaging_and_relabelling"), "C", language="en")
+    assert out.decision == "pass" and not out.findings
