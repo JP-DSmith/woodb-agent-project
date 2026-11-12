@@ -15,11 +15,17 @@ A document can only ever move "qualifies" to "needs review". It can never make a
 from __future__ import annotations
 
 import csv
+import os
+import shutil
+import tempfile
+from contextlib import contextmanager
 from datetime import date
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-RECORDS_FILE = REPO_ROOT / "data" / "documents" / "document_records.csv"
+# CUSMA_RECORDS_FILE points every reader and writer at another file (e.g. for a test or evaluation run).
+RECORDS_FILE = Path(os.environ["CUSMA_RECORDS_FILE"]) if os.environ.get("CUSMA_RECORDS_FILE") else \
+    REPO_ROOT / "data" / "documents" / "document_records.csv"
 
 FIELDS = ["doc_id", "received_date", "doc_type", "language", "supplier_id", "part_description",
           "hs_code_shown", "origin_shown", "declaration_start", "declaration_end",
@@ -121,3 +127,28 @@ def describe(r: dict) -> str:
     who = "checked by a person" if r["status"] in ("verified", "rejected") else "not yet checked by a person"
     return f"Document {r['doc_id']} ({r['doc_type']} from {r['supplier_id']}, received {r['received_date']}): " \
            f"{r['status']}, {what}; {who}"
+
+
+@contextmanager
+def temporary_records(start_from_real: bool = True, keep: bool = False):
+    """Use a throw-away copy of the records file inside the block, so an evaluation or attack run that
+    sends documents to the intake agent never writes to the real records.
+
+        with temporary_records() as path:
+            ...run the tests...           # reads and writes go to `path`
+
+    start_from_real  begin with a copy of today's records (so answers match normal use); False = empty
+    keep             leave the copy on disk afterwards (its path is the one yielded), e.g. to inspect it"""
+    global RECORDS_FILE
+    real = RECORDS_FILE
+    folder = Path(tempfile.mkdtemp(prefix="cusma_records_"))
+    temp = folder / "document_records.csv"
+    if start_from_real and real.exists():
+        shutil.copyfile(real, temp)
+    RECORDS_FILE = temp
+    try:
+        yield temp
+    finally:
+        RECORDS_FILE = real
+        if not keep:
+            shutil.rmtree(folder, ignore_errors=True)
