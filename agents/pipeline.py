@@ -15,12 +15,15 @@ Usage from the app (web/chat_services.py):
     out = answer(english_text, tier, original=text_as_typed, language=detected_language)
     out["response"]   -> reply text (English)
     out["result"]     -> qualification card for the portal, or None
+    out["seconds"], out["usage"] -> time and model use for this message (for the evaluation runner)
 """
 from __future__ import annotations
 
 import os
+import time
 from typing import Callable
 
+from agents.base import measure_usage
 from agents.specialists import keyword_route, run_specialist
 from mcp_servers.cusma_tools import SUPPLIERS, call_tool, eng, normalise_tier
 from security.input_guardrails import check_with_translation
@@ -71,6 +74,17 @@ def result_card(trace: list[dict]) -> dict | None:
 
 def answer(message: str, tier: str | None, *, original: str | None = None, language: str = "en",
            input_type: str = "message", router: Callable | None = None, model=None) -> dict:
+    """Answer one message (see _answer), and add what it took: "seconds" (wall time, every step) and
+    "usage" (model calls, tokens and cost, from agents/base.py). Neither is shown to the user."""
+    start = time.perf_counter()
+    with measure_usage() as meter:
+        out = _answer(message, tier, original=original, language=language, input_type=input_type,
+                      router=router, model=model)
+    return {**out, "seconds": round(time.perf_counter() - start, 3), "usage": meter.as_dict()}
+
+
+def _answer(message: str, tier: str | None, *, original: str | None = None, language: str = "en",
+            input_type: str = "message", router: Callable | None = None, model=None) -> dict:
     """Answer one message. `message` is the English text; `original` is the text as typed (if translated).
     Returns {"response", "decision", "label", "agent", "router", "tier", "trace", "escalation",
              "guard", "review", "result", "draft"}. Only "response" and "result" are for the user."""

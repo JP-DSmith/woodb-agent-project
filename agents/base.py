@@ -13,8 +13,10 @@ tests use a scripted fake, so no API key is needed to run them.
 """
 from __future__ import annotations
 
+import contextvars
 import json
 import os
+from contextlib import contextmanager
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -48,6 +50,53 @@ Rules you always follow:
   2026"), money with the tool's cents, percentages to one decimal place."""
 
 
+@dataclass
+class UsageMeter:
+    """Model calls, tokens and cost for one question (evaluation, T32). Filled by OpenRouterModel."""
+    calls: int = 0
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
+    cost_usd: float | None = None          # OpenRouter's own figure when it sends one; else priced by the runner
+    models: set = field(default_factory=set)
+
+    def add(self, model: str, prompt_tokens: int, completion_tokens: int, cost: float | None) -> None:
+        self.calls += 1
+        self.prompt_tokens += int(prompt_tokens or 0)
+        self.completion_tokens += int(completion_tokens or 0)
+        self.models.add(model)
+        if cost is not None:
+            self.cost_usd = (self.cost_usd or 0.0) + float(cost)
+
+    def as_dict(self) -> dict:
+        return {"calls": self.calls, "prompt_tokens": self.prompt_tokens, "completion_tokens": self.completion_tokens,
+                "cost_usd": None if self.cost_usd is None else round(self.cost_usd, 6), "models": sorted(self.models)}
+
+
+_meter: contextvars.ContextVar = contextvars.ContextVar("usage_meter", default=None)
+
+
+@contextmanager
+def measure_usage():
+    """Count every model call made inside the block, whichever agent makes it (specialists, intake fallback).
+    Outside such a block nothing is counted, so normal use is unchanged."""
+    meter = UsageMeter()
+    token = _meter.set(meter)
+    try:
+        yield meter
+    finally:
+        _meter.reset(token)
+
+
+def _record_usage(model: str, usage) -> None:
+    meter = _meter.get()
+    if meter is None or usage is None:
+        return
+    cost = getattr(usage, "cost", None)
+    if cost is None:
+        cost = (getattr(usage, "model_extra", None) or {}).get("cost")
+    meter.add(model, getattr(usage, "prompt_tokens", 0), getattr(usage, "completion_tokens", 0), cost)
+
+
 def load_model_name() -> str:
     try:
         cfg = json.loads(MODELS_CONFIG.read_text() or "{}")
@@ -71,6 +120,7 @@ class OpenRouterModel:
     def __call__(self, messages: list[dict], tools: list[dict]) -> dict:
         resp = self.client.chat.completions.create(model=self.model, messages=messages, tools=tools or None,
                                                    temperature=self.temperature)
+        _record_usage(self.model, getattr(resp, "usage", None))
         msg = resp.choices[0].message
         calls = [{"id": c.id, "name": c.function.name, "arguments": json.loads(c.function.arguments or "{}")}
                  for c in (msg.tool_calls or [])]
