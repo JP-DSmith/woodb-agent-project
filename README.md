@@ -5,9 +5,9 @@ AI-assisted origin-compliance agent for a fictional Canadian footwear manufactur
 
 > **For graders:** The active, fully tested integration version is currently on the `dev` branch. Before final submission, the validated release candidate will be promoted to `main` through a release pull request. Use the branch identified as
  the frozen submission branch in the final submission package.
-Marker Quick Start
+## Marker Quick Start
 The fastest reproducible path is Google Cloud Shell or a clean Python 3.11 environment.
-```bash
+> 
 # 1. Clone the repository
 git clone https://github.com/JP-DSmith/woodb-agent-project.git
 cd woodb-agent-project
