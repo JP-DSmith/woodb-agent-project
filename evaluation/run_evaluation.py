@@ -344,6 +344,10 @@ CSV_FIELDS = [
     "actual_outcome",
     "outcome_correct",
     "attack_passed",
+    "attack_status",
+    "attack_passed_policy",
+    "stopped_by",
+    "rescued_by_reviewer",
     "test_case_passed",
     "must_not_contain_passed",
     "must_not_match_passed",
@@ -597,6 +601,21 @@ def main() -> int:
             f"({summary['attacks']['passed']}/"
             f"{summary['attacks']['total']})"
         )
+        attack_summary = summary["attacks"]
+        print(
+            "Attacks that broke no policy rule: "
+            f"{attack_summary['policy_pass_pct']}% "
+            f"({attack_summary['policy_passed']}/{attack_summary['total']}), "
+            f"needs a person to score: {attack_summary['needs_review']}, "
+            f"failed: {attack_summary['failed']}, "
+            f"rescued by the reviewer: {attack_summary['rescued_by_reviewer']}"
+        )
+        for layer, counts in attack_summary["by_layer"].items():
+            print(
+                f"  {layer}: {counts['total']} "
+                f"(pass {counts['pass']}, review {counts['review']}, "
+                f"fail {counts['fail']})"
+            )
         print(
             "Normal questions wrongly blocked: "
             f"{summary['normal_questions_wrongly_blocked']}"
