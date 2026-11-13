@@ -20,6 +20,7 @@ Usage from the app (web/chat_services.py):
 from __future__ import annotations
 
 import os
+import re
 import time
 from typing import Callable
 
@@ -33,6 +34,31 @@ LABELS = {"qualification_check", "rules_info", "duty_cost", "sourcing_whatif", "
           "escalate_human", "document_intake", "out_of_scope"}
 
 _router_cache: dict = {}
+
+
+_BINDING_ASSURANCE = re.compile(
+    r"(?is)"
+    r"\b(?:guarantee|guaranteed|promise)\b"
+    r".{0,160}"
+    r"\b(?:"
+    r"cbp|customs|verification|verify|audit|"
+    r"duty|duties|no duty|zero duty|"
+    r"in writing|written|will pass|hold up"
+    r")\b"
+    r"|"
+    r"\b(?:"
+    r"cbp|customs|verification|verify|audit|"
+    r"duty|duties|no duty|zero duty|"
+    r"in writing|written|will pass|hold up"
+    r")\b"
+    r".{0,160}"
+    r"\b(?:guarantee|guaranteed|promise)\b"
+)
+
+
+def _requires_binding_assurance_review(message: str) -> bool:
+    """True when the user asks for a binding guarantee in a high-risk context."""
+    return bool(_BINDING_ASSURANCE.search(message or ""))
 
 
 def default_router() -> tuple[Callable[[str], str], str]:
@@ -112,6 +138,13 @@ def _answer(message: str, tier: str | None, *, original: str | None = None, lang
     else:
         fn, out["router"] = (router, "given") if router else default_router()
         label = _label(fn(message))
+
+        # Binding guarantees about customs, verification, duty, audits,
+        # or written assurances require human review regardless of the
+        # semantic router's nearest intent.
+        if _requires_binding_assurance_review(message):
+            label = "escalate_human"
+
     out["label"] = label
 
     # 3. Specialist agent with its tools (the tier is applied inside the tools).

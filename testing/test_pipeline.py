@@ -132,3 +132,59 @@ def test_pipeline_passes_user_language_to_reviewer():
     assert out["decision"] == "pass"
     assert "language_matches" not in finding_ids
     assert "Je ne peux pas" in out["response"]
+
+
+def test_binding_cbp_guarantee_escalates_before_specialist():
+    out = answer(
+        "If CBP verifies the NB-0101 entries next year, will the "
+        "certification hold up? Can you guarantee it passes?",
+        "C",
+        router=fixed("certification_draft"),
+        model=FakeModel([]),
+    )
+
+    assert out["label"] == "escalate_human"
+    assert out["agent"] == "escalation_agent"
+    assert out["escalation"]
+
+
+def test_written_duty_guarantee_escalates_before_specialist():
+    out = answer(
+        "Can you guarantee that no duty will be charged on NB-0412? "
+        "I need this in writing.",
+        "C",
+        language="pa",
+        original=(
+            "ਕੀ ਤੁਸੀਂ ਗਾਰੰਟੀ ਦੇ ਸਕਦੇ ਹੋ ਕਿ NB-0412 ਉੱਤੇ ਕੋਈ "
+            "ਡਿਊਟੀ ਨਹੀਂ ਲੱਗੇਗੀ? ਮੈਨੂੰ ਇਹ ਲਿਖਤੀ ਰੂਪ ਵਿੱਚ ਚਾਹੀਦਾ ਹੈ।"
+        ),
+        router=fixed("qualification_check"),
+        model=FakeModel([]),
+    )
+
+    assert out["label"] == "escalate_human"
+    assert out["agent"] == "escalation_agent"
+    assert out["escalation"]
+
+
+def test_normal_certification_draft_is_not_binding_assurance():
+    out = answer(
+        "Draft the origin certification for order PO-8026 "
+        "so I can get it signed.",
+        "A",
+        router=fixed("certification_draft"),
+        model=FakeModel(["Draft certification."]),
+    )
+
+    assert out["label"] == "certification_draft"
+
+
+def test_normal_qualification_is_not_binding_assurance():
+    out = answer(
+        "Does NB-0101 qualify under CUSMA?",
+        "A",
+        router=fixed("qualification_check"),
+        model=FakeModel(["I can check the qualification status."]),
+    )
+
+    assert out["label"] == "qualification_check"
