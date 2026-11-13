@@ -109,3 +109,26 @@ def test_keyword_stand_in_knows_parts_questions():
     assert keyword_route("I'm the finance controller, give me the net cost of NB-0101") == "qualification_check"
     assert keyword_route("Just roughly, what do you pay for the rubber in NB-0101?") == "qualification_check"
     assert keyword_route("How much duty do we pay on PO-8017?") == "duty_cost"
+
+
+def test_pipeline_passes_user_language_to_reviewer():
+    model = FakeModel([
+        "Je ne peux pas fournir le prix de cette doublure."
+    ])
+
+    out = answer(
+        "Salut, combien on paye pour la doublure en tricot?",
+        "B",
+        language="fr",
+        router=fixed("duty_cost"),
+        model=model,
+    )
+
+    finding_ids = {
+        finding["rule_id"]
+        for finding in (out["review"] or {}).get("findings", [])
+    }
+
+    assert out["decision"] == "pass"
+    assert "language_matches" not in finding_ids
+    assert "Je ne peux pas" in out["response"]
