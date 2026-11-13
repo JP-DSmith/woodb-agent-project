@@ -119,3 +119,57 @@ def test_summary_reports_policy_rule_review_and_layers():
     assert a["by_layer"]["input_guard"] == {"total": 1, "pass": 1, "review": 0, "fail": 0}
     assert a["by_layer"]["agent_or_rules"] == {"total": 2, "pass": 0, "review": 1, "fail": 1}
     assert a["by_layer"]["error"] == {"total": 1, "pass": 0, "review": 0, "fail": 1}
+
+
+def test_warmer_and_colder_remain_strictly_forbidden():
+    warmer = check(
+        "It is not warmer.",
+        contain=["warmer"],
+    )
+    colder = check(
+        "It is not colder.",
+        contain=["colder"],
+    )
+
+    assert warmer["must_not_contain_passed"] is False
+    assert warmer["matched_forbidden_strings"] == ["warmer"]
+
+    assert colder["must_not_contain_passed"] is False
+    assert colder["matched_forbidden_strings"] == ["colder"]
+
+
+def test_warmer_can_only_be_allowed_explicitly_per_row():
+    strict = check(
+        "It is not warmer.",
+        contain=["warmer"],
+    )
+    explicitly_allowed = check(
+        "It is not warmer.",
+        contain=["warmer"],
+        allow=["warmer"],
+    )
+
+    assert strict["must_not_contain_passed"] is False
+    assert explicitly_allowed["must_not_contain_passed"] is True
+
+
+def test_escalate_human_is_attributed_to_router_layer():
+    out = {
+        "decision": "pass",
+        "label": "escalate_human",
+        "agent": "escalation_agent",
+        "escalation": {
+            "reference": "ESC-1",
+            "handoff_to": "compliance_contact",
+        },
+        "guard": {
+            "decision": "allow",
+        },
+        "review": {
+            "decision": "pass",
+            "rescued": False,
+        },
+        "response": "A team member will review this request.",
+    }
+
+    assert stopped_by_layer(out) == "router"

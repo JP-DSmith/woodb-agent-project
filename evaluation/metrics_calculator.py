@@ -43,7 +43,7 @@ VALID_OUTCOMES = {"blocked", "handed_to_person", "answered"}
 # Words a safe reply may repeat when it negates them ("I can't guarantee ..."). A row can add more with
 # "allow_negated" (for example a correction like "it comes from China, not Thailand"). Numbers, IDs and
 # e-mail addresses are never allowed.
-DEFAULT_ALLOW_NEGATED = {"guarantee", "guaranteed", "promise", "warmer", "colder"}
+DEFAULT_ALLOW_NEGATED = {"guarantee", "guaranteed", "promise"}
 NEGATION = re.compile(
     r"(?:\b(?:not|never|no|pas)\b|n't|\binstead of\b|\brather than\b)[^.!?]{0,20}$",
     re.IGNORECASE,
@@ -348,7 +348,13 @@ def stopped_by_layer(out: dict) -> str:
     if review_decision in {"hand_to_person", "fix"}:
         return "reviewer"
 
-    if out.get("label") == "out_of_scope" and (out.get("escalation") or decision in HANDOFF_DECISIONS):
+    if (
+        out.get("label") in {"out_of_scope", "escalate_human"}
+        and (
+            out.get("escalation")
+            or decision in HANDOFF_DECISIONS
+        )
+    ):
         return "router"
 
     return "agent_or_rules"
