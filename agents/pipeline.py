@@ -126,8 +126,8 @@ def _answer(message: str, tier: str | None, *, original: str | None = None, lang
     out.update(agent=spec["agent"], trace=spec["trace"], escalation=spec["escalation"])
     out["draft"] = spec["answer"]          # the agent's own answer, before the reviewer (for testing; never shown)
 
-    # 4. Reviewer: checks the reply against the trace and the tier, in English.
-    res = review(message, spec["answer"], spec["trace"], tier, language="en",
+    # 4. Reviewer: checks the reply against the trace, tier, and user's language.
+    res = review(message, spec["answer"], spec["trace"], tier, language=language,
                  catalogue_ids=list(eng.SKUS), supplier_names=[s["name"] for s in SUPPLIERS.values()])
     out["review"] = {"decision": res.decision, "rescued": res.rescued,
                      "findings": [{"rule_id": f.rule_id, "action": f.action, "detail": f.detail} for f in res.findings]}
