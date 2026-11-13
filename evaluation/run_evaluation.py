@@ -214,6 +214,7 @@ def evaluate_case(
     base = {
         "case_id": case_id,
         "case_kind": case.get("case_kind"),
+        "category": case.get("category"),
         "source_file": case.get("source_file"),
         "query": message,
         "original_input": original,
@@ -324,6 +325,7 @@ CSV_FIELDS = [
     "run_id",
     "case_id",
     "case_kind",
+    "category",
     "source_file",
     "query",
     "original_input",
