@@ -1,4 +1,47 @@
-# woodb-agent-project
+
+# CUSMA Trade Assistant
+
+AI-assisted origin-compliance agent for a fictional Canadian footwear manufacturer.
+
+> **For graders:** The active, fully tested integration version is currently on the `dev` branch.
+AI-assisted origin-compliance agent for a fictional Canadian footwear manufacturer.
+> **For graders:** The active, fully tested integration version is currently on the `dev` branch. Before final submission, the validated release candidate will be promoted to `main` through a release pull request. Use the branch identified as
+ the frozen submission branch in the final submission package.
+Marker Quick Start
+The fastest reproducible path is Google Cloud Shell or a clean Python 3.11 environment.
+```bash
+# 1. Clone the repository
+git clone https://github.com/JP-DSmith/woodb-agent-project.git
+cd woodb-agent-project
+
+# 2. Use the active validated integration branch
+# Replace dev with main after the final release is promoted.
+git switch dev
+git pull --ff-only origin dev
+
+# 3. Create and activate a virtual environment
+python3.11 -m venv .venv
+source .venv/bin/activate
+
+# 4. Install runtime and test dependencies
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+# 5. Run the complete automated test suite
+pytest -q
+
+# 6. Validate the lightweight ONNX router
+python scripts/validate_lightweight_router.py
+```
+Verified on `dev` commit `1ef8549d13c99a26685747a0d534268edefdc1fd`:
+Automated tests: 961 passed, 12 documented skips
+Router validation: 488/500 = 97.6%
+Full available evaluation: 714 cases, 0 execution errors
+To run the model-backed evaluation, configure the required environment variables first, then continue with Reproduce the evaluation.
+
+===== STATUS =====
+?? T38_Evaluation_Evidence.zip
+?? evaluation/baselines/
 CUSMA Trade Assistant
 AI-assisted origin-compliance agent for a fictional Canadian footwear manufacturer.
 > **For graders:** The active, fully tested integration version is currently on the `dev` branch. Before final submission, the validated release candidate will be promoted to `main` through a release pull request. Use the branch identified as the frozen submission branch in the final submission package.
