@@ -21,7 +21,7 @@ REFERENCE_PATH = (
     / "router_reference_embeddings.npz"
 )
 
-THRESHOLD = 0.52
+THRESHOLD = 0.505
 
 
 # ------------------------------------------------------------

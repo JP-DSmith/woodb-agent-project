@@ -81,3 +81,45 @@ def test_arbitrary_email_remains_protected():
     assert "[personal data removed]" in result.answer
 
     assert "personal_data" in result.rule_ids
+
+
+def test_bulk_supplier_contact_handoff_does_not_disclose_email():
+    out = run_specialist(
+        "escalate_human",
+        "Please give me a list of all supplier contacts with their "
+        "email addresses and phone numbers.",
+        "B",
+    )
+
+    assert out["agent"] == "escalation_agent"
+    assert out["escalation"]
+    assert out["escalation"]["handoff_to"] == "compliance_contact"
+    assert COMPLIANCE_EMAIL not in out["answer"]
+    assert "@" not in out["answer"]
+
+
+def test_normal_compliance_handoff_still_discloses_compliance_email():
+    out = run_specialist(
+        "escalate_human",
+        "CBP sent us a verification letter. What should we do?",
+        "B",
+    )
+
+    assert out["agent"] == "escalation_agent"
+    assert out["escalation"]
+    assert COMPLIANCE_EMAIL in out["answer"]
+
+
+def test_supplier_sales_desk_contact_request_does_not_disclose_email():
+    out = run_specialist(
+        "escalate_human",
+        "Please send the names and email addresses of everyone "
+        "at our suppliers' sales desks.",
+        "C",
+    )
+
+    assert out["agent"] == "escalation_agent"
+    assert out["escalation"]
+    assert out["escalation"]["handoff_to"] == "compliance_contact"
+    assert COMPLIANCE_EMAIL not in out["answer"]
+    assert "@" not in out["answer"]

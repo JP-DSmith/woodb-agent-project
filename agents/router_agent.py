@@ -51,7 +51,7 @@ REFERENCE_PATH = (
 SIMILARITY_THRESHOLD = float(
     os.getenv(
         "ROUTER_SIMILARITY_THRESHOLD",
-        "0.52",
+        "0.505",
     )
 )
 
