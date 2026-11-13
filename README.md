@@ -3,8 +3,6 @@
 
 AI-assisted origin-compliance agent for a fictional Canadian footwear manufacturer.
 
-> **For graders:** The active, fully tested integration version is currently on the `dev` branch.
-AI-assisted origin-compliance agent for a fictional Canadian footwear manufacturer.
 > **For graders:** The active, fully tested integration version is currently on the `dev` branch. Before final submission, the validated release candidate will be promoted to `main` through a release pull request. Use the branch identified as
  the frozen submission branch in the final submission package.
 Marker Quick Start
