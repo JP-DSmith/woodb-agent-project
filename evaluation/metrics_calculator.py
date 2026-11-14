@@ -520,6 +520,176 @@ def summarize(rows: list[dict]) -> dict:
     ]
     costs = [value for value in costs if value is not None]
 
+    prompt_tokens = [
+        safe_float(row.get("prompt_tokens"))
+        for row in rows
+    ]
+    prompt_tokens = [
+        value for value in prompt_tokens
+        if value is not None
+    ]
+
+    completion_tokens = [
+        safe_float(row.get("completion_tokens"))
+        for row in rows
+    ]
+    completion_tokens = [
+        value for value in completion_tokens
+        if value is not None
+    ]
+
+    token_totals = [
+        safe_float(row.get("tokens"))
+        for row in rows
+    ]
+    token_totals = [
+        value for value in token_totals
+        if value is not None
+    ]
+
+    agent_rows = [
+        row for row in rows
+        if row.get("agent")
+    ]
+
+    agents: dict[str, dict] = {}
+
+    for row in agent_rows:
+        name = str(row["agent"])
+        entry = agents.setdefault(
+            name,
+            {
+                "count": 0,
+                "prompt_tokens": [],
+                "completion_tokens": [],
+                "tokens": [],
+                "costs": [],
+                "seconds": [],
+            },
+        )
+
+        entry["count"] += 1
+
+        for source, target in (
+            ("prompt_tokens", "prompt_tokens"),
+            ("completion_tokens", "completion_tokens"),
+            ("tokens", "tokens"),
+            ("cost_usd", "costs"),
+            ("seconds", "seconds"),
+        ):
+            value = safe_float(row.get(source))
+            if value is not None:
+                entry[target].append(value)
+
+    agent_usage = {}
+
+    for name, values in sorted(agents.items()):
+        count = values["count"]
+
+        agent_usage[name] = {
+            "count": count,
+            "pct_of_routed_cases": pct(
+                count,
+                len(agent_rows),
+            ),
+            "pct_of_all_cases": pct(
+                count,
+                total,
+            ),
+            "average_prompt_tokens": (
+                round(
+                    sum(values["prompt_tokens"])
+                    / len(values["prompt_tokens"]),
+                    2,
+                )
+                if values["prompt_tokens"] else None
+            ),
+            "average_completion_tokens": (
+                round(
+                    sum(values["completion_tokens"])
+                    / len(values["completion_tokens"]),
+                    2,
+                )
+                if values["completion_tokens"] else None
+            ),
+            "average_tokens": (
+                round(
+                    sum(values["tokens"])
+                    / len(values["tokens"]),
+                    2,
+                )
+                if values["tokens"] else None
+            ),
+            "average_cost_usd": (
+                round(
+                    sum(values["costs"])
+                    / len(values["costs"]),
+                    8,
+                )
+                if values["costs"] else None
+            ),
+            "average_seconds": (
+                round(
+                    sum(values["seconds"])
+                    / len(values["seconds"]),
+                    4,
+                )
+                if values["seconds"] else None
+            ),
+        }
+
+    economics = {
+        "prompt_tokens": {
+            "total": (
+                int(sum(prompt_tokens))
+                if prompt_tokens else 0
+            ),
+            "average_per_question": (
+                round(sum(prompt_tokens) / len(prompt_tokens), 2)
+                if prompt_tokens else None
+            ),
+        },
+        "completion_tokens": {
+            "total": (
+                int(sum(completion_tokens))
+                if completion_tokens else 0
+            ),
+            "average_per_question": (
+                round(
+                    sum(completion_tokens)
+                    / len(completion_tokens),
+                    2,
+                )
+                if completion_tokens else None
+            ),
+        },
+        "total_tokens": {
+            "total": (
+                int(sum(token_totals))
+                if token_totals else 0
+            ),
+            "average_per_question": (
+                round(sum(token_totals) / len(token_totals), 2)
+                if token_totals else None
+            ),
+        },
+        "cost": {
+            "total_usd": (
+                round(sum(costs), 8)
+                if costs else None
+            ),
+            "average_per_question_usd": (
+                round(sum(costs) / len(costs), 8)
+                if costs else None
+            ),
+        },
+        "agent_usage": {
+            "routed_cases": len(agent_rows),
+            "no_agent_cases": total - len(agent_rows),
+            "by_agent": agent_usage,
+        },
+    }
+
     summary = {
         "total_evaluated": total,
         "routing": {
@@ -572,6 +742,7 @@ def summarize(rows: list[dict]) -> dict:
             round(sum(costs) / len(costs), 8)
             if costs else None
         ),
+        "economics": economics,
         "errors": sum(bool(row.get("error")) for row in rows),
     }
 
