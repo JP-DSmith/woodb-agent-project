@@ -628,6 +628,50 @@ def main() -> int:
             "Cost per question USD: "
             f"{summary['cost_per_question_usd']}"
         )
+
+        economics = summary["economics"]
+
+        print()
+        print("Economics summary")
+        print("-----------------")
+        print(
+            "Input tokens: "
+            f"{economics['prompt_tokens']['total']} total, "
+            f"{economics['prompt_tokens']['average_per_question']} "
+            "average per question"
+        )
+        print(
+            "Output tokens: "
+            f"{economics['completion_tokens']['total']} total, "
+            f"{economics['completion_tokens']['average_per_question']} "
+            "average per question"
+        )
+        print(
+            "Combined tokens: "
+            f"{economics['total_tokens']['total']} total, "
+            f"{economics['total_tokens']['average_per_question']} "
+            "average per question"
+        )
+
+        agent_usage = economics["agent_usage"]
+
+        print(
+            "Agent handling: "
+            f"{agent_usage['routed_cases']} routed cases, "
+            f"{agent_usage['no_agent_cases']} cases with no agent"
+        )
+
+        for agent_name, agent in agent_usage["by_agent"].items():
+            print(
+                f"  {agent_name}: {agent['count']} cases, "
+                f"{agent['pct_of_routed_cases']}% of routed cases, "
+                f"{agent['pct_of_all_cases']}% of all cases, "
+                f"{agent['average_tokens']} average tokens, "
+                f"${agent['average_cost_usd']} average cost, "
+                f"{agent['average_seconds']} average seconds"
+            )
+
+        print()
         print(
             "Seen routing / answer accuracy: "
             f"{summary['seen']['routing_accuracy_pct']}% / "
