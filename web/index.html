@@ -22,7 +22,7 @@
                 Arial,
                 sans-serif;
 
-            background: #f5f7fa;
+            background: #e3ebf3;
             color: #172b3a;
             margin: 0;
             padding: 0;
@@ -33,11 +33,11 @@
             max-width: 1120px;
             margin: 32px auto;
             background: #ffffff;
-            border: 1px solid #e2e8f0;
+            border: 2px solid #86a5bd;
             border-radius: 14px;
             box-shadow:
-                0 2px 4px rgba(16, 24, 40, 0.04),
-                0 12px 32px rgba(16, 24, 40, 0.07);
+                0 4px 12px rgba(18, 58, 90, 0.10),
+                0 20px 48px rgba(18, 58, 90, 0.18);
             overflow: hidden;
         }
 
@@ -135,6 +135,7 @@
 
         .content {
             padding: 30px;
+            background: #fbfcfe;
         }
 
         .intro {
@@ -822,7 +823,7 @@
             border-top: 1px solid #e4e7ec;
         }
 
-        .deterministic-badge {
+        .rules-based-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -834,7 +835,7 @@
             font-weight: 700;
         }
 
-        .deterministic-icon {
+        .rules-based-icon {
             font-size: 12px;
             font-weight: 800;
         }
@@ -1197,14 +1198,14 @@
             <div class="intro">
                 <strong>
                     Trade qualification with transparent,
-                    deterministic results.
+                    rules-based results.
                 </strong>
 
                 <span>
                     Ask about CUSMA qualification, sourcing,
                     duties, certification, or a product.
-                    Qualification decisions are calculated by
-                    the deterministic CUSMA rules engine.
+                    Qualification decisions are evaluated using
+                    defined CUSMA rules and product data.
                 </span>
             </div>
 
@@ -1233,7 +1234,7 @@
                         <div class="welcome-eyebrow">
                             <span class="welcome-dot"></span>
 
-                            Deterministic trade analysis
+                            Rules-based trade analysis
                         </div>
 
                         <h2>
@@ -1297,7 +1298,7 @@
                             </div>
 
                             <div class="capability-description">
-                                See which deterministic rule
+                                See which qualification rules
                                 influenced the outcome.
                             </div>
                         </div>
@@ -1376,16 +1377,16 @@
                 </div>
                 <div class="composer-note">
                     <span class="composer-note-icon" aria-hidden="true">✓</span>
-                    Determinations are calculated by the deterministic CUSMA rules engine.
+                    Determinations are evaluated using defined CUSMA rules and structured product data.
                 </div>
             </div>
 
             <details class="decision-disclosure">
                 <summary>How this decision is produced</summary>
                 <div class="disclosure-content">
-                    <p>Product qualification is calculated using deterministic CUSMA rules and structured product data.</p>
+                    <p>Product qualification is evaluated using defined CUSMA rules and structured product data.</p>
                     <div class="disclosure-grid">
-                        <div><strong>Deterministic result</strong><span>Qualification, HS classification, RVC, tariff-shift results, and the applicable rules version come from the rules engine.</span></div>
+                        <div><strong>Rules-based result</strong><span>Qualification, HS classification, RVC, tariff-shift results, and the applicable rules version come from the rules engine.</span></div>
                         <div><strong>Conversational layer</strong><span>Language translation and conversational explanations change how the result is communicated, not the underlying determination.</span></div>
                     </div>
                 </div>
@@ -1399,7 +1400,7 @@
                 </span>
 
                 <span>
-                    Deterministic CUSMA rules engine
+                    CUSMA qualification rules engine
                 </span>
 
                 <span>
@@ -2066,7 +2067,7 @@
                     document.createElement("span");
 
                 analysis.textContent =
-                    "Deterministic analysis";
+                    "Rules-based analysis";
 
                 meta.appendChild(language);
                 meta.appendChild(dot);
@@ -2626,38 +2627,38 @@
             audit.className =
                 "result-audit";
 
-            const deterministicBadge =
+            const rulesBasedBadge =
                 document.createElement("div");
 
-            deterministicBadge.className =
-                "deterministic-badge";
+            rulesBasedBadge.className =
+                "rules-based-badge";
 
-            const deterministicIcon =
+            const rulesBasedIcon =
                 document.createElement("span");
 
-            deterministicIcon.className =
-                "deterministic-icon";
+            rulesBasedIcon.className =
+                "rules-based-icon";
 
-            deterministicIcon.textContent =
+            rulesBasedIcon.textContent =
                 "✓";
 
-            deterministicIcon.setAttribute(
+            rulesBasedIcon.setAttribute(
                 "aria-hidden",
                 "true"
             );
 
-            const deterministicText =
+            const rulesBasedText =
                 document.createElement("span");
 
-            deterministicText.textContent =
-                "Deterministic result";
+            rulesBasedText.textContent =
+                "Rules-based result";
 
-            deterministicBadge.appendChild(
-                deterministicIcon
+            rulesBasedBadge.appendChild(
+                rulesBasedIcon
             );
 
-            deterministicBadge.appendChild(
-                deterministicText
+            rulesBasedBadge.appendChild(
+                rulesBasedText
             );
 
             const rules =
@@ -2672,7 +2673,7 @@
                 + result.rules_version;
 
             audit.appendChild(
-                deterministicBadge
+                rulesBasedBadge
             );
 
             audit.appendChild(rules);
