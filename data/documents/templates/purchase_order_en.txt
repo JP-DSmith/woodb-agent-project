@@ -1,0 +1,12 @@
+PURCHASE ORDER
+PO No.: ${po_no}        Date: ${po_date}
+Buyer:  Northfield Rubber Footwear Inc., ${buyer_address}
+Supplier: ${supplier_name}, ${supplier_address}
+Terms: ${incoterm}      Currency: ${currency}      Required by: ${required_date}
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount
+${po_items}
+
+TOTAL: ${total} ${currency}
+Please send a supplier's declaration of origin with the first shipment.
+Approved by: ${buyer_contact}

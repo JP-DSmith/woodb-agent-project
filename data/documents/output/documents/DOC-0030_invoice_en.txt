@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-30609            Date: 2026-11-15
+Seller: Jordan Packaging Inc.
+        548 Industrial Road, Kitchener, ON N2H 6M3, Canada
+        Tax ID: 748200565
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0030        Terms: EXW        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-122-01  black compound, 25 kg  800  pair  0.94  752.00  Canada  4819.10
+
+Subtotal: 752.00 CAD
+Freight:  286.69 CAD
+TOTAL:    1,038.69 CAD
+
+Ship via: DHL      Ship date: 2026-11-15
+Authorized signature: Lindsey Gonzalez

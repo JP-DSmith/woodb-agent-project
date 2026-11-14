@@ -1,0 +1,20 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-56431            Date: 2027-02-17
+Seller: Hartwig Polymere GmbH
+        Hafenstraße 712, 30159 Hannover, Germany
+        Tax ID: 243742529
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0273        Terms: EXW        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-010-01  TPU compound pellets, moulded in-house  1000  pair  7.40  7,400.00  Germany  3909.50
+
+Subtotal: 7,400.00 CAD
+Freight:  123.50 CAD
+TOTAL:    7,523.50 CAD
+
+Ship via: Ocean freight      Ship date: 2027-02-17
+Authorized signature: Hans-Wilhelm Wohlgemut-Nerger
+
+[handwritten: check origin]

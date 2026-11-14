@@ -1,0 +1,18 @@
+FACTURA COMERCIAL
+Factura No.: INV-93175            Fecha: 2027-02-04
+Vendedor: Hunter Comfort Insoles S.A. de C.V.
+          Av. Constitución 788, Monterrey, N.L. C.P. 64000, Mexico
+          RFC: 787159950
+Comprador: Northfield Rubber Footwear Inc.
+           45 Factory Rd, Kitchener, ON N2G 1A1
+Orden de compra: SPO-0089     Términos: FCA     Moneda: CAD
+
+Línea  No. parte    Descripción                          Cant.  Unidad Precio unit. Importe   País de origen   Fracción arancelaria
+1     SUP-105-01  Anti-fatigue PU insole  800  pair  1.47  1,176.00  México  6406.90
+
+Subtotal: 1,176.00 CAD
+Flete:    86.69 CAD
+TOTAL:    1,262.69 CAD
+
+Enviado por: UPS Freight      Fecha de envío: 2027-02-04
+Firma autorizada: Verónica Aida Flores

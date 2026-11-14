@@ -1,0 +1,14 @@
+DÉCLARATION D'ORIGINE DU FOURNISSEUR
+À : Chaussures de caoutchouc Northfield inc.
+Fournisseur : ${supplier_name}, ${supplier_address}
+N° de déclaration : ${decl_no}
+Période globale : du ${period_start} au ${period_end}
+
+Je soussigné(e) déclare que les marchandises énumérées ci-dessous ont été produites dans le pays
+indiqué et que les renseignements fournis sont exacts. Je m'engage à aviser Northfield de tout changement.
+
+N° pièce     Description                          Code SH     Pays d'origine   Critère d'origine
+${decl_items}
+
+Nom : ${signer_name}      Titre : ${signer_title}
+Signature : ${signature}      Date : ${decl_date}

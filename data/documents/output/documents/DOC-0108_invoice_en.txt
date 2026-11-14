@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-23254            Date: 
+Seller: Jordan Packaging Inc.
+        548 Industrial Road, Kitchener, ON N2H 6M3, Canada
+        Tax ID: 748200565
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0108        Terms: DAP        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-122-01  Retail box and tissue  1000  pair  0.94  940.00  Canada  4819.10
+
+Subtotal: 940.00 CAD
+Freight:  234.94 CAD
+TOTAL:    1,174.94 CAD
+
+Ship via: Purolator      Ship date: 2026-12-30
+Authorized signature: ________

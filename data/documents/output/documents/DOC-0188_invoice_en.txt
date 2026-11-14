@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-78244            Date: 
+Seller: Hill Footbed Co., Ltd.
+        No. 858 Industrial Road, Jinjiang, Fujian 362200, China
+        Tax ID: 409734895
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0188        Terms: FCA        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-118-01  Gel midsole  800  pair  1.01  808.00  China  6406.90
+
+Subtotal: 808.00 CAD
+Freight:  147.47 CAD
+TOTAL:    955.47 CAD
+
+Ship via: Purolator      Ship date: 2026-12-17
+Authorized signature: Fang Zhang

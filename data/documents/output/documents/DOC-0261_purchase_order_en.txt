@@ -1,0 +1,12 @@
+PURCHASE ORDER
+PO No.: SPO-0261        Date: 2026-10-07
+Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
+Supplier: Mekong Sole Works Co., No. 228 Tran Hung Dao Street, Hai Phong, Hai Phong 180000, Vietnam
+Terms: EXW      Currency: CAD      Required by: 2026-10-07
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount
+1     SUP-023-01  Finished rubber outsole, bought  300  pair  6.50  1,950.00
+
+TOTAL: 2,150.11 CAD
+Please send a supplier's declaration of origin with the first shipment.
+Approved by: Sam Lee

@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-23022            Date: 2026-08-22
+Seller: Prairie Foam Systems LLC
+        400 Enterprise Boulevard, Charlotte, NC 28202, USA
+        Tax ID: 852788989
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0280        Terms: DAP        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-012-01  PU foam system, foamed in place  200  pair  3.10  620.00  Un1ted St4tes  3907.29 / 3909.31
+
+Subtotal: 620.00 CAD
+Freight:  115.23 CAD
+TOTAL:    735.23 CAD
+
+Ship via: DHL      Ship date: 2026-08-22
+Authorized signature: Sarah Johnson

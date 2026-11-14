@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-54139            Date: 2027-01-13
+Seller: Aramid Technik GmbH
+        Hafenstraße 741, 30159 Hannover, Germany
+        Tax ID: 227155952
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0026        Terms: DAP        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-018-75  Composite aramid plate  300  pair  3.35  1,005.00  Italy  6406.90
+
+Subtotal: 1,005.00 CAD
+Freight:  130.71 CAD
+TOTAL:    1,135.71 CAD
+
+Ship via: UPS Freight      Ship date: 2027-01-13
+Authorized signature: Elias Killer

@@ -1,0 +1,11 @@
+{
+  "_description": "Evaluation fallback prices in USD per token. Used only when the model response does not include cost_usd.",
+  "_source": "OpenRouter public model pricing",
+  "_updated": "2026-11-12",
+  "models": {
+    "openai/gpt-4o-mini": {
+      "prompt_usd_per_token": 0.00000015,
+      "completion_usd_per_token": 0.0000006
+    }
+  }
+}
