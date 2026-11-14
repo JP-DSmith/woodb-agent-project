@@ -1,0 +1,12 @@
+PURCHASE ORDER
+PO No.: SPO-0266        Date: 2026-09-29
+Buyer:  Northfield Rubber Footwear Inc., 45 Factory Rd, Kitchener, ON N2G 1A1
+Supplier: Brightline Color Inc., 26 Market Street, Akron, OH 44308, USA
+Terms: DAP      Currency: CAD      Required by: 2026-09-29
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount
+1     SUP-011-88  Colour masterbatch  1500  pair  0.31  465.00
+
+TOTAL: 859.61 CAD
+Please send a supplier's declaration of origin with the first shipment.
+Approved by: Sam Lee

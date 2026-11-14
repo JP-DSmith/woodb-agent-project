@@ -1,0 +1,21 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-99704            Date: 2026-12-13
+Seller: Hebei Felt Products Co.
+        No. 882 Xinhua Road, Shijiazhuang, Hebei 050000, China
+        Tax ID: 273774282
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0056        Terms: DAP        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-028-01  Removable felt liner, bought finished  500  pair  5.20  2,600.00  Canada  6406.10
+2     SUP-028-02  Wool-blend felt sheet, liner sewn in-house  1000  pair  2.40  2,400.00  China  5602.10
+
+Subtotal: 5,000.00 CAD
+Freight:  323.68 CAD
+TOTAL:    5,323.68 CAD
+
+Ship via: Purolator      Ship date: 2026-12-13
+Authorized signature: Ling Huang
+
+[handwritten: China??]

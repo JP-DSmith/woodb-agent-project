@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-61947            Date: 2027-01-07
+Seller: Gulfport Elastomers Inc.
+        166 Market Street, Dalton, GA 30720, USA
+        Tax ID: 486322947
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0270        Terms: DAP        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-015-01  SBR / BR synthetic rubber  300  pair  0.80  240.00    4002.19
+
+Subtotal: 240.00 CAD
+Freight:  317.47 CAD
+TOTAL:    557.47 CAD
+
+Ship via: Purolator      Ship date: 2027-01-07
+Authorized signature: Elizabeth Phillips

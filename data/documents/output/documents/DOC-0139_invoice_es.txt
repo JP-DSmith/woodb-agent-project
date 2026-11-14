@@ -1,0 +1,18 @@
+FACTURA COMERCIAL
+Factura No.: INV-82666            Fecha: 2026-08-09
+Vendedor: Plantillas del Pacifico S.A. de C.V.
+          Av. Constitución 671, Guadalajara, Jal. C.P. 44100, Mexico
+          RFC: 993050310
+Comprador: Northfield Rubber Footwear Inc.
+           45 Factory Rd, Kitchener, ON N2G 1A1
+Orden de compra: SPO-0139     Términos: EXW     Moneda: CAD
+
+Línea  No. parte    Descripción                          Cant.  Unidad Precio unit. Importe   País de origen   Fracción arancelaria
+1     SUP-019-01  Anti-fatigue PU insole  200  pair  1.20  240.00  Méx1c0  6406.90
+
+Subtotal: 240.00 CAD
+Flete:    300.09 CAD
+TOTAL:    540.09 CAD
+
+Enviado por: Purolator      Fecha de envío: 2026-08-09
+Firma autorizada: Abel Cervantes Ulibarri

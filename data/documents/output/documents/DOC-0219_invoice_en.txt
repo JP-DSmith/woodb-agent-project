@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-95272            Date: 2027-01-07
+Seller: Ramos Safety Components GmbH
+        Hafenstraße 649, 66953 Pirmasens, Germany
+        Tax ID: 116331393
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0219        Terms: DAP        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-101-01  Composite toe cap  1500  pair  2.74 USD  4,110.00 USD  Germany  6406.10
+
+Subtotal: 4,110.00 CAD
+Freight:  205.05 CAD
+TOTAL:    4,315.05 CAD
+
+Ship via: UPS Freight      Ship date: 2027-01-07
+Authorized signature: ________

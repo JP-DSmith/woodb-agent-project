@@ -1,0 +1,20 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-56745            Date: 
+Seller: Waters Packaging LLC
+        837 Mill Road, Grand Rapids, MI 49503, USA
+        Tax ID: 397294573
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0176        Terms: DAP        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-121-01  Retail box and tissue  300  pair  1.10  330.00  United States  4819.10
+
+Subtotal: 330.00 CAD
+Freight:  123.97 CAD
+TOTAL:    453.97 CAD
+
+Ship via: Ocean freight      Ship date: 2026-12-11
+Authorized signature: Michael Liu
+
+[handwritten: Mexico?]
