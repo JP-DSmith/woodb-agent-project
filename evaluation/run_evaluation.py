@@ -555,7 +555,7 @@ def main() -> int:
         run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         args.output_dir.mkdir(parents=True, exist_ok=True)
 
-        csv_path = args.output_dir / f"evaluation_{run_id}.csv"
+        csv_path = args.output_dir / f"CUSMA_Evaluation_Detailed_Results_{run_id}.csv"
 
         write_results_csv(
             results,
@@ -567,7 +567,7 @@ def main() -> int:
 
         if args.json:
             if args.json == "auto":
-                json_path = args.output_dir / f"evaluation_{run_id}.json"
+                json_path = args.output_dir / f"CUSMA_Evaluation_Summary_{run_id}.json"
             else:
                 json_path = Path(args.json)
 
