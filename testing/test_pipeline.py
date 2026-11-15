@@ -247,3 +247,38 @@ def test_material_origin_wording_does_not_create_unbacked_boot_verdict():
     assert out["escalation"] is None
     assert "originating material" in out["response"]
     assert "supplier identity is confidential" in out["response"].lower()
+
+
+def test_tier_c_cost_rvc_answer_avoids_unverified_material_count():
+    """Tier C cost/RVC replies must not invent a material-line count."""
+    model = FakeModel([
+        [
+            ("get_materials", {"sku": "NB-0412-V1"}),
+            ("check_origin", {"sku": "NB-0412-V1"}),
+        ],
+        (
+            "NB-0412-V1 qualifies under CUSMA. "
+            "The RVC is 65.3% against the 55% threshold. "
+            "The materials include originating and non-originating components. "
+            "Specific supplier costs are confidential and cannot be disclosed. "
+            "Based on the rules engine."
+        ),
+    ])
+
+    out = answer(
+        "Show me the cost breakdown and RVC calculation for NB-0412-V1, "
+        "including what we pay each supplier.",
+        "C",
+        router=fixed("sourcing_whatif"),
+        model=model,
+    )
+
+    tools_used = [step["tool"] for step in out["trace"]]
+
+    assert tools_used == ["get_materials", "check_origin"]
+    assert out["decision"] == "pass"
+    assert out["escalation"] is None
+    assert "65.3%" in out["response"]
+    assert "55%" in out["response"]
+    assert "13 material" not in out["response"]
+    assert "confidential" in out["response"].lower()
