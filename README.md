@@ -260,6 +260,17 @@ python scripts/validate_lightweight_router.py
 
 If Python 3.12 is the installed supported interpreter, replace `py -3.11` with `py -3.12`.
 
+### VS Code or a local terminal
+
+Open the repository folder in VS Code, then open **Terminal > New Terminal**.
+
+Use the instructions above for the operating system running VS Code:
+
+- Linux or macOS: use the Linux/macOS instructions.
+- Windows: use the Windows PowerShell instructions.
+
+VS Code terminal commands do not use `!` or `%cd`. Those prefixes are notebook syntax used by Colab and Kaggle.
+
 ### Google Colab
 
 Run in separate cells:
@@ -269,7 +280,8 @@ Run in separate cells:
 %cd woodb-agent-project
 !git switch dev
 !git pull --ff-only origin dev
-!pip install -q -r requirements.txt
+!python -m pip install -q --upgrade pip
+!python -m pip install -q -r requirements.txt
 ```
 
 ```python
@@ -277,7 +289,7 @@ Run in separate cells:
 !python scripts/validate_lightweight_router.py
 ```
 
-For model-backed evaluation, store `OPENROUTER_API_KEY` in Colab Secrets and load it without printing the value:
+For model-backed evaluation, store `OPENROUTER_API_KEY` in Colab Secrets and load it without printing the value. The `/health` check does not need this key. The `/chat` endpoint additionally requires Google Cloud authentication and `GOOGLE_CLOUD_PROJECT` because the portal performs language detection.
 
 ```python
 from google.colab import userdata
@@ -286,6 +298,146 @@ import os
 os.environ["OPENROUTER_API_KEY"] = userdata.get("OPENROUTER_API_KEY")
 print("OpenRouter key available:", bool(os.environ.get("OPENROUTER_API_KEY")))
 ```
+
+#### Configure Google Cloud authentication for `/chat`
+
+Before testing `/chat`, authenticate the Colab session and set the Google Cloud project:
+
+```python
+from google.colab import auth, userdata
+import os
+
+auth.authenticate_user()
+os.environ["GOOGLE_CLOUD_PROJECT"] = userdata.get("GOOGLE_CLOUD_PROJECT")
+os.environ["GOOGLE_CLOUD_QUOTA_PROJECT"] = os.environ["GOOGLE_CLOUD_PROJECT"]
+
+print("Google Cloud project available:", bool(os.environ.get("GOOGLE_CLOUD_PROJECT")))
+```
+
+Store `GOOGLE_CLOUD_PROJECT` in Colab Secrets before running this cell. Do not print credential values or API keys.
+
+### Running the Portal in Google Colab
+
+Do not run `!uvicorn app:app --host 0.0.0.0 --port 8080` directly in a Colab cell. That keeps the cell occupied, and port 8080 may already be in use. The Colab instructions below start Uvicorn in the background and select an available port automatically.
+
+#### Start the Portal and verify `/health`
+
+Run this in a new Colab cell. It selects an available port, starts Uvicorn in the background, and waits for the Portal to become healthy:
+
+```python
+import json
+import os
+import socket
+import subprocess
+import time
+import urllib.request
+
+with socket.socket() as sock:
+    sock.bind(("127.0.0.1", 0))
+    PORT = sock.getsockname()[1]
+
+os.environ["PORT"] = str(PORT)
+
+server_log = open("/tmp/cusma-uvicorn.log", "w")
+server_process = subprocess.Popen(
+    ["python", "-m", "uvicorn", "app:app", "--host", "127.0.0.1", "--port", str(PORT)],
+    stdout=server_log,
+    stderr=subprocess.STDOUT,
+)
+
+health_url = f"http://127.0.0.1:{PORT}/health"
+
+for attempt in range(30):
+    try:
+        with urllib.request.urlopen(health_url, timeout=2) as response:
+            health = json.load(response)
+        print("Portal process:", server_process.pid)
+        print("Health URL:", health_url)
+        print(json.dumps(health, indent=2))
+        break
+    except Exception as error:
+        if attempt == 29:
+            raise RuntimeError(f"Application did not become healthy: {error}") from error
+        time.sleep(1)
+```
+
+Expected response:
+
+```json
+{
+  "status": "healthy",
+  "environment": "dev",
+  "version": "0.6.0"
+}
+```
+
+The `/health` endpoint does not require an OpenRouter API key or Google Cloud credentials.
+
+#### Test `/chat` in Colab
+
+After Google Cloud authentication is configured and the Portal is healthy, run this in a new cell:
+
+```python
+import json
+import urllib.error
+import urllib.request
+
+chat_url = f"http://127.0.0.1:{PORT}/chat"
+payload = json.dumps({
+    "message": "Does NB-0101 qualify under CUSMA?"
+}).encode("utf-8")
+
+request = urllib.request.Request(
+    chat_url,
+    data=payload,
+    headers={"Content-Type": "application/json"},
+    method="POST",
+)
+
+try:
+    with urllib.request.urlopen(request, timeout=120) as response:
+        result = json.load(response)
+    print(json.dumps(result, indent=2))
+except urllib.error.HTTPError as error:
+    print("HTTP status:", error.code)
+    print(error.read().decode("utf-8"))
+    raise
+```
+
+#### Stop the Colab server
+
+When finished testing:
+
+```python
+server_process.terminate()
+server_process.wait(timeout=10)
+server_log.close()
+print("CUSMA Portal stopped.")
+```
+
+### Kaggle Notebooks
+
+Kaggle uses notebook-style commands similar to Colab. Enable Internet access for the notebook before cloning the repository or installing dependencies.
+
+```python
+!git clone https://github.com/JP-DSmith/woodb-agent-project.git
+%cd woodb-agent-project
+!git switch dev
+!git pull --ff-only origin dev
+!python -m pip install -q --upgrade pip
+!python -m pip install -q -r requirements.txt
+```
+
+Then run:
+
+```python
+!pytest -q
+!python scripts/validate_lightweight_router.py
+```
+
+For Portal testing, use the same automatic-port startup, `/health`, `/chat`, and shutdown approach documented in the Colab section. Kaggle does not use `google.colab.userdata`; configure authorized secrets and Google Cloud credentials using the facilities available in the Kaggle environment.
+
+This Kaggle path must be independently verified before final submission.
 
 ## Run the Application
 
