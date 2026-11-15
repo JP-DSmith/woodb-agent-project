@@ -10,8 +10,8 @@ The fastest reproducible path is Google Cloud Shell or a clean Python 3.11 or 3.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/JP-DSmith/woodb-agent-project.git
-cd woodb-agent-project
+!git clone https://github.com/JP-DSmith/woodb-agent-project.git
+%cd woodb-agent-project
 
 # 2. Use the active validated integration branch
 # Replace dev with main after the final release is promoted.
