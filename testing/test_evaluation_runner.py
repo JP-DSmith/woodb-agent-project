@@ -421,3 +421,85 @@ def test_summary_splits_seen_and_unseen():
 
     assert summary["average_seconds"] == 2.0
     assert summary["total_cost_usd"] == pytest.approx(0.006)
+
+def test_summary_includes_economics_and_agent_usage():
+    from evaluation.metrics_calculator import summarize
+
+    rows = [
+        {
+            "case_kind": "holdout",
+            "phrasing": "seen",
+            "route_correct": True,
+            "answer_correct": True,
+            "actual_outcome": "answered",
+            "agent": "qualification_agent",
+            "seconds": 1.0,
+            "prompt_tokens": 100,
+            "completion_tokens": 20,
+            "tokens": 120,
+            "cost_usd": 0.001,
+            "error": "",
+        },
+        {
+            "case_kind": "holdout",
+            "phrasing": "seen",
+            "route_correct": True,
+            "answer_correct": True,
+            "actual_outcome": "answered",
+            "agent": "qualification_agent",
+            "seconds": 2.0,
+            "prompt_tokens": 200,
+            "completion_tokens": 40,
+            "tokens": 240,
+            "cost_usd": 0.002,
+            "error": "",
+        },
+        {
+            "case_kind": "attack",
+            "phrasing": "",
+            "route_correct": None,
+            "answer_correct": None,
+            "actual_outcome": "blocked",
+            "agent": "",
+            "seconds": 0.5,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "tokens": 0,
+            "cost_usd": 0.0,
+            "error": "",
+        },
+    ]
+
+    summary = summarize(rows)
+    economics = summary["economics"]
+
+    assert economics["prompt_tokens"]["total"] == 300
+    assert economics["prompt_tokens"]["average_per_question"] == 100.0
+
+    assert economics["completion_tokens"]["total"] == 60
+    assert economics["completion_tokens"]["average_per_question"] == 20.0
+
+    assert economics["total_tokens"]["total"] == 360
+    assert economics["total_tokens"]["average_per_question"] == 120.0
+
+    assert economics["cost"]["total_usd"] == pytest.approx(0.003)
+    assert (
+        economics["cost"]["average_per_question_usd"]
+        == pytest.approx(0.001)
+    )
+
+    usage = economics["agent_usage"]
+
+    assert usage["routed_cases"] == 2
+    assert usage["no_agent_cases"] == 1
+
+    qualification = usage["by_agent"]["qualification_agent"]
+
+    assert qualification["count"] == 2
+    assert qualification["pct_of_routed_cases"] == 100.0
+    assert qualification["pct_of_all_cases"] == pytest.approx(66.7)
+    assert qualification["average_prompt_tokens"] == 150.0
+    assert qualification["average_completion_tokens"] == 30.0
+    assert qualification["average_tokens"] == 180.0
+    assert qualification["average_cost_usd"] == pytest.approx(0.0015)
+    assert qualification["average_seconds"] == 1.5
