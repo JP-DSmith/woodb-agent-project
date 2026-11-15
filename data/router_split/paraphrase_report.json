@@ -1,0 +1,34 @@
+{
+  "seed": 894,
+  "styles": {
+    "casual": "casual and short, like a quick chat message to a colleague",
+    "rushed": "rushed, all lower case, with one or two small typos and little punctuation",
+    "wordy": "long and wordy, with a sentence of background about why they are asking",
+    "email": "a polite, formal email with a greeting and a sign-off",
+    "plain_english": "simple English from someone whose first language is not English",
+    "keywords": "very short, just the key words, not a full sentence",
+    "indirect": "indirect: describes the situation and implies the question instead of asking it outright",
+    "synonyms": "different words for the same things (e.g. 'USMCA' or 'the trade agreement' for CUSMA, 'footwear' for boots, 'tariff' for duty)",
+    "outside_view": "from the point of view of a customer or partner outside the company",
+    "french": "in French, as a French-speaking Canadian would write it"
+  },
+  "train_questions": 1577,
+  "train_rewrites_kept": 4687,
+  "val_questions": 546,
+  "val_rewrites_kept": 1077,
+  "rewrites_dropped": {
+    "too_long": 54,
+    "copy": 2,
+    "empty": 3
+  },
+  "questions_not_finished": 0,
+  "model_use": {
+    "calls": 2123,
+    "prompt_tokens": 452364,
+    "completion_tokens": 289250,
+    "cost_usd": 0.241405,
+    "models": [
+      "openai/gpt-4o-mini"
+    ]
+  }
+}
