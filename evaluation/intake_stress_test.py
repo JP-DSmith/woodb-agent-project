@@ -2,73 +2,174 @@
 
 Each document is altered six ways (tabs, single spaces, lower case, shortened heading, blank lines
 between rows, a confidentiality footer) and read again by the intake agent's rules alone, as it would
-be without an API key. Each reading is sorted into:
-  correct                   read correctly, right action (pending or flagged)
-  flagged_for_person        flagged, so a person checks it (safe)
-  handed_to_person_unread   not recorded, handed to a person (safe)
-  silent_miss               a real problem recorded as clean (unsafe)
-  silent_wrong_origin       recorded as clean with a wrong country of origin (unsafe)
+be without an API key. Each reading is sorted into one outcome:
 
-    python evaluation/intake_stress_test.py                 # prints the tables
-    python evaluation/intake_stress_test.py --json out.json # also saves the counts
+  safe
+    correct                   read in full, right status (pending or flagged), right problems found
+    flagged_for_person        flagged, so a person checks it (problem labels may differ)
+    handed_to_person_unread   nothing recorded; the document goes to a person
+  unsafe (any of these fails the test)
+    silent_miss               recorded as pending (clean) although the document has a real problem
+    silent_partial_read       recorded as pending with fewer or more item lines than the document has
+    silent_wrong_origin       recorded as pending with a country of origin that differs from the answer key
+
+A flagged document is always safe: a person reviews it before it counts as proof of origin.
+Item lines are counted against what the document shows: a supplier email shows only its first item
+(the generator writes one), even when the answer key lists more.
+
+    python evaluation/intake_stress_test.py                  # prints the tables; exit code 1 if anything is unsafe
+    python evaluation/intake_stress_test.py --json out.json  # also saves the counts
+
+testing/test_intake_stress.py runs the same check in the normal test suite.
 """
-import sys, json, re, random, pathlib, collections as C
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from agents import intake_agent as ia
-from evaluation.intake_accuracy import load_sets, expected_defects, _norm
+from __future__ import annotations
 
-def tabs(t):            # columns separated by tabs instead of spaces (e.g. copied from a spreadsheet)
-    return re.sub(r" {2,}", "\t", t)
-def single_space(t):    # columns squeezed to one space (e.g. PDF-to-text export)
-    return re.sub(r" {2,}", " ", t)
-def lower_case(t):      # everything in lower case (e.g. OCR output)
-    return t.lower()
-def short_heading(t):   # heading shortened: "COMMERCIAL INVOICE" -> "INVOICE" and so on
-    return (t.replace("COMMERCIAL INVOICE", "INVOICE").replace("FACTURE COMMERCIALE", "FACTURE")
-             .replace("FACTURA COMERCIAL", "FACTURA"))
-def extra_lines(t):     # blank lines between table rows (e.g. email client re-wrapping)
-    return re.sub(r"\n(?=\s*\d+\s{2,}SUP-|\s*SUP-\d{3}-\d{2}\s{2,})", "\n\n", t)
-def signature_block(t): # a harmless footer added after the form
-    return t + "\n\nThis message and any attachments are confidential and intended only for the addressee."
+import argparse
+import json
+import re
+import sys
+from collections import Counter, defaultdict
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT))
+
+from agents import intake_agent as ia  # noqa: E402
+from evaluation.intake_accuracy import _norm, expected_defects, load_sets  # noqa: E402
+
+LANGUAGES = ("en", "fr", "es")
+SAFE = ("correct", "flagged_for_person", "handed_to_person_unread")
+UNSAFE = ("silent_miss", "silent_partial_read", "silent_wrong_origin")
+OUTCOMES = SAFE + UNSAFE
+
+
+# ---------------------------------------------------------------- the six formatting changes
+def tabs(text: str) -> str:
+    """Columns separated by tabs instead of spaces (e.g. copied from a spreadsheet)."""
+    return re.sub(r" {2,}", "\t", text)
+
+
+def single_space(text: str) -> str:
+    """Columns squeezed to one space (e.g. a PDF-to-text export)."""
+    return re.sub(r" {2,}", " ", text)
+
+
+def lower_case(text: str) -> str:
+    """Everything in lower case (e.g. OCR output)."""
+    return text.lower()
+
+
+def short_heading(text: str) -> str:
+    """Heading shortened: "COMMERCIAL INVOICE" -> "INVOICE", and the French and Spanish equivalents."""
+    return (text.replace("COMMERCIAL INVOICE", "INVOICE").replace("FACTURE COMMERCIALE", "FACTURE")
+                .replace("FACTURA COMERCIAL", "FACTURA"))
+
+
+def extra_blank_lines(text: str) -> str:
+    """Blank lines between table rows (e.g. an email client re-wrapping the text)."""
+    return re.sub(r"\n(?=\s*\d+\s{2,}SUP-|\s*SUP-\d{3}-\d{2}\s{2,})", "\n\n", text)
+
+
+def confidentiality_footer(text: str) -> str:
+    """A harmless footer added after the form."""
+    return text + "\n\nThis message and any attachments are confidential and intended only for the addressee."
+
+
 VARIANTS = {"tabs": tabs, "single_space": single_space, "lower_case": lower_case,
-            "short_heading": short_heading, "extra_blank_lines": extra_lines, "confidentiality_footer": signature_block}
+            "short_heading": short_heading, "extra_blank_lines": extra_blank_lines,
+            "confidentiality_footer": confidentiality_footer}
 
-def outcome(t, found):
-    want = expected_defects(t)
-    got = _norm(set(found["defects"]) - {"O2"})
+
+# ---------------------------------------------------------------- scoring one reading
+def visible_items(truth: dict) -> list[dict]:
+    """The item lines the document actually shows. A supplier email shows only its first item."""
+    return truth["items"][:1] if truth["doc_type"] == "supplier_email" else truth["items"]
+
+
+def outcome(truth: dict, found: dict) -> str:
+    """Sort one reading into an outcome (see the module docstring)."""
     if found["read_by"] == "unreadable" or not found["supplier_id"] or not found["items"]:
         return "handed_to_person_unread"
-    status = ia._status(found["defects"])
-    origins_ok = all((it.get("origin") in (None, i["origin_country"])) for it, i in zip(found["items"], t["items"])
-                     if not i.get("unsupported"))
-    if want and status == "pending":
-        return "silent_miss"                 # a real problem recorded as clean
-    if not origins_ok and status == "pending":
-        return "silent_wrong_origin"
-    if want <= got and status == ("flagged" if want else "pending"):
-        return "correct"
-    if status == "flagged":
-        return "flagged_for_person"          # safe: a person looks at it (problem labels may differ)
-    return "other"
+    want = expected_defects(truth)
+    got = _norm(set(found["defects"]) - {"O2"})
+    expected_items = visible_items(truth)
+    full_read = len(found["items"]) == len(expected_items)
+    if ia._status(found["defects"]) == "flagged":
+        return "correct" if want and want <= got and full_read else "flagged_for_person"
+    # recorded as pending: it must be clean, read in full, with the right origins
+    if want:
+        return "silent_miss"
+    if not full_read:
+        return "silent_partial_read"
+    wrong = [i for i, (item, read) in enumerate(zip(expected_items, found["items"]))
+             if not item.get("unsupported") and read.get("origin") not in (None, item["origin_country"])]
+    return "silent_wrong_origin" if wrong else "correct"
 
-res = C.defaultdict(lambda: C.defaultdict(C.Counter))
-for name, fn in VARIANTS.items():
-    for folder, t, path in load_sets():
-        found = ia.check_document(fn(path.read_text(encoding="utf-8")))
-        o = outcome(t, found)
-        res[name]["all"][o] += 1; res[name][t["language"]][o] += 1
-if len(sys.argv) > 2 and sys.argv[1] == "--json":
-    json.dump({k: {l: dict(v) for l, v in d.items()} for k, d in res.items()}, open(sys.argv[2], "w"), indent=1)
-order = ["correct", "flagged_for_person", "handed_to_person_unread", "silent_miss", "silent_wrong_origin", "other"]
-print(f"{'variation':24}" + "".join(f"{o[:14]:>16}" for o in order))
-for name in VARIANTS:
-    a = res[name]["all"]; n = sum(a.values())
-    print(f"{name:24}" + "".join(f"{100*a[o]/n:15.1f}%" for o in order))
-print("\nby language (correct / safe hand-off / silent error):")
-for name in VARIANTS:
-    row = []
-    for l in ("en", "fr", "es"):
-        a = res[name][l]; n = sum(a.values())
-        safe = a["flagged_for_person"] + a["handed_to_person_unread"]; bad = a["silent_miss"] + a["silent_wrong_origin"] + a["other"]
-        row.append(f"{l} {100*a['correct']/n:5.1f}/{100*safe/n:5.1f}/{100*bad/n:4.1f}")
-    print(f"  {name:24}", "   ".join(row))
+
+def run_stress(variants: dict | None = None, sets: list | None = None) -> dict:
+    """Read every document under every variation. Returns
+    {"counts": {variant: {language|"all": Counter}}, "unsafe": [{variant, doc_id, outcome, ...}]}."""
+    variants = VARIANTS if variants is None else variants
+    sets = load_sets() if sets is None else sets
+    counts: dict = defaultdict(lambda: defaultdict(Counter))
+    unsafe = []
+    for name, change in variants.items():
+        for folder, truth, path in sets:
+            found = ia.check_document(change(path.read_text(encoding="utf-8")))
+            result = outcome(truth, found)
+            counts[name]["all"][result] += 1
+            counts[name][truth["language"]][result] += 1
+            if result in UNSAFE:
+                unsafe.append({"variant": name, "set": folder, "doc_id": truth["doc_id"], "outcome": result,
+                               "items_expected": len(visible_items(truth)), "items_read": len(found["items"]),
+                               "defects_expected": sorted(expected_defects(truth)), "defects_found": found["defects"]})
+    return {"counts": counts, "unsafe": unsafe}
+
+
+def pct(part: int, whole: int) -> float:
+    """Percentage, 0.0 for an empty group instead of a division by zero."""
+    return round(100 * part / whole, 1) if whole else 0.0
+
+
+def report(results: dict) -> None:
+    counts = results["counts"]
+    print(f"{'variation':24}" + "".join(f"{o[:15]:>17}" for o in OUTCOMES))
+    for name, groups in counts.items():
+        row, n = groups["all"], sum(groups["all"].values())
+        print(f"{name:24}" + "".join(f"{pct(row[o], n):16.1f}%" for o in OUTCOMES))
+    print("\nby language (correct / safe hand-off / unsafe):")
+    for name, groups in counts.items():
+        parts = []
+        for lang in LANGUAGES:
+            row = groups.get(lang, Counter())
+            n = sum(row.values())
+            if not n:
+                parts.append(f"{lang}  no documents")
+                continue
+            handoff = row["flagged_for_person"] + row["handed_to_person_unread"]
+            bad = sum(row[o] for o in UNSAFE)
+            parts.append(f"{lang} {pct(row['correct'], n):5.1f}/{pct(handoff, n):5.1f}/{pct(bad, n):4.1f}")
+        print(f"  {name:24}", "   ".join(parts))
+    print(f"\nunsafe results: {len(results['unsafe'])}")
+    for u in results["unsafe"][:20]:
+        print(f"  {u['variant']:24} {u['doc_id']}  {u['outcome']}  items {u['items_read']}/{u['items_expected']}")
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("--json", help="save the counts and any unsafe results to this file")
+    args = ap.parse_args(argv)
+    results = run_stress()
+    report(results)
+    if args.json:
+        payload = {"counts": {name: {group: dict(c) for group, c in groups.items()}
+                              for name, groups in results["counts"].items()},
+                   "unsafe": results["unsafe"]}
+        with open(args.json, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=1)
+        print("saved", args.json)
+    return 1 if results["unsafe"] else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
