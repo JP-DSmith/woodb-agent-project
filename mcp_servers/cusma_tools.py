@@ -18,10 +18,13 @@ Tool names follow the names the reviewer already recognises (import_duty, create
 """
 from __future__ import annotations
 
+import contextvars
 import copy
 import csv
 import itertools
+import json
 import re
+from contextlib import contextmanager
 from datetime import date
 from pathlib import Path
 
@@ -83,6 +86,42 @@ COMPANY = {
     "address": "[EXPORTER ADDRESS - to be added to the company file]",
     "certifier": "[NAME AND TITLE OF AUTHORIZED SIGNER]",
 }
+
+# ------------------------------------------------------------------ who may see which orders
+DEMO_USERS_FILE = REPO_ROOT / "config" / "demo_users.json"
+_DEMO = json.loads(DEMO_USERS_FILE.read_text(encoding="utf-8")) if DEMO_USERS_FILE.exists() else {"users": []}
+DEMO_USERS = {u["id"]: u for u in _DEMO.get("users", [])}
+TIER_C_WITHOUT_CUSTOMER = _DEMO.get("tier_c_without_customer", "allow")
+_ORDER_SCOPE: contextvars.ContextVar = contextvars.ContextVar("order_scope", default=None)
+
+
+def demo_user(user_id: str) -> tuple[str, list[str] | None]:
+    """(tier, customer_ids) for a demo sign-in; customer_ids None means every customer (internal staff)."""
+    u = DEMO_USERS[user_id]
+    return u["tier"], (None if u["customer_ids"] == "all" else list(u["customer_ids"]))
+
+
+@contextmanager
+def order_scope(customer_ids):
+    """Inside this block, an external (tier C) user sees only these customers' orders. None = no customer known."""
+    token = _ORDER_SCOPE.set(frozenset(customer_ids) if customer_ids is not None else None)
+    try:
+        yield
+    finally:
+        _ORDER_SCOPE.reset(token)
+
+
+def _order_for(po_number: str, tier: str) -> dict | None:
+    """The order, or None if it doesn't exist OR this tier C user may not see it. Both give the same answer,
+    so an outside user can't confirm that another customer's order number exists."""
+    o = ORDERS.get(str(po_number or "").strip().upper())
+    if not o or normalise_tier(tier) != "C":
+        return o
+    scope = _ORDER_SCOPE.get()
+    if scope is None:
+        return o if TIER_C_WITHOUT_CUSTOMER == "allow" else None
+    return o if o["customer_id"] in scope else None
+
 
 COST_KEYS = {"cost_cad", "labour_cad", "overhead_cad", "net_cost_cad", "vnm_cad", "new_cost_cad"}
 SUPPLIER_KEYS = {"supplier_id", "supplier_name", "new_supplier_id"}
@@ -190,6 +229,63 @@ def _apply_documents(res: dict, sku: str, when: date) -> dict:
 
 
 # ------------------------------------------------------------------ tools
+def _norm(text: str) -> str:
+    text = re.sub(r"[^a-z0-9' ]+", " ", str(text or "").lower())
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _style_key(style_name: str) -> str:
+    """'Glacier Pro (variant 2)' -> 'glacier pro'; "Tundra Pac Leather (women's)" -> 'tundra pac leather'."""
+    return _norm(re.sub(r"\([^)]*\)", " ", style_name))
+
+
+_VARIANT = re.compile(r"(?:\bvariant\s*#?\s*|\bvar\.?\s*|(?<![a-z])v\s*-?\s*)(\d)\b", re.I)
+
+
+def find_boot(name: str, tier: str) -> dict:
+    """Find a boot's code (NB-xxxx) from its style name, e.g. 'Glacier Pro variant 3' or 'the Steelguard'.
+    Use it whenever the user names a boot instead of giving its code. Returns the best match, or several
+    candidates when the name is not clear (then ask the user which one)."""
+    text = _norm(name)
+    if not text:
+        return _err("BAD_INPUT", "Give the boot's name, e.g. 'Glacier Pro variant 2'.")
+    # A code written another way: 'nb-0413-v2', 'NB0413V3', '0412-V2'
+    for m in re.finditer(r"(?<![\d])(?:nb\s*-?\s*)?(\d{4})(?:\s*-?\s*v\s*-?\s*(\d))?(?![\d])", str(name), re.I):
+        code = f"NB-{m.group(1)}" + (f"-V{m.group(2)}" if m.group(2) else "")
+        if code in eng.SKUS:
+            return _ok({"best": code, "matches": [{"sku": code, "style_name": eng.SKUS[code]["style_name"]}],
+                        "ambiguous": False}, [f"'{m.group(0)}' is {code} ({eng.SKUS[code]['style_name']})."])
+    styles = {}
+    for sku, b in eng.SKUS.items():
+        if not re.search(r"-V\d+$", sku):          # a style's own code (no -V1/-V2/-V3)
+            styles[_style_key(b["style_name"])] = sku
+    hits = [k for k in styles if re.search(rf"\b{re.escape(k)}\b", text)]
+    # 'Glacier Pro V' also contains 'Glacier Pro': keep only the longest names that matched
+    hits = [k for k in hits if not any(k != o and k in o for o in hits)]
+    if not hits:
+        return _err("NOT_FOUND", f"No boot style matches '{name}'. Styles: " +
+                    ", ".join(sorted(eng.SKUS[s]["style_name"] for s in styles.values())))
+    m = _VARIANT.search(re.sub(r"\([^)]*\)", lambda x: " " + x.group(0)[1:-1] + " ", str(name)))
+    variant = int(m.group(1)) if m else None
+    matches = []
+    for k in hits:
+        base = styles[k]
+        family = [s for s in eng.SKUS if s == base or re.fullmatch(rf"{re.escape(base)}-V\d+", s)]
+        if variant is not None:
+            pick = [s for s in family if s.endswith(f"-V{variant}")]
+            matches += [{"sku": s, "style_name": eng.SKUS[s]["style_name"]} for s in pick]
+        else:
+            matches.append({"sku": base, "style_name": eng.SKUS[base]["style_name"],
+                            "other_variants": [s for s in family if s != base]})
+    if not matches:
+        return _err("NOT_FOUND", f"'{name}' has no variant {variant}.")
+    data = {"best": matches[0]["sku"] if len(matches) == 1 else None, "matches": matches,
+            "ambiguous": len(matches) > 1}
+    note = "Name matches several boots: ask the user which one." if data["ambiguous"] else \
+        f"'{name}' is {matches[0]['sku']} ({matches[0]['style_name']})."
+    return _ok(data, [note])
+
+
 def get_boot(sku: str, tier: str) -> dict:
     """Boot specifications (style, height, upper, toe, gender, price)."""
     return mask(eng.get_boot(sku.upper()), tier)
@@ -270,7 +366,7 @@ def import_duty(sku: str, quantity: int, unit_price_usd: float, tier: str, as_of
 
 def get_order(po_number: str, tier: str) -> dict:
     """A customer order: customer, boot, quantity, unit price, ship date."""
-    o = ORDERS.get(po_number.upper())
+    o = _order_for(po_number, tier)
     if not o:
         return _err("NOT_FOUND", f"No order with number {po_number}")
     c = CUSTOMERS.get(o["customer_id"], {})
@@ -281,7 +377,7 @@ def get_order(po_number: str, tier: str) -> dict:
 
 def order_duty(po_number: str, tier: str) -> dict:
     """US duty on an order, using its own quantity, price and ship date."""
-    o = ORDERS.get(po_number.upper())
+    o = _order_for(po_number, tier)
     if not o:
         return _err("NOT_FOUND", f"No order with number {po_number}")
     res = import_duty(o["sku"], int(o["quantity"]), float(o["unit_price_usd"]), tier, o["ship_date"])
@@ -384,7 +480,7 @@ def draft_certification(po_number: str, tier: str) -> dict:
     on the ship date. Tier C requests are taken and handed to a person, with no draft sent."""
     if _rules(tier).get("cert_draft") == "hand_to_person":
         return _err("NOT_ALLOWED", "Certification drafts are prepared for external users by a compliance analyst.")
-    o = ORDERS.get(po_number.upper())
+    o = _order_for(po_number, tier)
     if not o:
         return _err("NOT_FOUND", f"No order with number {po_number}")
     origin = _apply_documents(eng.check_origin(o["sku"], _as_of(o["ship_date"])), o["sku"], _as_of(o["ship_date"]))
@@ -416,6 +512,7 @@ def draft_certification(po_number: str, tier: str) -> dict:
 # The registry the agents use: name -> (function, description, JSON schema for the arguments, excluding tier).
 _S = {"type": "string"}
 TOOLS = {
+    "find_boot": (find_boot, find_boot.__doc__, {"name": _S}),
     "get_boot": (get_boot, get_boot.__doc__, {"sku": _S}),
     "get_materials": (get_materials, get_materials.__doc__, {"sku": _S, "as_of": _S}),
     "check_origin": (check_origin, check_origin.__doc__, {"sku": _S, "as_of": _S}),
@@ -430,7 +527,7 @@ TOOLS = {
     "create_escalation": (create_escalation, create_escalation.__doc__, {"reason": _S, "summary": _S, "handoff_to": _S}),
     "draft_certification": (draft_certification, draft_certification.__doc__, {"po_number": _S}),
 }
-REQUIRED = {"get_boot": ["sku"], "get_materials": ["sku"], "check_origin": ["sku"],
+REQUIRED = {"find_boot": ["name"], "get_boot": ["sku"], "get_materials": ["sku"], "check_origin": ["sku"],
             "find_alternative_suppliers": ["sku", "line_no"], "what_if": ["sku", "changes"],
             "import_duty": ["sku", "quantity", "unit_price_usd"], "get_order": ["po_number"],
             "order_duty": ["po_number"], "lookup_rule": ["topic"], "create_escalation": ["reason", "summary"],

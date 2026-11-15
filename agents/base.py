@@ -16,6 +16,7 @@ from __future__ import annotations
 import contextvars
 import json
 import os
+import time
 from contextlib import contextmanager
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -25,13 +26,23 @@ from mcp_servers.cusma_tools import REQUIRED, TOOLS, call_tool, normalise_tier
 REPO_ROOT = Path(__file__).resolve().parent.parent
 MODELS_CONFIG = REPO_ROOT / "config" / "models_config.json"
 DEFAULT_MODEL = "openai/gpt-4o-mini"
-MAX_STEPS = 6
+MAX_STEPS = 6                       # model calls per agent run; then hand to a person
+MODEL_TIMEOUT_SECONDS = 25          # per model call (the OpenAI library's default is 10 minutes)
+MODEL_MAX_RETRIES = 1               # (the library's default is 2)
+MAX_OUTPUT_TOKENS = 800             # replies are a few short sentences; this stops runaway output
+MAX_TOOL_CALLS_PER_STEP = 4         # tool calls the model may request in one step
+QUESTION_TIME_LIMIT_SECONDS = 90    # whole agent run; then hand to a person
 
 COMMON_INSTRUCTIONS = """You are an assistant for Northfield Rubber Footwear Inc., a Canadian boot maker.
 You answer questions about CUSMA (USMCA) rules of origin and US duty for our boots.
 
 Rules you always follow:
 - Every number, verdict and tariff code comes from a tool result. Never calculate or guess one yourself.
+- Boots have codes like NB-0412 or NB-0412-V2. If the user names a boot ("the Glacier Pro, variant 3")
+  or writes a code another way ("nb0413v3", "0412-V2"), call find_boot first and use the code it returns.
+  If it returns several matches, or none, ask which boot is meant. Never make up or guess a code.
+- If a question is about an order (a PO number), the answer applies on that order's ship date: get the
+  order and pass its ship_date as as_of to check_origin, rather than checking today.
 - If a boot, part, order or supplier is not named clearly, ask which one is meant. Do not guess.
 - If a tool says something is not found, say so plainly. Never invent a boot, order or supplier.
 - If what the user says (a country, a supplier, a height) does not match our records, say what the records show first.
@@ -120,17 +131,28 @@ class OpenRouterModel:
         key = os.environ.get("OPENROUTER_API_KEY")
         if not key:
             raise RuntimeError("OPENROUTER_API_KEY is not set")
-        self.client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=key)
+        self.client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=key,
+                             timeout=MODEL_TIMEOUT_SECONDS, max_retries=MODEL_MAX_RETRIES)
         self.model, self.temperature = model or load_model_name(), temperature
 
     def __call__(self, messages: list[dict], tools: list[dict]) -> dict:
         resp = self.client.chat.completions.create(model=self.model, messages=messages, tools=tools or None,
-                                                   temperature=self.temperature)
+                                                   temperature=self.temperature, max_tokens=MAX_OUTPUT_TOKENS)
         _record_usage(self.model, getattr(resp, "usage", None))
         msg = resp.choices[0].message
-        calls = [{"id": c.id, "name": c.function.name, "arguments": json.loads(c.function.arguments or "{}")}
+        calls = [{"id": c.id, "name": c.function.name, "arguments": _parse_arguments(c.function.arguments)}
                  for c in (msg.tool_calls or [])]
         return {"content": msg.content, "tool_calls": calls}
+
+
+def _parse_arguments(raw: str | None) -> dict:
+    """Tool arguments from the model. Broken JSON becomes an argument the tool rejects (BAD_INPUT), which
+    is sent back to the model, instead of crashing the whole answer."""
+    try:
+        value = json.loads(raw or "{}")
+        return value if isinstance(value, dict) else {"_unreadable_arguments": raw}
+    except ValueError:
+        return {"_unreadable_arguments": raw}
 
 
 def tool_schema(name: str) -> dict:
@@ -158,7 +180,11 @@ class Agent:
         ]
         schemas = [tool_schema(t) for t in self.tools]
         trace, escalation = [], None
+        started, stop_reason = time.monotonic(), "agent_step_limit"
         for step in range(1, max_steps + 1):
+            if time.monotonic() - started > QUESTION_TIME_LIMIT_SECONDS:
+                stop_reason = "agent_time_limit"
+                break
             reply = model(messages, schemas)
             calls = reply.get("tool_calls") or []
             if not calls:
@@ -167,9 +193,12 @@ class Agent:
             messages.append({"role": "assistant", "content": reply.get("content"), "tool_calls": [
                 {"id": c["id"], "type": "function",
                  "function": {"name": c["name"], "arguments": json.dumps(c.get("arguments") or {})}} for c in calls]})
-            for c in calls:
+            for n, c in enumerate(calls):
                 args = {k: v for k, v in (c.get("arguments") or {}).items() if k != "tier"}
-                if c["name"] in self.tools:
+                if n >= MAX_TOOL_CALLS_PER_STEP:
+                    result = {"ok": False, "error": {"code": "TOO_MANY_CALLS", "message":
+                              f"At most {MAX_TOOL_CALLS_PER_STEP} tool calls per step; ask for the rest next step."}}
+                elif c["name"] in self.tools:
                     result = call_tool(c["name"], args, tier)
                 else:
                     result = {"ok": False, "error": {"code": "NOT_ALLOWED",
@@ -178,9 +207,9 @@ class Agent:
                 if c["name"] == "create_escalation" and result.get("ok"):
                     escalation = result["data"]
                 messages.append({"role": "tool", "tool_call_id": c["id"], "content": json.dumps(result, default=str)})
-        # Step limit reached: hand off rather than return a half answer.
-        result = call_tool("create_escalation", {"reason": "agent_step_limit",
+        # Step or time limit reached: hand off rather than return a half answer.
+        result = call_tool("create_escalation", {"reason": stop_reason,
                                                  "summary": f"{self.name} could not finish: {question[:200]}"}, tier)
-        trace.append({"tool": "create_escalation", "args": {"reason": "agent_step_limit"}, "result": result})
+        trace.append({"tool": "create_escalation", "args": {"reason": stop_reason}, "result": result})
         return {"agent": self.name, "answer": "I couldn't complete that, so I've passed your request to a colleague.",
                 "trace": trace, "escalation": result.get("data"), "tier": tier, "language": language, "steps": max_steps}
