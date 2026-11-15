@@ -222,3 +222,28 @@ def test_sourcing_cost_breakdown_and_rvc_uses_both_authoritative_tools():
     assert "65.28%" in out["response"]
     assert "50.55" in out["response"]
     assert "17.55" in out["response"]
+
+
+def test_material_origin_wording_does_not_create_unbacked_boot_verdict():
+    """Material origin status must not be phrased as an unsupported boot qualification verdict."""
+    model = FakeModel([
+        [("get_materials", {"sku": "NB-0101"})],
+        (
+            "The SBR / BR synthetic rubber used in the outsole originates in the US "
+            "and is an originating material with a valid declaration. "
+            "Supplier identity is confidential for this user. "
+            "Based on the rules engine."
+        ),
+    ])
+
+    out = answer(
+        "Which supplier makes the outsole for NB-0101, and where is it made?",
+        "C",
+        router=fixed("sourcing_whatif"),
+        model=model,
+    )
+
+    assert out["decision"] == "pass"
+    assert out["escalation"] is None
+    assert "originating material" in out["response"]
+    assert "supplier identity is confidential" in out["response"].lower()

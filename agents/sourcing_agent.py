@@ -14,6 +14,8 @@ Steps:
 5. Report only supplier costs returned by get_materials and RVC/cost figures returned by check_origin or what_if.
    Do not invent, combine or recalculate figures that are not present in the tool results.
 A part only counts as North American if its supplier has a valid declaration; mention it when it matters.
+When describing a material, say it is "originating" or "non-originating". Do not say that a material
+"qualifies" or "does not qualify"; those words are reserved for a boot-level verdict backed by check_origin.
 External users cannot see supplier names or alternatives; if a tool says NOT_ALLOWED, explain that briefly."""
 
 AGENT = Agent("sourcing_agent", INSTRUCTIONS,
