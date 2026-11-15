@@ -20,8 +20,7 @@ on new wording here, close to what the final test showed.
 The styled files come from `fine_tuning/paraphrase_questions.py`. It asks gpt-4o-mini to rewrite each question in
 general styles (casual, rushed with typos, wordy, formal email, simple English, key words only, indirect,
 synonyms, outside point of view, French). The meaning is kept, so the route label is kept. Rewrites that lose a
-code (NB-0413, PO-8013 ...), copy the question or come back empty are dropped. 50 random rewrites were checked by
-a person (`paraphrase_spot_check.xlsx`). The styles are general descriptions, not copied from any test question.
+code (NB-0413, PO-8013 ...), copy the question or come back empty are dropped. The paraphrase script generates `evaluation/results/paraphrase_spot_check.xlsx` with 50 randomly selected rewrites for human spot-checking before the augmented data is treated as validated evidence. The styles are general descriptions, not copied from any test question.
 
 Never train or tune on the test sets (holdout, attacks, team questions, hand-written questions). They are used
 once, in the final run.
