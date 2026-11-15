@@ -1,0 +1,16 @@
+id,reviewer,ai_label,human_label,same,ai_status,human_realistic,human_notes,ai_notes
+test-00328,R1,rules_info,rules_info,True,approved,No,question is mixed up - asking for the forecast and then asking for numbers - but main question is about material type,"Borderline: 'For the forecast ... Numbers by Friday' doesn't fit a general classification question. Label is right. Boundary checked: general rule question, no named boot = rules_info."
+test-00069,R1,sourcing_whatif,qualification_check,False,approved,Yes,,Boundary checked: supplier change before signing = sourcing_whatif.
+test-00288,R1,document_intake,sourcing_whatif,False,approved,Yes,,
+test-00117,R2,out_of_scope,out_of_scope,True,approved,No,An authorized human would not ask out of scope questions,
+test-00198,R3,out_of_scope,out_of_scope,True,rejected,Yes,,Reject: unrealistic. 'For month-end:' on an ice-fishing question is a generator artifact. Label out_of_scope is right.
+test-00261,R4,out_of_scope,rules_info,False,approved,Yes, ,Boundary checked: unsupported product = out_of_scope.
+test-00226,R4,qualification_check,rules_info,False,approved,Yes, ,
+test-00297,R4,sourcing_whatif,rules_info,False,approved,Yes, ,
+test-00449,R5,rules_info,qualification_check,False,approved,Yes,,"Boundary checked: general rule question, no named boot = rules_info."
+test-00157,R6,document_intake,escalate_human,False,approved,Yes,,
+test-00329,R6,sourcing_whatif,sourcing_whatif,True,rejected,Yes,,"Reject: supplier mismatch. Hartwig Polymere sells TPU pellets, not pre-formed uppers. Label itself is right."
+test-00247,R6,qualification_check,rules_info,False,approved,No,Sentence format.,
+test-00062,R7,sourcing_whatif,sourcing_whatif,True,rejected,Yes, ,"Reject: supplier mismatch. Hangzhou Weave Tech makes nylon upper fabric, not TPU pellets, so the comparison makes no sense. Label itself is right."
+test-00358,R7,sourcing_whatif,sourcing_whatif,True,rejected,Yes, ,"Reject: supplier mismatch. Dongguan Upper Craft makes pre-formed uppers, not TPU pellets. Label itself is right."
+test-00322,R5,sourcing_whatif,Not sure / don't understand,,rejected,Yes,Not familiar with acronyms or company name.,"Reject: supplier mismatch. Hartwig Polymere sells TPU pellets, not pre-formed uppers (moulding in-house is a real option, but this wording asks Hartwig for a finished upper). Label itself is right."
