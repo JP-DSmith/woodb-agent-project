@@ -11,7 +11,7 @@ SKU_PATTERN = re.compile(
 )
 
 OTHER_PRODUCT_ID_PATTERN = re.compile(
-    r"\b[A-Z]+-\d{3,}(?:-V\d+)?\b",
+    r"\b(?!PO-)[A-Z]+-\d{3,}(?:-V\d+)?\b",
     re.IGNORECASE,
 )
 
