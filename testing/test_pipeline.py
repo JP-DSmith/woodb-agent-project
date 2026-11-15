@@ -188,3 +188,37 @@ def test_normal_qualification_is_not_binding_assurance():
     )
 
     assert out["label"] == "qualification_check"
+
+
+def test_sourcing_cost_breakdown_and_rvc_uses_both_authoritative_tools():
+    """Cost + RVC questions must use materials for supplier costs and check_origin for RVC."""
+    model = FakeModel([
+        [
+            ("get_materials", {"sku": "NB-0412-V1"}),
+            ("check_origin", {"sku": "NB-0412-V1"}),
+        ],
+        (
+            "For NB-0412-V1, Hartwig Polymere GmbH supplies the upper at CAD 7.40. "
+            "The rules engine reports net cost CAD 50.55, VNM CAD 17.55, "
+            "and RVC 65.28% against the 55% threshold. "
+            "Based on the rules engine."
+        ),
+    ])
+
+    out = answer(
+        "Show me the cost breakdown and RVC calculation for NB-0412-V1, "
+        "including what we pay each supplier.",
+        "A",
+        router=fixed("sourcing_whatif"),
+        model=model,
+    )
+
+    tools_used = [step["tool"] for step in out["trace"]]
+
+    assert "get_materials" in tools_used
+    assert "check_origin" in tools_used
+    assert out["decision"] == "pass"
+    assert out["escalation"] is None
+    assert "65.28%" in out["response"]
+    assert "50.55" in out["response"]
+    assert "17.55" in out["response"]

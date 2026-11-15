@@ -42,3 +42,22 @@ def test_unsupported_boot_does_not_create_qualification_result():
 
     assert answer["result"] is None
     assert "NB-series" in answer["response"]
+def test_purchase_order_number_is_not_rejected_as_product_id(monkeypatch):
+    """PO numbers must reach the pipeline rather than the unsupported-product filter."""
+    captured = {}
+
+    def fake_pipeline(message, tier, **kwargs):
+        captured["message"] = message
+        return {
+            "response": "pipeline reached",
+            "result": None,
+            "router": "test",
+            "label": "duty_cost",
+        }
+
+    monkeypatch.setattr("web.chat_services.pipeline_answer", fake_pipeline)
+
+    answer = answer_question("What's the duty on PO-8013?")
+
+    assert answer["response"] == "pipeline reached"
+    assert captured["message"] == "What's the duty on PO-8013?"
