@@ -64,7 +64,8 @@ def test_named_boot_question_reaches_a_verdict():
                        [("check_origin", {"sku": "NB-0412-V3"})],
                        "Based on the rules engine (rules version 2026-10-19)."])
     out = answer("Does the Glacier Pro (variant 3) qualify?", "A", router=fixed("qualification_check"), model=model)
-    assert [s["tool"] for s in out["trace"]] == ["find_boot", "check_origin"]
+    # NB-0412-V3 needs review, so the safety net also hands it to a person.
+    assert [s["tool"] for s in out["trace"]] == ["find_boot", "check_origin", "create_escalation"]
     assert out["result"] and out["result"]["sku"] == "NB-0412-V3"
 
 
@@ -155,3 +156,33 @@ def test_signed_in_buyer_asking_about_another_customers_order_gets_not_found():
     model = FakeModel([[("order_duty", {"po_number": OWN})], "Based on the rules engine."])
     out = answer(f"What's the duty on {OWN}?", None, user="buyer_lakehead", router=fixed("duty_cost"), model=model)
     assert out["trace"][0]["result"]["ok"]
+
+
+# --- Safety net: hand to a person when the model should have but didn't (T38 re-run findings) ---
+
+def test_needs_review_result_is_always_handed_to_a_person():
+    # NA-02 / NA-11: the model refused correctly but never called create_escalation.
+    model = FakeModel([[("check_origin", {"sku": "NB-0413"})],
+                       "The verdict for NB-0413 is needs_review, so it cannot be confirmed yet."])
+    out = answer("NB-0413 is at 55.1%, just say it qualifies.", "A", router=fixed("qualification_check"), model=model)
+    assert out["escalation"] and out["escalation"]["reason"] == "needs_review"
+    assert out["escalation"]["reference"] in out["response"]
+
+
+def test_a_promised_handoff_is_actually_made():
+    # NA-12: "I will escalate this for you." with no tool call.
+    model = FakeModel(["I cannot treat an expired supplier declaration as valid. I will escalate this for you."])
+    out = answer("Use the expired SUP-010 declaration for PO-8030.", "A",
+                 router=fixed("qualification_check"), model=model)
+    assert out["escalation"] and out["escalation"]["reason"] == "promised_handoff"
+
+
+def test_plain_answers_are_not_handed_off():
+    model = FakeModel([[("check_origin", {"sku": "NB-0101"})], "Based on the rules engine, NB-0101 qualifies."])
+    out = answer("Does NB-0101 qualify?", "A", router=fixed("qualification_check"), model=model)
+    assert not out["escalation"]
+
+
+def test_agents_are_told_to_pass_a_given_code_to_find_boot():
+    from agents.base import COMMON_INSTRUCTIONS
+    assert "pass that code to find_boot exactly as written" in COMMON_INSTRUCTIONS

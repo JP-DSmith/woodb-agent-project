@@ -16,6 +16,7 @@ from __future__ import annotations
 import contextvars
 import json
 import os
+import re
 import time
 from contextlib import contextmanager
 from dataclasses import dataclass, field
@@ -40,6 +41,7 @@ Rules you always follow:
 - Every number, verdict and tariff code comes from a tool result. Never calculate or guess one yourself.
 - Boots have codes like NB-0412 or NB-0412-V2. If the user names a boot ("the Glacier Pro, variant 3")
   or writes a code another way ("nb0413v3", "0412-V2"), call find_boot first and use the code it returns.
+  If the user gives a code in any form, pass that code to find_boot exactly as written, not the boot's name.
   If it returns several matches, or none, ask which boot is meant. Never make up or guess a code.
 - If a question is about an order (a PO number), the answer applies on that order's ship date: get the
   order and pass its ship_date as as_of to check_origin, rather than checking today.
@@ -155,6 +157,24 @@ def _parse_arguments(raw: str | None) -> dict:
         return {"_unreadable_arguments": raw}
 
 
+_PROMISED_HANDOFF = re.compile(
+    r"\b(I will|I'll|I can|I am going to|I'm going to)\s+(now\s+)?"
+    r"(escalate|create an escalation|hand (this|it|the request)?\s*(off|over)|pass (this|it|your request))",
+    re.IGNORECASE)
+
+
+def _handoff_needed(trace: list[dict], answer: str) -> str | None:
+    """Reason to hand to a person when the model didn't: a result that needs review, or a reply that
+    promises a handoff without making one."""
+    for t in trace:
+        data = (t.get("result") or {}).get("data")
+        if isinstance(data, dict) and data.get("verdict") == "needs_review":
+            return "needs_review"
+    if _PROMISED_HANDOFF.search(answer):
+        return "promised_handoff"
+    return None
+
+
 def tool_schema(name: str) -> dict:
     _, doc, props = TOOLS[name]
     return {"type": "function", "function": {
@@ -188,7 +208,19 @@ class Agent:
             reply = model(messages, schemas)
             calls = reply.get("tool_calls") or []
             if not calls:
-                return {"agent": self.name, "answer": (reply.get("content") or "").strip(), "trace": trace,
+                answer = (reply.get("content") or "").strip()
+                if escalation is None:
+                    reason = _handoff_needed(trace, answer)
+                    if reason:
+                        # Safety net: the model should have handed this to a person but didn't call the tool.
+                        result = call_tool("create_escalation", {"reason": reason,
+                                           "summary": f"{self.name}: {question[:200]}"}, tier)
+                        trace.append({"tool": "create_escalation", "args": {"reason": reason}, "result": result})
+                        escalation = result.get("data")
+                        if escalation:
+                            answer += (f" I've passed this to a colleague who will follow up "
+                                       f"(reference {escalation['reference']}).")
+                return {"agent": self.name, "answer": answer, "trace": trace,
                         "escalation": escalation, "tier": tier, "language": language, "steps": step}
             messages.append({"role": "assistant", "content": reply.get("content"), "tool_calls": [
                 {"id": c["id"], "type": "function",
