@@ -19,6 +19,7 @@ Usage from the app (web/chat_services.py):
 """
 from __future__ import annotations
 
+import logging
 import os
 import re
 import time
@@ -29,6 +30,9 @@ from agents.specialists import keyword_route, run_specialist
 from mcp_servers.cusma_tools import SUPPLIERS, call_tool, demo_user, eng, normalise_tier, order_scope
 from security.input_guardrails import check_with_translation
 from security.output_guardrails import review
+
+logger = logging.getLogger(__name__)
+
 
 LABELS = {"qualification_check", "rules_info", "duty_cost", "sourcing_whatif", "certification_draft",
           "escalate_human", "document_intake", "out_of_scope"}
@@ -157,6 +161,13 @@ def _answer(message: str, tier: str | None, *, original: str | None = None, lang
     try:
         spec = run_specialist(label, message, tier, model=model, language=language)
     except Exception as err:  # e.g. OPENROUTER_API_KEY not set, or the model service is down
+        logger.error(
+            "Specialist agent failed: label=%s tier=%s error_type=%s error=%s",
+            label,
+            normalise_tier(tier),
+            type(err).__name__,
+            str(err)[:500],
+        )
         esc = call_tool("create_escalation", {"reason": "assistant_unavailable", "summary": message[:300]}, tier)
         return {**out, "response": "The assistant isn't available right now, so I've passed your request "
                                    "to a colleague.", "decision": "unavailable", "escalation": esc.get("data"),

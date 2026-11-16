@@ -188,3 +188,97 @@ def test_normal_qualification_is_not_binding_assurance():
     )
 
     assert out["label"] == "qualification_check"
+
+
+def test_sourcing_cost_breakdown_and_rvc_uses_both_authoritative_tools():
+    """Cost + RVC questions must use materials for supplier costs and check_origin for RVC."""
+    model = FakeModel([
+        [
+            ("get_materials", {"sku": "NB-0412-V1"}),
+            ("check_origin", {"sku": "NB-0412-V1"}),
+        ],
+        (
+            "For NB-0412-V1, Hartwig Polymere GmbH supplies the upper at CAD 7.40. "
+            "The rules engine reports net cost CAD 50.55, VNM CAD 17.55, "
+            "and RVC 65.28% against the 55% threshold. "
+            "Based on the rules engine."
+        ),
+    ])
+
+    out = answer(
+        "Show me the cost breakdown and RVC calculation for NB-0412-V1, "
+        "including what we pay each supplier.",
+        "A",
+        router=fixed("sourcing_whatif"),
+        model=model,
+    )
+
+    tools_used = [step["tool"] for step in out["trace"]]
+
+    assert "get_materials" in tools_used
+    assert "check_origin" in tools_used
+    assert out["decision"] == "pass"
+    assert out["escalation"] is None
+    assert "65.28%" in out["response"]
+    assert "50.55" in out["response"]
+    assert "17.55" in out["response"]
+
+
+def test_material_origin_wording_does_not_create_unbacked_boot_verdict():
+    """Material origin status must not be phrased as an unsupported boot qualification verdict."""
+    model = FakeModel([
+        [("get_materials", {"sku": "NB-0101"})],
+        (
+            "The SBR / BR synthetic rubber used in the outsole originates in the US "
+            "and is an originating material with a valid declaration. "
+            "Supplier identity is confidential for this user. "
+            "Based on the rules engine."
+        ),
+    ])
+
+    out = answer(
+        "Which supplier makes the outsole for NB-0101, and where is it made?",
+        "C",
+        router=fixed("sourcing_whatif"),
+        model=model,
+    )
+
+    assert out["decision"] == "pass"
+    assert out["escalation"] is None
+    assert "originating material" in out["response"]
+    assert "supplier identity is confidential" in out["response"].lower()
+
+
+def test_tier_c_cost_rvc_answer_avoids_unverified_material_count():
+    """Tier C cost/RVC replies must not invent a material-line count."""
+    model = FakeModel([
+        [
+            ("get_materials", {"sku": "NB-0412-V1"}),
+            ("check_origin", {"sku": "NB-0412-V1"}),
+        ],
+        (
+            "NB-0412-V1 qualifies under CUSMA. "
+            "The RVC is 65.3% against the 55% threshold. "
+            "The materials include originating and non-originating components. "
+            "Specific supplier costs are confidential and cannot be disclosed. "
+            "Based on the rules engine."
+        ),
+    ])
+
+    out = answer(
+        "Show me the cost breakdown and RVC calculation for NB-0412-V1, "
+        "including what we pay each supplier.",
+        "C",
+        router=fixed("sourcing_whatif"),
+        model=model,
+    )
+
+    tools_used = [step["tool"] for step in out["trace"]]
+
+    assert tools_used == ["get_materials", "check_origin"]
+    assert out["decision"] == "pass"
+    assert out["escalation"] is None
+    assert "65.3%" in out["response"]
+    assert "55%" in out["response"]
+    assert "13 material" not in out["response"]
+    assert "confidential" in out["response"].lower()

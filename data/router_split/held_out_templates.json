@@ -1,0 +1,87 @@
+{
+  "seed": 894,
+  "held_out_per_route": 3,
+  "held_out_templates": {
+    "certification_draft": [
+      "CD05",
+      "CD08",
+      "CD15"
+    ],
+    "document_intake": [
+      "DI06",
+      "DI11",
+      "DI13"
+    ],
+    "duty_cost": [
+      "DC01",
+      "DC04",
+      "DC09"
+    ],
+    "escalate_human": [
+      "EH01",
+      "EH06",
+      "EH10"
+    ],
+    "out_of_scope": [
+      "OS10",
+      "OS14",
+      "OS15"
+    ],
+    "qualification_check": [
+      "QC02",
+      "QC05",
+      "QC07"
+    ],
+    "rules_info": [
+      "RI04",
+      "RI10",
+      "RI13"
+    ],
+    "sourcing_whatif": [
+      "SW04",
+      "SW06",
+      "SW15"
+    ]
+  },
+  "counts": {
+    "train": {
+      "questions": 1577,
+      "by_route": {
+        "certification_draft": 187,
+        "document_intake": 199,
+        "duty_cost": 234,
+        "escalate_human": 131,
+        "out_of_scope": 130,
+        "qualification_check": 305,
+        "rules_info": 157,
+        "sourcing_whatif": 234
+      }
+    },
+    "val_seen_wording": {
+      "questions": 377,
+      "by_route": {
+        "certification_draft": 44,
+        "document_intake": 44,
+        "duty_cost": 61,
+        "escalate_human": 32,
+        "out_of_scope": 34,
+        "qualification_check": 77,
+        "rules_info": 34,
+        "sourcing_whatif": 51
+      }
+    },
+    "val_new_wording": {
+      "questions": 546,
+      "by_route": {
+        "certification_draft": 69,
+        "document_intake": 57,
+        "duty_cost": 80,
+        "escalate_human": 37,
+        "out_of_scope": 36,
+        "qualification_check": 118,
+        "rules_info": 59,
+        "sourcing_whatif": 90
+      }
+    }
+  }
+}
