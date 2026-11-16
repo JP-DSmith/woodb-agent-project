@@ -142,11 +142,75 @@ def test_broker_sees_both_customers_and_no_one_else():
         assert not call_tool("get_order", {"po_number": OTHER}, tier)["ok"]
 
 
-def test_demo_users_and_no_customer_setting(monkeypatch):
+def test_demo_users():
     assert demo_user("staff_compliance") == ("A", None) and demo_user("buyer_lakehead") == ("C", ["CUS-201"])
-    assert call_tool("get_order", {"po_number": OTHER}, "C")["ok"]          # no customer known: 'allow' for now
-    monkeypatch.setattr(tools, "TIER_C_WITHOUT_CUSTOMER", "deny")
-    assert not call_tool("get_order", {"po_number": OTHER}, "C")["ok"]
+
+
+# --- Fail closed: a tier C user whose customer isn't verified sees no order (review of this PR) ---------
+
+def _same_as_missing(result: dict, po: str) -> bool:
+    """The answer for a hidden order must match the answer for an order number that doesn't exist."""
+    missing = call_tool("get_order", {"po_number": "PO-9999"}, "C")
+    hide = lambda r: json.dumps(r).replace(po, "PO-X").replace("PO-9999", "PO-X")
+    return not result["ok"] and hide(result) == hide(missing)
+
+
+def test_tier_c_without_customer_is_denied_by_config_and_by_default():
+    assert json.loads((tools.REPO_ROOT / "config" / "demo_users.json").read_text())["tier_c_without_customer"] == "deny"
+    assert tools.TIER_C_WITHOUT_CUSTOMER == "deny"
+    assert tools.no_customer_rule({}) == "deny"                                   # setting missing
+    for value in ("Allow", "ALLOW", "yes", "", None, True, "deny"):                 # anything but exactly "allow"
+        assert tools.no_customer_rule({"tier_c_without_customer": value}) == "deny"
+    assert tools.no_customer_rule({"tier_c_without_customer": "allow"}) == "allow"
+
+
+@pytest.mark.parametrize("tool", ["get_order", "order_duty", "draft_certification"])
+def test_tier_c_with_no_customer_scope_gets_no_order(tool):
+    # Every real order gets exactly the same refusal as an order number that doesn't exist.
+    # (draft_certification refuses tier C before looking up the order: NOT_ALLOWED, the same either way.)
+    hide = lambda r, po: json.dumps(r).replace(po, "PO-X")
+    missing = hide(call_tool(tool, {"po_number": "PO-9999"}, "C"), "PO-9999")
+    for po in ORDERS:
+        r = call_tool(tool, {"po_number": po}, "C")
+        assert not r["ok"] and hide(r, po) == missing
+
+
+def test_hidden_orders_look_exactly_like_missing_ones():
+    with order_scope(["CUS-201"]):
+        assert _same_as_missing(call_tool("get_order", {"po_number": OTHER}, "C"), OTHER)
+    assert _same_as_missing(call_tool("get_order", {"po_number": OWN}, "C"), OWN)       # no scope at all
+    with order_scope([]):                                                              # empty customer list
+        assert _same_as_missing(call_tool("get_order", {"po_number": OWN}, "C"), OWN)
+    with order_scope(["CUS-999"]):                                                     # customer that doesn't exist
+        assert _same_as_missing(call_tool("get_order", {"po_number": OWN}, "C"), OWN)
+
+
+@pytest.mark.parametrize("user", ["nobody", "", "   ", "BUYER_LAKEHEAD", 123, ["buyer_lakehead"], {"id": "staff_finance"}])
+def test_unknown_or_invalid_user_never_raises_and_sees_no_order(user):
+    assert demo_user(user) == ("C", [])
+    model = FakeModel([[("get_order", {"po_number": OWN})], "I can't find that order."])
+    out = answer(f"What's the status of {OWN}?", None, user=user, router=fixed("duty_cost"), model=model)
+    assert out["tier"] == "C" and _same_as_missing(out["trace"][0]["result"], OWN)
+
+
+def test_unknown_user_cannot_raise_their_tier_by_also_passing_one():
+    model = FakeModel([[("get_order", {"po_number": OWN})], "I can't find that order."])
+    out = answer(f"Status of {OWN}?", "A", user="nobody", router=fixed("duty_cost"), model=model)
+    assert out["tier"] == "C" and not out["trace"][0]["result"]["ok"]
+
+
+def test_no_user_and_no_tier_is_external_with_no_orders():
+    # This is what the portal sends today: no user, no tier.
+    model = FakeModel([[("get_order", {"po_number": OWN})], "I can't find that order."])
+    out = answer(f"Status of {OWN}?", None, router=fixed("duty_cost"), model=model)
+    assert out["tier"] == "C" and _same_as_missing(out["trace"][0]["result"], OWN)
+
+
+def test_internal_staff_still_see_every_order():
+    for user in ("staff_compliance", "staff_sales"):
+        tier, customers = demo_user(user)
+        with order_scope(customers):
+            assert all(call_tool("get_order", {"po_number": p}, tier)["ok"] for p in list(ORDERS)[:5])
 
 
 def test_signed_in_buyer_asking_about_another_customers_order_gets_not_found():

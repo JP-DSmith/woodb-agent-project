@@ -110,8 +110,8 @@ def answer(message: str, tier: str | None, *, original: str | None = None, langu
 
     Who is asking: pass the tier, plus customer_ids for an external user (they then see only those
     customers' orders), or pass user=<id from config/demo_users.json>, which sets both."""
-    if user:
-        tier, customer_ids = demo_user(user)
+    if user is not None:
+        tier, customer_ids = demo_user(user)   # unknown or invalid user: tier C, no customers
     start = time.perf_counter()
     with measure_usage() as meter, order_scope(customer_ids):
         out = _answer(message, tier, original=original, language=language, input_type=input_type,

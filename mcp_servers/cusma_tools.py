@@ -91,13 +91,25 @@ COMPANY = {
 DEMO_USERS_FILE = REPO_ROOT / "config" / "demo_users.json"
 _DEMO = json.loads(DEMO_USERS_FILE.read_text(encoding="utf-8")) if DEMO_USERS_FILE.exists() else {"users": []}
 DEMO_USERS = {u["id"]: u for u in _DEMO.get("users", [])}
-TIER_C_WITHOUT_CUSTOMER = _DEMO.get("tier_c_without_customer", "allow")
+
+
+def no_customer_rule(config: dict) -> str:
+    """What a tier C user with no verified customer may see. Fails closed: only the exact value "allow"
+    allows; a missing, misspelt or unexpected setting means "deny"."""
+    return "allow" if config.get("tier_c_without_customer") == "allow" else "deny"
+
+
+TIER_C_WITHOUT_CUSTOMER = no_customer_rule(_DEMO)
 _ORDER_SCOPE: contextvars.ContextVar = contextvars.ContextVar("order_scope", default=None)
 
 
-def demo_user(user_id: str) -> tuple[str, list[str] | None]:
-    """(tier, customer_ids) for a demo sign-in; customer_ids None means every customer (internal staff)."""
-    u = DEMO_USERS[user_id]
+def demo_user(user_id) -> tuple[str, list[str] | None]:
+    """(tier, customer_ids) for a demo sign-in; customer_ids None means every customer (internal staff).
+    An unknown, empty or invalid user ID is treated as an external user with no customers: tier C, and no
+    order is visible. It never raises."""
+    u = DEMO_USERS.get(user_id) if isinstance(user_id, str) else None
+    if not u:
+        return "C", []
     return u["tier"], (None if u["customer_ids"] == "all" else list(u["customer_ids"]))
 
 

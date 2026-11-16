@@ -3,10 +3,11 @@
     "Demo sign-in for the portal and for tests: who the user is decides their tier and which customers' orders they may see.",
     "This stands in for the company's real sign-in, which would supply the same two facts. There are no passwords.",
     "customer_ids: the customers whose orders this user may see. 'all' = every order (internal staff).",
-    "tier_c_without_customer: what an external (tier C) user with no known customer may see. 'allow' keeps today's",
-    "behaviour until the app passes a signed-in customer; set it to 'deny' once it does."
+    "tier_c_without_customer: what an external (tier C) user with no verified customer may see. 'deny' (no orders).",
+    "The rule fails closed: anything other than exactly 'allow' means 'deny', and an unknown user ID is treated as",
+    "tier C with no customers."
   ],
-  "tier_c_without_customer": "allow",
+  "tier_c_without_customer": "deny",
   "users": [
     {"id": "staff_compliance", "label": "Trade compliance analyst (internal)", "tier": "A", "customer_ids": "all"},
     {"id": "staff_finance", "label": "Finance controller (internal)", "tier": "A", "customer_ids": "all"},
