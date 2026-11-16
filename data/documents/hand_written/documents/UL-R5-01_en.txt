@@ -1,0 +1,30 @@
+CERTIFICATION OF ORIGIN (CUSMA / USMCA)
+1. Certifier Type: Exporter / Producer
+2. Certifier Details:
+• Name: Bill Adams, Supply Manager
+• Company: Gulfport Elastomers Inc. (Supplier ID: SUP-015)
+• Address: 403 Mill Road, Grand Rapids, MI 49503, USA
+• Telephone: +1 (616) 555-0148
+• Email: bill@gulfport.example
+3. Exporter Details:
+• Same as Certifier (Gulfport Elastomers Inc., 403 Mill Road, Grand Rapids, MI 49503, USA)
+4. Producer Details:
+• Same as Certifier (Gulfport Elastomers Inc., 403 Mill Road, Grand Rapids, MI 49503, USA)
+5. Importer Details:
+• Name: Northfield Rubber Footwear Inc.
+• Address: 45 Factory Rd, Kitchener, ON N2G 1A1, Canada
+• Email: ssharpe@northfield.example
+6. Description and HS Tariff Classification of the Good(s):
+• Item Code: SUP-015-01
+• Description: SBR / BR synthetic rubber (Outsole/shell compound)
+• HS Tariff Classification (6-Digit): 4002.19 
+7. Origin Criterion:
+• Criterion: B
+8. Blanket Period:
+• From: February 1, 2025
+• To: January 31, 2026 
+9. Authorized Signature and Certification Statement:
+I certify that the goods described in this document qualify as originating and the information contained in this document is true and accurate. I assume responsibility for proving such representations and agree to maintain and present upon request or to make available during a verification visit, documentation necessary to support this certification.
+• Authorized Signature: __Bill Adams
+• Name & Title: Bill Adams, Supply Manager
+• Date: November 16, 2026

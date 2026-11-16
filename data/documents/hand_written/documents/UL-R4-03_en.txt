@@ -1,0 +1,26 @@
+INVOICE
+Invoice Number: INV-2026-110
+Invoice Date: November 16, 2026
+Due Date: December 16, 2026
+Supplier (From):
+Mekong Sole Works Co.
+Supplier ID: SUP-023
+Category: Outsole
+Country: Vietnam (VN)
+Lot B4, Tan Thuan Export Processing Zone, District 7, Ho Chi Minh City, 700000
+Bill To:
+Northfield Rubber Footwear Inc.
+45 Factory Rd, Kitchener, ON N2G 1A1
+Jim Delaware / Tax ID 345950
+
+Itemized Charges
+
+Item / Description	Part No.	Qty	Unit Price	Currency	Line Total	Country of Origin
+Finished rubber outsoles (Batch A)	SUP-023-01	500 pairs	$5.50	USD	$2,750.00 USD	Mexico
+Custom Outsole Tooling & Mold Prep	-	1	$800.00	USD	$800.00 USD	-
+Freight & Export Handling	-	1	$180.00	USD	$180.00 USD	-
+
+Summary of Totals
+• Total Due: $3,730.00 USD
+Payment Instructions:
+• USD Account / Wire: [Bank Name / Account / SWIFT]

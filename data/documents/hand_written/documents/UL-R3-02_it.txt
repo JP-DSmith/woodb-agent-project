@@ -1,0 +1,2 @@
+Numero_Fattura,Data_Fattura,Data_Scadenza,Nome_Fornitore,Nome_Cliente,Codice_Articolo,Descrizione_Articolo,Quantità,Prezzo_Unitario,Aliquota_Imposta,Subtotale_Riga,Importo_Imposta,Totale_Dovuto,Valuta,Paese_di_Origine
+INV-8335,2026-10-10,2026-12-12,Conceria Valdarno S.r.l.,Northfield Rubber Footwear Inc.,SUP-026-01,Pelle bovina rifinita,680,5.80,0.05,3944.00,197.00,4143.00,CAD,Italia
