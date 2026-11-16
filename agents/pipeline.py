@@ -27,7 +27,7 @@ from typing import Callable
 
 from agents.base import measure_usage
 from agents.specialists import keyword_route, run_specialist
-from mcp_servers.cusma_tools import SUPPLIERS, call_tool, eng, normalise_tier
+from mcp_servers.cusma_tools import SUPPLIERS, call_tool, demo_user, eng, normalise_tier, order_scope
 from security.input_guardrails import check_with_translation
 from security.output_guardrails import review
 
@@ -103,11 +103,17 @@ def result_card(trace: list[dict]) -> dict | None:
 
 
 def answer(message: str, tier: str | None, *, original: str | None = None, language: str = "en",
-           input_type: str = "message", router: Callable | None = None, model=None) -> dict:
+           input_type: str = "message", router: Callable | None = None, model=None,
+           customer_ids: list[str] | None = None, user: str | None = None) -> dict:
     """Answer one message (see _answer), and add what it took: "seconds" (wall time, every step) and
-    "usage" (model calls, tokens and cost, from agents/base.py). Neither is shown to the user."""
+    "usage" (model calls, tokens and cost, from agents/base.py). Neither is shown to the user.
+
+    Who is asking: pass the tier, plus customer_ids for an external user (they then see only those
+    customers' orders), or pass user=<id from config/demo_users.json>, which sets both."""
+    if user is not None:
+        tier, customer_ids = demo_user(user)   # unknown or invalid user: tier C, no customers
     start = time.perf_counter()
-    with measure_usage() as meter:
+    with measure_usage() as meter, order_scope(customer_ids):
         out = _answer(message, tier, original=original, language=language, input_type=input_type,
                       router=router, model=model)
     return {**out, "seconds": round(time.perf_counter() - start, 3), "usage": meter.as_dict()}

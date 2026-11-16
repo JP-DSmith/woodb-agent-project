@@ -14,4 +14,4 @@ other agreements) are not covered: say so and hand off with create_escalation (r
 A question about whether goods qualify (for example after packaging or relabelling) is a rule question: use lookup_rule."""
 
 AGENT = Agent("duty_agent", INSTRUCTIONS,
-              ["get_order", "order_duty", "import_duty", "check_origin", "lookup_rule", "create_escalation"])
+              ["find_boot", "get_order", "order_duty", "import_duty", "check_origin", "lookup_rule", "create_escalation"])

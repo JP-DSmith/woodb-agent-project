@@ -20,4 +20,4 @@ When describing a material, say it is "originating" or "non-originating". Do not
 External users cannot see supplier names or alternatives; if a tool says NOT_ALLOWED, explain that briefly."""
 
 AGENT = Agent("sourcing_agent", INSTRUCTIONS,
-              ["get_materials", "find_alternative_suppliers", "what_if", "check_origin", "lookup_rule", "create_escalation"])
+              ["find_boot", "get_materials", "find_alternative_suppliers", "what_if", "check_origin", "lookup_rule", "create_escalation"])

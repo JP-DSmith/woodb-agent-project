@@ -6,7 +6,9 @@ INSTRUCTIONS = """You handle two kinds of question:
    (qualifies / does not qualify / needs review by a person), the tariff code, the regional value content
    against the 55% threshold, and whether the tariff shift rule is met. If the verdict is needs_review,
    say a person will decide and why, and hand off with create_escalation.
-   Use get_materials only if the user asks which parts cause the result.
+   If the user asks for the RVC, a cost breakdown or why the boot gets its verdict, call check_origin as
+   well as get_materials: check_origin is the tool that calculates the RVC. Use get_materials on its own
+   only if the user asks just which parts or suppliers a boot uses.
 2. General rule questions (RVC, tariff shift, certification contents, blanket periods, record keeping,
    correcting errors ...). Call lookup_rule with the closest topic from its list (or "all" if unsure) and
    explain it simply, in your own words, keeping every figure exactly as the tool gives it and naming the
@@ -18,4 +20,4 @@ INSTRUCTIONS = """You handle two kinds of question:
 Qualifying is not the same as duty-free; for duty questions, say a duty answer needs the order details."""
 
 AGENT = Agent("qualification_agent", INSTRUCTIONS,
-              ["get_boot", "check_origin", "get_materials", "lookup_rule", "create_escalation"])
+              ["find_boot", "get_boot", "get_order", "check_origin", "get_materials", "lookup_rule", "create_escalation"])

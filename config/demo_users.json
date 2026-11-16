@@ -1,0 +1,21 @@
+{
+  "_about": [
+    "Demo sign-in for the portal and for tests: who the user is decides their tier and which customers' orders they may see.",
+    "This stands in for the company's real sign-in, which would supply the same two facts. There are no passwords.",
+    "customer_ids: the customers whose orders this user may see. 'all' = every order (internal staff).",
+    "tier_c_without_customer: what an external (tier C) user with no verified customer may see. 'deny' (no orders).",
+    "The rule fails closed: anything other than exactly 'allow' means 'deny', and an unknown user ID is treated as",
+    "tier C with no customers."
+  ],
+  "tier_c_without_customer": "deny",
+  "users": [
+    {"id": "staff_compliance", "label": "Trade compliance analyst (internal)", "tier": "A", "customer_ids": "all"},
+    {"id": "staff_finance", "label": "Finance controller (internal)", "tier": "A", "customer_ids": "all"},
+    {"id": "staff_sales", "label": "Sales rep, US accounts (internal)", "tier": "B", "customer_ids": "all"},
+    {"id": "staff_plant", "label": "Quebec plant supervisor (internal)", "tier": "B", "customer_ids": "all"},
+    {"id": "buyer_lakehead", "label": "Buyer, Lakehead Workwear Supply", "tier": "C", "customer_ids": ["CUS-201"]},
+    {"id": "buyer_iron_range", "label": "Buyer, Iron Range Industrial", "tier": "C", "customer_ids": ["CUS-205"]},
+    {"id": "buyer_north_shore", "label": "Buyer, North Shore Fishing Gear", "tier": "C", "customer_ids": ["CUS-206"]},
+    {"id": "broker_two_customers", "label": "Customs broker for Green Mountain Safety Outfitters and Cascade Marine & Outdoor", "tier": "C", "customer_ids": ["CUS-202", "CUS-203"]}
+  ]
+}
