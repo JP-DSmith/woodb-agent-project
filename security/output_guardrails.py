@@ -287,9 +287,12 @@ def _walk(obj: Any, facts: TraceFacts, key: str, restricted: bool) -> None:
             facts.verdicts.add(obj)
         if key in ("supplier_name", "supplier") and obj:
             facts.supplier_names.add(obj)
-        # numbers inside rule-step text: percentages always allowed, other figures only for cost-cleared tiers
+        # numbers inside rule-step text: percentages always allowed, other figures only for cost-cleared tiers,
+        # except a plain number in a step that names no cost (a grade such as "TSR 20" is not a price)
+        # Only whole numbers count, and never from a step that names a cost, holds a formula or shows money.
+        cost_step = bool(_COST_WORDS.search(obj)) or bool(re.search(r"[=/*+$()]", obj))
         for n in _numbers(obj):
-            if n.kind == "pct" or not restricted:
+            if n.kind == "pct" or not restricted or (n.kind == "plain" and n.decimals == 0 and not cost_step):
                 facts.numbers.append(n.value)
 
 
@@ -702,17 +705,29 @@ def _summarise_tariffs(extras: list) -> str:
     return "; ".join(parts)
 
 
+_PART_WORDS = re.compile(
+    r"\b(?:outsole|midsole|insole|sole|upper|lining|component|material|compound|pellets?|rubber|leather|"
+    r"textile|fabric|part|parts|thread|lace|laces|eyelets?|shank|toe cap|tpu)\b")
+_ABOUT_BOOT = re.compile(r"\bboots?\b|\bbottes?\b|\bbotas?\b")
+
+
+def _about_a_part(sentence: str, folded: str) -> bool:
+    """True when the sentence talks about a material or part and never names a boot."""
+    return bool(_PART_WORDS.search(folded)) and not _BOOT_ID.search(sentence) and not _ABOUT_BOOT.search(folded)
+
+
 def _asserted_verdicts(text: str) -> set[str]:
     out: set[str] = set()
     for s in _sentences(text):
         fs = _fold(s)
         if _NOT_ASSERTION.search(fs):
             continue
-        no = _VERDICT_NO.search(fs)
+        part = _about_a_part(s, fs)
+        no = None if part else _VERDICT_NO.search(fs)
         if no:
             out.add("does_not_qualify")
             fs = fs[:no.start()] + " " + fs[no.end():]
-        if _VERDICT_YES.search(fs):
+        if not part and _VERDICT_YES.search(fs):
             out.add("qualifies")
         if _VERDICT_REVIEW.search(fs):
             out.add("needs_review")
