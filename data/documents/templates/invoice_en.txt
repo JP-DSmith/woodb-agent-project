@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: ${invoice_no}            Date: ${invoice_date}
+Seller: ${supplier_name}
+        ${supplier_address}
+        Tax ID: ${supplier_tax_id}
+Buyer:  Northfield Rubber Footwear Inc.
+        ${buyer_address}
+PO Reference: ${po_no}        Terms: ${incoterm}        Currency: ${currency}
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+${line_items}
+
+Subtotal: ${subtotal} ${currency}
+Freight:  ${freight} ${currency}
+TOTAL:    ${total} ${currency}
+
+Ship via: ${ship_via}      Ship date: ${ship_date}
+Authorized signature: ${signature}

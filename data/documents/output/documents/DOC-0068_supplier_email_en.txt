@@ -1,0 +1,14 @@
+From: Sarah Johnson <sarah@prairie.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2027-01-08
+Subject: Shipment for PO SPO-0068
+
+Hi Sam,
+
+Your order SPO-0068 shipped on 2027-01-08 via UPS Freight. Invoice INV-28724 is attached.
+Quantity: 500 pairs of PU foam system, foamed in place.
+
+[handwritten: Mexico?]
+Best regards,
+Sarah Johnson
+Prairie Foam Systems LLC

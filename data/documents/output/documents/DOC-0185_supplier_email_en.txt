@@ -1,0 +1,14 @@
+From: Qiang Zhang <qiang@foshan.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2026-12-12
+Subject: Shipment for PO SPO-0185
+
+Hi Sam,
+
+Your order SPO-0185 shipped on 2026-12-12 via UPS Freight. Invoice INV-24730 is attached.
+Quantity: 200 pairs of Plastic buckles, eyelets, laces.
+
+
+Best regards,
+Qiang Zhang
+Foshan Hardware Fittings Co.

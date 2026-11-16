@@ -1,0 +1,14 @@
+De: ${sender_name} <${sender_email}>
+Para: ${recipient_name} <${recipient_email}>
+Fecha: ${email_date}
+Asunto: Envío de la orden ${po_no}
+
+Hola ${recipient_first}:
+
+Su orden ${po_no} se envió el ${ship_date} por ${ship_via}. Adjuntamos la factura ${invoice_no}.
+${body_detail}
+
+${extra_note}
+Saludos cordiales,
+${sender_name}
+${supplier_name}

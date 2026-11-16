@@ -1,0 +1,14 @@
+From: Hans-Wilhelm Wohlgemut-Nerger <hans-wilhelm@hartwig.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2026-08-30
+Subject: Shipment for PO SPO-0190
+
+Hi Sam,
+
+Your order SPO-0190 shipped on 2026-08-30 via UPS Freight. Invoice INV-15122 is attached.
+Quantity: 200 pairs of misc. parts. Our origin declaration is attached.
+
+
+Best regards,
+Hans-Wilhelm Wohlgemut-Nerger
+Hartwig Polymere GmbH

@@ -1,0 +1,14 @@
+From: Anong Chaiyaporn <anong@siam.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2027-02-07
+Subject: Shipment for PO SPO-0144
+
+Hi Sam,
+
+Your order SPO-0144 shipped on 2027-02-07 via UPS Freight. Invoice INV-44199 is attached.
+Quantity: 500 pairs of Natural rubber TSR 20.
+
+
+Best regards,
+Anong Chaiyaporn
+Siam Latex Trading Ltd.

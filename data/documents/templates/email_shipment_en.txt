@@ -1,0 +1,14 @@
+From: ${sender_name} <${sender_email}>
+To: ${recipient_name} <${recipient_email}>
+Date: ${email_date}
+Subject: Shipment for PO ${po_no}
+
+Hi ${recipient_first},
+
+Your order ${po_no} shipped on ${ship_date} via ${ship_via}. Invoice ${invoice_no} is attached.
+${body_detail}
+
+${extra_note}
+Best regards,
+${sender_name}
+${supplier_name}

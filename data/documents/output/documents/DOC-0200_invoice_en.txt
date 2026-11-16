@@ -1,0 +1,19 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-51215            Date: 2027-01-12
+Seller: Siam Latex Trading Ltd.
+        No. 124 Bangna-Trad Road, Rayong, Rayong 21000, Thailand
+        Tax ID: 932184269
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0200        Terms: EXW        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-014-01  Hand-laid natural rubber shell (from in-house compound)  1500  pair  4.20  6,300.00  Thailand  4001.22
+2     SUP-014-02  Natural rubber TSR 20  300  pair  2.33  699.00  Thailand  4001.22
+
+Subtotal: 7,794.44 CAD
+Freight:  345.69 CAD
+TOTAL:    8,140.13 CAD
+
+Ship via: DHL      Ship date: 2027-01-12
+Authorized signature: Anong Chaiyaporn

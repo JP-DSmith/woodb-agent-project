@@ -1,0 +1,20 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-94414            Date: 2027-02-14
+Seller: Tucker Labels Co., Ltd.
+        No. 745 Xinhua Road, Tianjin, Tianjin 300000, China
+        Tax ID: 627869825
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0195        Terms: DAP        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-120-65  Labels, patch, pull loop  1000  pair  0.37  370.00  China  5807.10
+
+Subtotal: 370.00 CAD
+Freight:  282.29 CAD
+TOTAL:    652.29 CAD
+
+Ship via: DHL      Ship date: 2027-02-14
+Authorized signature: Wei Wu
+
+[handwritten: Mexico?]

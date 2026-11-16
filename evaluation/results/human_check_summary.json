@@ -1,0 +1,77 @@
+{
+ "checked": 70,
+ "expected": 70,
+ "not_sure": 1,
+ "label_agreement": {
+  "agree": 61,
+  "of": 69,
+  "percent": 88.4,
+  "ci95": [
+   78.8,
+   94.0
+  ]
+ },
+ "per_label": {
+  "certification_draft": {
+   "agree": 9,
+   "of": 9
+  },
+  "document_intake": {
+   "agree": 7,
+   "of": 9
+  },
+  "duty_cost": {
+   "agree": 9,
+   "of": 9
+  },
+  "escalate_human": {
+   "agree": 8,
+   "of": 8
+  },
+  "out_of_scope": {
+   "agree": 7,
+   "of": 8
+  },
+  "qualification_check": {
+   "agree": 7,
+   "of": 9
+  },
+  "rules_info": {
+   "agree": 8,
+   "of": 9
+  },
+  "sourcing_whatif": {
+   "agree": 6,
+   "of": 8
+  }
+ },
+ "keep_or_reject_agreement": {
+  "agree": 60,
+  "of": 67,
+  "detail": {
+   "AI approved / human says realistic=Yes": 59,
+   "AI approved / human says realistic=No": 3,
+   "AI rejected / human says realistic=No": 1,
+   "AI rejected / human says realistic=Yes": 4
+  }
+ },
+ "hand_written_questions": 70,
+ "hand_written_near_copies_of_train": 0,
+ "hand_written_by_label": {
+  "qualification_check": 16,
+  "rules_info": 13,
+  "escalate_human": 7,
+  "sourcing_whatif": 8,
+  "out_of_scope": 7,
+  "duty_cost": 8,
+  "certification_draft": 6,
+  "document_intake": 5
+ },
+ "hand_written_by_language": {
+  "en": 59,
+  "fr": 5,
+  "es": 4,
+  "hi": 1,
+  "bn": 1
+ }
+}

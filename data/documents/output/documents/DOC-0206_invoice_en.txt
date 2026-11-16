@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-85133            Date: 2026-08-24
+Seller: Mekong Sole Works Co.
+        No. 228 Tran Hung Dao Street, Hai Phong, Hai Phong 180000, Vietnam
+        Tax ID: 974250019
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0206        Terms: DAP        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-023-89  Finished rubber outsole, bought  300  pair  5.50  1,650.00  Italy  6406.20
+
+Subtotal: 1,650.00 CAD
+Freight:  103.30 CAD
+TOTAL:    1,753.30 CAD
+
+Ship via: UPS Freight      Ship date: 2026-08-24
+Authorized signature: Minh Hoang

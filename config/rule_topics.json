@@ -1,0 +1,91 @@
+{
+  "_about": [
+    "Plain-language CUSMA rule texts for the lookup_rule tool (mcp_servers/cusma_tools.py).",
+    "Each topic has a one-line summary (shown to the agent so it can pick a topic), the text it may quote, and the source.",
+    "Placeholders {rvc} {dm} {margin} {lo} {hi} are filled from the rules file, so those numbers always match the engine.",
+    "Check every fact against the source before changing it. If a question is not covered here, the agent hands it to a person.",
+    "Sources: CUSMA Chapters 4 and 5 (Global Affairs Canada consolidated text); CBSA guidance pages named in each source."
+  ],
+  "topics": {
+    "rvc": {
+      "summary": "regional value content: the formula and the footwear threshold",
+      "text": "Regional value content (net cost method): (net cost - value of non-originating materials) / net cost. Footwear needs at least {rvc:.0%}.",
+      "source": "CUSMA Article 4.5; Annex 4-B (Chapter 64 product-specific rule)"
+    },
+    "tariff_shift": {
+      "summary": "tariff shift: which imported parts break the footwear rule",
+      "text": "Tariff shift: non-originating inputs may not come from headings 6401-6405 or subheading 6406.10 (uppers and parts of uppers, including safety toe caps).",
+      "source": "CUSMA Annex 4-B (Chapter 64 product-specific rule)"
+    },
+    "de_minimis": {
+      "summary": "de minimis: small amounts of imported inputs that are allowed",
+      "text": "De minimis: excluded non-originating inputs worth {dm:.0%} or less of net cost do not break the tariff shift; if all imported inputs are within {dm:.0%}, the value test is waived.",
+      "source": "CUSMA Article 4.12"
+    },
+    "declarations": {
+      "summary": "supplier declarations: when a North American part counts as originating",
+      "text": "A Canadian, US or Mexican part counts as originating only with a valid, unexpired supplier declaration.",
+      "source": "Northfield rules engine assumption (prototypes/cusma_qualification/Engine/rules_engine.py)"
+    },
+    "review_band": {
+      "summary": "which boots always go to a person for review",
+      "text": "Boots within {margin:.0%} of the threshold, boots {lo}-{hi} in. tall (knee band), and neoprene uppers go to a person.",
+      "source": "Northfield rules file and escalation policy (prototypes/cusma_qualification; config/policy.yaml)"
+    },
+    "section_338": {
+      "summary": "Section 338: the extra US tariff on some leather boots even when they qualify",
+      "text": "Built from the rules file at run time.",
+      "source": "US tariff measure in the rules file (prototypes/cusma_qualification)"
+    },
+    "certification_format": {
+      "summary": "who can complete a certification of origin, its format, language and electronic signatures",
+      "text": "A certification of origin can be completed by the exporter, the producer or the importer. There is no set form: it can be on an invoice or any other document, as long as it has the required information (see topic certification_contents). It can be in English, French or Spanish; the importing country may ask for a translation. It can be completed and sent electronically, with an electronic or digital signature.",
+      "source": "CUSMA Article 5.2 (paragraphs 1, 3, 5 and 6); CBSA, 'CUSMA: What importers need to know - certification of origin'"
+    },
+    "certification_contents": {
+      "summary": "the minimum information a certification of origin must include",
+      "text": "A certification of origin must include: (1) whether the certifier is the exporter, producer or importer; (2) the certifier's name, title, address, phone and email; (3) the exporter, if not the certifier; (4) the producer, if different (or 'Various', or 'Available upon request by the importing authorities' to keep it confidential); (5) the importer, if known; (6) a description of the goods and their 6-digit HS code; (7) the origin criterion met; (8) the blanket period, if it covers several shipments; (9) the certifier's signature and date, with the statement 'I certify that the goods described in this document qualify as originating' and that the certifier keeps the supporting documents.",
+      "source": "CUSMA Annex 5-A (minimum data elements)"
+    },
+    "blanket_certification": {
+      "summary": "blanket certification: one certification for many shipments, and how long a certification is valid",
+      "text": "One certification can cover a single shipment, or several shipments of identical goods within a period stated on the certification of up to 12 months (a 'blanket period'). Customs must accept a certification for 4 years after the date it was completed.",
+      "source": "CUSMA Article 5.3 (paragraphs 5 and 6); Annex 5-A item 8; CBSA certification of origin page"
+    },
+    "record_keeping": {
+      "summary": "how long importers, exporters and producers must keep certifications and supporting records",
+      "text": "Under CUSMA, an importer keeps its import documents, including the certification, for at least 5 years from the date of import. An exporter or producer that completes a certification keeps the records showing the goods originate for at least 5 years from the date of the certification, or longer if its country requires it: in Canada the CBSA requires export records to be kept for 6 years. Records cover purchases, costs, value, shipping and payment for the goods and their materials, and how the goods were made. They can be kept electronically if they can be found and printed quickly.",
+      "source": "CUSMA Article 5.8; CBSA 'Keeping records' (export) page and the Exporters' and Producers' Records Regulations"
+    },
+    "correcting_errors": {
+      "summary": "what to do if a certification turns out to be wrong, and minor errors",
+      "text": "If an exporter or producer finds that a certification it gave contains incorrect information, it must promptly tell, in writing, everyone it gave the certification to; a person who does this voluntarily is not penalised. If the importer has reason to believe the certification is wrong, it must promptly correct its import declaration and pay any duty owing; a promptly corrected statement is not penalised. Minor errors that do not cast doubt on the goods' origin are not a reason to reject a certification, and an importer gets at least 5 working days to supply a corrected copy of a defective one.",
+      "source": "CUSMA Articles 5.4(2), 5.6(2)-(3) and 5.7"
+    },
+    "low_value_shipments": {
+      "summary": "when no certification is needed for low-value imports",
+      "text": "No certification of origin is required for an import worth US$1,000 or less (or a higher amount set by the importing country), though a written statement that the goods originate may be asked for. This does not apply to a series of imports split up to avoid the rule.",
+      "source": "CUSMA Article 5.5"
+    },
+    "packaging_and_relabelling": {
+      "summary": "whether packaging, repacking or relabelling goods in Canada makes them originate",
+      "text": "Packaging, repacking or relabelling a finished boot does not change its tariff classification, so a boot made outside North America cannot meet the footwear tariff shift rule that way. Retail packaging that is classified with the boot is ignored when checking the tariff shift (it does count in the value calculation), and shipping containers and packing materials are ignored when deciding origin. Simply diluting a good, or a pricing or production practice meant to get around the rules, never makes a good originate.",
+      "source": "CUSMA Articles 4.15, 4.16 and 4.19; Annex 4-B (Chapter 64 rule)"
+    },
+    "confidential_information": {
+      "summary": "whether a producer must share its costs or supplier details with its buyer",
+      "text": "A certification of origin does not contain costs or prices. A producer can keep its name confidential on the certification ('Available upon request by the importing authorities'). In a verification, customs must accept information directly from the producer or exporter, so cost records can go straight to customs rather than to the buyer, and customs must keep information marked confidential confidential. Whether to share anything with a particular customer is a business decision for a person.",
+      "source": "CUSMA Annex 5-A item 4; Articles 5.9(3) and 5.12"
+    },
+    "proving_origin": {
+      "summary": "how origin is proven: the basis of a certification, records and customs verification",
+      "text": "A certification must be based on information showing the goods originate: a producer relies on its own records; an exporter that is not the producer may rely on the producer's written statement. Those records must be kept (see topic record_keeping). The importing country's customs can check origin by a written request or questionnaire, or by a visit to the producer's premises; there are at least 30 days to answer a written request.",
+      "source": "CUSMA Articles 5.3, 5.8 and 5.9"
+    },
+    "cost_changes": {
+      "summary": "what happens if material costs or suppliers change during a blanket period",
+      "text": "A blanket certification must stay correct for every shipment it covers. If a change in costs or suppliers means the certification may now be based on incorrect information, the exporter or producer must promptly tell, in writing, everyone it gave the certification to, and the boot should be checked again. The regulations have specific rules for averaging some costs over a period; how they apply to a case should be decided by the compliance analyst.",
+      "source": "CUSMA Articles 5.3(5) and 5.6(2); CUSMA Rules of Origin Regulations (averaging provisions)"
+    }
+  }
+}

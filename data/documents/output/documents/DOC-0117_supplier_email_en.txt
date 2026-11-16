@@ -1,0 +1,14 @@
+From: Alicia Schmidtke <alicia@thomas.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2026-11-28
+Subject: Shipment for PO SPO-0117
+
+Hi Sam,
+
+Your order SPO-0117 shipped on 2026-11-28 via UPS Freight. Invoice INV-15388 is attached.
+Quantity: 1000 pairs of Composite aramid plate.
+
+
+Best regards,
+Alicia Schmidtke
+Thomas Protective Parts GmbH

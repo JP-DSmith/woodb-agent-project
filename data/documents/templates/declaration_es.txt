@@ -1,0 +1,14 @@
+DECLARACIÓN DE ORIGEN DEL PROVEEDOR
+Para: Northfield Rubber Footwear Inc.
+Proveedor: ${supplier_name}, ${supplier_address}
+Declaración No.: ${decl_no}
+Periodo general: del ${period_start} al ${period_end}
+
+El suscrito declara que las mercancías enumeradas a continuación fueron producidas en el país
+indicado y que la información es verdadera y exacta. Me comprometo a informar a Northfield de cualquier cambio.
+
+No. parte    Descripción                          Fracción    País de origen   Criterio de origen
+${decl_items}
+
+Nombre: ${signer_name}      Cargo: ${signer_title}
+Firma: ${signature}      Fecha: ${decl_date}

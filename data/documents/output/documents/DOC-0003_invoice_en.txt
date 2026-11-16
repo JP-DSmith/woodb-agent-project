@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-50597            Date: 2026-11-23
+Seller: Hangzhou Weave Tech Co.
+        No. 419 Industrial Road, Hangzhou, Zhejiang 310000, China
+        Tax ID: 781085129
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0003        Terms: DAP        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-027-01  Nylon upper fabric  1500  pair  3.20  4,800.00  [crossed out: Thailand] China  5407.42
+
+Subtotal: 4,800.00 CAD
+Freight:  387.54 CAD
+TOTAL:    5,187.54 CAD
+
+Ship via: Ocean freight      Ship date: 2026-11-23
+Authorized signature: Yan Liu

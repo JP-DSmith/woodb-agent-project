@@ -1,0 +1,20 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-31929            Date: 2026-12-06
+Seller: Jade River Textiles Co.
+        No. 455 Xinhua Road, Jinjiang, Fujian 362200, China
+        Tax ID: 458195305
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0085        Terms: EXW        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-013-96  Polyester knit lining  200  pair  1.60  320.00  China  6006.32
+2     SUP-013-02  Labels, safety patch, pull loop  1000  pair  0.45  450.00  China  5807.10
+3     SUP-013-01  Labels, patch, pull loop  500  pair  0.46  230.00  China  5807.10
+
+Subtotal: 1,000.00 CAD
+Freight:  229.52 CAD
+TOTAL:    1,229.52 CAD
+
+Ship via: Purolator      Ship date: 2026-12-06
+Authorized signature: Wei Huang

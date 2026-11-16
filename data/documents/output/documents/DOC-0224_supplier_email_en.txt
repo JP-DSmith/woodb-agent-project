@@ -1,0 +1,14 @@
+From: Michael Liu <michael@waters.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2026-08-17
+Subject: Shipment for PO SPO-0224
+
+Hi Sam,
+
+Your order SPO-0224 shipped on 2026-08-17 via UPS Freight. Invoice INV-29715 is attached.
+Quantity: 800 pairs of black compound, 25 kg.
+
+
+Best regards,
+Michael Liu
+Waters Packaging LLC

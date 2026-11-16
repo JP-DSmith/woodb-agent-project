@@ -1,0 +1,14 @@
+From: Joanna Martin <joanna@brightline.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2026-11-16
+Subject: Shipment for PO SPO-0070
+
+Hi Sam,
+
+Your order SPO-0070 shipped on 2026-11-16 via UPS Freight. Invoice INV-74816 is attached.
+Quantity: 500 pairs of Colour masterbatch.
+
+
+Best regards,
+Joanna Martin
+Brightline Color Inc.

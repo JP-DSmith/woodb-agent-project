@@ -1,0 +1,14 @@
+SUPPLIER'S DECLARATION OF ORIGIN
+To: Northfield Rubber Footwear Inc.
+Supplier: ${supplier_name}, ${supplier_address}
+Declaration No.: ${decl_no}
+Blanket period: ${period_start} to ${period_end}
+
+I, the undersigned, declare that the goods listed below were produced in the country stated
+and that the information is true and accurate. I agree to inform Northfield of any change.
+
+Part No.     Description                          HS Code     Country of Origin   Origin criterion
+${decl_items}
+
+Name: ${signer_name}      Title: ${signer_title}
+Signature: ${signature}      Date: ${decl_date}

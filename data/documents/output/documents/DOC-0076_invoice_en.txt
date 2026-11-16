@@ -1,0 +1,18 @@
+COMMERCIAL INVOICE
+Invoice No.: INV-27294            Date: 2026-08-22
+Seller: Brightline Color Inc.
+        26 Market Street, Akron, OH 44308, USA
+        Tax ID: 659050460
+Buyer:  Northfield Rubber Footwear Inc.
+        45 Factory Rd, Kitchener, ON N2G 1A1
+PO Reference: SPO-0076        Terms: DAP        Currency: CAD
+
+Line  Part No.     Description                          Qty    Unit   Unit Price   Amount    Country of Origin   HS Code
+1     SUP-011-01  Colour masterbatch  300  pair  0.30  90.00  United States  3206.49
+
+Subtotal: 90.00 CAD
+Freight:  209.88 CAD
+TOTAL:    299.88 CAD
+
+Ship via: UPS Freight      Ship date: 2026-08-22
+Authorized signature: Joanna Martin

@@ -1,0 +1,18 @@
+FACTURE COMMERCIALE
+N° de facture : INV-61274            Date : 2027-02-11
+Vendeur : Powell Labels Inc.
+          770 rue Principale, Trois-Rivières, QC G9A 5H3, Canada
+          N° TPS/TVQ : 128471647
+Acheteur : Chaussures de caoutchouc Northfield inc.
+           45 Factory Rd, Kitchener, ON N2G 1A1
+Réf. bon de commande : SPO-0115     Conditions : FCA     Devise : CAD
+
+Ligne  N° pièce     Description                          Qté    Unité  Prix unit.   Montant   Pays d'origine   Code SH
+1     SUP-119-02  Labels, safety patch, pull loop  500  pair  0.43  215.00  Canada  5807.10
+
+Sous-total : 215.00 CAD
+Transport :  303.24 CAD
+TOTAL :      518.24 CAD
+
+Expédié par : UPS Freight      Date d'expédition : 2027-02-11
+Signature autorisée : ________

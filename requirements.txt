@@ -6,3 +6,7 @@ pandas>=2.0.0
 faker>=19.0.0
 spacy>=3.5.0
 pytest>=7.0.0
+google-cloud-translate
+openpyxl
+onnxruntime==1.31.0
+tokenizers==0.23.3

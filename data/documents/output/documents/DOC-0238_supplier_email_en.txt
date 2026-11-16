@@ -1,0 +1,14 @@
+From: Lindsey Gonzalez <lindsey@jordan.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2026-08-02
+Subject: Shipment for PO SPO-0238
+
+Hi Sam,
+
+Your order SPO-0238 shipped on 2026-08-02 via UPS Freight. Invoice INV-15663 is attached.
+Quantity: 1000 pairs of Retail box and tissue.
+
+[handwritten: China??]
+Best regards,
+Lindsey Gonzalez
+Jordan Packaging Inc.

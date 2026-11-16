@@ -1,0 +1,14 @@
+From: Joseph Mendoza <joseph@merritt.example>
+To: Sam Lee <s.lee@northfield.example>
+Date: 2026-09-21
+Subject: Shipment for PO SPO-0196
+
+Hi Sam,
+
+Your order SPO-0196 shipped on 2026-09-21 via UPS Freight. Invoice INV-75849 is attached.
+Quantity: 300 pairs of material as per sample.
+
+
+Best regards,
+Joseph Mendoza
+Merritt Textiles LLC

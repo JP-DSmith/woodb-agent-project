@@ -1,0 +1,14 @@
+De : Raymond Caron <raymond@powell.example>
+À : Sam Lee <s.lee@northfield.example>
+Date : 2026-12-01
+Objet : Expédition pour le bon de commande SPO-0112
+
+Bonjour Sam,
+
+Votre commande SPO-0112 a été expédiée le 2026-12-01 par UPS Freight. Vous trouverez la facture INV-37069 ci-jointe.
+Quantité : 800 paires (Labels, patch, pull loop).
+
+[handwritten: ask supplier]
+Cordialement,
+Raymond Caron
+Powell Labels Inc.
