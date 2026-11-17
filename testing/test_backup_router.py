@@ -1,4 +1,9 @@
-"""Offline tests for the backup router (fine_tuning/backup). No model calls, no downloads."""
+"""Tests for the router fine-tuning study (fine_tuning/backup). No model calls, no downloads.
+
+Normal CI (requirements.txt) runs the data, prompt, leakage, metrics and economics tests. The training,
+chart and ONNX tests need the research packages and skip without them:
+    pip install -r requirements.txt -r requirements-research.txt
+"""
 import json
 
 import pytest
@@ -184,6 +189,7 @@ def test_search_picks_the_best_combination_and_its_epochs(tmp_path, monkeypatch)
     best = ex.best_settings({**tf.DEFAULTS}, results)
     assert best["learning_rate"] == results[0]["learning_rate"] and best["epochs"] == results[0]["best_epoch"]
     assert ex.best_settings({**tf.DEFAULTS}, results, max_epochs=6)["epochs"] == 6
+    pytest.importorskip("matplotlib")
     an.chart_search(results, tmp_path / "s.png")
     assert (tmp_path / "s.png").exists() and "Learning rate" in an.search_table(results)
 
@@ -252,3 +258,18 @@ def test_reused_llm_answers_still_report_their_cost_and_time(tmp_path, monkeypat
     cache.write_text('{"openai/gpt-4o-mini|0|0.0|old": "duty_cost"}', encoding="utf-8")   # older cache: answer only
     old = routers.make_llm_router("openai/gpt-4o-mini", cache_path=cache)
     assert old("old") == "duty_cost" and old.unpriced == 1
+
+
+def test_no_validation_or_final_question_appears_in_the_training_data():
+    """Training questions (and so the few-shot examples, which come from train.jsonl) never appear in any
+    validation set, any final test set (holdout, team-written, human-written) or the attack suite."""
+    from evaluation import adversarial_suite, compare_routers
+    norm = lambda s: " ".join(str(s).lower().split())
+    train = {norm(r["query"]) for name in ("train", "train_styled") for r in _jsonl(name)}
+    sets = compare_routers.load_sets(list(compare_routers.VALIDATION_SETS) + list(compare_routers.FINAL_SETS))
+    assert set(compare_routers.FINAL_SETS) <= set(sets)
+    for name, rows in sets.items():
+        assert rows and not [r["id"] for r in rows if norm(r["question"]) in train], name
+    attacks = [norm(c.get("query") or c.get("message") or c.get("input") or "")
+               for c in list(adversarial_suite.ATTACKS) + list(adversarial_suite.TEST_CASES)]
+    assert attacks and not [a for a in attacks if a in train]
