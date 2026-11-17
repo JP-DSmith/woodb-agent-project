@@ -29,14 +29,16 @@ pip install -r requirements.txt
 # 5. Run the complete automated test suite
 pytest -q
 
-# 6. Validate the lightweight ONNX router
+# 6. Validate the lightweight ONNX router (the fallback router)
 python scripts/validate_lightweight_router.py
 ```
 
 Verified results:
 
-- Full automated suite: **961 passed, 12 documented skips**
-- Router validation: **488/500 = 97.6%**
+- Full offline automated suite: **1109 passed, 27 skipped, 1 warning**.
+  - **15 of the skipped tests are opt-in real OpenRouter router tests.** Those tests were run separately with `CUSMA_LIVE_ROUTER_TESTS=1` and passed.
+- ONNX (fallback) router validation: **488/500 = 97.6%**
+- LLM router (default) on the router test sets: **92.3%** vs **79.8%** for the ONNX router (653 questions; evidence: `evaluation/evidence/router_comparison_llm_vs_onnx.md`)
 - Full available T38 evaluation: **714 cases, 0 execution errors**
 - Clean Google Cloud Shell reproduction: **verified with Python 3.12.3** through clone, install, tests, router validation, `/health`, `/chat`, and evaluation artifact creation
 
@@ -92,7 +94,8 @@ User message or supplier document
 (original text and translation both checked)
                 |
                 v
-       Lightweight ONNX router
+  Router (prompted gpt-4o-mini;
+  ONNX router as fallback)
                 |
      +----------+-----------+-----------+
      |          |           |           |
@@ -121,7 +124,7 @@ Qualification Rules     Sourcing     Duty / cost
 ### Why this design
 
 - **Deterministic tools own facts and figures.** Models do not invent verdicts, tariff codes, RVC values, duty amounts, or supplier records.
-- **The router is narrow and lightweight.** Runtime routing uses ONNX Runtime, a local tokenizer, and precomputed reference embeddings.
+- **The router reads only the question.** A small prompted model (gpt-4o-mini, `agents/llm_router.py`) picks one of the eight routes from the route definitions alone. On the router test sets it routed 92.3% of questions correctly against 79.8% for the nearest-neighbour ONNX router, and 80.0% against 54.3% on the hand-written questions, for about 0.5 s and $0.00009 more per question (all measured in `evaluation/evidence/router_comparison_llm_vs_onnx.md`). If the model can't be reached, the lightweight ONNX router (ONNX Runtime, a local tokenizer and precomputed reference embeddings) routes instead, so routing never stops.
 - **Security is layered.** Input checks, access-tier controls, tool restrictions, specialist behavior, and output review provide separate controls.
 - **Human handoff is a valid outcome.** Legal matters, customs verification, guarantees, signatures, unresolved records, and unsupported requests are escalated.
 - **Documents are treated as data, not instructions.** Suspicious and hidden instructions are not followed as application commands.
@@ -185,7 +188,8 @@ Never commit secrets or print secret values in logs, screenshots, notebooks, or 
 | `OPENROUTER_API_KEY` | Model-backed specialist calls and full evaluation. |
 | `GOOGLE_CLOUD_PROJECT` | Google Cloud resource project. |
 | `GOOGLE_CLOUD_QUOTA_PROJECT` | Quota/billing attribution for Google client libraries when required. |
-| `CUSMA_ROUTER` | Optional router override. `keyword` forces the keyword fallback; omit to use the ONNX router. |
+| `CUSMA_ROUTER` | Optional router override. Omit (or `llm`) for the prompted LLM router with the ONNX router as fallback; `onnx` uses the ONNX router only; `keyword` forces the keyword fallback. |
+| `CUSMA_ROUTER_MODEL` | Optional model for the LLM router (default `openai/gpt-4o-mini`). |
 | `ROUTER_SIMILARITY_THRESHOLD` | Optional router threshold override. |
 | `PORT` | HTTP port; Docker defaults to 8080. |
 
@@ -503,10 +507,10 @@ pytest -q
 Verified baseline:
 
 ```text
-961 passed, 12 skipped
+1109 passed, 27 skipped, 1 warning
 ```
 
-The documented skips are known-gap adversarial cases. A new failure should be investigated rather than relabelled solely to increase a score.
+Of the skips, 12 are documented known-gap adversarial cases and 15 are opt-in real OpenRouter router tests (run separately with `CUSMA_LIVE_ROUTER_TESTS=1`; they passed). A new failure should be investigated rather than relabelled solely to increase a score.
 
 ### Syntax and import checks
 

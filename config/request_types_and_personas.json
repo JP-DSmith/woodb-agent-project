@@ -22,12 +22,12 @@
           "Est-ce que la botte d'hiver PAC-40 est admissible à l'ACEUM?"
         ]
       },
-      "not_this": "Questions about changing a supplier (sourcing_whatif) or the dollar amount of duty (duty_cost)."
+      "not_this": "Questions about who supplies a part, where it comes from, or changing a supplier (sourcing_whatif), or the dollar amount of duty (duty_cost)."
     },
     {
       "id": "sourcing_whatif",
       "routes_to": "3b_sourcing_agent",
-      "description": "What happens to qualification or cost if we change where a material or component comes from.",
+      "description": "Where a boot's materials or components come from and who supplies them, today or after a change: the current supplier or country of origin of a part, which parts come from outside North America, and what happens to qualification or cost if we change where a material or component comes from.",
       "examples": {
         "en": [
           "If we buy the neoprene from Mexico instead of Thailand, does the boot qualify?",
@@ -37,7 +37,7 @@
           "Si on achète les semelles au Québec plutôt qu'en Chine, qu'est-ce qui change?"
         ]
       },
-      "not_this": "A plain yes/no on today's materials (qualification_check)."
+      "not_this": "Whether the boot qualifies as it is today (qualification_check)."
     },
     {
       "id": "duty_cost",
@@ -136,7 +136,7 @@
           "Peux-tu m'aider avec ma déclaration d'impôt?"
         ]
       },
-      "not_this": "Boot questions that are just vague (pick the closest in-scope class).",
+      "not_this": "Boot questions that are just vague (pick the closest in-scope class), and questions about our own suppliers or where our boots' materials come from (sourcing_whatif).",
       "tier_handling": "Tier A/B: polite decline plus handoff to staff on duty. Tier C: polite decline only. Boat fenders always escalated until the Nov 14 stretch decision."
     }
   ],

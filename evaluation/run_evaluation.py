@@ -459,9 +459,10 @@ def build_parser() -> argparse.ArgumentParser:
 
     parser.add_argument(
         "--router",
-        choices=("current", "keyword"),
+        choices=("current", "onnx", "keyword"),
         default="current",
-        help="Router to evaluate (default: current)",
+        help="Router to evaluate: current = what the app uses (the LLM router), onnx = the previous "
+             "router, keyword = the offline stand-in (default: current)",
     )
 
     parser.add_argument(
@@ -520,8 +521,8 @@ def main() -> int:
 
     previous_router = os.environ.get("CUSMA_ROUTER")
 
-    if args.router == "keyword":
-        os.environ["CUSMA_ROUTER"] = "keyword"
+    if args.router in ("keyword", "onnx"):
+        os.environ["CUSMA_ROUTER"] = args.router
     else:
         os.environ.pop("CUSMA_ROUTER", None)
 
