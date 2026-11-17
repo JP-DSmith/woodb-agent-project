@@ -1,0 +1,161 @@
+{
+  "run_id": "20261117T003452Z",
+  "created_utc": "2026-11-17T00:34:52.760494+00:00",
+  "model": "openai/gpt-4o-mini",
+  "router": "current",
+  "datasets": [
+    "attacks",
+    "holdout",
+    "human_written",
+    "test_cases"
+  ],
+  "results_csv": "fine_tuning\\results\\backup_pipeline\\fine_tuned\\CUSMA_Evaluation_Detailed_Results_20261117T003452Z.csv",
+  "summary": {
+    "total_evaluated": 784,
+    "routing": {
+      "correct": 577,
+      "applicable": 653,
+      "accuracy_pct": 88.4
+    },
+    "answers": {
+      "correct": 115,
+      "applicable": 175,
+      "accuracy_pct": 65.7
+    },
+    "attacks": {
+      "passed": 87,
+      "total": 131,
+      "stopped_or_safe_pct": 66.4,
+      "policy_passed": 103,
+      "policy_pass_pct": 78.6,
+      "needs_review": 26,
+      "failed": 2,
+      "rescued_by_reviewer": 1,
+      "by_layer": {
+        "agent_or_rules": {
+          "total": 59,
+          "pass": 31,
+          "review": 26,
+          "fail": 2
+        },
+        "input_guard": {
+          "total": 25,
+          "pass": 25,
+          "review": 0,
+          "fail": 0
+        },
+        "reviewer": {
+          "total": 20,
+          "pass": 20,
+          "review": 0,
+          "fail": 0
+        },
+        "router": {
+          "total": 27,
+          "pass": 27,
+          "review": 0,
+          "fail": 0
+        }
+      }
+    },
+    "normal_questions_wrongly_blocked": 0,
+    "average_seconds": 2.3879,
+    "total_cost_usd": 0.309801,
+    "cost_per_question_usd": 0.00039515,
+    "economics": {
+      "prompt_tokens": {
+        "total": 2660478,
+        "average_per_question": 3393.47
+      },
+      "completion_tokens": {
+        "total": 62772,
+        "average_per_question": 80.07
+      },
+      "total_tokens": {
+        "total": 2723250,
+        "average_per_question": 3473.53
+      },
+      "cost": {
+        "total_usd": 0.309801,
+        "average_per_question_usd": 0.00039515
+      },
+      "agent_usage": {
+        "routed_cases": 681,
+        "no_agent_cases": 103,
+        "by_agent": {
+          "certification_agent": {
+            "count": 68,
+            "pct_of_routed_cases": 10.0,
+            "pct_of_all_cases": 8.7,
+            "average_prompt_tokens": 3326.96,
+            "average_completion_tokens": 73.9,
+            "average_tokens": 3400.85,
+            "average_cost_usd": 0.00039091,
+            "average_seconds": 2.5008
+          },
+          "duty_agent": {
+            "count": 107,
+            "pct_of_routed_cases": 15.7,
+            "pct_of_all_cases": 13.6,
+            "average_prompt_tokens": 4030.69,
+            "average_completion_tokens": 94.28,
+            "average_tokens": 4124.97,
+            "average_cost_usd": 0.00048203,
+            "average_seconds": 3.066
+          },
+          "escalation_agent": {
+            "count": 96,
+            "pct_of_routed_cases": 14.1,
+            "pct_of_all_cases": 12.2,
+            "average_prompt_tokens": 0.0,
+            "average_completion_tokens": 0.0,
+            "average_tokens": 0.0,
+            "average_cost_usd": 0.0,
+            "average_seconds": 0.009
+          },
+          "intake_agent": {
+            "count": 104,
+            "pct_of_routed_cases": 15.3,
+            "pct_of_all_cases": 13.3,
+            "average_prompt_tokens": 317.66,
+            "average_completion_tokens": 58.34,
+            "average_tokens": 376.0,
+            "average_cost_usd": 8.27e-05,
+            "average_seconds": 1.2432
+          },
+          "qualification_agent": {
+            "count": 197,
+            "pct_of_routed_cases": 28.9,
+            "pct_of_all_cases": 25.1,
+            "average_prompt_tokens": 4141.92,
+            "average_completion_tokens": 113.28,
+            "average_tokens": 4255.2,
+            "average_cost_usd": 0.00054988,
+            "average_seconds": 3.3028
+          },
+          "sourcing_agent": {
+            "count": 109,
+            "pct_of_routed_cases": 16.0,
+            "pct_of_all_cases": 13.9,
+            "average_prompt_tokens": 10586.83,
+            "average_completion_tokens": 176.84,
+            "average_tokens": 10763.68,
+            "average_cost_usd": 0.00105242,
+            "average_seconds": 5.4356
+          }
+        }
+      }
+    },
+    "errors": 0,
+    "seen": {
+      "rows": 249,
+      "routing_accuracy_pct": 98.8,
+      "answer_accuracy_pct": 66.7
+    },
+    "unseen": {
+      "rows": 251,
+      "routing_accuracy_pct": 94.0,
+      "answer_accuracy_pct": 64.6
+    }
+  }
+}

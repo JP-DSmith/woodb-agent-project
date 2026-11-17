@@ -134,7 +134,7 @@ Qualification Rules     Sourcing     Duty / cost
 | `config/` | Policy, model pricing/settings, request types/personas, rules topics, and application configuration. |
 | `data/` | Synthetic company world, router datasets/references, holdout data, and supplier documents. |
 | `evaluation/` | Adversarial suite, deterministic metrics, intake evaluation, and reproducible evaluation runner. |
-| `fine_tuning/` | Narrow routing-model experiments and artifacts. |
+| `fine_tuning/` | Router data split, the fine-tuning study (`fine_tuning/README_router_study.md`: fine-tuned MiniLM vs prompted small and large models, with results in `fine_tuning/results/router_study/`). |
 | `mcp_servers/` | Deterministic CUSMA tools, rules engine, records, and data access. |
 | `models/router/` | Lightweight ONNX router model and tokenizer. |
 | `scripts/` | Router validation and reproducibility utilities. |
