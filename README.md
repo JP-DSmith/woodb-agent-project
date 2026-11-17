@@ -92,7 +92,8 @@ User message or supplier document
 (original text and translation both checked)
                 |
                 v
-       Lightweight ONNX router
+  Router (prompted gpt-4o-mini;
+  ONNX router as fallback)
                 |
      +----------+-----------+-----------+
      |          |           |           |
@@ -121,7 +122,7 @@ Qualification Rules     Sourcing     Duty / cost
 ### Why this design
 
 - **Deterministic tools own facts and figures.** Models do not invent verdicts, tariff codes, RVC values, duty amounts, or supplier records.
-- **The router is narrow and lightweight.** Runtime routing uses ONNX Runtime, a local tokenizer, and precomputed reference embeddings.
+- **The router reads only the question.** A small prompted model (gpt-4o-mini, `agents/llm_router.py`) picks one of the eight routes from the route descriptions alone. It routed people's own questions far better than the nearest-neighbour ONNX router (81% vs 54% on the hand-written test questions) for about 0.6 s and $0.00008 more per question. If the model can't be reached, the lightweight ONNX router (ONNX Runtime, a local tokenizer and precomputed reference embeddings) routes instead, so routing never stops.
 - **Security is layered.** Input checks, access-tier controls, tool restrictions, specialist behavior, and output review provide separate controls.
 - **Human handoff is a valid outcome.** Legal matters, customs verification, guarantees, signatures, unresolved records, and unsupported requests are escalated.
 - **Documents are treated as data, not instructions.** Suspicious and hidden instructions are not followed as application commands.
@@ -185,7 +186,8 @@ Never commit secrets or print secret values in logs, screenshots, notebooks, or 
 | `OPENROUTER_API_KEY` | Model-backed specialist calls and full evaluation. |
 | `GOOGLE_CLOUD_PROJECT` | Google Cloud resource project. |
 | `GOOGLE_CLOUD_QUOTA_PROJECT` | Quota/billing attribution for Google client libraries when required. |
-| `CUSMA_ROUTER` | Optional router override. `keyword` forces the keyword fallback; omit to use the ONNX router. |
+| `CUSMA_ROUTER` | Optional router override. Omit (or `llm`) for the prompted LLM router with the ONNX router as fallback; `onnx` uses the ONNX router only; `keyword` forces the keyword fallback. |
+| `CUSMA_ROUTER_MODEL` | Optional model for the LLM router (default `openai/gpt-4o-mini`). |
 | `ROUTER_SIMILARITY_THRESHOLD` | Optional router threshold override. |
 | `PORT` | HTTP port; Docker defaults to 8080. |
 

@@ -2,7 +2,8 @@
 
     message (English) + tier from login
       -> input guard  (security/input_guardrails.py; checks the original AND the English text)
-      -> router       (agents/router_agent.py: reads the question TEXT ONLY, never the tier)
+      -> router       (agents/llm_router.py, falling back to agents/router_agent.py: reads the question TEXT
+                       ONLY, never the tier; CUSMA_ROUTER=onnx uses the previous router)
       -> specialist agent + tools  (agents/specialists.py; the tier controls what tools may show)
       -> reviewer     (security/output_guardrails.py; checks every number and name against the trace)
       -> reply (English; the app translates it back)
@@ -66,19 +67,29 @@ def _requires_binding_assurance_review(message: str) -> bool:
 
 
 def default_router() -> tuple[Callable[[str], str], str]:
-    """The trained router (agents/router_agent.py) if it loads, else the keyword stand-in.
-    Set CUSMA_ROUTER=keyword to force the stand-in (e.g. in tests or without a GPU/model download)."""
+    """The router the app uses, chosen by CUSMA_ROUTER:
+        llm (default)  the prompted LLM router (agents/llm_router.py); if the model can't be reached, each
+                       question is routed by the ONNX router instead
+        onnx           the previous router (agents/router_agent.py, nearest neighbour); "trained" also works
+        keyword        the offline keyword stand-in (tests, no model files)
+    Without the ONNX model files, the keyword stand-in takes the ONNX router's place."""
     if "fn" in _router_cache:
         return _router_cache["fn"], _router_cache["name"]
-    fn, name = keyword_route, "keyword_stand_in"
-    if os.environ.get("CUSMA_ROUTER", "trained") != "keyword":
+    choice = os.environ.get("CUSMA_ROUTER", "llm").strip().lower()
+    onnx, onnx_name = keyword_route, "keyword_stand_in"
+    if choice != "keyword":
         try:
             from agents import router_agent
             route = getattr(router_agent, "route_user_input", None)
             if route is not None:
-                fn, name = route, "router_agent"
+                onnx, onnx_name = route, "router_agent"
         except Exception:  # model/libraries not available: fall back, and say so in the output
             pass
+    if choice in ("keyword", "onnx", "trained"):
+        fn, name = onnx, onnx_name
+    else:
+        from agents.llm_router import make_router
+        fn, name = make_router(fallback=onnx), "llm_router"
     _router_cache.update(fn=fn, name=name)
     return fn, name
 
