@@ -1,0 +1,27 @@
+INVOICE
+Invoice Number: INV-2026-109
+Invoice Date: November 16, 2026
+Due Date: December 16, 2026
+Supplier (From):
+Hunter Comfort Insoles S.A. de C.V.
+Supplier ID: SUP-105
+Country: Mexico (MX)
+Av. Vallarta 3120, Col. Vallarta Poniente, Guadalajara, Jalisco, 44110
+Bill To:
+Northfield Rubber Footwear Inc.
+45 Factory Rd, Kitchener, ON N2G 1A1
+Jim Delaware / Tax ID 345950
+
+Itemized Charges
+
+Item / Description	Part No.	Qty	Unit Price	Currency	Line Total	Country of Origin
+Anti-fatigue PU insoles	SUP-105-01	500 pairs	$1.10	USD	$550.00 USD	Mexico
+Insole Die Cutting & Setup	-	1	$14,500.00	MXN	$14,500.00 MXN	-
+Local Freight & Export Handling (MX)	-	1	$3,200.00	MXN	$3,200.00 MXN	-
+
+Summary of Totals
+• Total USD Due: $550.00 USD
+• Total MXN Due: $17,700.00 MXN
+Payment Instructions:
+• USD Account / Wire: [Bank Name / Account / SWIFT]
+• MXN CLABE Transfer: [18-Digit CLABE Number]

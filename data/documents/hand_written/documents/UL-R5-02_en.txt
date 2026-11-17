@@ -1,0 +1,24 @@
+CERTIFICATION OF ORIGIN (CUSMA / USMCA)
+1. Certifier Type: Exporter / Producer
+2. Certifier Details:
+Name: Robert Miller, Compliance Manager
+Company: Gulfport Elastomers Inc. (Supplier ID: SUP-015)
+Address: 403 Mill Road, Grand Rapids, MI 49503, USA
+Telephone: +1 (616) 555-0148     Email: rmiller@gulfport.example
+3. Exporter Details: Same as Certifier
+4. Producer Details: Same as Certifier
+5. Importer Details:
+Name: Northfield Rubber Footwear Inc.
+Address: 45 Factory Rd, Kitchener, ON N2G 1A1, Canada
+Telephone: +1 (519) 555-0192
+6. Description and HS Tariff Classification of the Good(s):
+Item Code: SUP-015-01
+Description: SBR / BR synthetic rubb (Outsole/shell compound)
+HS Tariff Classification (6-Digit): 4002.19
+7. Origin Criterion & Country of Origin:
+Country of Origin: USA [circled] [handwritten: Mexico? - verify raw SBR lot #]
+Origin Criterion: B
+8. Blanket Period: From: November 16, 2026   To: January 31, 2027
+9. Authorized Signature and Certification Statement:
+I certify that the goods described in this document qualify as originating and the information contained in this document is true and accurate.
+Signature: [signed] Robert Miller     Date: November 16, 2026
