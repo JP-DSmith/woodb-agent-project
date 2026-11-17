@@ -1,0 +1,26 @@
+INVOICE
+Invoice Number: INV-2026-108
+Invoice Date: November 16, 2026
+Due Date: December 16, 2026
+Supplier (From):
+Dean Sole Works S.A. de C.V.
+Supplier ID: SUP-108
+Category: Outsole
+Country: Mexico (MX)
+Calle Río de la Plata #402, Col. Cuauhtémoc, Ciudad de México, 06500
+Bill To:
+Northfield Rubber Footwear Inc.
+45 Factory Rd, Kitchener, ON N2G 1A1
+Jim Delaware / Tax ID 345950
+
+Itemized Charges
+
+Item / Description	Qty	Unit Price	Currency	Line Total	Country of Origin
+Molded Rubber Outsoles (Batch A)	500 pairs	$8.50	USD	$4,250.00 USD	Mexico
+Custom Outsole Tooling & Mold Prep	1	$800.00	USD	$800.00 USD	-
+Local Freight & Export Handling (MX)	1	$180.00	USD	$180.00 USD	-
+
+Summary of Totals
+• Total Due: $5,230.00 USD
+Payment Instructions:
+• USD Account / Wire: [Bank Name / Account / SWIFT]
