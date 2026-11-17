@@ -1,9 +1,10 @@
 """Prompted LLM router: asks a small model (gpt-4o-mini by default) which of the 8 routes a question belongs to.
 
-Chosen in the router study (fine_tuning/backup, validation results, Nov 16) over the nearest-neighbour ONNX router
-(agents/router_agent.py) and a fine-tuned MiniLM: on the test sets it routed 92.6% correctly against 79.8% for the
-ONNX router, and 81% against 54% on questions written by people. It adds about 0.6 s and about $0.00008 per
-question.
+Chosen in the router study (validation results) over the nearest-neighbour ONNX router (agents/router_agent.py)
+and a fine-tuned MiniLM. The committed evidence for the router as it is now (accuracy per question set, time and
+cost per question, against the ONNX router) is evaluation/evidence/router_comparison_llm_vs_onnx.md, made with
+evaluation/compare_routers.py (routers "llm=agents.llm_router:route" and "onnx=live", validation and test sets);
+the predictions for each question id are in router_comparison_llm_vs_onnx_predictions.csv.
 
 The prompt is built only from the route descriptions in config/request_types_and_personas.json ("description"
 and "not_this"): no example sentences and no test questions. The reply must name exactly one route; anything
@@ -88,3 +89,14 @@ def make_router(model=None, fallback: Callable[[str], object] | None = None, mod
 
     route.__name__ = "llm_router"
     return route
+
+
+_default: dict = {}
+
+
+def route(question: str) -> str:
+    """The LLM router on its own, with no fallback (a failed call goes to escalate_human), for measuring it:
+    evaluation/compare_routers.py --router llm=agents.llm_router:route"""
+    if "fn" not in _default:
+        _default["fn"] = make_router()
+    return _default["fn"](question)

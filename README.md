@@ -29,14 +29,15 @@ pip install -r requirements.txt
 # 5. Run the complete automated test suite
 pytest -q
 
-# 6. Validate the lightweight ONNX router
+# 6. Validate the lightweight ONNX router (the fallback router)
 python scripts/validate_lightweight_router.py
 ```
 
 Verified results:
 
 - Full automated suite: **961 passed, 12 documented skips**
-- Router validation: **488/500 = 97.6%**
+- ONNX (fallback) router validation: **488/500 = 97.6%**
+- LLM router (default) on the router test sets: **92.3%** vs **79.8%** for the ONNX router (653 questions; evidence: `evaluation/evidence/router_comparison_llm_vs_onnx.md`)
 - Full available T38 evaluation: **714 cases, 0 execution errors**
 - Clean Google Cloud Shell reproduction: **verified with Python 3.12.3** through clone, install, tests, router validation, `/health`, `/chat`, and evaluation artifact creation
 
@@ -122,7 +123,7 @@ Qualification Rules     Sourcing     Duty / cost
 ### Why this design
 
 - **Deterministic tools own facts and figures.** Models do not invent verdicts, tariff codes, RVC values, duty amounts, or supplier records.
-- **The router reads only the question.** A small prompted model (gpt-4o-mini, `agents/llm_router.py`) picks one of the eight routes from the route descriptions alone. It routed people's own questions far better than the nearest-neighbour ONNX router (81% vs 54% on the hand-written test questions) for about 0.6 s and $0.00008 more per question. If the model can't be reached, the lightweight ONNX router (ONNX Runtime, a local tokenizer and precomputed reference embeddings) routes instead, so routing never stops.
+- **The router reads only the question.** A small prompted model (gpt-4o-mini, `agents/llm_router.py`) picks one of the eight routes from the route definitions alone. On the router test sets it routed 92.3% of questions correctly against 79.8% for the nearest-neighbour ONNX router, and 80.0% against 54.3% on the hand-written questions, for about 0.5 s and $0.00009 more per question (all measured in `evaluation/evidence/router_comparison_llm_vs_onnx.md`). If the model can't be reached, the lightweight ONNX router (ONNX Runtime, a local tokenizer and precomputed reference embeddings) routes instead, so routing never stops.
 - **Security is layered.** Input checks, access-tier controls, tool restrictions, specialist behavior, and output review provide separate controls.
 - **Human handoff is a valid outcome.** Legal matters, customs verification, guarantees, signatures, unresolved records, and unsupported requests are escalated.
 - **Documents are treated as data, not instructions.** Suspicious and hidden instructions are not followed as application commands.
