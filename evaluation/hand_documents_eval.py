@@ -115,7 +115,9 @@ def score_one(t: dict, found: dict) -> dict:
         "security_missed": t["expected_action"] == "flag_security" and got != "flag_security",
         # a silent partial read: recorded, but parts missing, extra or with the wrong origin
         "recorded_incomplete": got in RECORDED and not parts["complete"],
+        "parts_expected": sorted(_key(p) for p in t["parts"]), "parts_read": sorted(parts["read"]),
         "parts_missing": parts["missing"], "parts_extra": parts["extra"], "origins_wrong": parts["wrong_origin"],
+        "parts_complete": parts["complete"],
         "supplier_expected": t["supplier_id"], "supplier_read": found.get("supplier_id"),
         "supplier_ok": found.get("supplier_id") == t["supplier_id"],
         "origins_expected": t["parts"], "origins_read": origins,
