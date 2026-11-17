@@ -78,3 +78,79 @@ def test_rules_only_run_records_nothing_and_sends_hidden_instructions_to_securit
     assert not any(r["wrongly_recorded"] for r in results)
     assert not any(r["security_missed"] for r in results)
     assert "RULES ONLY" in ev.report(results, use_model=False)
+
+
+def _result(doc_id, **kw):
+    base = {"doc_id": doc_id, "language": "en", "layout": "", "expected_action": "record", "action": "record",
+            "action_ok": True, "wrongly_recorded": False, "security_missed": False, "recorded_incomplete": False,
+            "parts_missing": [], "parts_extra": [], "origins_wrong": [], "supplier_expected": "SUP-015",
+            "supplier_read": "SUP-015", "supplier_ok": True, "origins_expected": {}, "origins_read": {},
+            "origins_ok": 0, "origins_total": 0, "problems_planted": [], "problems_found": [], "planted_found": [],
+            "planted_missed": [], "not_detectable": [], "read_by": "rules", "notes": ""}
+    return base | kw
+
+
+@pytest.mark.parametrize("bad,code", [
+    ({}, 0),                                                                           # everything safe
+    ({"wrongly_recorded": True, "expected_action": "flag_for_person", "action_ok": False}, 1),
+    ({"security_missed": True, "expected_action": "flag_security", "action": "flag_for_person",
+      "action_ok": False}, 1),
+    ({"recorded_incomplete": True, "parts_missing": ["SUP-015-02"]}, 1),          # partial read, action looked right
+])
+def test_exit_code_is_non_zero_when_a_result_is_unsafe(monkeypatch, tmp_path, capsys, bad, code):
+    results = [_result("OK-1"), _result("BAD-1", **bad)]
+    monkeypatch.setattr(ev, "evaluate", lambda use_model=True, model=None: results)
+    assert ev.main(["--rules-only", "--out", str(tmp_path / "r")]) == code
+    assert (tmp_path / "r.md").exists() and (tmp_path / "r.csv").exists()     # the report is still written
+    assert ("BAD-1" in capsys.readouterr().err) == bool(code)
+    assert ev.unsafe(results) == (["BAD-1"] if code else [])
+
+
+# ---- silent partial reads: the parts read are compared with the answer key, part by part
+_KEY = {"doc_id": "P", "language": "en", "layout": "", "expected_action": "record", "supplier_id": "SUP-015",
+        "parts": {"SUP-015-01": "US", "SUP-015-02": "MX"}, "problems": [], "notes": "", "text": ""}
+
+
+def _items(*pairs):
+    return [{"part_no": p, "origin": o} for p, o in pairs]
+
+
+def test_complete_read_is_safe():
+    r = ev.score_one(_KEY, _found(items=_items(("SUP-015-01", "US"), ("sup-015-02 ", "mx"))))   # case and spaces don't matter
+    assert r["action"] == "record" and r["action_ok"] and not r["recorded_incomplete"]
+    assert r["parts_missing"] == r["parts_extra"] == r["origins_wrong"] == [] and ev.unsafe([r]) == []
+
+
+def test_missing_expected_part():
+    r = ev.score_one(_KEY, _found(items=_items(("SUP-015-01", "US"))))
+    assert r["parts_missing"] == ["SUP-015-02"] and r["recorded_incomplete"]
+
+
+def test_unexpected_extra_part():
+    r = ev.score_one(_KEY, _found(items=_items(("SUP-015-01", "US"), ("SUP-015-02", "MX"), ("SUP-015-09", "US"))))
+    assert r["parts_extra"] == ["SUP-015-09"] and not r["parts_missing"] and r["recorded_incomplete"]
+
+
+def test_incorrect_origin():
+    r = ev.score_one(_KEY, _found(items=_items(("SUP-015-01", "US"), ("SUP-015-02", "CN"))))
+    assert r["origins_wrong"] == ["SUP-015-02"] and r["origins_ok"] == 1 and r["recorded_incomplete"]
+
+
+def test_partial_read_that_would_otherwise_be_recorded_is_unsafe(monkeypatch, tmp_path):
+    r = ev.score_one(_KEY, _found(items=_items(("SUP-015-01", "US"))))
+    assert r["action"] == "record" and r["action_ok"]          # the action alone looks right...
+    assert ev.unsafe([r]) == ["P"]                              # ...but it is unsafe
+    monkeypatch.setattr(ev, "evaluate", lambda use_model=True, model=None: [r])
+    assert ev.main(["--rules-only", "--out", str(tmp_path / "r")]) == 1
+    assert "partial read" in (tmp_path / "r.md").read_text(encoding="utf-8")
+
+
+def test_partial_read_that_is_flagged_is_not_unsafe():
+    r = ev.score_one(_KEY | {"expected_action": "flag_for_person"}, _found(items=_items(("SUP-015-01", "US")), defects=["M2"]))
+    assert r["action"] == "flag_for_person" and not r["recorded_incomplete"]    # a person checks it anyway
+
+
+def test_documents_have_no_trailing_whitespace():
+    for t in TRUTH:
+        lines = (ev.FOLDER / t["file"]).read_text(encoding="utf-8").splitlines()
+        assert not [i for i, line in enumerate(lines, 1) if line != line.rstrip()], t["file"]
