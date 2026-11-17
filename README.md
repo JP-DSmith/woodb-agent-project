@@ -35,7 +35,8 @@ python scripts/validate_lightweight_router.py
 
 Verified results:
 
-- Full automated suite: **961 passed, 12 documented skips**
+- Full offline automated suite: **1109 passed, 27 skipped, 1 warning**.
+  - **15 of the skipped tests are opt-in real OpenRouter router tests.** Those tests were run separately with `CUSMA_LIVE_ROUTER_TESTS=1` and passed.
 - ONNX (fallback) router validation: **488/500 = 97.6%**
 - LLM router (default) on the router test sets: **92.3%** vs **79.8%** for the ONNX router (653 questions; evidence: `evaluation/evidence/router_comparison_llm_vs_onnx.md`)
 - Full available T38 evaluation: **714 cases, 0 execution errors**
@@ -506,10 +507,10 @@ pytest -q
 Verified baseline:
 
 ```text
-961 passed, 12 skipped
+1109 passed, 27 skipped, 1 warning
 ```
 
-The documented skips are known-gap adversarial cases. A new failure should be investigated rather than relabelled solely to increase a score.
+Of the skips, 12 are documented known-gap adversarial cases and 15 are opt-in real OpenRouter router tests (run separately with `CUSMA_LIVE_ROUTER_TESTS=1`; they passed). A new failure should be investigated rather than relabelled solely to increase a score.
 
 ### Syntax and import checks
 
