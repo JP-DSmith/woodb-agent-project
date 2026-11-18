@@ -305,9 +305,11 @@ def _collect(trace: Any, restricted: bool) -> TraceFacts:
         tool = call.get("tool") or call.get("name") or ""
         if tool:
             facts.tools.add(tool)
-        if tool == "draft_certification":
-            facts.has_draft_certification = True
         result = call.get("result", call)   # accept either {tool, args, result} or a bare envelope
+        # A draft counts only when the tool produced one. A refusal or a missing order number is not a draft.
+        if tool == "draft_certification" and isinstance(result, dict) and result.get("ok") is True:
+            facts.has_draft_certification = True
+            facts.verdicts.add("qualifies")   # the tool drafts only for a boot that qualifies
         args = call.get("args") or {}
         if isinstance(result, dict):
             if result.get("rules_version"):
@@ -316,6 +318,11 @@ def _collect(trace: Any, restricted: bool) -> TraceFacts:
                 if isinstance(s, str):
                     facts.steps.append(s)
             err = result.get("error")
+            if tool == "draft_certification" and isinstance(err, dict):
+                # "No draft: NB-0414 is 'does_not_qualify' on the ship date ..."
+                m_verdict = re.search(r"is '(qualifies|does_not_qualify|needs_review)'", str(err.get("message", "")))
+                if m_verdict:
+                    facts.verdicts.add(m_verdict.group(1))
             if isinstance(err, dict) and err.get("code") == "NOT_FOUND":
                 for m in re.finditer(r"NB-\d{4}(?:-V\d)?", f"{err.get('message', '')} {args.get('boot_id') or args.get('sku') or ''}"):
                     facts.boot_ids_not_found.add(m.group(0))
