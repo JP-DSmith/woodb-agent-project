@@ -1,0 +1,4 @@
+Invoice_Number,Invoice_Date,Due_Date,Vendor_Name,Customer_Name,Part_No,Item_Description,Quantity,Unit_Price,Tax_Rate,Line_Subtotal,Tax_Amount,Total_Due,Currency,Country_of_Origin
+INV-7731,2026-11-10,2026-12-10,Jade River Textiles Co.,Northfield Rubber Footwear Inc.,SUP-013-01,"Labels, patch, pull loop",2000,0.12,0.00,240.00,0.00,240.00,USD,China
+INV-7731,2026-11-10,2026-12-10,Jade River Textiles Co.,Northfield Rubber Footwear Inc.,SUP-013-02,"Labels, safety patch, pull loop",1500,0.15,0.00,225.00,0.00,225.00,USD,China
+INV-7731,2026-11-10,2026-12-10,Jade River Textiles Co.,Northfield Rubber Footwear Inc.,SUP-013-03,Polyester knit lining,800,1.85,0.00,1480.00,0.00,1480.00,USD,China
