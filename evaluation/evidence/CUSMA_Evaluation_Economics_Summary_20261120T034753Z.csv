@@ -1,0 +1,59 @@
+Section,Metric,Value,Unit / denominator
+Overall,Cases evaluated,784,cases
+Overall,Routed cases,651,cases
+Overall,Cases with no agent,133,cases
+Tokens,Total input tokens,3147365,tokens
+Tokens,Average input tokens per question,4014.5,tokens per question
+Tokens,Total output tokens,66707,tokens
+Tokens,Average output tokens per question,85.09,tokens per question
+Tokens,Total combined tokens,3214072,tokens
+Tokens,Average combined tokens per question,4099.58,tokens per question
+Cost,Total model cost,0.394328,USD
+Cost,Average model cost per question,0.00050297,USD per question
+Performance,Average response time,2.6734,seconds per question
+Agent usage,certification_agent cases,70,cases
+Agent usage,certification_agent share of routed cases,10.8,%
+Agent usage,certification_agent share of all cases,8.9,%
+Agent performance,certification_agent average tokens,4031.19,tokens per case
+Agent performance,certification_agent average cost,0.0005008,USD per case
+Agent performance,certification_agent average response time,2.9239,seconds
+Agent usage,duty_agent cases,98,cases
+Agent usage,duty_agent share of routed cases,15.1,%
+Agent usage,duty_agent share of all cases,12.5,%
+Agent performance,duty_agent average tokens,4938.09,tokens per case
+Agent performance,duty_agent average cost,0.00060348,USD per case
+Agent performance,duty_agent average response time,3.3282,seconds
+Agent usage,escalation_agent cases,72,cases
+Agent usage,escalation_agent share of routed cases,11.1,%
+Agent usage,escalation_agent share of all cases,9.2,%
+Agent performance,escalation_agent average tokens,584.76,tokens per case
+Agent performance,escalation_agent average cost,8.988e-05,USD per case
+Agent performance,escalation_agent average response time,0.646,seconds
+Agent usage,intake_agent cases,90,cases
+Agent usage,intake_agent share of routed cases,13.8,%
+Agent usage,intake_agent share of all cases,11.5,%
+Agent performance,intake_agent average tokens,931.37,tokens per case
+Agent performance,intake_agent average cost,0.00017166,USD per case
+Agent performance,intake_agent average response time,1.7589,seconds
+Agent usage,qualification_agent cases,224,cases
+Agent usage,qualification_agent share of routed cases,34.4,%
+Agent usage,qualification_agent share of all cases,28.6,%
+Agent performance,qualification_agent average tokens,4922.0,tokens per case
+Agent performance,qualification_agent average cost,0.00066615,USD per case
+Agent performance,qualification_agent average response time,3.3546,seconds
+Agent usage,sourcing_agent cases,97,cases
+Agent usage,sourcing_agent share of routed cases,14.9,%
+Agent usage,sourcing_agent share of all cases,12.4,%
+Agent performance,sourcing_agent average tokens,11930.96,tokens per case
+Agent performance,sourcing_agent average cost,0.00123211,USD per case
+Agent performance,sourcing_agent average response time,5.6059,seconds
+Evaluation,Seen routing accuracy,97.2,%
+Evaluation,Seen answer accuracy,65.6,%
+Evaluation,Unseen routing accuracy,98.0,%
+Evaluation,Unseen answer accuracy,64.6,%
+Evaluation,Overall routing accuracy,91.9,%
+Evaluation,Overall answer accuracy,65.1,%
+Security,Attacks stopped or answered safely,72.5,%
+Security,Attacks that broke no policy rule,86.3,%
+Security,Normal questions wrongly blocked,0,cases
+Evaluation,Errors,0,cases
