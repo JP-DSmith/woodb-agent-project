@@ -2,7 +2,7 @@
 
 AI-assisted origin-compliance agent for a fictional Canadian footwear manufacturer.
 
-> **For graders:** The active, fully tested integration version is currently on the `dev` branch. Before final submission, the validated release candidate will be promoted to `main` through a release pull request. Use the frozen submission branch identified in the final submission package.
+> **For graders:** The final validated release is on the `main` branch. Reproduction and submission checks should be performed from `main`; `dev` remains the integration branch for reviewed development work.
 
 ## Marker Quick Start
 
@@ -13,10 +13,9 @@ The fastest reproducible path is Google Cloud Shell or a clean Python 3.11 or 3.
 git clone https://github.com/JP-DSmith/woodb-agent-project.git
 cd woodb-agent-project
 
-# 2. Use the active validated integration branch
-# Replace dev with main after the final release is promoted.
-git switch dev
-git pull --ff-only origin dev
+# 2. Use the final validated release branch
+git switch main
+git pull --ff-only origin main
 
 # 3. Create and activate a virtual environment
 python3 -m venv .venv
@@ -35,11 +34,20 @@ python scripts/validate_lightweight_router.py
 
 Verified results:
 
-- Full offline automated suite: **1109 passed, 27 skipped, 1 warning**.
-  - **15 of the skipped tests are opt-in real OpenRouter router tests.** Those tests were run separately with `CUSMA_LIVE_ROUTER_TESTS=1` and passed.
+- Full offline automated suite: **1121 passed, 29 skipped, 1 warning**.
+  - **15 skips are opt-in real OpenRouter router tests.** Those tests were run separately with `CUSMA_LIVE_ROUTER_TESTS=1` and passed.
+  - **2 skips require the optional research dependencies** (`onnx` and `matplotlib`). With `requirements-research.txt` installed, the complete router-study research suite passed **14/14 tests**.
 - ONNX (fallback) router validation: **488/500 = 97.6%**
 - LLM router (default) on the router test sets: **92.3%** vs **79.8%** for the ONNX router (653 questions; evidence: `evaluation/evidence/router_comparison_llm_vs_onnx.md`)
-- Full available T38 evaluation: **714 cases, 0 execution errors**
+- Final evaluation: **784 cases, 0 execution errors**
+- Final routing accuracy: **91.9% (600/653 applicable cases)**
+- Final answer accuracy: **65.1% (114/175 applicable cases)**
+- Strict attack handling: **72.5% (95/131)**
+- Policy-safe attack handling: **86.3% (113/131)**
+- Normal questions wrongly blocked: **0**
+- Average final-evaluation latency: **2.6734 seconds per evaluated case**
+- Final-evaluation model cost: **US$0.394328 total; US$0.00050297 per evaluated case**
+- Frozen final evidence: `evaluation/results/CUSMA_Evaluation_Detailed_Results_20261120T034753Z.csv`, `evaluation/evidence/CUSMA_Evaluation_Summary_20261120T034753Z.json`, and `evaluation/evidence/CUSMA_Evaluation_Economics_Summary_20261120T034753Z.csv`
 - Clean Google Cloud Shell reproduction: **verified with Python 3.12.3** through clone, install, tests, router validation, `/health`, `/chat`, and evaluation artifact creation
 
 To run model-backed requests or evaluation, complete [Credentials and configuration](#credentials-and-configuration) first.
@@ -229,8 +237,8 @@ gcloud auth application-default login
 ```bash
 git clone https://github.com/JP-DSmith/woodb-agent-project.git
 cd woodb-agent-project
-git switch dev
-git pull --ff-only origin dev
+git switch main
+git pull --ff-only origin main
 
 python3 -m venv .venv
 source .venv/bin/activate
@@ -250,8 +258,8 @@ Use the same sequence with Python 3.11 or 3.12. Configure Google Cloud credentia
 ```powershell
 git clone https://github.com/JP-DSmith/woodb-agent-project.git
 cd woodb-agent-project
-git switch dev
-git pull --ff-only origin dev
+git switch main
+git pull --ff-only origin main
 
 py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -282,8 +290,8 @@ Run in separate cells:
 ```python
 !git clone https://github.com/JP-DSmith/woodb-agent-project.git
 %cd woodb-agent-project
-!git switch dev
-!git pull --ff-only origin dev
+!git switch main
+!git pull --ff-only origin main
 !python -m pip install -q --upgrade pip
 !python -m pip install -q -r requirements.txt
 ```
@@ -426,8 +434,8 @@ Kaggle uses notebook-style commands similar to Colab. Enable Internet access for
 ```python
 !git clone https://github.com/JP-DSmith/woodb-agent-project.git
 %cd woodb-agent-project
-!git switch dev
-!git pull --ff-only origin dev
+!git switch main
+!git pull --ff-only origin main
 !python -m pip install -q --upgrade pip
 !python -m pip install -q -r requirements.txt
 ```
@@ -507,7 +515,7 @@ pytest -q
 Verified baseline:
 
 ```text
-1109 passed, 27 skipped, 1 warning
+1121 passed, 29 skipped, 1 warning
 ```
 
 Of the skips, 12 are documented known-gap adversarial cases and 15 are opt-in real OpenRouter router tests (run separately with `CUSMA_LIVE_ROUTER_TESTS=1`; they passed). A new failure should be investigated rather than relabelled solely to increase a score.
@@ -577,36 +585,37 @@ python evaluation/run_evaluation.py \
   --router current \
   --files holdout,attacks,test_cases,human_written \
   --json \
-  --output-dir evaluation/results/t38
+  --output-dir evaluation/results/reproduction
 ```
 
 The runner loads the selected datasets, runs each case through the full pipeline, records route/outcome/security/performance data, applies deterministic scoring, and writes CSV plus JSON outputs.
 
-### Verified T38 results
+### Frozen final evaluation
+
+The frozen final model-backed evaluation is run `20261120T034753Z`. It includes the holdout, adversarial, human-written, and normal test-case datasets.
 
 | Metric | Result |
 |---|---:|
-| Total evaluated | 714 |
-| Routing accuracy | 83.0% (484/583) |
-| Answer accuracy | 41.7% (73/175) |
-| Strict attack pass rate | 71.0% (93/131) |
-| Policy-safe attack rate | 87.0% (114/131) |
+| Total evaluated | 784 |
+| Routing accuracy | 91.9% (600/653) |
+| Answer accuracy | 65.1% (114/175) |
+| Strict attack pass rate | 72.5% (95/131) |
+| Policy-safe attack rate | 86.3% (113/131) |
 | Needs human scoring | 17 |
-| Confirmed policy failures | 0 |
 | Normal questions wrongly blocked | 0 |
 | Reviewer rescues | 3 |
-| Average latency | 1.8174 s |
-| Total model cost | US$0.185662 |
-| Cost per case | US$0.00026003 |
+| Average latency | 2.6734 s |
+| Total model cost | US$0.394328 |
+| Cost per evaluated case | US$0.00050297 |
 | Errors | 0 |
 
-Dataset composition for that run:
+Frozen evidence:
 
-- 500 human-reviewed holdout rows
-- 131 adversarial attacks
-- 83 normal test cases
+- `evaluation/results/CUSMA_Evaluation_Detailed_Results_20261120T034753Z.csv`
+- `evaluation/evidence/CUSMA_Evaluation_Summary_20261120T034753Z.json`
+- `evaluation/evidence/CUSMA_Evaluation_Economics_Summary_20261120T034753Z.csv`
 
-`data/test_human_written.jsonl` was optional and was not present for the verified 714-case run.
+The earlier T38 run remains historical pre-fix evidence used during error review; it is not the current final-performance baseline.
 
 ### Interpreting attack metrics
 
@@ -691,26 +700,25 @@ Structured result fields are kept stable rather than rewritten by translation.
 
 ### Project portal
 
-`woodb-agent-portal` is the existing CUSMA project portal service. During the documentation audit it used `OPENROUTER_API_KEY` from Google Secret Manager and explicitly set `CUSMA_ROUTER=keyword`.
+`woodb-agent-portal` is the CUSMA project portal service. The frozen repository release uses the prompted GPT-4o-mini router as the default application router, with the local ONNX router retained as the fallback when the model cannot be reached.
 
-The verified T38 evaluation used the current ONNX router. Before final submission, synchronize the final project portal deployment with the frozen release and verify the intended router configuration.
+Cloud deployment should use the frozen `main` release and the intended router configuration should be verified as part of the final deployment check.
 
 `quanta-mentals-portal` is unrelated to this project and is intentionally omitted from project instructions.
 
 ## CI and Release Checks
 
-Before promoting `dev` to `main`:
+The validated release has been promoted from `dev` to `main`. Final reproducibility and submission checks are performed from `main`.
 
-- [ ] README validated on `dev`
+- [ ] README validated from a fresh clone of `main`
 - [ ] Clean-machine workflow completed exactly as documented
 - [ ] Two teammates complete the independent reproducibility check
 - [ ] `pytest -q` passes
 - [ ] Router validation remains above threshold
-- [ ] Required final evaluation is complete
-- [ ] No secrets or generated evidence files are staged
+- [ ] Frozen final evaluation evidence is present
+- [ ] No secrets are committed
 - [ ] Final Cloud Run router configuration is verified
-- [ ] Release PR is opened from `dev` to `main`
-- [ ] Required checks/review pass before merge
+- [ ] Required GitHub checks/reviews are complete
 - [ ] Frozen submission commit is recorded
 
 ## Rubric Evidence Map
@@ -731,8 +739,8 @@ Before promoting `dev` to `main`:
 A teammate or marker should be able to complete the applicable items without assistance:
 
 - [ ] Clone repository
-- [ ] Check out instructed branch
-- [ ] Confirm current commit
+- [ ] Confirm `main` is checked out
+- [ ] Record the exact `main` commit being reproduced
 - [ ] Create Python 3.11 or 3.12 virtual environment
 - [ ] Install `requirements.txt`
 - [ ] Run syntax/import checks
@@ -794,7 +802,7 @@ ls -lh \
 printenv CUSMA_ROUTER
 ```
 
-To return to the default ONNX path:
+To return to the application's default router selection (prompted LLM router with ONNX fallback):
 
 ```bash
 unset CUSMA_ROUTER
